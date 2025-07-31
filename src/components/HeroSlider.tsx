@@ -1,12 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselPrevious, 
-  CarouselNext 
-} from "@/components/ui/carousel";
 
 const sliderImages = [
   {
@@ -30,7 +23,7 @@ const HeroSlider = React.memo(() => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,34 +35,27 @@ const HeroSlider = React.memo(() => {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
-      <Carousel className="h-full" 
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-        orientation="horizontal"
-        setApi={(api) => {
-          if (api) {
-            api.scrollTo(currentSlide);
-          }
-        }}
-      >
-        <CarouselContent className="h-full">
-          {sliderImages.map((image, index) => (
-            <CarouselItem key={index} className="h-full">
-              <img 
-                src={image.url} 
-                alt={image.alt} 
-                className="w-full h-full object-cover"
-                loading={index === 0 ? "eager" : "lazy"}
-                onError={handleImageError}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex left-4 z-20" />
-        <CarouselNext className="hidden sm:flex right-4 z-20" />
-      </Carousel>
+      <div className="h-full w-full">
+        {sliderImages.map((image, index) => (
+          <div 
+            key={index} 
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image.url} 
+              alt={image.alt} 
+              className="w-full h-full object-cover"
+              loading={index === 0 ? "eager" : "lazy"}
+              onError={handleImageError}
+            />
+          </div>
+        ))}
+        {imageError && (
+          <div className="absolute inset-0 bg-gradient-to-br from-moving-blue to-moving-darkblue"></div>
+        )}
+      </div>
     </div>
   );
 });

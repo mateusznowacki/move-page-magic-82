@@ -46,9 +46,9 @@ const Services: React.FC = () => {
     <section id="services" className="section-padding bg-moving-gray" role="main" aria-labelledby="services-heading">
       <div className="container">
         <header className="text-center max-w-3xl mx-auto mb-12">
-          <h2 id="services-heading" className="section-subtitle">{t('services.title')}</h2>
-          <h3 className="section-title">{t('services.subtitle')}</h3>
-          <p className="text-gray-600">
+          <h2 id="services-heading" className="section-subtitle text-xl sm:text-2xl md:text-3xl lg:text-4xl">{t('services.title')}</h2>
+          <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{t('services.subtitle')}</h3>
+          <p className="text-gray-600 text-base sm:text-lg">
             {t('services.description')}
           </p>
         </header>

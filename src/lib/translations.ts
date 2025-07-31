@@ -203,22 +203,22 @@ export const translations: Translations = {
     es: 'Obtener presupuesto'
   },
   'services.title': {
-    en: 'Our Services',
-    pl: 'Nasze Usługi',
-    de: 'Unsere Dienstleistungen',
-    es: 'Nuestros Servicios'
+    en: 'Professional Moving Services',
+    pl: 'Profesjonalne Usługi Przeprowadzkowe',
+    de: 'Professionelle Umzugsdienste',
+    es: 'Servicios Profesionales de Mudanza'
   },
   'services.subtitle': {
-    en: 'Comprehensive Moving Solutions',
-    pl: 'Kompleksowe rozwiązania przeprowadzkowe',
-    de: 'Umfassende Umzugslösungen',
-    es: 'Soluciones integrales de mudanza'
+    en: 'Complete Moving Solutions for Home and Business',
+    pl: 'Kompletne rozwiązania przeprowadzkowe dla domu i firmy',
+    de: 'Vollständige Umzugslösungen für Zuhause und Unternehmen',
+    es: 'Soluciones completas de mudanza para hogar y empresa'
   },
   'services.description': {
-    en: 'We offer a wide range of professional moving services tailored to your specific needs. From residential to commercial relocations, our team ensures a smooth transition.',
-    pl: 'Oferujemy szeroki zakres profesjonalnych usług przeprowadzkowych dostosowanych do Twoich konkretnych potrzeb. Od przeprowadzek mieszkaniowych po komercyjne, nasz zespół zapewnia płynne przejście do nowej lokalizacji.',
-    de: 'Wir bieten eine breite Palette professioneller Umzugsdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind. Von Wohnungs- bis hin zu Geschäftsumzügen sorgt unser Team für einen reibungslosen Übergang.',
-    es: 'Ofrecemos una amplia gama de servicios profesionales de mudanza adaptados a sus necesidades específicas. Desde reubicaciones residenciales hasta comerciales, nuestro equipo garantiza una transición sin problemas.'
+    en: 'Professional moving services in Germany with 10+ years of experience. Residential and commercial relocations, packing, furniture assembly, and international moves throughout the EU.',
+    pl: 'Profesjonalne usługi przeprowadzkowe w Niemczech z 10+ latami doświadczenia. Przeprowadzki mieszkaniowe i komercyjne, pakowanie, montaż mebli i przeprowadzki międzynarodowe w całej UE.',
+    de: 'Professionelle Umzugsdienste in Deutschland mit über 10 Jahren Erfahrung. Wohnungs- und Geschäftsumzüge, Verpackung, Möbelmontage und internationale Umzüge in der gesamten EU.',
+    es: 'Servicios profesionales de mudanza en Alemania con más de 10 años de experiencia. Mudanzas residenciales y comerciales, empaquetado, montaje de muebles y mudanzas internacionales en toda la UE.'
   },
   'services.viewAll': {
     en: 'View All Services',
@@ -563,10 +563,10 @@ export const translations: Translations = {
     es: '¡Reserve su servicio de mudanza en línea y obtenga un 10% de descuento en su primer pedido!'
   },
   'footer.promotionTerms': {
-    en: '*Valid for online bookings only. Cannot be combined with other offers.',
-    pl: '*Ważne tylko dla rezerwacji online. Nie można łączyć z innymi ofertami.',
-    de: '*Gültig nur für Online-Buchungen. Nicht mit anderen Angeboten kombinierbar.',
-    es: '*Válido solo para reservas en línea. No se puede combinar con otras ofertas.'
+    en: '',
+    pl: '',
+    de: '',
+    es: ''
   },
   'footer.copyright': {
     en: '© 2025 MP Transporte und Umzüge. All rights reserved.',

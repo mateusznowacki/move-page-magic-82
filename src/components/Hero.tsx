@@ -24,29 +24,28 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16" role="banner">
+    <section className="relative h-screen flex items-center pt-16" role="banner">
       <HeroSlider />
       
       <div className="container relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-          <div className="lg:col-span-8 text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+          <div className="lg:col-span-8 text-white text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               {t('hero.title')}
             </h1>
-            <h2 className="text-lg md:text-xl opacity-90 mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <h2 className="text-lg sm:text-xl md:text-2xl opacity-90 mb-6 sm:mb-8 px-4 sm:px-0">
               {t('hero.subtitle')}
             </h2>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
               <Button 
-                className="btn-primary text-lg"
+                className="bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 onClick={scrollToContact}
                 aria-label="Uzyskaj bezpłatną wycenę przeprowadzki"
               >
                 {t('hero.getQuote')}
               </Button>
               <Button 
-                className="bg-white text-moving-darkblue hover:bg-moving-lightblue text-lg" 
-                variant="outline"
+                className="bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105" 
                 onClick={scrollToServices}
                 aria-label="Zobacz nasze usługi przeprowadzkowe"
               >
@@ -55,56 +54,56 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-4 flex justify-center lg:justify-end lg:pr-16">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg animate-fade-in max-w-xs" style={{animationDelay: '0.6s'}}>
-              <div className="flex items-center mb-3">
-                <BadgePercent className="w-6 h-6 text-moving-blue mr-2" />
+          <div className="lg:col-span-4 flex justify-center lg:justify-end lg:pr-16 px-4 sm:px-0">
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg w-full max-w-sm">
+              <div className="flex items-center mb-3 sm:mb-4">
+                <BadgePercent className="w-6 h-6 sm:w-8 sm:h-8 text-moving-blue mr-2 sm:mr-3" />
                 <div>
-                  <Badge variant="default" className="bg-moving-blue text-white mb-1 text-xs">
+                  <Badge variant="default" className="bg-moving-blue text-white mb-1 sm:mb-2 text-xs sm:text-sm">
                     {t('footer.promotionTitle')}
                   </Badge>
                   <div className="flex items-center">
-                    <span className="text-2xl font-bold text-moving-blue">10%</span>
-                    <span className="text-sm font-semibold ml-1 text-moving-dark">{t('footer.discount')}</span>
+                    <span className="text-2xl sm:text-3xl font-bold text-moving-blue">10%</span>
+                    <span className="text-sm sm:text-base font-semibold ml-1 sm:ml-2 text-moving-dark">{t('footer.discount')}</span>
                   </div>
                 </div>
               </div>
-              <p className="text-moving-dark text-xs mb-3">{t('footer.promotionDescription')}</p>
-              <div className="text-xs text-gray-600">
+              <p className="text-moving-dark text-xs sm:text-sm mb-3 leading-relaxed">{t('footer.promotionDescription')}</p>
+              <div className="text-xs sm:text-sm text-gray-600">
                 {t('footer.promotionTerms')}
               </div>
             </div>
           </div>
         </div>
         
-        <div className="mt-8 md:mt-12 bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6 flex flex-col md:flex-row gap-4 md:gap-8 animate-fade-in" style={{animationDelay: '0.8s'}}>
-          <div className="flex items-center gap-4">
-            <div className="bg-moving-blue rounded-full w-12 h-12 flex items-center justify-center text-white text-xl font-bold" aria-label="15 lat doświadczenia">
+        <div className="hidden lg:flex mt-6 sm:mt-8 md:mt-12 bg-white rounded-lg p-4 md:p-6 gap-4 md:gap-8 shadow-lg mx-4 sm:mx-0 w-fit mx-auto">
+          <div className="flex items-center gap-3 justify-center">
+            <div className="bg-moving-blue rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0" aria-label="10 lat doświadczenia">
               {t('hero.years')}
             </div>
-            <div>
-              <h3 className="font-semibold">{t('hero.yearsDesc')}</h3>
-              <p className="text-sm opacity-80">Profesjonalne usługi przeprowadzkowe</p>
+            <div className="text-center">
+              <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.yearsDesc')}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Profesjonalne usługi przeprowadzkowe</p>
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
-            <div className="bg-moving-blue rounded-full w-12 h-12 flex items-center justify-center text-white text-xl font-bold" aria-label="Ponad 5000 zadowolonych klientów">
+          <div className="flex items-center gap-3 justify-center">
+            <div className="bg-moving-blue rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0" aria-label="Ponad 5000 zadowolonych klientów">
               {t('hero.customers')}
             </div>
-            <div>
-              <h3 className="font-semibold">{t('hero.customersDesc')}</h3>
-              <p className="text-sm opacity-80">W całym kraju</p>
+            <div className="text-center">
+              <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.customersDesc')}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">W całym kraju</p>
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
-            <div className="bg-moving-blue rounded-full w-12 h-12 flex items-center justify-center text-white text-xl font-bold" aria-label="Całodobowe wsparcie">
+          <div className="flex items-center gap-3 justify-center">
+            <div className="bg-moving-blue rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white text-lg sm:text-xl font-bold flex-shrink-0" aria-label="Całodobowe wsparcie">
               {t('hero.support')}
             </div>
-            <div>
-              <h3 className="font-semibold">{t('hero.supportDesc')}</h3>
-              <p className="text-sm opacity-80">Zawsze gotowi pomóc</p>
+            <div className="text-center">
+              <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.supportDesc')}</h3>
+              <p className="text-xs sm:text-sm text-gray-600">Zawsze gotowi pomóc</p>
             </div>
           </div>
         </div>
