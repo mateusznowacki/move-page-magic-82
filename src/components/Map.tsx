@@ -58,15 +58,15 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       
       const settings = mapSettings[mapType];
       
-              map.current = new mapboxgl.Map({
-          container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/light-v11',
-          center: settings.center,
-          zoom: settings.zoom,
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: settings.center,
+        zoom: settings.zoom,
           interactive: false,
           attributionControl: false,
           logoPosition: 'bottom-left'
-        });
+      });
 
       // Add navigation controls
               // Removed NavigationControl to disable zoom controls
@@ -208,10 +208,10 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
             </div>
           </div>
         )}
-        <div 
-          ref={mapContainer} 
+      <div 
+        ref={mapContainer} 
           className="w-full h-full rounded-lg"
-        />
+      />
       </div>
     </div>
   );
