@@ -75,6 +75,10 @@ const Navbar: React.FC = () => {
     href: '/einsatzgebiete',
     isLink: true
   }, {
+    key: 'cities',
+    href: '/staedte',
+    isLink: true
+  }, {
     key: 'quote',
     href: '/angebot',
     isLink: true

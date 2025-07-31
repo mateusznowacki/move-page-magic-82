@@ -16,6 +16,7 @@ type TranslationKey =
   | 'nav.contact'
   | 'nav.getQuote'
   | 'nav.areas'
+  | 'nav.cities'
   | 'nav.quote'
   | 'services.title'
   | 'services.subtitle'
@@ -203,6 +204,12 @@ export const translations: Translations = {
     pl: 'Obszary',
     de: 'Gebiete',
     es: 'Áreas'
+  },
+  'nav.cities': {
+    en: 'Cities',
+    pl: 'Miasta',
+    de: 'Städte',
+    es: 'Ciudades'
   },
   'nav.quote': {
     en: 'Get a Quote',
