@@ -7,7 +7,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Globe } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Language {
@@ -33,29 +32,26 @@ const LanguageSwitcher: React.FC = () => {
   const currentLanguage = languages.find(lang => lang.code === language);
 
   return (
-    <div className="flex items-center gap-2">
-      <Globe className="h-4 w-4 text-moving-dark" />
-      <Select value={language} onValueChange={handleLanguageChange}>
-        <SelectTrigger className="w-[140px] h-8 text-sm bg-transparent border-none hover:bg-moving-lightblue focus:ring-0">
-          <div className="flex items-center gap-2">
-            {currentLanguage && (
-              <span className="text-base">{currentLanguage.flag}</span>
-            )}
-            <SelectValue placeholder="Select language" />
-          </div>
-        </SelectTrigger>
-        <SelectContent>
-          {languages.map((lang) => (
-            <SelectItem key={lang.code} value={lang.code} className="cursor-pointer">
-              <div className="flex items-center gap-2">
-                <span className="text-base">{lang.flag}</span>
-                <span>{lang.name}</span>
-              </div>
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
+    <Select value={language} onValueChange={handleLanguageChange}>
+      <SelectTrigger className="w-[110px] sm:w-[120px] lg:w-[130px] h-8 sm:h-9 lg:h-10 text-sm sm:text-base bg-white/95 backdrop-blur-sm border border-gray-300 hover:bg-white focus:ring-0 rounded-md shadow-sm">
+        <div className="flex items-center gap-1 sm:gap-2">
+          {currentLanguage && (
+            <span className="text-lg sm:text-xl">{currentLanguage.flag}</span>
+          )}
+          <span className="text-xs sm:text-sm lg:text-base font-semibold text-gray-800">{currentLanguage?.name}</span>
+        </div>
+      </SelectTrigger>
+      <SelectContent>
+        {languages.map((lang) => (
+          <SelectItem key={lang.code} value={lang.code} className="cursor-pointer">
+            <div className="flex items-center gap-2">
+              <span className="text-lg sm:text-xl">{lang.flag}</span>
+              <span className="text-sm sm:text-base">{lang.name}</span>
+            </div>
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };
 

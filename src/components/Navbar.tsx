@@ -91,15 +91,21 @@ const Navbar: React.FC = () => {
     item: typeof navigationItems[0];
     isMobile?: boolean;
   }) => {
-    const baseClasses = `${isScrolled ? 'text-moving-dark' : 'text-white'} hover:text-moving-blue font-medium transition-colors`;
-    const mobileClasses = isMobile ? "py-2" : "";
+    const baseClasses = "text-moving-dark font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-moving-blue after:transition-all after:duration-300 hover:after:w-full focus:outline-none active:outline-none border-none";
+    const mobileClasses = isMobile ? "py-3 text-lg text-gray-800 hover:bg-moving-lightblue px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none active:outline-none border-none after:hidden" : "";
     
     if (item.isLink) {
       return (
         <Link 
           to={item.href} 
           className={`${baseClasses} ${mobileClasses}`} 
-          onClick={isMobile ? () => setIsMobileMenuOpen(false) : undefined}
+          onClick={() => {
+            if (isMobile) setIsMobileMenuOpen(false);
+            if (item.href === '/' && location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          tabIndex={-1}
         >
           {getNavText(item.key)}
         </Link>
@@ -111,6 +117,7 @@ const Navbar: React.FC = () => {
         href={item.href} 
         onClick={e => scrollToSection(item.sectionId!, e)} 
         className={`${baseClasses} ${mobileClasses}`}
+        tabIndex={-1}
       >
         {getNavText(item.key)}
       </a>
@@ -118,28 +125,36 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5")}>
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md py-2 md:py-3")}>
       <div className="container flex justify-between items-center">
-        <Link to="/" className={`${isScrolled ? 'text-moving-dark' : 'text-white'} flex items-center gap-2 group`}>
-          <img alt="Meister Umzuge Logo" className="h-10 md:h-12 object-contain" src="/meister-umzunge-logo.png" />
+        <Link 
+          to="/" 
+          className="text-moving-dark flex items-center gap-2 md:gap-3 group"
+          onClick={() => {
+            if (location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
+          <img alt="Meister Umzuge Logo" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/meister-umzunge-logo.png" />
         </Link>
         
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">
           {navigationItems.map(item => <NavItem key={item.key} item={item} />)}
           <LanguageSwitcher />
         </nav>
         
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center gap-2">
           <LanguageSwitcher />
-          <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            <Menu className={`h-6 w-6 ${isScrolled ? 'text-moving-dark' : 'text-white'}`} />
+          <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="outline-none">
+            <Menu className="h-6 w-6 sm:h-7 sm:w-7 text-moving-dark" />
           </Button>
         </div>
       </div>
       
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-md animate-slide-in-right">
-          <div className="container py-4 flex flex-col space-y-4">
+        <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-lg border-t border-gray-200 animate-slide-in-right">
+          <div className="container py-4 flex flex-col space-y-3">
             {navigationItems.map(item => <NavItem key={item.key} item={item} isMobile />)}
           </div>
         </div>

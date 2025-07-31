@@ -130,7 +130,6 @@
   }
 
   /* Focus states for accessibility */
-  a:focus,
   button:focus,
   input:focus,
   select:focus,
