@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { MapPin, Users, Building } from 'lucide-react';
+import { MapPin, Users, Building, ChevronRight } from 'lucide-react';
 
 interface City {
   name: string;
@@ -22,9 +22,10 @@ interface CitiesData {
 }
 
 const StatesPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [citiesData, setCitiesData] = useState<CitiesData>({});
   const [loading, setLoading] = useState(true);
+  const [expandedState, setExpandedState] = useState<string | null>(null);
 
   useEffect(() => {
     const loadCities = async () => {
@@ -94,6 +95,32 @@ const StatesPage: React.FC = () => {
     };
   };
 
+  const toggleState = (state: string) => {
+    setExpandedState(expandedState === state ? null : state);
+  };
+
+  const getHeaderText = () => {
+    const texts = {
+      en: {
+        title: "Choose Your City",
+        subtitle: "Click on your city and discover our comprehensive range of moving services, professional packing, furniture assembly, international moves, and storage solutions. We offer individual solutions, professional service, and consultation for your relocation throughout Germany. Request a free quote now!"
+      },
+      pl: {
+        title: "Wybierz swoje miasto",
+        subtitle: "Kliknij na swoje miasto i odkryj nasze kompleksowe usługi przeprowadzkowe, profesjonalne pakowanie, montaż mebli, przeprowadzki międzynarodowe i rozwiązania magazynowe. Oferujemy indywidualne rozwiązania, profesjonalną obsługę i konsultacje dla Twojej przeprowadzki w całych Niemczech. Poproś o bezpłatną wycenę już teraz!"
+      },
+      de: {
+        title: "Wählen Sie Ihre Stadt",
+        subtitle: "Klicken Sie auf Ihre Stadt und entdecken Sie unser umfassendes Angebot an Umzugsdiensten, professioneller Verpackung, Möbelmontage, internationalen Umzügen und Lagerlösungen. Wir bieten individuelle Lösungen, professionellen Service und Beratung für Ihren Umzug in ganz Deutschland. Jetzt kostenloses Angebot anfordern!"
+      },
+      es: {
+        title: "Elija su ciudad",
+        subtitle: "Haga clic en su ciudad y descubra nuestra amplia gama de servicios de mudanza, empaquetado profesional, montaje de muebles, mudanzas internacionales y soluciones de almacenamiento. Ofrecemos soluciones individuales, servicio profesional y consultoría para su mudanza en toda Alemania. ¡Solicite un presupuesto gratuito ahora!"
+      }
+    };
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-moving-gray flex items-center justify-center">
@@ -105,22 +132,23 @@ const StatesPage: React.FC = () => {
     );
   }
 
+  const headerText = getHeaderText();
+
   return (
     <div className="min-h-screen bg-moving-gray">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-moving-dark mb-4">
-            Niemieckie Landy
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-moving-dark mb-6">
+            {headerText.title}
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Wybierz land, aby zobaczyć listę miast i gmin w tym regionie. 
-            Każdy land zawiera miasta z populacją powyżej 20,000 mieszkańców.
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            {headerText.subtitle}
           </p>
         </div>
 
         {/* Statystyki ogólne */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center">
@@ -182,54 +210,82 @@ const StatesPage: React.FC = () => {
           </Card>
         </div>
 
-        {/* Lista landów */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Lista landów z miastami */}
+        <div className="space-y-6">
           {Object.entries(citiesData).map(([state, cities]) => {
             const stats = getStateStats(cities);
             const stateSlug = createStateSlug(state);
+            const isExpanded = expandedState === state;
             
             return (
-              <Link key={state} to={`/staedte/${stateSlug}`}>
-                <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
-                  <CardHeader className="pb-3">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-xl font-semibold text-moving-dark">
+              <Card key={state} className="overflow-hidden">
+                <CardHeader 
+                  className="cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => toggleState(state)}
+                >
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                      <CardTitle className="text-2xl font-bold text-moving-dark">
                         {getStateName(state)}
                       </CardTitle>
                       <Badge variant="secondary" className="bg-moving-blue text-white">
                         {cities.length} miast
                       </Badge>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-gray-600">Populacja:</span>
-                        <span className="font-semibold text-moving-dark">
+                    <div className="flex items-center gap-4">
+                      <div className="text-right hidden md:block">
+                        <p className="text-sm text-gray-600">Populacja</p>
+                        <p className="font-semibold text-moving-dark">
                           {formatPopulation(stats.totalPopulation)}
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-gray-600">Milionowe miasta:</span>
-                        <span className="font-semibold text-red-500">
-                          {stats.millionCities}
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-gray-600">Duże miasta:</span>
-                        <span className="font-semibold text-orange-500">
-                          {stats.largeCities}
-                        </span>
-                      </div>
-                      <div className="pt-2 border-t border-gray-200">
-                        <p className="text-sm text-gray-500">
-                          Kliknij, aby zobaczyć wszystkie miasta w {getStateName(state)}
                         </p>
                       </div>
+                      <ChevronRight 
+                        className={`w-6 h-6 text-moving-blue transition-transform duration-300 ${
+                          isExpanded ? 'rotate-90' : ''
+                        }`} 
+                      />
                     </div>
+                  </div>
+                </CardHeader>
+                
+                {isExpanded && (
+                  <CardContent className="pt-0">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                      {cities.slice(0, 20).map((city, index) => (
+                        <Link 
+                          key={`${city.slug}-${index}`} 
+                          to={`/staedte/${stateSlug}/${city.slug}`}
+                          className="block p-3 rounded-lg border border-gray-200 hover:border-moving-blue hover:bg-moving-lightblue transition-all duration-200 group"
+                        >
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h4 className="font-semibold text-moving-dark group-hover:text-moving-blue transition-colors">
+                                {city.name}
+                              </h4>
+                              <p className="text-sm text-gray-600">
+                                {formatPopulation(city.population)} mieszkańców
+                              </p>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-moving-blue transition-colors" />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                    
+                    {cities.length > 20 && (
+                      <div className="mt-6 text-center">
+                        <Link 
+                          to={`/staedte/${stateSlug}`}
+                          className="inline-flex items-center text-moving-blue hover:text-moving-darkblue font-semibold transition-colors"
+                        >
+                          Zobacz wszystkie {cities.length} miast w {getStateName(state)}
+                          <ChevronRight className="w-4 h-4 ml-2" />
+                        </Link>
+                      </div>
+                    )}
                   </CardContent>
-                </Card>
-              </Link>
+                )}
+              </Card>
             );
           })}
         </div>
