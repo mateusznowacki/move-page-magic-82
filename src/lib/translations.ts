@@ -1,0 +1,1000 @@
+type TranslationKey = 
+  | 'hero.title'
+  | 'hero.subtitle'
+  | 'hero.getQuote'
+  | 'hero.services'
+  | 'hero.years'
+  | 'hero.yearsDesc'
+  | 'hero.customers'
+  | 'hero.customersDesc'
+  | 'hero.support'
+  | 'hero.supportDesc'
+  | 'nav.home'
+  | 'nav.services'
+  | 'nav.about'
+  | 'nav.testimonials'
+  | 'nav.contact'
+  | 'nav.getQuote'
+  | 'nav.areas'
+  | 'services.title'
+  | 'services.subtitle'
+  | 'services.description'
+  | 'services.viewAll'
+  | 'about.title'
+  | 'about.subtitle'
+  | 'about.description'
+  | 'about.getStarted'
+  | 'about.contactUs'
+  | 'testimonials.title'
+  | 'testimonials.subtitle'
+  | 'testimonials.description'
+  | 'testimonials.ready'
+  | 'testimonials.getInTouch'
+  | 'testimonials.getFreeQuote'
+  | 'testimonials.trustedUs'
+  | 'testimonials.professional'
+  | 'contact.title'
+  | 'contact.subtitle'
+  | 'contact.description'
+  | 'contact.location'
+  | 'contact.locationAddress'
+  | 'contact.phone'
+  | 'contact.email'
+  | 'contact.hours'
+  | 'contact.hoursWeekdays'
+  | 'contact.hoursSaturday'
+  | 'contact.formTitle'
+  | 'contact.nameLabel'
+  | 'contact.namePlaceholder'
+  | 'contact.emailLabel'
+  | 'contact.emailPlaceholder'
+  | 'contact.phoneLabel'
+  | 'contact.phonePlaceholder'
+  | 'contact.dateLabel'
+  | 'contact.moveTypeLabel'
+  | 'contact.moveTypePlaceholder'
+  | 'contact.moveTypeResidential'
+  | 'contact.moveTypeCommercial'
+  | 'contact.moveTypeLongDistance'
+  | 'contact.moveTypeInternational'
+  | 'contact.messageLabel'
+  | 'contact.messagePlaceholder'
+  | 'contact.submitButton'
+  | 'footer.description'
+  | 'footer.servicesTitle'
+  | 'footer.residentialMoving'
+  | 'footer.commercialMoving'
+  | 'footer.packingUnpacking'
+  | 'footer.longDistanceMoving'
+  | 'footer.storageSolutions'
+  | 'footer.quickLinksTitle'
+  | 'footer.home'
+  | 'footer.aboutUs'
+  | 'footer.services'
+  | 'footer.testimonials'
+  | 'footer.contactUs'
+  | 'footer.promotionTitle'
+  | 'footer.discount'
+  | 'footer.promotionDescription'
+  | 'footer.promotionTerms'
+  | 'footer.copyright'
+  | 'footer.allRightsReserved'
+  | 'footer.privacyPolicy'
+  | 'footer.termsOfService'
+  | 'footer.cookiePolicy';
+
+type Translations = {
+  [key in TranslationKey]: {
+    en: string;
+    pl: string;
+    de: string;
+    es: string;
+  };
+};
+
+export const translations: Translations = {
+  'hero.title': {
+    en: 'Professional Moving Services for Your Peace of Mind',
+    pl: 'Profesjonalne usługi przeprowadzkowe dla Twojego spokoju ducha',
+    de: 'Professionelle Umzugsdienste für Ihre Seelenruhe',
+    es: 'Servicios profesionales de mudanza para su tranquilidad'
+  },
+  'hero.subtitle': {
+    en: 'We make your relocation stress-free with our experienced team and customized moving solutions.',
+    pl: 'Sprawiamy, że przeprowadzka jest wolna od stresu dzięki naszemu doświadczonemu zespołowi i spersonalizowanym rozwiązaniom.',
+    de: 'Wir machen Ihren Umzug stressfrei mit unserem erfahrenen Team und individuellen Umzugslösungen.',
+    es: 'Hacemos que su reubicación sea libre de estrés con nuestro equipo experimentado y soluciones de mudanza personalizadas.'
+  },
+  'hero.getQuote': {
+    en: 'Get Free Quote',
+    pl: 'Uzyskaj darmową wycenę',
+    de: 'Kostenloses Angebot erhalten',
+    es: 'Obtener presupuesto gratis'
+  },
+  'hero.services': {
+    en: 'Our Services',
+    pl: 'Nasze Usługi',
+    de: 'Unsere Dienstleistungen',
+    es: 'Nuestros Servicios'
+  },
+  'hero.years': {
+    en: '10+',
+    pl: '10+',
+    de: '10+',
+    es: '10+'
+  },
+  'hero.yearsDesc': {
+    en: 'Years of Experience',
+    pl: 'Lat doświadczenia',
+    de: 'Jahre Erfahrung',
+    es: 'Años de experiencia'
+  },
+  'hero.customers': {
+    en: '5K+',
+    pl: '5K+',
+    de: '5K+',
+    es: '5K+'
+  },
+  'hero.customersDesc': {
+    en: 'Satisfied Customers',
+    pl: 'Zadowolonych klientów',
+    de: 'Zufriedene Kunden',
+    es: 'Clientes satisfechos'
+  },
+  'hero.support': {
+    en: '24/7',
+    pl: '24/7',
+    de: '24/7',
+    es: '24/7'
+  },
+  'hero.supportDesc': {
+    en: 'Customer Support',
+    pl: 'Obsługa klienta',
+    de: 'Kundendienst',
+    es: 'Atención al cliente'
+  },
+  'nav.home': {
+    en: 'Home',
+    pl: 'Strona główna',
+    de: 'Startseite',
+    es: 'Inicio'
+  },
+  'nav.services': {
+    en: 'Services',
+    pl: 'Usługi',
+    de: 'Dienstleistungen',
+    es: 'Servicios'
+  },
+  'nav.about': {
+    en: 'About Us',
+    pl: 'O nas',
+    de: 'Über uns',
+    es: 'Sobre nosotros'
+  },
+  'nav.testimonials': {
+    en: 'Testimonials',
+    pl: 'Opinie',
+    de: 'Referenzen',
+    es: 'Testimonios'
+  },
+  'nav.contact': {
+    en: 'Contact',
+    pl: 'Kontakt',
+    de: 'Kontakt',
+    es: 'Contacto'
+  },
+  'nav.getQuote': {
+    en: 'Get a Quote',
+    pl: 'Wycena',
+    de: 'Angebot einholen',
+    es: 'Obtener presupuesto'
+  },
+  'nav.areas': {
+    en: 'Areas',
+    pl: 'Obszary',
+    de: 'Gebiete',
+    es: 'Áreas'
+  },
+  'services.title': {
+    en: 'Our Services',
+    pl: 'Nasze Usługi',
+    de: 'Unsere Dienstleistungen',
+    es: 'Nuestros Servicios'
+  },
+  'services.subtitle': {
+    en: 'Comprehensive Moving Solutions',
+    pl: 'Kompleksowe rozwiązania przeprowadzkowe',
+    de: 'Umfassende Umzugslösungen',
+    es: 'Soluciones integrales de mudanza'
+  },
+  'services.description': {
+    en: 'We offer a wide range of professional moving services tailored to your specific needs. From residential to commercial relocations, our team ensures a smooth transition.',
+    pl: 'Oferujemy szeroki zakres profesjonalnych usług przeprowadzkowych dostosowanych do Twoich konkretnych potrzeb. Od przeprowadzek mieszkaniowych po komercyjne, nasz zespół zapewnia płynne przejście do nowej lokalizacji.',
+    de: 'Wir bieten eine breite Palette professioneller Umzugsdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind. Von Wohnungs- bis hin zu Geschäftsumzügen sorgt unser Team für einen reibungslosen Übergang.',
+    es: 'Ofrecemos una amplia gama de servicios profesionales de mudanza adaptados a sus necesidades específicas. Desde reubicaciones residenciales hasta comerciales, nuestro equipo garantiza una transición sin problemas.'
+  },
+  'services.viewAll': {
+    en: 'View All Services',
+    pl: 'Zobacz wszystkie usługi',
+    de: 'Alle Dienstleistungen anzeigen',
+    es: 'Ver todos los servicios'
+  },
+  'about.title': {
+    en: 'Why Choose Us',
+    pl: 'Dlaczego my',
+    de: 'Warum uns wählen',
+    es: 'Por qué elegirnos'
+  },
+  'about.subtitle': {
+    en: 'Making Your Move Easy and Stress-Free',
+    pl: 'Ułatwiamy przeprowadzkę i eliminujemy stres',
+    de: 'Wir machen Ihren Umzug einfach und stressfrei',
+    es: 'Haciendo su mudanza fácil y libre de estrés'
+  },
+  'about.description': {
+    en: 'With over 10 years of experience in the moving industry, we have built a reputation for reliability, efficiency, and exceptional customer service. Our team of professionals is committed to ensuring a smooth transition to your new location.',
+    pl: 'Z ponad 10-letnim doświadczeniem w branży przeprowadzkowej, zbudowaliśmy reputację niezawodności, efektywności i wyjątkowej obsługi klienta. Nasz zespół profesjonalistów dokłada wszelkich starań, aby zapewnić płynne przejście do nowej lokalizacji.',
+    de: 'Mit über 10 Jahren Erfahrung in der Umzugsbranche haben wir uns einen Ruf für Zuverlässigkeit, Effizienz und außergewöhnlichen Kundenservice aufgebaut. Unser Team aus Fachleuten ist bestrebt, einen reibungslosen Übergang zu Ihrem neuen Standort zu gewährleisten.',
+    es: 'Con más de 10 años de experiencia en la industria de mudanzas, hemos construido una reputación de confiabilidad, eficiencia y servicio al cliente excepcional. Nuestro equipo de profesionales está comprometido a garantizar una transición sin problemas a su nueva ubicación.'
+  },
+  'about.getStarted': {
+    en: 'Get Started',
+    pl: 'Rozpocznij',
+    de: 'Loslegen',
+    es: 'Empezar'
+  },
+  'about.contactUs': {
+    en: 'Contact Us',
+    pl: 'Kontakt',
+    de: 'Kontaktiere uns',
+    es: 'Contáctenos'
+  },
+  'testimonials.title': {
+    en: 'Client Testimonials',
+    pl: 'Opinie klientów',
+    de: 'Kundenbewertungen',
+    es: 'Testimonios de clientes'
+  },
+  'testimonials.subtitle': {
+    en: 'What Our Customers Say',
+    pl: 'Co mówią nasi klienci',
+    de: 'Was unsere Kunden sagen',
+    es: 'Lo que dicen nuestros clientes'
+  },
+  'testimonials.description': {
+    en: "Don't just take our word for it. Here's what our satisfied customers have to say about our moving services.",
+    pl: 'Nie wierz nam na słowo. Oto co nasi zadowoleni klienci mówią o naszych usługach przeprowadzkowych.',
+    de: 'Nehmen Sie nicht nur unser Wort dafür. Hier ist, was unsere zufriedenen Kunden über unsere Umzugsdienste zu sagen haben.',
+    es: 'No tome solo nuestra palabra. Esto es lo que nuestros clientes satisfechos tienen que decir sobre nuestros servicios de mudanza.'
+  },
+  'testimonials.ready': {
+    en: 'Ready to experience our moving services?',
+    pl: 'Gotowy, aby skorzystać z naszych usług przeprowadzkowych?',
+    de: 'Bereit, unsere Umzugsdienste zu erleben?',
+    es: '¿Listo para experimentar nuestros servicios de mudanza?'
+  },
+  'testimonials.getInTouch': {
+    en: 'Get in touch today for a free, no-obligation quote.',
+    pl: 'Skontaktuj się z nami już dziś, aby uzyskać bezpłatną wycenę bez zobowiązań.',
+    de: 'Kontaktieren Sie uns noch heute für ein kostenloses, unverbindliches Angebot.',
+    es: 'Póngase en contacto hoy para obtener un presupuesto gratuito sin compromiso.'
+  },
+  'testimonials.getFreeQuote': {
+    en: 'Get a Free Quote',
+    pl: 'Uzyskaj darmową wycenę',
+    de: 'Kostenloses Angebot erhalten',
+    es: 'Obtener presupuesto gratis'
+  },
+  'testimonials.trustedUs': {
+    en: 'Trusted Us',
+    pl: 'Zaufało nam',
+    de: 'Vertrauten uns',
+    es: 'Confiaron en nosotros'
+  },
+  'testimonials.professional': {
+    en: 'Professional During Work',
+    pl: 'Profesjonalni podczas pracy',
+    de: 'Professionell bei der Arbeit',
+    es: 'Profesionales durante el trabajo'
+  },
+  'contact.title': {
+    en: 'Contact Us',
+    pl: 'Skontaktuj się z nami',
+    de: 'Kontaktieren Sie uns',
+    es: 'Contáctanos'
+  },
+  'contact.subtitle': {
+    en: 'Get in Touch With Our Team',
+    pl: 'Skontaktuj się z naszym zespołem',
+    de: 'Kontaktieren Sie unser Team',
+    es: 'Ponte en contacto con nuestro equipo'
+  },
+  'contact.description': {
+    en: 'Have questions about our moving services? Need a quote for your upcoming move? Our team is ready to assist you with all your moving needs.',
+    pl: 'Masz pytania dotyczące naszych usług przeprowadzkowych? Potrzebujesz wyceny dla nadchodzącej przeprowadzki? Nasz zespół jest gotowy, aby pomóc Ci ze wszystkimi potrzebami związanymi z przeprowadzką.',
+    de: 'Haben Sie Fragen zu unseren Umzugsdiensten? Benötigen Sie ein Angebot für Ihren bevorstehenden Umzug? Unser Team ist bereit, Ihnen bei allen Ihren Umzugsbedürfnissen zu helfen.',
+    es: '¿Tienes preguntas sobre nuestros servicios de mudanza? ¿Necesitas un presupuesto para tu próxima mudanza? Nuestro equipo está listo para ayudarte con todas tus necesidades de mudanza.'
+  },
+  'contact.location': {
+    en: 'Our Location',
+    pl: 'Nasza lokalizacja',
+    de: 'Unser Standort',
+    es: 'Nuestra ubicación'
+  },
+  'contact.locationAddress': {
+    en: '123 Moving Street, Your City, ST 12345',
+    pl: 'ul. Przeprowadzkowa 123, Twoje Miasto, 12-345',
+    de: 'Umzugstraße 123, Ihre Stadt, 12345',
+    es: 'Calle Mudanza 123, Tu Ciudad, 12345'
+  },
+  'contact.phone': {
+    en: 'Phone Number',
+    pl: 'Numer telefonu',
+    de: 'Telefonnummer',
+    es: 'Número de teléfono'
+  },
+  'contact.email': {
+    en: 'Email Address',
+    pl: 'Adres email',
+    de: 'E-Mail-Adresse',
+    es: 'Dirección de correo'
+  },
+  'contact.hours': {
+    en: 'Working Hours',
+    pl: 'Godziny pracy',
+    de: 'Arbeitszeiten',
+    es: 'Horario de trabajo'
+  },
+  'contact.hoursWeekdays': {
+    en: 'Monday - Friday: 8:00 AM - 6:00 PM',
+    pl: 'Poniedziałek - Piątek: 8:00 - 18:00',
+    de: 'Montag - Freitag: 8:00 - 18:00',
+    es: 'Lunes - Viernes: 8:00 - 18:00'
+  },
+  'contact.hoursSaturday': {
+    en: 'Saturday: 9:00 AM - 4:00 PM',
+    pl: 'Sobota: 9:00 - 16:00',
+    de: 'Samstag: 9:00 - 16:00',
+    es: 'Sábado: 9:00 - 16:00'
+  },
+  'contact.formTitle': {
+    en: 'Request a Quote',
+    pl: 'Poproś o wycenę',
+    de: 'Angebot anfordern',
+    es: 'Solicitar presupuesto'
+  },
+  'contact.nameLabel': {
+    en: 'Your Name',
+    pl: 'Twoje imię',
+    de: 'Ihr Name',
+    es: 'Tu nombre'
+  },
+  'contact.namePlaceholder': {
+    en: 'John Doe',
+    pl: 'Jan Kowalski',
+    de: 'Max Mustermann',
+    es: 'Juan Pérez'
+  },
+  'contact.emailLabel': {
+    en: 'Email Address',
+    pl: 'Adres email',
+    de: 'E-Mail-Adresse',
+    es: 'Dirección de correo'
+  },
+  'contact.emailPlaceholder': {
+    en: 'john@example.com',
+    pl: 'jan@przykład.pl',
+    de: 'max@beispiel.de',
+    es: 'juan@ejemplo.com'
+  },
+  'contact.phoneLabel': {
+    en: 'Phone Number',
+    pl: 'Numer telefonu',
+    de: 'Telefonnummer',
+    es: 'Número de teléfono'
+  },
+  'contact.phonePlaceholder': {
+    en: '(123) 456-7890',
+    pl: '+48 123 456 789',
+    de: '+49 123 456 789',
+    es: '+34 123 456 789'
+  },
+  'contact.dateLabel': {
+    en: 'Moving Date',
+    pl: 'Data przeprowadzki',
+    de: 'Umzugsdatum',
+    es: 'Fecha de mudanza'
+  },
+  'contact.moveTypeLabel': {
+    en: 'Moving Type',
+    pl: 'Typ przeprowadzki',
+    de: 'Umzugsart',
+    es: 'Tipo de mudanza'
+  },
+  'contact.moveTypePlaceholder': {
+    en: 'Select a moving type',
+    pl: 'Wybierz typ przeprowadzki',
+    de: 'Wählen Sie eine Umzugsart',
+    es: 'Selecciona un tipo de mudanza'
+  },
+  'contact.moveTypeResidential': {
+    en: 'Residential Moving',
+    pl: 'Przeprowadzka mieszkaniowa',
+    de: 'Wohnungsumzug',
+    es: 'Mudanza residencial'
+  },
+  'contact.moveTypeCommercial': {
+    en: 'Commercial Moving',
+    pl: 'Przeprowadzka komercyjna',
+    de: 'Geschäftsumzug',
+    es: 'Mudanza comercial'
+  },
+  'contact.moveTypeLongDistance': {
+    en: 'Long Distance Moving',
+    pl: 'Przeprowadzka na duże odległości',
+    de: 'Fernumzug',
+    es: 'Mudanza de larga distancia'
+  },
+  'contact.moveTypeInternational': {
+    en: 'International Moving',
+    pl: 'Przeprowadzka międzynarodowa',
+    de: 'Internationale Umzüge',
+    es: 'Mudanza internacional'
+  },
+  'contact.messageLabel': {
+    en: 'Additional Information',
+    pl: 'Dodatkowe informacje',
+    de: 'Zusätzliche Informationen',
+    es: 'Información adicional'
+  },
+  'contact.messagePlaceholder': {
+    en: 'Tell us more about your move...',
+    pl: 'Opowiedz nam więcej o swojej przeprowadzce...',
+    de: 'Erzählen Sie uns mehr über Ihren Umzug...',
+    es: 'Cuéntanos más sobre tu mudanza...'
+  },
+  'contact.submitButton': {
+    en: 'Submit Request',
+    pl: 'Wyślij zapytanie',
+    de: 'Anfrage senden',
+    es: 'Enviar solicitud'
+  },
+  'footer.description': {
+    en: 'Professional moving services to make your relocation stress-free and efficient. We handle all types of moves with care and expertise.',
+    pl: 'Profesjonalne usługi przeprowadzkowe, aby Twoja przeprowadzka była bezstresowa i efektywna. Zajmujemy się wszystkimi typami przeprowadzek z dbałością i fachowością.',
+    de: 'Professionelle Umzugsdienste, um Ihren Umzug stressfrei und effizient zu gestalten. Wir kümmern uns um alle Arten von Umzügen mit Sorgfalt und Fachwissen.',
+    es: 'Servicios profesionales de mudanza para hacer que su reubicación sea libre de estrés y eficiente. Manejamos todos los tipos de mudanzas con cuidado y experiencia.'
+  },
+  'footer.servicesTitle': {
+    en: 'Services',
+    pl: 'Usługi',
+    de: 'Dienstleistungen',
+    es: 'Servicios'
+  },
+  'footer.residentialMoving': {
+    en: 'Residential Moving',
+    pl: 'Przeprowadzki mieszkaniowe',
+    de: 'Wohnungsumzug',
+    es: 'Mudanzas residenciales'
+  },
+  'footer.commercialMoving': {
+    en: 'Commercial Moving',
+    pl: 'Przeprowadzki komercyjne',
+    de: 'Geschäftsumzug',
+    es: 'Mudanzas comerciales'
+  },
+  'footer.packingUnpacking': {
+    en: 'Packing & Unpacking',
+    pl: 'Pakowanie i rozpakowywanie',
+    de: 'Ein- und Auspacken',
+    es: 'Embalaje y desembalaje'
+  },
+  'footer.longDistanceMoving': {
+    en: 'Long Distance Moving',
+    pl: 'Przeprowadzki na duże odległości',
+    de: 'Fernumzug',
+    es: 'Mudanzas de larga distancia'
+  },
+  'footer.storageSolutions': {
+    en: 'Storage Solutions',
+    pl: 'Rozwiązania magazynowe',
+    de: 'Lagerungslösungen',
+    es: 'Soluciones de almacenamiento'
+  },
+  'footer.quickLinksTitle': {
+    en: 'Quick Links',
+    pl: 'Szybkie linki',
+    de: 'Schnelle Links',
+    es: 'Enlaces rápidos'
+  },
+  'footer.home': {
+    en: 'Home',
+    pl: 'Strona główna',
+    de: 'Startseite',
+    es: 'Inicio'
+  },
+  'footer.aboutUs': {
+    en: 'About Us',
+    pl: 'O nas',
+    de: 'Über uns',
+    es: 'Sobre nosotros'
+  },
+  'footer.services': {
+    en: 'Services',
+    pl: 'Usługi',
+    de: 'Dienstleistungen',
+    es: 'Servicios'
+  },
+  'footer.testimonials': {
+    en: 'Testimonials',
+    pl: 'Opinie',
+    de: 'Referenzen',
+    es: 'Testimonios'
+  },
+  'footer.contactUs': {
+    en: 'Contact Us',
+    pl: 'Kontakt',
+    de: 'Kontakt',
+    es: 'Contacto'
+  },
+  'footer.promotionTitle': {
+    en: 'Special Offer',
+    pl: 'Promocja',
+    de: 'Sonderangebot',
+    es: 'Oferta especial'
+  },
+  'footer.discount': {
+    en: 'Discount',
+    pl: 'Rabatu',
+    de: 'Rabatt',
+    es: 'Descuento'
+  },
+  'footer.promotionDescription': {
+    en: 'Book your moving service online and get 10% discount on your first order!',
+    pl: 'Zarezerwuj usługę przeprowadzkową online i otrzymaj 10% rabatu na pierwsze zamówienie!',
+    de: 'Buchen Sie Ihren Umzugsservice online und erhalten Sie 10% Rabatt auf Ihre erste Bestellung!',
+    es: '¡Reserve su servicio de mudanza en línea y obtenga un 10% de descuento en su primer pedido!'
+  },
+  'footer.promotionTerms': {
+    en: '*Valid for online bookings only. Cannot be combined with other offers.',
+    pl: '*Ważne tylko dla rezerwacji online. Nie można łączyć z innymi ofertami.',
+    de: '*Gültig nur für Online-Buchungen. Nicht mit anderen Angeboten kombinierbar.',
+    es: '*Válido solo para reservas en línea. No se puede combinar con otras ofertas.'
+  },
+  'footer.copyright': {
+    en: '© 2025 MP Transporte und Umzüge. All rights reserved.',
+    pl: '© 2025 MP Transporte und Umzüge. Wszystkie prawa zastrzeżone.',
+    de: '© 2025 MP Transporte und Umzüge. Alle Rechte vorbehalten.',
+    es: '© 2025 MP Transporte und Umzüge. Todos los derechos reservados.'
+  },
+  'footer.allRightsReserved': {
+    en: 'All rights reserved.',
+    pl: 'Wszystkie prawa zastrzeżone.',
+    de: 'Alle Rechte vorbehalten.',
+    es: 'Todos los derechos reservados.'
+  },
+  'footer.privacyPolicy': {
+    en: 'Privacy Policy',
+    pl: 'Polityka prywatności',
+    de: 'Datenschutzrichtlinie',
+    es: 'Política de privacidad'
+  },
+  'footer.termsOfService': {
+    en: 'Terms of Service',
+    pl: 'Regulamin',
+    de: 'Nutzungsbedingungen',
+    es: 'Términos de servicio'
+  },
+  'footer.cookiePolicy': {
+    en: 'Cookie Policy',
+    pl: 'Polityka cookies',
+    de: 'Cookie-Richtlinie',
+    es: 'Política de cookies'
+  }
+};
+
+export const serviceTranslations = {
+  en: [
+    {
+      id: 1,
+      icon: "🏠",
+      title: "Residential Moving",
+      description: "Our residential moving services provide a stress-free relocation experience for homes of all sizes.",
+    },
+    {
+      id: 2,
+      icon: "🏢",
+      title: "Commercial Moving",
+      description: "Minimize downtime with our efficient office and business relocation services.",
+    },
+    {
+      id: 3,
+      icon: "📦",
+      title: "Packing & Unpacking",
+      description: "Professional packing and unpacking services to protect your valuable belongings.",
+    },
+    {
+      id: 4,
+      icon: "🚚",
+      title: "Long Distance Moving",
+      description: "Reliable cross-country moving services with careful planning and execution.",
+    },
+    {
+      id: 5,
+      icon: "🔒",
+      title: "Storage Solutions",
+      description: "Secure storage options for short-term and long-term needs during your move.",
+    },
+    {
+      id: 6,
+      icon: "🛋️",
+      title: "Furniture Assembly",
+      description: "Expert furniture disassembly and reassembly to make your move seamless.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Lamp Installation",
+      description: "Professional installation of lamps and lighting fixtures in your home or office.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Mirror Mounting",
+      description: "Expert installation of mirrors and wall decorations for your interior.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Wall Painting",
+      description: "Quality wall painting services and filling in wall defects and imperfections.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Furniture Cleaning & Repair",
+      description: "Basic furniture cleaning, maintenance and repair services to extend the life of your pieces.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Cleaning Products",
+      description: "We sell proven cleaning and maintenance products for upholstered and leather furniture.",
+    },
+    {
+      id: 12,
+      icon: "🇪🇺",
+      title: "International Moving",
+      description: "Professional moving services across all EU countries with customs handling and international logistics expertise.",
+    },
+  ],
+  pl: [
+    {
+      id: 1,
+      icon: "🏠",
+      title: "Przeprowadzki mieszkaniowe",
+      description: "Nasze usługi przeprowadzkowe zapewniają bezstresowe doświadczenie dla domów każdej wielkości.",
+    },
+    {
+      id: 2,
+      icon: "🏢",
+      title: "Przeprowadzki komercyjne",
+      description: "Zminimalizuj przestoje dzięki naszym efektywnym usługom relokacji biur i firm.",
+    },
+    {
+      id: 3,
+      icon: "📦",
+      title: "Pakowanie i rozpakowywanie",
+      description: "Profesjonalne usługi pakowania i rozpakowywania, aby chronić Twoje cenne rzeczy.",
+    },
+    {
+      id: 4,
+      icon: "🚚",
+      title: "Przeprowadzki na duże odległości",
+      description: "Niezawodne usługi przeprowadzkowe na duże odległości z dokładnym planowaniem i wykonaniem.",
+    },
+    {
+      id: 5,
+      icon: "🔒",
+      title: "Rozwiązania magazynowe",
+      description: "Bezpieczne opcje przechowywania na krótki i długi termin podczas przeprowadzki.",
+    },
+    {
+      id: 6,
+      icon: "🛋️",
+      title: "Montaż mebli",
+      description: "Fachmännische Demontage und Wiedermontage von Möbeln, um Ihren Umzug nahtlos zu gestalten.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Montaż lamp",
+      description: "Profesjonalny montaż lamp i oświetlenia w Twoim domu lub biurze.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Montaż luster",
+      description: "Ekspercki montaż luster i dekoracji ściennych dla Twojego wnętrza.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Malowanie ścian",
+      description: "Usługi malowania ścian i uzupełniania ubytków oraz niedoskonałości.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Czyszczenie i naprawa mebli",
+      description: "Podstawowe czyszczenie, konserwacja i naprawa mebli, aby przedłużyć ich żywotność.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Środki czyszczące",
+      description: "Sprzedajemy sprawdzone środki do czyszczenia i konserwacji mebli tapicerowanych oraz skórzanych.",
+    },
+    {
+      id: 12,
+      icon: "🇪🇺",
+      title: "Przeprowadzki międzynarodowe",
+      description: "Profesjonalne usługi przeprowadzkowe na terenie całej Unii Europejskiej z obsługą celną i wiedzą z zakresu logistyki międzynarodowej.",
+    },
+  ],
+  de: [
+    {
+      id: 1,
+      icon: "🏠",
+      title: "Wohnungsumzug",
+      description: "Unsere Umzugsdienste für Wohnungen bieten ein stressfreies Umzugserlebnis für Häuser aller Größen.",
+    },
+    {
+      id: 2,
+      icon: "🏢",
+      title: "Geschäftsumzug",
+      description: "Minimieren Sie Ausfallzeiten mit unseren effizienten Büro- und Geschäftsumzugsdiensten.",
+    },
+    {
+      id: 3,
+      icon: "📦",
+      title: "Ein- und Auspacken",
+      description: "Professionelle Ein- und Auspackdienste zum Schutz Ihrer wertvollen Gegenstände.",
+    },
+    {
+      id: 4,
+      icon: "🚚",
+      title: "Fernumzug",
+      description: "Zuverlässige Fernumzugsdienste mit sorgfältiger Planung und Durchführung.",
+    },
+    {
+      id: 5,
+      icon: "🔒",
+      title: "Lagerungslösungen",
+      description: "Sichere Lagerungsoptionen für kurz- und langfristige Bedürfnisse während Ihres Umzugs.",
+    },
+    {
+      id: 6,
+      icon: "🛋️",
+      title: "Möbelmontage",
+      description: "Fachmännische Demontage und Wiedermontage von Möbeln, um Ihren Umzug nahtlos zu gestalten.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Lampeninstallation",
+      description: "Professionelle Installation von Lampen und Beleuchtungskörpern in Ihrem Haus oder Büro.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Spiegelmontage",
+      description: "Fachmännische Montage von Spiegeln und Wanddekorationen für Ihr Interieur.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Wandmalerei",
+      description: "Qualitative Wandmalerei und Ausbesserung von Wanddefekten und Unvollkommenheiten.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Möbelreinigung & -reparatur",
+      description: "Grundlegende Möbelreinigung, -wartung und -reparaturdienste, um die Lebensdauer Ihrer Möbelstücke zu verlängern.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Reinigungsprodukte",
+      description: "Wir verkaufen bewährte Reinigungs- und Pflegeprodukte für Polster- und Ledermöbel.",
+    },
+    {
+      id: 12,
+      icon: "🇪🇺",
+      title: "Internationale Umzüge",
+      description: "Professionelle Umzugsdienste in allen EU-Ländern mit Zollabwicklung und Fachwissen in internationaler Logistik.",
+    },
+  ],
+  es: [
+    {
+      id: 1,
+      icon: "🏠",
+      title: "Mudanzas residenciales",
+      description: "Nuestros servicios de mudanzas residenciales proporcionan una experiencia de reubicación sin estrés para hogares de todos los tamaños.",
+    },
+    {
+      id: 2,
+      icon: "🏢",
+      title: "Mudanzas comerciales",
+      description: "Minimice el tiempo de inactividad con nuestros eficientes servicios de reubicación de oficinas y negocios.",
+    },
+    {
+      id: 3,
+      icon: "📦",
+      title: "Embalaje y desembalaje",
+      description: "Servicios profesionales de embalaje y desembalaje para proteger sus valiosas pertenencias.",
+    },
+    {
+      id: 4,
+      icon: "🚚",
+      title: "Mudanzas de larga distancia",
+      description: "Servicios de mudanzas de larga distancia confiables con planificación y ejecución cuidadosa.",
+    },
+    {
+      id: 5,
+      icon: "🔒",
+      title: "Soluciones de almacenamiento",
+      description: "Opciones de almacenamiento seguras para necesidades a corto y largo plazo durante su mudanza.",
+    },
+    {
+      id: 6,
+      icon: "🛋️",
+      title: "Montaje de muebles",
+      description: "Desmontaje y remontaje experto de muebles para hacer su mudanza sin problemas.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Instalación de lámparas",
+      description: "Instalación profesional de lámparas y accesorios de iluminación en su hogar u oficina.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Montaje de espejos",
+      description: "Instalación experta de espejos y decoraciones de pared para su interior.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Pintura de paredes",
+      description: "Servicios de pintura de paredes de calidad y relleno de defectos e imperfecciones en paredes.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Limpieza y reparación de muebles",
+      description: "Servicios básicos de limpieza, mantenimiento y reparación de muebles para extender la vida útil de sus piezas.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Productos de limpieza",
+      description: "Vendemos productos probados de limpieza y mantenimiento para muebles tapizados y de cuero.",
+    },
+    {
+      id: 12,
+      icon: "🇪🇺",
+      title: "Mudanzas internacionales",
+      description: "Servicios profesionales de mudanza en todos los países de la UE con gestión aduanera y experiencia en logística internacional.",
+    },
+  ]
+};
+
+export const testimonialTranslations = {
+  en: [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "Homeowner",
+      quote: "The team at Umzuge Meister made our family's move across town incredibly smooth. They were professional, careful with our belongings, and finished ahead of schedule!",
+      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      role: "Business Owner",
+      quote: "Moving our office was a daunting task, but the crew handled everything with precision and care. Our business was up and running in the new location with minimal downtime.",
+      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      role: "Apartment Resident",
+      quote: "I was impressed by their attention to detail and how they protected both my furniture and the building during the move. Highly recommend their services!",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      rating: 4
+    },
+  ],
+  pl: [
+    {
+      id: 1,
+      name: "Anna Kowalska",
+      role: "Właścicielka domu",
+      quote: "Zespół Umzuge Meister sprawił, że przeprowadzka naszej rodziny przez miasto przebiegła niezwykle sprawnie. Byli profesjonalni, ostrożni z naszymi rzeczami i skończyli przed terminem!",
+      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Piotr Nowak",
+      role: "Właściciel firmy",
+      quote: "Przeprowadzka naszego biura była trudnym zadaniem, ale ekipa zajęła się wszystkim z precyzją i starannością. Nasza firma działała w nowej lokalizacji z minimalnymi przestojami.",
+      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Magdalena Wiśniewska",
+      role: "Mieszkanka apartamentu",
+      quote: "Byłam pod wrażeniem ich dbałości o szczegóły i tego, jak chronili zarówno moje meble, jak i budynek podczas przeprowadzki. Gorąco polecam ich usługi!",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      rating: 4
+    },
+  ],
+  de: [
+    {
+      id: 1,
+      name: "Laura Schmidt",
+      role: "Hausbesitzerin",
+      quote: "Das Team von Umzuge Meister hat den Umzug unserer Familie quer durch die Stadt unglaublich reibungslos gestaltet. Sie waren professionell, vorsichtig mit unseren Sachen und wurden vor dem Zeitplan fertig!",
+      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Thomas Müller",
+      role: "Geschäftsinhaber",
+      quote: "Der Umzug unseres Büros war eine entmutigende Aufgabe, aber die Crew erledigte alles mit Präzision und Sorgfalt. Unser Geschäft war am neuen Standort mit minimalen Ausfallzeiten betriebsbereit.",
+      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Sophia Wagner",
+      role: "Wohnungsbewohnerin",
+      quote: "Ich war beeindruckt von ihrer Liebe zum Detail und wie sie sowohl meine Möbel als auch das Gebäude während des Umzugs schützten. Empfehle ihre Dienste wärmstens!",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      rating: 4
+    },
+  ],
+  es: [
+    {
+      id: 1,
+      name: "Carmen García",
+      role: "Propietaria",
+      quote: "El equipo de Umzuge Meister hizo que la mudanza de nuestra familia por la ciudad fuera increíblemente fluida. Fueron profesionales, cuidadosos con nuestras pertenencias, ¡y terminaron antes de lo previsto!",
+      image: "https://randomuser.me/api/portraits/women/32.jpg",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Javier Rodríguez",
+      role: "Propietario de negocio",
+      quote: "Mudar nuestra oficina fue una tarea desalentadora, pero el equipo manejó todo con precisión y cuidado. Nuestro negocio estaba funcionando en la nueva ubicación con un tiempo de inactividad mínimo.",
+      image: "https://randomuser.me/api/portraits/men/46.jpg",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Lucía Martínez",
+      role: "Residente de apartamento",
+      quote: "Me impresionó su atención al detalle y cómo protegieron tanto mis muebles como el edificio durante la mudanza. ¡Recomiendo encarecidamente sus servicios!",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      rating: 4
+    },
+  ]
+};

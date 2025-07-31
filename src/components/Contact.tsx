@@ -1,0 +1,265 @@
+
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useToast } from "@/hooks/use-toast";
+import { MapPin, Phone, Mail, Clock, Building } from 'lucide-react';
+
+const Contact: React.FC = () => {
+  const { t } = useLanguage();
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    moveDate: '',
+    moveType: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Podstawowa walidacja
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Błąd",
+        description: "Proszę wypełnić wszystkie wymagane pola (imię, email, wiadomość)",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Walidacja email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Błąd",
+        description: "Proszę podać prawidłowy adres email",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Tutaj można dodać rzeczywiste wysyłanie na serwer
+      // Na razie symulujemy wysyłanie
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log('Dane formularza:', formData);
+      
+      toast({
+        title: "Sukces!",
+        description: "Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.",
+      });
+
+      // Resetowanie formularza
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        moveDate: '',
+        moveType: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Błąd wysyłania:', error);
+      toast({
+        title: "Błąd",
+        description: "Wystąpił problem z wysyłaniem wiadomości. Spróbuj ponownie.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="section-padding">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="section-subtitle">{t('contact.title')}</h2>
+            <h3 className="section-title">{t('contact.subtitle')}</h3>
+            <p className="text-gray-600 mb-8">
+              {t('contact.description')}
+            </p>
+            
+            <div className="space-y-6">
+              <div className="flex items-start">
+                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
+                  <Building className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-moving-dark">Firma</h4>
+                  <p className="text-gray-600 font-semibold">MP Transporte <span className="text-moving-blue">und Umzüge</span></p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
+                  <MapPin className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-moving-dark">{t('contact.location')}</h4>
+                  <p className="text-gray-600">Kolonnenstr. 8<br />10827 Berlin</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
+                  <Phone className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-moving-dark">{t('contact.phone')}</h4>
+                  <p className="text-gray-600">+49 1522 3031473</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
+                  <Mail className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-moving-dark">{t('contact.email')}</h4>
+                  <p className="text-gray-600">mptransporte24@web.de</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
+                  <Clock className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-moving-dark">{t('contact.hours')}</h4>
+                  <p className="text-gray-600">{t('contact.hoursWeekdays')}</p>
+                  <p className="text-gray-600">{t('contact.hoursSaturday')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold mb-6 text-moving-dark">{t('contact.formTitle')}</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700">
+                    {t('contact.nameLabel')} <span className="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                    placeholder={t('contact.namePlaceholder')}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
+                    {t('contact.emailLabel')} <span className="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                    placeholder={t('contact.emailPlaceholder')}
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                <div>
+                  <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.phoneLabel')}</label>
+                  <input 
+                    type="tel" 
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                    placeholder={t('contact.phonePlaceholder')}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="move-date" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.dateLabel')}</label>
+                  <input 
+                    type="date" 
+                    id="move-date"
+                    name="moveDate"
+                    value={formData.moveDate}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="move-type" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.moveTypeLabel')}</label>
+                <select 
+                  id="move-type"
+                  name="moveType"
+                  value={formData.moveType}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                >
+                  <option value="">{t('contact.moveTypePlaceholder')}</option>
+                  <option value="residential">{t('contact.moveTypeResidential')}</option>
+                  <option value="commercial">{t('contact.moveTypeCommercial')}</option>
+                  <option value="long-distance">{t('contact.moveTypeLongDistance')}</option>
+                  <option value="international">{t('contact.moveTypeInternational')}</option>
+                </select>
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">
+                  {t('contact.messageLabel')} <span className="text-red-500">*</span>
+                </label>
+                <textarea 
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent"
+                  placeholder={t('contact.messagePlaceholder')}
+                  required
+                ></textarea>
+              </div>
+              
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="btn-primary w-full text-lg"
+                aria-label="Wyślij formularz kontaktowy"
+              >
+                {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
