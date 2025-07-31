@@ -5,10 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from "@/hooks/use-toast";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import { Calculator, MapPin, Calendar, Package, Truck } from 'lucide-react';
 
 const QuotePage: React.FC = () => {
@@ -400,294 +397,332 @@ ${t.footer}`;
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <div className="min-h-screen bg-gray-50">
       <div className="pt-24 pb-12">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center justify-center bg-moving-lightblue p-3 rounded-full mb-4">
-              <Calculator className="h-8 w-8 text-moving-blue" />
+        {/* Hero Section */}
+        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white py-12 mb-12">
+          <div className="container mx-auto px-4 text-center">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+              <Calculator className="w-5 h-5" />
+              <span className="text-sm font-medium">
+                {language === 'pl' ? 'Bezpłatna wycena' :
+                 language === 'de' ? 'Kostenloses Angebot' :
+                 language === 'es' ? 'Presupuesto gratuito' :
+                 'Free Quote'}
+              </span>
             </div>
-            <h1 className="text-4xl font-bold text-moving-dark mb-4">{getPageTitle()}</h1>
-            <p className="text-gray-600 text-lg">
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              {getPageTitle()}
+            </h1>
+            
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
               {getPageSubtitle()}
             </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-xl font-bold mb-1">24/7</div>
+                <div className="text-sm text-white/80">
+                  {language === 'pl' ? 'Wsparcie' :
+                   language === 'de' ? 'Support' :
+                   language === 'es' ? 'Soporte' :
+                   'Support'}
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-xl font-bold mb-1">100%</div>
+                <div className="text-sm text-white/80">
+                  {language === 'pl' ? 'Bezpłatnie' :
+                   language === 'de' ? 'Kostenlos' :
+                   language === 'es' ? 'Gratis' :
+                   'Free'}
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-xl font-bold mb-1">10+</div>
+                <div className="text-sm text-white/80">
+                  {language === 'pl' ? 'Lat doświadczenia' :
+                   language === 'de' ? 'Jahre Erfahrung' :
+                   language === 'es' ? 'Años de experiencia' :
+                   'Years Experience'}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="container max-w-4xl">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Podstawowe informacje */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="container max-w-4xl">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Podstawowe informacje */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Imię i nazwisko *' : 
+                     language === 'de' ? 'Name *' : 
+                     language === 'es' ? 'Nombre y apellido *' : 
+                     'Full Name *'}
+                  </label>
+                  <Input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={language === 'pl' ? 'Jan Kowalski' : 
+                                language === 'de' ? 'Max Mustermann' : 
+                                language === 'es' ? 'Juan García' : 
+                                'John Smith'}
+                    className={errors.name ? 'border-red-500' : ''}
+                    required
+                  />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Email *' : 
+                     language === 'de' ? 'E-Mail *' : 
+                     language === 'es' ? 'Email *' : 
+                     'Email *'}
+                  </label>
+                  <Input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={language === 'pl' ? 'jan@example.com' : 
+                                language === 'de' ? 'max@example.com' : 
+                                language === 'es' ? 'juan@example.com' : 
+                                'john@example.com'}
+                    className={errors.email ? 'border-red-500' : ''}
+                    required
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+              </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Imię i nazwisko *' : 
-                   language === 'de' ? 'Name *' : 
-                   language === 'es' ? 'Nombre y apellido *' : 
-                   'Full Name *'}
+                  {language === 'pl' ? 'Telefon' : 
+                   language === 'de' ? 'Telefon' : 
+                   language === 'es' ? 'Teléfono' : 
+                   'Phone'}
                 </label>
                 <Input
-                  name="name"
-                  value={formData.name}
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleInputChange}
-                  placeholder={language === 'pl' ? 'Jan Kowalski' : 
-                              language === 'de' ? 'Max Mustermann' : 
-                              language === 'es' ? 'Juan García' : 
-                              'John Smith'}
-                  className={errors.name ? 'border-red-500' : ''}
-                  required
+                  placeholder="+49 123 456 789"
+                  className={errors.phone ? 'border-red-500' : ''}
                 />
-                {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                {errors.phone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
                 )}
               </div>
+
+              {/* Adresy */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Adres źródłowy *' : 
+                     language === 'de' ? 'Aktuelle Adresse *' : 
+                     language === 'es' ? 'Dirección de origen *' : 
+                     'From Address *'}
+                  </label>
+                  <Input
+                    name="fromAddress"
+                    value={formData.fromAddress}
+                    onChange={handleInputChange}
+                    placeholder={language === 'pl' ? 'Ulica, miasto, kod pocztowy' : 
+                                language === 'de' ? 'Straße, Stadt, PLZ' : 
+                                language === 'es' ? 'Calle, ciudad, código postal' : 
+                                'Street, city, postal code'}
+                    className={errors.fromAddress ? 'border-red-500' : ''}
+                    required
+                  />
+                  {errors.fromAddress && (
+                    <p className="text-red-500 text-sm mt-1">{errors.fromAddress}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Adres docelowy *' : 
+                     language === 'de' ? 'Zieladresse *' : 
+                     language === 'es' ? 'Dirección de destino *' : 
+                     'To Address *'}
+                  </label>
+                  <Input
+                    name="toAddress"
+                    value={formData.toAddress}
+                    onChange={handleInputChange}
+                    placeholder={language === 'pl' ? 'Ulica, miasto, kod pocztowy' : 
+                                language === 'de' ? 'Straße, Stadt, PLZ' : 
+                                language === 'es' ? 'Calle, ciudad, código postal' : 
+                                'Street, city, postal code'}
+                    className={errors.toAddress ? 'border-red-500' : ''}
+                    required
+                  />
+                  {errors.toAddress && (
+                    <p className="text-red-500 text-sm mt-1">{errors.toAddress}</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Szczegóły przeprowadzki */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Typ przeprowadzki' : 
+                     language === 'de' ? 'Umzugstyp' : 
+                     language === 'es' ? 'Tipo de mudanza' : 
+                     'Moving Type'}
+                  </label>
+                  <Select value={formData.moveType} onValueChange={(value) => handleSelectChange('moveType', value)}>
+                    <SelectTrigger className={errors.moveType ? 'border-red-500' : ''}>
+                      <SelectValue placeholder={language === 'pl' ? 'Wybierz typ' : 
+                                              language === 'de' ? 'Typ wählen' : 
+                                              language === 'es' ? 'Seleccionar tipo' : 
+                                              'Select type'} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Residential Moving">
+                        {language === 'pl' ? 'Przeprowadzka mieszkaniowa' : 
+                         language === 'de' ? 'Wohnungsumzug' : 
+                         language === 'es' ? 'Mudanza residencial' : 
+                         'Residential Moving'}
+                      </SelectItem>
+                      <SelectItem value="Commercial Moving">
+                        {language === 'pl' ? 'Przeprowadzka komercyjna' : 
+                         language === 'de' ? 'Geschäftsumzug' : 
+                         language === 'es' ? 'Mudanza comercial' : 
+                         'Commercial Moving'}
+                      </SelectItem>
+                      <SelectItem value="Long Distance Moving">
+                        {language === 'pl' ? 'Przeprowadzka na duże odległości' : 
+                         language === 'de' ? 'Fernumzug' : 
+                         language === 'es' ? 'Mudanza de larga distancia' : 
+                         'Long Distance Moving'}
+                      </SelectItem>
+                      <SelectItem value="International Moving">
+                        {language === 'pl' ? 'Przeprowadzka międzynarodowa' : 
+                         language === 'de' ? 'Internationale Umzüge' : 
+                         language === 'es' ? 'Mudanza internacional' : 
+                         'International Moving'}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {errors.moveType && (
+                    <p className="text-red-500 text-sm mt-1">{errors.moveType}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Data przeprowadzki' : 
+                     language === 'de' ? 'Umzugsdatum' : 
+                     language === 'es' ? 'Fecha de mudanza' : 
+                     'Move Date'}
+                  </label>
+                  <Input
+                    name="moveDate"
+                    type="date"
+                    value={formData.moveDate}
+                    onChange={handleInputChange}
+                    className={errors.moveDate ? 'border-red-500' : ''}
+                  />
+                  {errors.moveDate && (
+                    <p className="text-red-500 text-sm mt-1">{errors.moveDate}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {language === 'pl' ? 'Liczba pokoi' : 
+                     language === 'de' ? 'Anzahl Zimmer' : 
+                     language === 'es' ? 'Número de habitaciones' : 
+                     'Number of Rooms'}
+                  </label>
+                  <Select value={formData.rooms} onValueChange={(value) => handleSelectChange('rooms', value)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder={language === 'pl' ? 'Wybierz' : 
+                                              language === 'de' ? 'Wählen' : 
+                                              language === 'es' ? 'Seleccionar' : 
+                                              'Select'} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="1">
+                        {language === 'pl' ? '1 pokój' : 
+                         language === 'de' ? '1 Zimmer' : 
+                         language === 'es' ? '1 habitación' : 
+                         '1 room'}
+                      </SelectItem>
+                      <SelectItem value="2">
+                        {language === 'pl' ? '2 pokoje' : 
+                         language === 'de' ? '2 Zimmer' : 
+                         language === 'es' ? '2 habitaciones' : 
+                         '2 rooms'}
+                      </SelectItem>
+                      <SelectItem value="3">
+                        {language === 'pl' ? '3 pokoje' : 
+                         language === 'de' ? '3 Zimmer' : 
+                         language === 'es' ? '3 habitaciones' : 
+                         '3 rooms'}
+                      </SelectItem>
+                      <SelectItem value="4">
+                        {language === 'pl' ? '4 pokoje' : 
+                         language === 'de' ? '4 Zimmer' : 
+                         language === 'es' ? '4 habitaciones' : 
+                         '4 rooms'}
+                      </SelectItem>
+                      <SelectItem value="5+">
+                        {language === 'pl' ? '5+ pokoi' : 
+                         language === 'de' ? '5+ Zimmer' : 
+                         language === 'es' ? '5+ habitaciones' : 
+                         '5+ rooms'}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Dodatkowe informacje */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Email *' : 
-                   language === 'de' ? 'E-Mail *' : 
-                   language === 'es' ? 'Email *' : 
-                   'Email *'}
+                  {language === 'pl' ? 'Dodatkowe informacje' : 
+                   language === 'de' ? 'Zusätzliche Informationen' : 
+                   language === 'es' ? 'Información adicional' : 
+                   'Additional Information'}
                 </label>
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
+                <Textarea
+                  name="message"
+                  value={formData.message}
                   onChange={handleInputChange}
-                  placeholder={language === 'pl' ? 'jan@example.com' : 
-                              language === 'de' ? 'max@example.com' : 
-                              language === 'es' ? 'juan@example.com' : 
-                              'john@example.com'}
-                  className={errors.email ? 'border-red-500' : ''}
-                  required
+                  placeholder={language === 'pl' ? 'Opisz szczegóły przeprowadzki, specjalne wymagania, itp.' : 
+                              language === 'de' ? 'Beschreiben Sie Umzugsdetails, besondere Anforderungen, usw.' : 
+                              language === 'es' ? 'Describa los detalles de la mudanza, requisitos especiales, etc.' : 
+                              'Describe moving details, special requirements, etc.'}
+                  rows={4}
                 />
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
               </div>
-            </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {language === 'pl' ? 'Telefon' : 
-                 language === 'de' ? 'Telefon' : 
-                 language === 'es' ? 'Teléfono' : 
-                 'Phone'}
-              </label>
-              <Input
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                placeholder="+49 123 456 789"
-                className={errors.phone ? 'border-red-500' : ''}
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-              )}
-            </div>
-
-            {/* Adresy */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Adres źródłowy *' : 
-                   language === 'de' ? 'Aktuelle Adresse *' : 
-                   language === 'es' ? 'Dirección de origen *' : 
-                   'From Address *'}
-                </label>
-                <Input
-                  name="fromAddress"
-                  value={formData.fromAddress}
-                  onChange={handleInputChange}
-                  placeholder={language === 'pl' ? 'Ulica, miasto, kod pocztowy' : 
-                              language === 'de' ? 'Straße, Stadt, PLZ' : 
-                              language === 'es' ? 'Calle, ciudad, código postal' : 
-                              'Street, city, postal code'}
-                  className={errors.fromAddress ? 'border-red-500' : ''}
-                  required
-                />
-                {errors.fromAddress && (
-                  <p className="text-red-500 text-sm mt-1">{errors.fromAddress}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Adres docelowy *' : 
-                   language === 'de' ? 'Zieladresse *' : 
-                   language === 'es' ? 'Dirección de destino *' : 
-                   'To Address *'}
-                </label>
-                <Input
-                  name="toAddress"
-                  value={formData.toAddress}
-                  onChange={handleInputChange}
-                  placeholder={language === 'pl' ? 'Ulica, miasto, kod pocztowy' : 
-                              language === 'de' ? 'Straße, Stadt, PLZ' : 
-                              language === 'es' ? 'Calle, ciudad, código postal' : 
-                              'Street, city, postal code'}
-                  className={errors.toAddress ? 'border-red-500' : ''}
-                  required
-                />
-                {errors.toAddress && (
-                  <p className="text-red-500 text-sm mt-1">{errors.toAddress}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Szczegóły przeprowadzki */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Typ przeprowadzki' : 
-                   language === 'de' ? 'Umzugstyp' : 
-                   language === 'es' ? 'Tipo de mudanza' : 
-                   'Moving Type'}
-                </label>
-                <Select value={formData.moveType} onValueChange={(value) => handleSelectChange('moveType', value)}>
-                  <SelectTrigger className={errors.moveType ? 'border-red-500' : ''}>
-                    <SelectValue placeholder={language === 'pl' ? 'Wybierz typ' : 
-                                            language === 'de' ? 'Typ wählen' : 
-                                            language === 'es' ? 'Seleccionar tipo' : 
-                                            'Select type'} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Residential Moving">
-                      {language === 'pl' ? 'Przeprowadzka mieszkaniowa' : 
-                       language === 'de' ? 'Wohnungsumzug' : 
-                       language === 'es' ? 'Mudanza residencial' : 
-                       'Residential Moving'}
-                    </SelectItem>
-                    <SelectItem value="Commercial Moving">
-                      {language === 'pl' ? 'Przeprowadzka komercyjna' : 
-                       language === 'de' ? 'Geschäftsumzug' : 
-                       language === 'es' ? 'Mudanza comercial' : 
-                       'Commercial Moving'}
-                    </SelectItem>
-                    <SelectItem value="Long Distance Moving">
-                      {language === 'pl' ? 'Przeprowadzka na duże odległości' : 
-                       language === 'de' ? 'Fernumzug' : 
-                       language === 'es' ? 'Mudanza de larga distancia' : 
-                       'Long Distance Moving'}
-                    </SelectItem>
-                    <SelectItem value="International Moving">
-                      {language === 'pl' ? 'Przeprowadzka międzynarodowa' : 
-                       language === 'de' ? 'Internationale Umzüge' : 
-                       language === 'es' ? 'Mudanza internacional' : 
-                       'International Moving'}
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-                {errors.moveType && (
-                  <p className="text-red-500 text-sm mt-1">{errors.moveType}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Data przeprowadzki' : 
-                   language === 'de' ? 'Umzugsdatum' : 
-                   language === 'es' ? 'Fecha de mudanza' : 
-                   'Move Date'}
-                </label>
-                <Input
-                  name="moveDate"
-                  type="date"
-                  value={formData.moveDate}
-                  onChange={handleInputChange}
-                  className={errors.moveDate ? 'border-red-500' : ''}
-                />
-                {errors.moveDate && (
-                  <p className="text-red-500 text-sm mt-1">{errors.moveDate}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {language === 'pl' ? 'Liczba pokoi' : 
-                   language === 'de' ? 'Anzahl Zimmer' : 
-                   language === 'es' ? 'Número de habitaciones' : 
-                   'Number of Rooms'}
-                </label>
-                <Select value={formData.rooms} onValueChange={(value) => handleSelectChange('rooms', value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder={language === 'pl' ? 'Wybierz' : 
-                                            language === 'de' ? 'Wählen' : 
-                                            language === 'es' ? 'Seleccionar' : 
-                                            'Select'} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">
-                      {language === 'pl' ? '1 pokój' : 
-                       language === 'de' ? '1 Zimmer' : 
-                       language === 'es' ? '1 habitación' : 
-                       '1 room'}
-                    </SelectItem>
-                    <SelectItem value="2">
-                      {language === 'pl' ? '2 pokoje' : 
-                       language === 'de' ? '2 Zimmer' : 
-                       language === 'es' ? '2 habitaciones' : 
-                       '2 rooms'}
-                    </SelectItem>
-                    <SelectItem value="3">
-                      {language === 'pl' ? '3 pokoje' : 
-                       language === 'de' ? '3 Zimmer' : 
-                       language === 'es' ? '3 habitaciones' : 
-                       '3 rooms'}
-                    </SelectItem>
-                    <SelectItem value="4">
-                      {language === 'pl' ? '4 pokoje' : 
-                       language === 'de' ? '4 Zimmer' : 
-                       language === 'es' ? '4 habitaciones' : 
-                       '4 rooms'}
-                    </SelectItem>
-                    <SelectItem value="5+">
-                      {language === 'pl' ? '5+ pokoi' : 
-                       language === 'de' ? '5+ Zimmer' : 
-                       language === 'es' ? '5+ habitaciones' : 
-                       '5+ rooms'}
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
-
-
-            {/* Dodatkowe informacje */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {language === 'pl' ? 'Dodatkowe informacje' : 
-                 language === 'de' ? 'Zusätzliche Informationen' : 
-                 language === 'es' ? 'Información adicional' : 
-                 'Additional Information'}
-              </label>
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder={language === 'pl' ? 'Opisz szczegóły przeprowadzki, specjalne wymagania, itp.' : 
-                            language === 'de' ? 'Beschreiben Sie Umzugsdetails, besondere Anforderungen, usw.' : 
-                            language === 'es' ? 'Describa los detalles de la mudanza, requisitos especiales, etc.' : 
-                            'Describe moving details, special requirements, etc.'}
-                rows={4}
-              />
-            </div>
-
-            <Button 
-              type="submit" 
-              className="btn-primary w-full" 
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 
-                (language === 'pl' ? 'Wysyłam...' : 
-                 language === 'de' ? 'Sende...' : 
-                 language === 'es' ? 'Enviando...' : 
-                 'Sending...') : 
-                (language === 'pl' ? 'Wyślij zapytanie o wycenę' : 
-                 language === 'de' ? 'Angebot anfordern' : 
-                 language === 'es' ? 'Solicitar cotización' : 
-                 'Send quote request')}
-            </Button>
-          </form>
+              <Button 
+                type="submit" 
+                className="btn-primary w-full" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 
+                  (language === 'pl' ? 'Wysyłam...' : 
+                   language === 'de' ? 'Sende...' : 
+                   language === 'es' ? 'Enviando...' : 
+                   'Sending...') : 
+                  (language === 'pl' ? 'Wyślij zapytanie o wycenę' : 
+                   language === 'de' ? 'Angebot anfordern' : 
+                   language === 'es' ? 'Solicitar cotización' : 
+                   'Send quote request')}
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
       <ScrollToTop />

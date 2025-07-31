@@ -47,32 +47,28 @@ const ServicesPage: React.FC = () => {
   const getHeaderText = () => {
     const texts = {
       en: {
-        title: "Our Services",
+        title: "Professional Moving Services",
         subtitle: "Complete Moving Solutions for Home and Business in Eastern Germany",
         description: "We offer comprehensive moving services throughout Eastern Germany with over 10 years of experience. From residential moves to international relocations, our professional team ensures a smooth and stress-free moving experience.",
         features: "Why Choose Our Services",
-
       },
       pl: {
-        title: "Nasze Usługi",
+        title: "Profesjonalne Usługi Przeprowadzkowe",
         subtitle: "Kompletne rozwiązania przeprowadzkowe dla domu i firmy we wschodnich Niemczech",
         description: "Oferujemy kompleksowe usługi przeprowadzkowe we wschodnich Niemczech z ponad 10-letnim doświadczeniem. Od przeprowadzek mieszkaniowych po międzynarodowe, nasz profesjonalny zespół zapewnia płynne i bezstresowe doświadczenie przeprowadzkowe.",
         features: "Dlaczego warto wybrać nasze usługi",
-
       },
       de: {
-        title: "Unsere Dienstleistungen",
+        title: "Professionelle Umzugsdienste",
         subtitle: "Vollständige Umzugslösungen für Zuhause und Unternehmen in Ostdeutschland",
         description: "Wir bieten umfassende Umzugsdienste in ganz Ostdeutschland mit über 10 Jahren Erfahrung. Von Wohnungsumzügen bis hin zu internationalen Umzügen sorgt unser professionelles Team für ein reibungsloses und stressfreies Umzugserlebnis.",
         features: "Warum unsere Dienstleistungen wählen",
-
       },
       es: {
-        title: "Nuestros Servicios",
+        title: "Servicios Profesionales de Mudanza",
         subtitle: "Soluciones completas de mudanza para hogar y empresa en el este de Alemania",
         description: "Ofrecemos servicios completos de mudanza en el este de Alemania con más de 10 años de experiencia. Desde mudanzas residenciales hasta mudanzas internacionales, nuestro equipo profesional garantiza una experiencia de mudanza fluida y sin estrés.",
         features: "Por qué elegir nuestros servicios",
-
       }
     };
     return texts[language as keyof typeof texts] || texts.en;
@@ -115,14 +111,16 @@ const ServicesPage: React.FC = () => {
           </div>
           
           <div className="relative max-w-5xl mx-auto text-center">
-            <div className="mb-4 sm:mb-6">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-3 sm:mb-4">
-                <Package className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="text-xs sm:text-sm font-medium">
-                  {language === 'pl' ? 'Specjalizacja: Wschodnie Niemcy' :
-                   language === 'de' ? 'Spezialisierung: Ostdeutschland' :
-                   language === 'es' ? 'Especialización: Este de Alemania' :
-                   'Specialization: Eastern Germany'}
+
+            
+            <div className="mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+                <CheckCircle className="w-4 h-4" />
+                <span className="text-sm font-medium">
+                  {language === 'pl' ? 'Doświadczenie i profesjonalizm' :
+                   language === 'de' ? 'Erfahrung und Professionalität' :
+                   language === 'es' ? 'Experiencia y profesionalismo' :
+                   'Experience and Professionalism'}
                 </span>
               </div>
             </div>
@@ -133,6 +131,16 @@ const ServicesPage: React.FC = () => {
             
             <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
               {headerText.subtitle}
+            </p>
+            
+            <p className="text-sm sm:text-base text-white/80 max-w-2xl mx-auto px-4 mb-6">
+              {language === 'pl' ? 
+                'Oferujemy kompleksowe usługi przeprowadzkowe we wschodnich Niemczech z ponad 10-letnim doświadczeniem. Od przeprowadzek mieszkaniowych po międzynarodowe, nasz profesjonalny zespół zapewnia płynne i bezstresowe doświadczenie przeprowadzkowe.' :
+               language === 'de' ? 
+                'Wir bieten umfassende Umzugsdienste in ganz Ostdeutschland mit über 10 Jahren Erfahrung. Von Wohnungsumzügen bis hin zu internationalen Umzügen sorgt unser professionelles Team für ein reibungsloses und stressfreies Umzugserlebnis.' :
+               language === 'es' ? 
+                'Ofrecemos servicios completos de mudanza en el este de Alemania con más de 10 años de experiencia. Desde mudanzas residenciales hasta mudanzas internacionales, nuestro equipo profesional garantiza una experiencia de mudanza fluida y sin estrés.' :
+               'We offer comprehensive moving services throughout Eastern Germany with over 10 years of experience. From residential moves to international relocations, our professional team ensures a smooth and stress-free moving experience.'}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto px-4">
@@ -169,20 +177,33 @@ const ServicesPage: React.FC = () => {
 
         {/* Features */}
         <div className="max-w-6xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-moving-dark mb-8 text-center">
-            {headerText.features}
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-moving-dark mb-4">
+              {headerText.features}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              {language === 'pl' ? 
+                'Wybierz nasze usługi przeprowadzkowe i ciesz się profesjonalną obsługą na każdym etapie przeprowadzki.' :
+               language === 'de' ? 
+                'Wählen Sie unsere Umzugsdienste und genießen Sie professionellen Service in jeder Phase des Umzugs.' :
+               language === 'es' ? 
+                'Elija nuestros servicios de mudanza y disfrute de un servicio profesional en cada fase de la mudanza.' :
+               'Choose our moving services and enjoy professional service at every stage of the move.'}
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
+                <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 border-0 shadow-md">
                   <CardContent className="p-6">
-                    <IconComponent className="w-12 h-12 text-moving-blue mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-moving-dark mb-2">
+                    <div className="bg-moving-lightblue p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                      <IconComponent className="w-8 h-8 text-moving-blue" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-moving-dark mb-3">
                       {feature.title[language as keyof typeof feature.title]}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {feature.description[language as keyof typeof feature.description]}
                     </p>
                   </CardContent>
@@ -194,16 +215,35 @@ const ServicesPage: React.FC = () => {
 
         {/* Services Grid */}
         <div className="max-w-7xl mx-auto mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-moving-dark mb-4">
+              {language === 'pl' ? 'Nasze Usługi Przeprowadzkowe' :
+               language === 'de' ? 'Unsere Umzugsdienste' :
+               language === 'es' ? 'Nuestros Servicios de Mudanza' :
+               'Our Moving Services'}
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              {language === 'pl' ? 
+                'Kompletne rozwiązania przeprowadzkowe dostosowane do Twoich potrzeb. Od małych mieszkań po duże firmy.' :
+               language === 'de' ? 
+                'Vollständige Umzugslösungen, die auf Ihre Bedürfnisse zugeschnitten sind. Von kleinen Wohnungen bis hin zu großen Unternehmen.' :
+               language === 'es' ? 
+                'Soluciones completas de mudanza adaptadas a sus necesidades. Desde pequeños apartamentos hasta grandes empresas.' :
+               'Complete moving solutions tailored to your needs. From small apartments to large companies.'}
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData.map((service) => {
               const IconComponent = getIconComponent(service.id);
               const isInternational = service.id === 12;
               
               return (
-                <Card key={service.id} className="h-full hover:shadow-lg transition-all duration-300 group">
-                  <CardHeader className="relative">
+                <Card key={service.id} className="h-full hover:shadow-lg transition-all duration-300 group border-0 shadow-md">
+                  <CardHeader className="relative pb-4">
                     <div className="flex items-center gap-3">
-                      <IconComponent className="w-8 h-8 text-moving-blue" />
+                      <div className="bg-moving-lightblue p-2 rounded-lg">
+                        <IconComponent className="w-6 h-6 text-moving-blue" />
+                      </div>
                       <CardTitle className="text-xl group-hover:text-moving-blue transition-colors pr-16">
                         {service.title}
                       </CardTitle>
@@ -218,8 +258,8 @@ const ServicesPage: React.FC = () => {
                       </div>
                     )}
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
                   </CardContent>
