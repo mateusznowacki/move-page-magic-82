@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.yearsDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-600">Profesjonalne usługi przeprowadzkowe</p>
+              <p className="text-xs sm:text-sm text-gray-600">Doświadczenie i profesjonalizm</p>
             </div>
           </div>
           

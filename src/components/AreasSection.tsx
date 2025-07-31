@@ -59,7 +59,7 @@ const AreasSection: React.FC = () => {
     <section id="areas" className="py-16 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="section-subtitle">{getTitle('coverage')}</h2>
+          <h2 className="sr-only">{getTitle('coverage')}</h2>
           <h3 className="section-title">{getTitle('areas')}</h3>
         </div>
         

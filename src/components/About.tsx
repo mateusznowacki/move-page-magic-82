@@ -36,9 +36,9 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <header>
-              <h2 id="about-heading" className="section-subtitle">{t('about.title')}</h2>
-              <h3 className="section-title">{t('about.subtitle')}</h3>
-              <p className="text-gray-600 mb-6">
+              <h2 id="about-heading" className="sr-only">{t('about.title')}</h2>
+              <h3 className="section-title text-3xl md:text-4xl lg:text-5xl">{t('about.subtitle')}</h3>
+              <p className="text-gray-600 mb-6 text-lg">
                 {t('about.description')}
               </p>
             </header>
@@ -51,15 +51,16 @@ const About: React.FC = () => {
             
             <div className="flex flex-wrap gap-4">
               <Button 
-                className="btn-primary"
-                aria-label="Rozpocznij współpracę z Umzuge Meister"
+                className="btn-primary text-lg px-8 py-3"
+                aria-label={t('about.getStarted')}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t('about.getStarted')}
               </Button>
               <Button 
-                variant="outline" 
-                className="btn-secondary"
-                aria-label="Skontaktuj się z nami"
+                className="btn-secondary text-lg px-8 py-3"
+                aria-label={t('about.contactUs')}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t('about.contactUs')}
               </Button>
@@ -68,12 +69,10 @@ const About: React.FC = () => {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1600518464441-7d95420a873c?q=80&w=1600&auto=format&fit=crop" 
+              src="/movecompany-in-action.png" 
               alt="Profesjonalni przeprowadzkowcy podczas pracy - zespół Umzuge Meister niesie meble" 
               className="rounded-lg w-full h-auto object-cover shadow-lg"
               loading="lazy"
-              width="800"
-              height="600"
             />
             <aside className="absolute -bottom-8 -left-8 bg-white rounded-lg p-6 shadow-lg max-w-xs">
               <div className="flex items-center mb-4">
@@ -104,8 +103,8 @@ const About: React.FC = () => {
                   />
                 </div>
                 <div className="ml-3">
-                  <p className="text-moving-blue font-medium">Zaufało nam</p>
-                  <p className="text-sm text-gray-600">5000+ Klientów</p>
+                  <p className="text-moving-blue font-medium">{t('testimonials.trustedUs')}</p>
+                  <p className="text-sm text-gray-600">{t('hero.customers')}</p>
                 </div>
               </div>
               <div className="flex items-center">

@@ -21,6 +21,21 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const savedLanguage = localStorage.getItem('preferredLanguage') as Language;
     if (savedLanguage && ['en', 'pl', 'de', 'es'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
+    } else {
+      // Pobierz język przeglądarki
+      const browserLanguage = navigator.language.toLowerCase();
+      let detectedLanguage: Language = 'en';
+      
+      if (browserLanguage.startsWith('pl')) {
+        detectedLanguage = 'pl';
+      } else if (browserLanguage.startsWith('de')) {
+        detectedLanguage = 'de';
+      } else if (browserLanguage.startsWith('es')) {
+        detectedLanguage = 'es';
+      }
+      
+      setLanguage(detectedLanguage);
+      localStorage.setItem('preferredLanguage', detectedLanguage);
     }
   }, []);
 

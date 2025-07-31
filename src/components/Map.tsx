@@ -11,6 +11,7 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({ mapType }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
+  const [isLoading, setIsLoading] = React.useState(true);
   const { language } = useLanguage();
   
   // Mapbox access token
@@ -32,8 +33,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       }
     },
     germany: {
-      center: [10.4515, 51.1657] as [number, number],
-      zoom: 5.5,
+      center: [11.5, 52.5] as [number, number],
+      zoom: 5,
       title: {
         en: 'German Federal States',
         pl: 'Niemieckie kraje związkowe',
@@ -57,22 +58,22 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       
       const settings = mapSettings[mapType];
       
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/light-v11',
-        center: settings.center,
-        zoom: settings.zoom,
-        interactive: true
-      });
+              map.current = new mapboxgl.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/light-v11',
+          center: settings.center,
+          zoom: settings.zoom,
+          interactive: false,
+          attributionControl: false,
+          logoPosition: 'bottom-left'
+        });
 
       // Add navigation controls
-      map.current.addControl(
-        new mapboxgl.NavigationControl(),
-        'top-right'
-      );
+              // Removed NavigationControl to disable zoom controls
 
       // Add company location marker
       map.current.on('load', () => {
+        setIsLoading(false);
         if (map.current) {
           // Create a custom marker element
           const markerEl = document.createElement('div');
@@ -98,6 +99,35 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                 `)
             )
             .addTo(map.current);
+
+          // Add Berlin boundary for Berlin map
+          if (mapType === 'berlin') {
+            // Load the GeoJSON data to get exact Berlin boundaries
+            fetch('/germany-states-low.geojson')
+              .then(response => response.json())
+              .then(data => {
+                if (map.current) {
+                  // Find Berlin feature in GeoJSON
+                  const berlinFeature = data.features.find((f: any) => f.properties.name === 'Berlin');
+                  if (berlinFeature) {
+                    // Create bounds from Berlin's actual coordinates
+                    const bounds = new mapboxgl.LngLatBounds();
+                    berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
+                      bounds.extend(coord as [number, number]);
+                    });
+                    
+                    // Fit map to Berlin bounds
+                    map.current.fitBounds(bounds, {
+                      padding: 20,
+                      maxZoom: 12
+                    });
+                  }
+                }
+              })
+              .catch(error => {
+                console.error('Error loading GeoJSON data:', error);
+              });
+          }
 
           // Add highlighted states for Germany map using real GeoJSON data
           if (mapType === 'germany') {
@@ -169,12 +199,20 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
 
   return (
     <div className="flex flex-col w-full">
-      <h3 className="text-xl font-semibold mb-3">{currentTitle}</h3>
-      
-      <div 
-        ref={mapContainer} 
-        className="w-full h-[400px] rounded-lg shadow-lg"
-      />
+      <div className="relative w-full h-[400px] rounded-lg shadow-lg">
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+              <p className="text-gray-600 text-sm">Ładowanie mapy...</p>
+            </div>
+          </div>
+        )}
+        <div 
+          ref={mapContainer} 
+          className="w-full h-full rounded-lg"
+        />
+      </div>
     </div>
   );
 };

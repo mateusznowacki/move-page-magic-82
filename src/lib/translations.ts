@@ -61,6 +61,14 @@ type TranslationKey =
   | 'contact.messageLabel'
   | 'contact.messagePlaceholder'
   | 'contact.submitButton'
+  | 'contact.whatsappTitle'
+  | 'contact.contactInfo'
+  | 'contact.name'
+  | 'contact.phoneField'
+  | 'contact.moveDateField'
+  | 'contact.moveTypeField'
+  | 'contact.messageField'
+  | 'contact.sentFromWebsite'
   | 'footer.description'
   | 'footer.servicesTitle'
   | 'footer.residentialMoving'
@@ -204,7 +212,7 @@ export const translations: Translations = {
   },
   'services.title': {
     en: 'Professional Moving Services',
-    pl: 'Profesjonalne Usługi Przeprowadzkowe',
+    pl: '',
     de: 'Professionelle Umzugsdienste',
     es: 'Servicios Profesionales de Mudanza'
   },
@@ -245,10 +253,10 @@ export const translations: Translations = {
     es: 'Con más de 10 años de experiencia en la industria de mudanzas, hemos construido una reputación de confiabilidad, eficiencia y servicio al cliente excepcional. Nuestro equipo de profesionales está comprometido a garantizar una transición sin problemas a su nueva ubicación.'
   },
   'about.getStarted': {
-    en: 'Get Started',
-    pl: 'Rozpocznij',
-    de: 'Loslegen',
-    es: 'Empezar'
+    en: 'Get Quote',
+    pl: 'Wycena',
+    de: 'Angebot',
+    es: 'Presupuesto'
   },
   'about.contactUs': {
     en: 'Contact Us',
@@ -402,7 +410,7 @@ export const translations: Translations = {
   },
   'contact.phonePlaceholder': {
     en: '(123) 456-7890',
-    pl: '+48 123 456 789',
+    pl: '+49 123 456 789',
     de: '+49 123 456 789',
     es: '+34 123 456 789'
   },
@@ -465,6 +473,54 @@ export const translations: Translations = {
     pl: 'Wyślij zapytanie',
     de: 'Anfrage senden',
     es: 'Enviar solicitud'
+  },
+  'contact.whatsappTitle': {
+    en: 'New Moving Request',
+    pl: 'Nowe zapytanie o przeprowadzkę',
+    de: 'Neue Umzugsanfrage',
+    es: 'Nueva solicitud de mudanza'
+  },
+  'contact.contactInfo': {
+    en: 'Contact Information',
+    pl: 'Dane kontaktowe',
+    de: 'Kontaktinformationen',
+    es: 'Información de contacto'
+  },
+  'contact.name': {
+    en: 'Name',
+    pl: 'Imię',
+    de: 'Name',
+    es: 'Nombre'
+  },
+  'contact.phoneField': {
+    en: 'Phone',
+    pl: 'Telefon',
+    de: 'Telefon',
+    es: 'Teléfono'
+  },
+  'contact.moveDateField': {
+    en: 'Moving Date',
+    pl: 'Data przeprowadzki',
+    de: 'Umzugsdatum',
+    es: 'Fecha de mudanza'
+  },
+  'contact.moveTypeField': {
+    en: 'Moving Type',
+    pl: 'Typ przeprowadzki',
+    de: 'Umzugsart',
+    es: 'Tipo de mudanza'
+  },
+  'contact.messageField': {
+    en: 'Message',
+    pl: 'Wiadomość',
+    de: 'Nachricht',
+    es: 'Mensaje'
+  },
+  'contact.sentFromWebsite': {
+    en: 'Message sent from website',
+    pl: 'Wiadomość wysłana ze strony internetowej',
+    de: 'Nachricht von der Website gesendet',
+    es: 'Mensaje enviado desde el sitio web'
   },
   'footer.description': {
     en: 'Professional moving services to make your relocation stress-free and efficient. We handle all types of moves with care and expertise.',
@@ -710,7 +766,7 @@ export const serviceTranslations = {
       id: 6,
       icon: "🛋️",
       title: "Montaż mebli",
-      description: "Fachmännische Demontage und Wiedermontage von Möbeln, um Ihren Umzug nahtlos zu gestalten.",
+      description: "Fachowy demontaż i montaż mebli, aby Twoja przeprowadzka przebiegła bezproblemowo.",
     },
     {
       id: 7,

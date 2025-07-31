@@ -18,7 +18,7 @@ const Testimonials: React.FC = () => {
     <section id="testimonials" className="section-padding bg-moving-lightblue" role="main" aria-labelledby="testimonials-heading">
       <div className="container">
         <header className="text-center max-w-3xl mx-auto mb-12">
-          <h2 id="testimonials-heading" className="section-subtitle">{t('testimonials.title')}</h2>
+          <h2 id="testimonials-heading" className="sr-only">{t('testimonials.title')}</h2>
           <h3 className="section-title">{t('testimonials.subtitle')}</h3>
           <p className="text-gray-600">
             {t('testimonials.description')}

@@ -16,7 +16,7 @@ const ServiceCard = React.memo(({ service }: { service: any }) => {
     >
       {isInternational && (
         <div className="absolute top-0 right-0">
-          <div className="bg-blue-500 text-white px-3 py-1 transform rotate-45 translate-x-2 -translate-y-1">
+          <div className="bg-moving-blue text-white px-3 py-2 text-sm font-semibold rounded-bl-lg shadow-md">
             {service.title.includes("International") ? "New" : 
              service.title.includes("międzynarodowe") ? "Nowość" :
              service.title.includes("Internationale") ? "Neu" : "Nuevo"}
@@ -46,7 +46,7 @@ const Services: React.FC = () => {
     <section id="services" className="section-padding bg-moving-gray" role="main" aria-labelledby="services-heading">
       <div className="container">
         <header className="text-center max-w-3xl mx-auto mb-12">
-          <h2 id="services-heading" className="section-subtitle text-xl sm:text-2xl md:text-3xl lg:text-4xl">{t('services.title')}</h2>
+          <h2 id="services-heading" className="sr-only">{t('services.title')}</h2>
           <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{t('services.subtitle')}</h3>
           <p className="text-gray-600 text-base sm:text-lg">
             {t('services.description')}
