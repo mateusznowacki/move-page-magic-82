@@ -16,11 +16,14 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   // Mapbox access token
   const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
   
+  // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
+  const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
+  
   // Define center points and zoom levels for each map type
   const mapSettings = {
     berlin: {
-      center: [13.405, 52.52] as [number, number],
-      zoom: 10,
+      center: COMPANY_LOCATION,
+      zoom: 12,
       title: {
         en: 'Berlin Districts',
         pl: 'Dzielnice Berlina',
@@ -67,6 +70,88 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         new mapboxgl.NavigationControl(),
         'top-right'
       );
+
+      // Add company location marker
+      map.current.on('load', () => {
+        if (map.current) {
+          // Create a custom marker element
+          const markerEl = document.createElement('div');
+          markerEl.className = 'company-marker';
+          markerEl.style.width = '30px';
+          markerEl.style.height = '30px';
+          markerEl.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ef4444\'%3E%3Cpath d=\'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z\'/%3E%3C/svg%3E")';
+          markerEl.style.backgroundSize = 'contain';
+          markerEl.style.backgroundRepeat = 'no-repeat';
+          markerEl.style.cursor = 'pointer';
+
+          // Add marker to map
+          new mapboxgl.Marker(markerEl)
+            .setLngLat(COMPANY_LOCATION)
+            .setPopup(
+              new mapboxgl.Popup({ offset: 25 })
+                .setHTML(`
+                  <div class="p-2">
+                    <h3 class="font-bold text-lg">Meister Umzüge</h3>
+                    <p class="text-sm">Kolonnenstr. 8</p>
+                    <p class="text-sm">10827 Berlin</p>
+                  </div>
+                `)
+            )
+            .addTo(map.current);
+
+          // Add highlighted states for Germany map using real GeoJSON data
+          if (mapType === 'germany') {
+            // Load the GeoJSON data
+            fetch('/germany-states-low.geojson')
+              .then(response => response.json())
+              .then(data => {
+                if (map.current) {
+                  // Filter only the states we want to highlight
+                  const highlightedStates = ['Thüringen', 'Sachsen', 'Sachsen-Anhalt', 'Berlin', 'Brandenburg', 'Mecklenburg-Vorpommern'];
+                  
+                  const filteredFeatures = data.features.filter((feature: any) => 
+                    highlightedStates.includes(feature.properties.name)
+                  );
+
+                  const filteredData: GeoJSON.FeatureCollection = {
+                    type: 'FeatureCollection',
+                    features: filteredFeatures
+                  };
+
+                  // Add source for highlighted states
+                  map.current.addSource('highlighted-states', {
+                    type: 'geojson',
+                    data: filteredData
+                  });
+
+                  // Add layer for highlighted states
+                  map.current.addLayer({
+                    id: 'highlighted-states-fill',
+                    type: 'fill',
+                    source: 'highlighted-states',
+                    paint: {
+                      'fill-color': '#3b82f6',
+                      'fill-opacity': 0.2
+                    }
+                  });
+
+                  map.current.addLayer({
+                    id: 'highlighted-states-border',
+                    type: 'line',
+                    source: 'highlighted-states',
+                    paint: {
+                      'line-color': '#1d4ed8',
+                      'line-width': 1.5
+                    }
+                  });
+                }
+              })
+              .catch(error => {
+                console.error('Error loading GeoJSON data:', error);
+              });
+          }
+        }
+      });
 
       // Clean up on unmount
       return () => {

@@ -6,11 +6,12 @@ import { cn } from '@/lib/utils';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { translations } from '@/lib/translations';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -48,14 +49,19 @@ const Navbar: React.FC = () => {
     if (isMobileMenuOpen) setIsMobileMenuOpen(false);
   };
 
+  const getNavText = (key: string) => {
+    const navKey = `nav.${key}` as keyof typeof translations;
+    return translations[navKey] ? translations[navKey][language] : key;
+  };
+
   const navigationItems = [{
     key: 'home',
     href: '/',
     isLink: true
   }, {
     key: 'services',
-    href: '#services',
-    sectionId: 'services'
+    href: '/dienstleistungen',
+    isLink: true
   }, {
     key: 'about',
     href: '#about',
@@ -66,8 +72,12 @@ const Navbar: React.FC = () => {
     sectionId: 'testimonials'
   }, {
     key: 'areas',
-    href: '#areas',
-    sectionId: 'areas'
+    href: '/einsatzgebiete',
+    isLink: true
+  }, {
+    key: 'quote',
+    href: '/angebot',
+    isLink: true
   }, {
     key: 'contact',
     href: '#contact',
@@ -91,7 +101,7 @@ const Navbar: React.FC = () => {
           className={`${baseClasses} ${mobileClasses}`} 
           onClick={isMobile ? () => setIsMobileMenuOpen(false) : undefined}
         >
-          {t(`nav.${item.key}` as any)}
+          {getNavText(item.key)}
         </Link>
       );
     }
@@ -102,7 +112,7 @@ const Navbar: React.FC = () => {
         onClick={e => scrollToSection(item.sectionId!, e)} 
         className={`${baseClasses} ${mobileClasses}`}
       >
-        {t(`nav.${item.key}` as any)}
+        {getNavText(item.key)}
       </a>
     );
   };
@@ -111,13 +121,12 @@ const Navbar: React.FC = () => {
     <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5")}>
       <div className="container flex justify-between items-center">
         <Link to="/" className={`${isScrolled ? 'text-moving-dark' : 'text-white'} flex items-center gap-2 group`}>
-          <img alt="Meister Umzuge Logo" className="h-10 md:h-12 object-contain" src="/lovable-uploads/f24f1dd4-0e2d-4eb3-8bab-2a0677a3e732.png" />
+          <img alt="Meister Umzuge Logo" className="h-10 md:h-12 object-contain" src="/meister-umzunge-logo.png" />
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8">
           {navigationItems.map(item => <NavItem key={item.key} item={item} />)}
           <LanguageSwitcher />
-          <Button className="btn-primary" onClick={scrollToContact}>{t('nav.getQuote')}</Button>
         </nav>
         
         <div className="md:hidden flex items-center">
@@ -132,9 +141,6 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-md animate-slide-in-right">
           <div className="container py-4 flex flex-col space-y-4">
             {navigationItems.map(item => <NavItem key={item.key} item={item} isMobile />)}
-            <Button className="btn-primary w-full" onClick={scrollToContact}>
-              {t('nav.getQuote')}
-            </Button>
           </div>
         </div>
       )}

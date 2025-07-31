@@ -53,15 +53,53 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Tutaj można dodać rzeczywiste wysyłanie na serwer
-      // Na razie symulujemy wysyłanie
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Tłumaczenia typów przeprowadzek
+      const moveTypeTranslations: { [key: string]: string } = {
+        'Residential Moving': 'Przeprowadzka mieszkaniowa',
+        'Commercial Moving': 'Przeprowadzka komercyjna',
+        'Long Distance Moving': 'Przeprowadzka na duże odległości',
+        'International Moving': 'Przeprowadzka międzynarodowa',
+        'Przeprowadzka mieszkaniowa': 'Przeprowadzka mieszkaniowa',
+        'Przeprowadzka komercyjna': 'Przeprowadzka komercyjna',
+        'Przeprowadzka na duże odległości': 'Przeprowadzka na duże odległości',
+        'Przeprowadzka międzynarodowa': 'Przeprowadzka międzynarodowa',
+        'Wohnungsumzug': 'Wohnungsumzug',
+        'Geschäftsumzug': 'Geschäftsumzug',
+        'Fernumzug': 'Fernumzug',
+        'Internationale Umzüge': 'Internationale Umzüge',
+        'Mudanza residencial': 'Mudanza residencial',
+        'Mudanza comercial': 'Mudanza comercial',
+        'Mudanza de larga distancia': 'Mudanza de larga distancia',
+        'Mudanza internacional': 'Mudanza internacional'
+      };
+
+      const translatedMoveType = moveTypeTranslations[formData.moveType] || formData.moveType;
       
-      console.log('Dane formularza:', formData);
+      // Konstruuj wiadomość email
+      const moveTypeText = formData.moveType ? `\nTyp przeprowadzki: ${translatedMoveType}` : '';
+      const moveDateText = formData.moveDate ? `\nData przeprowadzki: ${formData.moveDate}` : '';
+      const phoneText = formData.phone ? `\nTelefon: ${formData.phone}` : '';
+      
+      const emailSubject = `Nowe zapytanie o przeprowadzkę - ${formData.name}`;
+      const emailBody = `Nowe zapytanie o przeprowadzkę
+
+Dane kontaktowe:
+Imię: ${formData.name}
+Email: ${formData.email}${phoneText}${moveDateText}${moveTypeText}
+
+Wiadomość:
+${formData.message}
+
+---
+Wiadomość wysłana ze strony internetowej`;
+
+      // Otwórz domyślną aplikację email
+      const mailtoUrl = `mailto:info@meisterumzuege24.de?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      window.open(mailtoUrl);
       
       toast({
         title: "Sukces!",
-        description: "Twoja wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.",
+        description: "Otwieram aplikację email z gotową wiadomością. Możesz ją wysłać lub edytować.",
       });
 
       // Resetowanie formularza
@@ -78,7 +116,7 @@ const Contact: React.FC = () => {
       console.error('Błąd wysyłania:', error);
       toast({
         title: "Błąd",
-        description: "Wystąpił problem z wysyłaniem wiadomości. Spróbuj ponownie.",
+        description: "Wystąpił problem z otwieraniem aplikacji email. Spróbuj ponownie.",
         variant: "destructive",
       });
     } finally {
@@ -248,11 +286,10 @@ const Contact: React.FC = () => {
               
               <Button 
                 type="submit" 
+                className="btn-primary w-full" 
                 disabled={isSubmitting}
-                className="btn-primary w-full text-lg"
-                aria-label="Wyślij formularz kontaktowy"
               >
-                {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
+                {isSubmitting ? 'Wysyłam wiadomość...' : 'Wyślij przez email'}
               </Button>
             </form>
           </div>

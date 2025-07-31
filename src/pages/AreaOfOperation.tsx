@@ -90,7 +90,7 @@ const AreaOfOperation: React.FC = () => {
         </section>
         
         {/* CTA Section */}
-        <section className="py-16 px-4 bg-moving-dark text-white">
+        <section id="contact" className="py-16 px-4 bg-moving-dark text-white">
           <div className="container mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               {language === 'en' && "Not sure if we serve your area?"}
@@ -104,7 +104,12 @@ const AreaOfOperation: React.FC = () => {
               {language === 'de' && "Kontaktieren Sie unser Team für personalisierte Informationen zu Dienstleistungen an Ihrem Standort. Wir erweitern ständig unsere Abdeckungsgebiete."}
               {language === 'es' && "Contacte a nuestro equipo para obtener información personalizada sobre los servicios en su ubicación. Estamos expandiendo constantemente nuestras áreas de cobertura."}
             </p>
-            <Button className="btn-primary">
+            <Button className="btn-primary" onClick={() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
               {language === 'en' && "Contact Us"}
               {language === 'pl' && "Kontakt"}
               {language === 'de' && "Kontaktiere uns"}
@@ -114,7 +119,7 @@ const AreaOfOperation: React.FC = () => {
         </section>
       </div>
       <Footer />
-      <WhatsAppButton phoneNumber="1234567890" />
+      <WhatsAppButton phoneNumber="4915223031473" />
       <ScrollToTop />
     </div>
   );

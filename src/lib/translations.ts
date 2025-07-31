@@ -16,6 +16,7 @@ type TranslationKey =
   | 'nav.contact'
   | 'nav.getQuote'
   | 'nav.areas'
+  | 'nav.quote'
   | 'services.title'
   | 'services.subtitle'
   | 'services.description'
@@ -195,6 +196,12 @@ export const translations: Translations = {
     de: 'Gebiete',
     es: 'Áreas'
   },
+  'nav.quote': {
+    en: 'Get a Quote',
+    pl: 'Wycena',
+    de: 'Angebot einholen',
+    es: 'Obtener presupuesto'
+  },
   'services.title': {
     en: 'Our Services',
     pl: 'Nasze Usługi',
@@ -322,10 +329,10 @@ export const translations: Translations = {
     es: 'Nuestra ubicación'
   },
   'contact.locationAddress': {
-    en: '123 Moving Street, Your City, ST 12345',
-    pl: 'ul. Przeprowadzkowa 123, Twoje Miasto, 12-345',
-    de: 'Umzugstraße 123, Ihre Stadt, 12345',
-    es: 'Calle Mudanza 123, Tu Ciudad, 12345'
+    en: 'Kolonnenstr. 8, 10827 Berlin',
+    pl: 'Kolonnenstr. 8, 10827 Berlin',
+    de: 'Kolonnenstr. 8, 10827 Berlin',
+    es: 'Kolonnenstr. 8, 10827 Berlin'
   },
   'contact.phone': {
     en: 'Phone Number',

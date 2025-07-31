@@ -10,21 +10,22 @@ import {
 
 const sliderImages = [
   {
-    url: "https://images.unsplash.com/photo-1600518464441-7d95420a873c?q=80&w=2000&auto=format&fit=crop",
+    url: "/hero-image-1.jpg",
     alt: "Moving services"
   },
   {
-    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000&auto=format&fit=crop",
+    url: "/hero-image-2.jpg", 
     alt: "Professional movers loading a truck" 
   },
   {
-    url: "https://images.unsplash.com/photo-1600518464192-79194dda3733?q=80&w=2000&auto=format&fit=crop",
+    url: "/hero-image-3.jpg",
     alt: "Home relocation"
   }
 ];
 
 const HeroSlider = React.memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,6 +33,11 @@ const HeroSlider = React.memo(() => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleImageError = () => {
+    console.error('Hero image failed to load');
+    setImageError(true);
+  };
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
@@ -56,6 +62,7 @@ const HeroSlider = React.memo(() => {
                 alt={image.alt} 
                 className="w-full h-full object-cover"
                 loading={index === 0 ? "eager" : "lazy"}
+                onError={handleImageError}
               />
             </CarouselItem>
           ))}
