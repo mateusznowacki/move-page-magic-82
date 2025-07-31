@@ -27,12 +27,31 @@ const StatesPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [expandedState, setExpandedState] = useState<string | null>(null);
 
+  // Filtrowanie tylko wybranych landów
+  const selectedStates = [
+    'Sachsen',
+    'Sachsen-Anhalt', 
+    'Berlin',
+    'Brandenburg',
+    'Mecklenburg-Vorpommern',
+    'Thüringen'
+  ];
+
   useEffect(() => {
     const loadCities = async () => {
       try {
         const response = await fetch('/data/cities/all-cities.json');
         const data = await response.json();
-        setCitiesData(data);
+        
+        // Filtruj tylko wybrane landy
+        const filteredData: CitiesData = {};
+        selectedStates.forEach(state => {
+          if (data[state]) {
+            filteredData[state] = data[state];
+          }
+        });
+        
+        setCitiesData(filteredData);
       } catch (error) {
         console.error('Błąd podczas ładowania danych miast:', error);
       } finally {
@@ -49,22 +68,12 @@ const StatesPage: React.FC = () => {
 
   const getStateName = (state: string) => {
     const stateNames: { [key: string]: string } = {
-      'Nordrhein-Westfalen': 'Nordrhein-Westfalen',
-      'Baden-Württemberg': 'Baden-Württemberg',
-      'Bayern': 'Bayern',
-      'Niedersachsen': 'Niedersachsen',
-      'Rheinland-Pfalz': 'Rheinland-Pfalz',
       'Sachsen': 'Sachsen',
-      'Schleswig-Holstein': 'Schleswig-Holstein',
       'Sachsen-Anhalt': 'Sachsen-Anhalt',
-      'Hessen': 'Hessen',
-      'Thüringen': 'Thüringen',
-      'Mecklenburg-Vorpommern': 'Mecklenburg-Vorpommern',
-      'Brandenburg': 'Brandenburg',
       'Berlin': 'Berlin',
-      'Saarland': 'Saarland',
-      'Bremen': 'Bremen',
-      'Hamburg': 'Hamburg'
+      'Brandenburg': 'Brandenburg',
+      'Mecklenburg-Vorpommern': 'Mecklenburg-Vorpommern',
+      'Thüringen': 'Thüringen'
     };
     return stateNames[state] || state;
   };
@@ -80,19 +89,6 @@ const StatesPage: React.FC = () => {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .replace(/^-+|-+$/g, '');
-  };
-
-  const getStateStats = (cities: City[]) => {
-    const totalPopulation = cities.reduce((sum, city) => sum + city.population, 0);
-    const millionCities = cities.filter(city => city.population >= 1000000).length;
-    const largeCities = cities.filter(city => city.population >= 100000).length;
-    
-    return {
-      totalPopulation,
-      millionCities,
-      largeCities,
-      totalCities: cities.length
-    };
   };
 
   const toggleState = (state: string) => {
@@ -148,7 +144,7 @@ const StatesPage: React.FC = () => {
         </div>
 
         {/* Statystyki ogólne */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center">
@@ -182,22 +178,6 @@ const StatesPage: React.FC = () => {
               <div className="flex items-center">
                 <Users className="w-8 h-8 text-moving-blue mr-3" />
                 <div>
-                  <p className="text-sm text-gray-600">Milionowe miasta</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {Object.values(citiesData).reduce((sum, cities) => 
-                      sum + cities.filter(city => city.population >= 1000000).length, 0
-                    )}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-orange-500 rounded-full mr-3"></div>
-                <div>
                   <p className="text-sm text-gray-600">Duże miasta</p>
                   <p className="text-2xl font-bold text-moving-dark">
                     {Object.values(citiesData).reduce((sum, cities) => 
@@ -213,7 +193,6 @@ const StatesPage: React.FC = () => {
         {/* Lista landów z miastami */}
         <div className="space-y-6">
           {Object.entries(citiesData).map(([state, cities]) => {
-            const stats = getStateStats(cities);
             const stateSlug = createStateSlug(state);
             const isExpanded = expandedState === state;
             
@@ -232,19 +211,11 @@ const StatesPage: React.FC = () => {
                         {cities.length} miast
                       </Badge>
                     </div>
-                    <div className="flex items-center gap-4">
-                      <div className="text-right hidden md:block">
-                        <p className="text-sm text-gray-600">Populacja</p>
-                        <p className="font-semibold text-moving-dark">
-                          {formatPopulation(stats.totalPopulation)}
-                        </p>
-                      </div>
-                      <ChevronRight 
-                        className={`w-6 h-6 text-moving-blue transition-transform duration-300 ${
-                          isExpanded ? 'rotate-90' : ''
-                        }`} 
-                      />
-                    </div>
+                    <ChevronRight 
+                      className={`w-6 h-6 text-moving-blue transition-transform duration-300 ${
+                        isExpanded ? 'rotate-90' : ''
+                      }`} 
+                    />
                   </div>
                 </CardHeader>
                 
@@ -262,9 +233,6 @@ const StatesPage: React.FC = () => {
                               <h4 className="font-semibold text-moving-dark group-hover:text-moving-blue transition-colors">
                                 {city.name}
                               </h4>
-                              <p className="text-sm text-gray-600">
-                                {formatPopulation(city.population)} mieszkańców
-                              </p>
                             </div>
                             <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-moving-blue transition-colors" />
                           </div>
