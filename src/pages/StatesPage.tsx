@@ -27,31 +27,12 @@ const StatesPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [expandedState, setExpandedState] = useState<string | null>(null);
 
-  // Filtrowanie tylko wybranych landów
-  const selectedStates = [
-    'Sachsen',
-    'Sachsen-Anhalt', 
-    'Berlin',
-    'Brandenburg',
-    'Mecklenburg-Vorpommern',
-    'Thüringen'
-  ];
-
   useEffect(() => {
     const loadCities = async () => {
       try {
         const response = await fetch('/data/cities/all-cities.json');
         const data = await response.json();
-        
-        // Filtruj tylko wybrane landy
-        const filteredData: CitiesData = {};
-        selectedStates.forEach(state => {
-          if (data[state]) {
-            filteredData[state] = data[state];
-          }
-        });
-        
-        setCitiesData(filteredData);
+        setCitiesData(data);
       } catch (error) {
         console.error('Błąd podczas ładowania danych miast:', error);
       } finally {
@@ -68,12 +49,22 @@ const StatesPage: React.FC = () => {
 
   const getStateName = (state: string) => {
     const stateNames: { [key: string]: string } = {
+      'Nordrhein-Westfalen': 'Nordrhein-Westfalen',
+      'Baden-Württemberg': 'Baden-Württemberg',
+      'Bayern': 'Bayern',
+      'Niedersachsen': 'Niedersachsen',
+      'Rheinland-Pfalz': 'Rheinland-Pfalz',
       'Sachsen': 'Sachsen',
+      'Schleswig-Holstein': 'Schleswig-Holstein',
       'Sachsen-Anhalt': 'Sachsen-Anhalt',
-      'Berlin': 'Berlin',
-      'Brandenburg': 'Brandenburg',
+      'Hessen': 'Hessen',
+      'Thüringen': 'Thüringen',
       'Mecklenburg-Vorpommern': 'Mecklenburg-Vorpommern',
-      'Thüringen': 'Thüringen'
+      'Brandenburg': 'Brandenburg',
+      'Berlin': 'Berlin',
+      'Saarland': 'Saarland',
+      'Bremen': 'Bremen',
+      'Hamburg': 'Hamburg'
     };
     return stateNames[state] || state;
   };
