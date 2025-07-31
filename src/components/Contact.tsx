@@ -107,13 +107,13 @@ ${formData.message}
 Wiadomość wysłana ze strony internetowej`;
 
       // Przygotuj wiadomość WhatsApp w odpowiednim języku
-      const whatsappMessage = `*${t('contact.whatsappTitle')}*
+      const whatsappMessage = `${t('contact.whatsappTitle')}
 
-*${t('contact.contactInfo')}:*
+${t('contact.contactInfo')}:
 ${t('contact.name')}: ${formData.name}
 Email: ${formData.email}${phoneText}${moveDateText}${moveTypeText}
 
-*${t('contact.messageField')}:*
+${t('contact.messageField')}:
 ${formData.message}
 
 ---
@@ -161,28 +161,28 @@ ${t('contact.sentFromWebsite')}`;
               {t('contact.description')}
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-start">
-                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
-                  <Building className="w-6 h-6 text-moving-blue" />
+                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
+                  <Building className="w-7 h-7 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-moving-dark">Firma</h4>
-                  <p className="text-gray-600 font-semibold">MP Transporte <span className="text-moving-blue">und Umzüge</span></p>
+                  <h4 className="font-semibold text-moving-dark text-lg mb-2">Firma</h4>
+                  <p className="text-gray-700 font-bold text-lg">MP Transporte <span className="text-moving-blue">und Umzüge</span></p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
-                  <MapPin className="w-6 h-6 text-moving-blue" />
+                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
+                  <MapPin className="w-7 h-7 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-moving-dark">{t('contact.location')}</h4>
+                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.location')}</h4>
                   <a 
                     href="https://maps.google.com/?q=Kolonnenstr.+8,+10827+Berlin" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-moving-blue transition-colors cursor-pointer"
+                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg"
                   >
                     Kolonnenstr. 8<br />10827 Berlin
                   </a>
@@ -190,14 +190,14 @@ ${t('contact.sentFromWebsite')}`;
               </div>
               
               <div className="flex items-start">
-                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
-                  <Phone className="w-6 h-6 text-moving-blue" />
+                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
+                  <Phone className="w-7 h-7 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-moving-dark">{t('contact.phone')}</h4>
+                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.phone')}</h4>
                   <a 
                     href="tel:+4915223031473" 
-                    className="text-gray-600 hover:text-moving-blue transition-colors cursor-pointer"
+                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg font-medium"
                   >
                     +49 1522 3031473
                   </a>
@@ -205,14 +205,14 @@ ${t('contact.sentFromWebsite')}`;
               </div>
               
               <div className="flex items-start">
-                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
-                  <Mail className="w-6 h-6 text-moving-blue" />
+                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
+                  <Mail className="w-7 h-7 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-moving-dark">{t('contact.email')}</h4>
+                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.email')}</h4>
                   <a 
                     href="mailto:mptransporte24@web.de" 
-                    className="text-gray-600 hover:text-moving-blue transition-colors cursor-pointer"
+                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg"
                   >
                     mptransporte24@web.de
                   </a>
@@ -220,13 +220,13 @@ ${t('contact.sentFromWebsite')}`;
               </div>
               
               <div className="flex items-start">
-                <div className="bg-moving-lightblue p-3 rounded-full mr-4">
-                  <Clock className="w-6 h-6 text-moving-blue" />
+                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
+                  <Clock className="w-7 h-7 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-moving-dark">{t('contact.hours')}</h4>
-                  <p className="text-gray-600">{t('contact.hoursWeekdays')}</p>
-                  <p className="text-gray-600">{t('contact.hoursSaturday')}</p>
+                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.hours')}</h4>
+                  <p className="text-gray-700 text-lg">{t('contact.hoursWeekdays')}</p>
+                  <p className="text-gray-700 text-lg">{t('contact.hoursSaturday')}</p>
                 </div>
               </div>
             </div>
