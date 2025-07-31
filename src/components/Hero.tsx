@@ -24,11 +24,12 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center pt-16" role="banner">
+    <section className="relative h-screen flex items-center pt-16 w-full" role="banner">
       <HeroSlider />
       
-      <div className="container relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      <div className="relative z-20 px-4 w-full">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           <div className="lg:col-span-8 text-white text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               {t('hero.title')}
@@ -106,6 +107,7 @@ const Hero: React.FC = () => {
               <p className="text-xs sm:text-sm text-gray-600">Zawsze gotowi pomóc</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

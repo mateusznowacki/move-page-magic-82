@@ -161,7 +161,7 @@ ${t('contact.sentFromWebsite')}`;
               {t('contact.description')}
             </p>
             
-            <div className="space-y-8">
+            <div className="space-y-8 text-left">
               <div className="flex items-start">
                 <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
                   <Building className="w-7 h-7 text-moving-blue" />

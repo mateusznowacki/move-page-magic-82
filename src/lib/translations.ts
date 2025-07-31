@@ -1,97 +1,27 @@
 type TranslationKey = 
-  | 'hero.title'
-  | 'hero.subtitle'
-  | 'hero.getQuote'
-  | 'hero.services'
-  | 'hero.years'
-  | 'hero.yearsDesc'
-  | 'hero.customers'
-  | 'hero.customersDesc'
-  | 'hero.support'
-  | 'hero.supportDesc'
-  | 'nav.home'
-  | 'nav.services'
-  | 'nav.about'
-  | 'nav.testimonials'
-  | 'nav.contact'
-  | 'nav.getQuote'
-  | 'nav.areas'
-  | 'nav.cities'
-  | 'nav.quote'
-  | 'services.title'
-  | 'services.subtitle'
-  | 'services.description'
-  | 'services.viewAll'
-  | 'about.title'
-  | 'about.subtitle'
-  | 'about.description'
-  | 'about.getStarted'
-  | 'about.contactUs'
-  | 'testimonials.title'
-  | 'testimonials.subtitle'
-  | 'testimonials.description'
-  | 'testimonials.ready'
-  | 'testimonials.getInTouch'
-  | 'testimonials.getFreeQuote'
-  | 'testimonials.trustedUs'
-  | 'testimonials.professional'
-  | 'contact.title'
-  | 'contact.subtitle'
-  | 'contact.description'
-  | 'contact.location'
-  | 'contact.locationAddress'
-  | 'contact.phone'
-  | 'contact.email'
-  | 'contact.hours'
-  | 'contact.hoursWeekdays'
-  | 'contact.hoursSaturday'
-  | 'contact.formTitle'
-  | 'contact.nameLabel'
-  | 'contact.namePlaceholder'
-  | 'contact.emailLabel'
-  | 'contact.emailPlaceholder'
-  | 'contact.phoneLabel'
-  | 'contact.phonePlaceholder'
-  | 'contact.dateLabel'
-  | 'contact.moveTypeLabel'
-  | 'contact.moveTypePlaceholder'
-  | 'contact.moveTypeResidential'
-  | 'contact.moveTypeCommercial'
-  | 'contact.moveTypeLongDistance'
-  | 'contact.moveTypeInternational'
-  | 'contact.messageLabel'
-  | 'contact.messagePlaceholder'
-  | 'contact.submitButton'
-  | 'contact.whatsappTitle'
-  | 'contact.contactInfo'
-  | 'contact.name'
-  | 'contact.phoneField'
-  | 'contact.moveDateField'
-  | 'contact.moveTypeField'
-  | 'contact.messageField'
-  | 'contact.sentFromWebsite'
-  | 'footer.description'
-  | 'footer.servicesTitle'
-  | 'footer.residentialMoving'
-  | 'footer.commercialMoving'
-  | 'footer.packingUnpacking'
-  | 'footer.longDistanceMoving'
-  | 'footer.storageSolutions'
-  | 'footer.quickLinksTitle'
-  | 'footer.home'
-  | 'footer.aboutUs'
-  | 'footer.services'
-  | 'footer.testimonials'
-  | 'footer.contactUs'
-  | 'footer.promotionTitle'
-  | 'footer.discount'
-  | 'footer.promotionDescription'
-  | 'footer.promotionTerms'
-  | 'footer.copyright'
-  | 'footer.allRightsReserved'
-  | 'footer.privacyPolicy'
-  | 'footer.termsOfService'
-  | 'footer.cookiePolicy';
+  | 'nav.home' | 'nav.about' | 'nav.services' | 'nav.contact' | 'nav.quote' | 'nav.testimonials' | 'nav.getQuote' | 'nav.areas'
+  | 'hero.title' | 'hero.subtitle' | 'hero.years' | 'hero.yearsDesc' | 'hero.getQuote' | 'hero.learnMore' | 'hero.services' | 'hero.customers' | 'hero.customersDesc' | 'hero.support' | 'hero.supportDesc'
+  | 'about.title' | 'about.subtitle' | 'about.description' | 'about.getStarted' | 'about.learnMore' | 'about.contactUs'
+  | 'services.title' | 'services.subtitle' | 'services.description' | 'services.viewAll'
+  | 'services.residential.title' | 'services.residential.description'
+  | 'services.commercial.title' | 'services.commercial.description'
+  | 'services.longDistance.title' | 'services.longDistance.description'
+  | 'services.international.title' | 'services.international.description'
+  | 'services.packing.title' | 'services.packing.description'
+  | 'services.assembly.title' | 'services.assembly.description'
+  | 'services.storage.title' | 'services.storage.description'
+  | 'testimonials.title' | 'testimonials.subtitle' | 'testimonials.description' | 'testimonials.ready' | 'testimonials.getInTouch' | 'testimonials.getFreeQuote' | 'testimonials.trustedUs' | 'testimonials.professional'
+  | 'contact.title' | 'contact.subtitle' | 'contact.description' | 'contact.location' | 'contact.locationAddress' | 'contact.phone' | 'contact.email' | 'contact.hours' | 'contact.hoursWeekdays' | 'contact.hoursSaturday' | 'contact.formTitle'
+  | 'contact.nameLabel' | 'contact.namePlaceholder' | 'contact.emailLabel' | 'contact.emailPlaceholder' | 'contact.phoneLabel' | 'contact.phonePlaceholder'
+  | 'contact.dateLabel' | 'contact.moveTypeLabel' | 'contact.moveTypePlaceholder' | 'contact.moveTypeResidential' | 'contact.moveTypeCommercial' | 'contact.moveTypeLongDistance' | 'contact.moveTypeInternational'
+  | 'contact.messageLabel' | 'contact.messagePlaceholder' | 'contact.submitButton'
+  | 'contact.whatsappTitle' | 'contact.contactInfo' | 'contact.nameField' | 'contact.phoneField' | 'contact.name'
+  | 'contact.moveDateField' | 'contact.moveTypeField' | 'contact.messageField' | 'contact.sentFromWebsite'
+
+  | 'footer.description' | 'footer.servicesTitle' | 'footer.residentialMoving' | 'footer.commercialMoving' | 'footer.packingUnpacking'
+  | 'footer.longDistanceMoving' | 'footer.internationalMoving' | 'footer.storageSolutions' | 'footer.quickLinksTitle' | 'footer.home' | 'footer.aboutUs' | 'footer.services' | 'footer.testimonials' | 'footer.contactUs'
+  | 'footer.promotionTitle' | 'footer.discount' | 'footer.promotionDescription' | 'footer.promotionTerms' | 'footer.copyright' | 'footer.allRightsReserved'
+  | 'footer.privacyPolicy' | 'footer.termsOfService' | 'footer.cookiePolicy';
 
 type Translations = {
   [key in TranslationKey]: {
@@ -205,12 +135,8 @@ export const translations: Translations = {
     de: 'Gebiete',
     es: 'Áreas'
   },
-  'nav.cities': {
-    en: 'Cities',
-    pl: 'Miasta',
-    de: 'Städte',
-    es: 'Ciudades'
-  },
+
+
   'nav.quote': {
     en: 'Get a Quote',
     pl: 'Wycena',
@@ -751,12 +677,7 @@ export const serviceTranslations = {
       title: "Przeprowadzki komercyjne",
       description: "Zminimalizuj przestoje dzięki naszym efektywnym usługom relokacji biur i firm.",
     },
-    {
-      id: 3,
-      icon: "📦",
-      title: "Pakowanie i rozpakowywanie",
-      description: "Profesjonalne usługi pakowania i rozpakowywania, aby chronić Twoje cenne rzeczy.",
-    },
+
     {
       id: 4,
       icon: "🚚",
@@ -769,44 +690,9 @@ export const serviceTranslations = {
       title: "Rozwiązania magazynowe",
       description: "Bezpieczne opcje przechowywania na krótki i długi termin podczas przeprowadzki.",
     },
+
     {
-      id: 6,
-      icon: "🛋️",
-      title: "Montaż mebli",
-      description: "Fachowy demontaż i montaż mebli, aby Twoja przeprowadzka przebiegła bezproblemowo.",
-    },
-    {
-      id: 7,
-      icon: "💡",
-      title: "Montaż lamp",
-      description: "Profesjonalny montaż lamp i oświetlenia w Twoim domu lub biurze.",
-    },
-    {
-      id: 8,
-      icon: "🪞",
-      title: "Montaż luster",
-      description: "Ekspercki montaż luster i dekoracji ściennych dla Twojego wnętrza.",
-    },
-    {
-      id: 9,
-      icon: "🖌️",
-      title: "Malowanie ścian",
-      description: "Usługi malowania ścian i uzupełniania ubytków oraz niedoskonałości.",
-    },
-    {
-      id: 10,
-      icon: "🧹",
-      title: "Czyszczenie i naprawa mebli",
-      description: "Podstawowe czyszczenie, konserwacja i naprawa mebli, aby przedłużyć ich żywotność.",
-    },
-    {
-      id: 11,
-      icon: "🛋️",
-      title: "Środki czyszczące",
-      description: "Sprzedajemy sprawdzone środki do czyszczenia i konserwacji mebli tapicerowanych oraz skórzanych.",
-    },
-    {
-      id: 12,
+      id: 3,
       icon: "🇪🇺",
       title: "Przeprowadzki międzynarodowe",
       description: "Profesjonalne usługi przeprowadzkowe na terenie całej Unii Europejskiej z obsługą celną i wiedzą z zakresu logistyki międzynarodowej.",
@@ -825,12 +711,7 @@ export const serviceTranslations = {
       title: "Geschäftsumzug",
       description: "Minimieren Sie Ausfallzeiten mit unseren effizienten Büro- und Geschäftsumzugsdiensten.",
     },
-    {
-      id: 3,
-      icon: "📦",
-      title: "Ein- und Auspacken",
-      description: "Professionelle Ein- und Auspackdienste zum Schutz Ihrer wertvollen Gegenstände.",
-    },
+
     {
       id: 4,
       icon: "🚚",
@@ -843,44 +724,9 @@ export const serviceTranslations = {
       title: "Lagerungslösungen",
       description: "Sichere Lagerungsoptionen für kurz- und langfristige Bedürfnisse während Ihres Umzugs.",
     },
+
     {
-      id: 6,
-      icon: "🛋️",
-      title: "Möbelmontage",
-      description: "Fachmännische Demontage und Wiedermontage von Möbeln, um Ihren Umzug nahtlos zu gestalten.",
-    },
-    {
-      id: 7,
-      icon: "💡",
-      title: "Lampeninstallation",
-      description: "Professionelle Installation von Lampen und Beleuchtungskörpern in Ihrem Haus oder Büro.",
-    },
-    {
-      id: 8,
-      icon: "🪞",
-      title: "Spiegelmontage",
-      description: "Fachmännische Montage von Spiegeln und Wanddekorationen für Ihr Interieur.",
-    },
-    {
-      id: 9,
-      icon: "🖌️",
-      title: "Wandmalerei",
-      description: "Qualitative Wandmalerei und Ausbesserung von Wanddefekten und Unvollkommenheiten.",
-    },
-    {
-      id: 10,
-      icon: "🧹",
-      title: "Möbelreinigung & -reparatur",
-      description: "Grundlegende Möbelreinigung, -wartung und -reparaturdienste, um die Lebensdauer Ihrer Möbelstücke zu verlängern.",
-    },
-    {
-      id: 11,
-      icon: "🛋️",
-      title: "Reinigungsprodukte",
-      description: "Wir verkaufen bewährte Reinigungs- und Pflegeprodukte für Polster- und Ledermöbel.",
-    },
-    {
-      id: 12,
+      id: 3,
       icon: "🇪🇺",
       title: "Internationale Umzüge",
       description: "Professionelle Umzugsdienste in allen EU-Ländern mit Zollabwicklung und Fachwissen in internationaler Logistik.",
@@ -899,62 +745,17 @@ export const serviceTranslations = {
       title: "Mudanzas comerciales",
       description: "Minimice el tiempo de inactividad con nuestros eficientes servicios de reubicación de oficinas y negocios.",
     },
-    {
-      id: 3,
-      icon: "📦",
-      title: "Embalaje y desembalaje",
-      description: "Servicios profesionales de embalaje y desembalaje para proteger sus valiosas pertenencias.",
-    },
-    {
-      id: 4,
-      icon: "🚚",
-      title: "Mudanzas de larga distancia",
-      description: "Servicios de mudanzas de larga distancia confiables con planificación y ejecución cuidadosa.",
-    },
+
+
     {
       id: 5,
       icon: "🔒",
       title: "Soluciones de almacenamiento",
       description: "Opciones de almacenamiento seguras para necesidades a corto y largo plazo durante su mudanza.",
     },
+
     {
-      id: 6,
-      icon: "🛋️",
-      title: "Montaje de muebles",
-      description: "Desmontaje y remontaje experto de muebles para hacer su mudanza sin problemas.",
-    },
-    {
-      id: 7,
-      icon: "💡",
-      title: "Instalación de lámparas",
-      description: "Instalación profesional de lámparas y accesorios de iluminación en su hogar u oficina.",
-    },
-    {
-      id: 8,
-      icon: "🪞",
-      title: "Montaje de espejos",
-      description: "Instalación experta de espejos y decoraciones de pared para su interior.",
-    },
-    {
-      id: 9,
-      icon: "🖌️",
-      title: "Pintura de paredes",
-      description: "Servicios de pintura de paredes de calidad y relleno de defectos e imperfecciones en paredes.",
-    },
-    {
-      id: 10,
-      icon: "🧹",
-      title: "Limpieza y reparación de muebles",
-      description: "Servicios básicos de limpieza, mantenimiento y reparación de muebles para extender la vida útil de sus piezas.",
-    },
-    {
-      id: 11,
-      icon: "🛋️",
-      title: "Productos de limpieza",
-      description: "Vendemos productos probados de limpieza y mantenimiento para muebles tapizados y de cuero.",
-    },
-    {
-      id: 12,
+      id: 3,
       icon: "🇪🇺",
       title: "Mudanzas internacionales",
       description: "Servicios profesionales de mudanza en todos los países de la UE con gestión aduanera y experiencia en logística internacional.",

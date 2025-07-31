@@ -64,28 +64,20 @@ const Navbar: React.FC = () => {
     isLink: true
   }, {
     key: 'about',
-    href: '#about',
-    sectionId: 'about'
+    href: '/uber-uns',
+    isLink: true
   }, {
     key: 'testimonials',
     href: '#testimonials',
     sectionId: 'testimonials'
-  }, {
-    key: 'areas',
-    href: '/einsatzgebiete',
-    isLink: true
-  }, {
-    key: 'cities',
-    href: '/staedte',
-    isLink: true
   }, {
     key: 'quote',
     href: '/angebot',
     isLink: true
   }, {
     key: 'contact',
-    href: '#contact',
-    sectionId: 'contact'
+    href: '/kontakt',
+    isLink: true
   }];
 
   const NavItem = ({
@@ -105,7 +97,8 @@ const Navbar: React.FC = () => {
           className={`${baseClasses} ${mobileClasses}`} 
           onClick={() => {
             if (isMobile) setIsMobileMenuOpen(false);
-            if (item.href === '/' && location.pathname === '/') {
+            // Scroll to top for all page navigation
+            if (item.href !== '/' || location.pathname !== '/') {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           }}

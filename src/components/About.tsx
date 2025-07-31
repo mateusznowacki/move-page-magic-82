@@ -52,17 +52,17 @@ const About: React.FC = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 className="btn-primary text-lg px-8 py-3"
-                aria-label={t('about.getStarted')}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                {t('about.getStarted')}
-              </Button>
-              <Button 
-                className="btn-secondary text-lg px-8 py-3"
                 aria-label={t('about.contactUs')}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t('about.contactUs')}
+              </Button>
+              <Button 
+                className="btn-secondary text-lg px-8 py-3"
+                aria-label={t('about.getStarted')}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {t('about.getStarted')}
               </Button>
             </div>
           </div>

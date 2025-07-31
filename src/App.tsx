@@ -1,47 +1,54 @@
 
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "./components/ui/toaster";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import ServicesPage from "./pages/ServicesPage";
-import AreaOfOperation from "./pages/AreaOfOperation";
-import QuotePage from "./pages/QuotePage";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import CookiePolicy from "./pages/CookiePolicy";
-import CitiesPage from "./pages/CitiesPage";
-import StatesPage from "./pages/StatesPage";
-import StateCitiesPage from "./pages/StateCitiesPage";
-import CityDetailPage from "./pages/CityDetailPage";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { Toaster } from './components/ui/toaster';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 
-const queryClient = new QueryClient();
+// Pages
+import Index from './pages/Index';
+import QuotePage from './pages/QuotePage';
+import ServicesPage from './pages/ServicesPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
+import NotFound from './pages/NotFound';
+
+import './App.css';
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/dienstleistungen" element={<ServicesPage />} />
-            <Route path="/einsatzgebiete" element={<AreaOfOperation />} />
-            <Route path="/angebot" element={<QuotePage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/staedte" element={<StatesPage />} />
-            <Route path="/staedte/:stateSlug" element={<StateCitiesPage />} />
-            <Route path="/staedte/:stateSlug/:citySlug" element={<CityDetailPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-        <Toaster />
-      </LanguageProvider>
-    </QueryClientProvider>
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/angebot" element={<QuotePage />} />
+              <Route path="/dienstleistungen" element={<ServicesPage />} />
+              <Route path="/uber-uns" element={<AboutPage />} />
+              <Route path="/kontakt" element={<ContactPage />} />
+
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+          <WhatsAppButton phoneNumber="+4915223031473" />
+          <ScrollToTop />
+          <Toaster />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 
