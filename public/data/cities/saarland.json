@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Saarbrücken",
+    "slug": "saarbruecken",
+    "population": 179349,
+    "district": "Saarbrücken",
+    "coords": {
+      "lat": "49.233",
+      "lon": "7.000"
+    },
+    "area": 167.07
+  },
+  {
+    "name": "Neunkirchen",
+    "slug": "neunkirchen",
+    "population": 46037,
+    "district": "Neunkirchen",
+    "coords": {
+      "lat": "49.350",
+      "lon": "7.167"
+    },
+    "area": 75.08
+  },
+  {
+    "name": "Homburg",
+    "slug": "homburg",
+    "population": 41790,
+    "district": "Saarpfalz",
+    "coords": {
+      "lat": "49.317",
+      "lon": "7.333"
+    },
+    "area": 82.65
+  },
+  {
+    "name": "Völklingen",
+    "slug": "voelklingen",
+    "population": 39412,
+    "district": "Saarbrücken",
+    "coords": {
+      "lat": "49.250",
+      "lon": "6.833"
+    },
+    "area": 67.06
+  },
+  {
+    "name": "Sankt Ingbert",
+    "slug": "sankt-ingbert",
+    "population": 35213,
+    "district": "Saarpfalz-Kreis",
+    "coords": {
+      "lat": "49.300",
+      "lon": "7.117"
+    },
+    "area": 49.95
+  },
+  {
+    "name": "Saarlouis",
+    "slug": "saarlouis",
+    "population": 34409,
+    "district": "Saarlouis",
+    "coords": {
+      "lat": "49.31667",
+      "lon": "6.75000"
+    },
+    "area": 43.27
+  },
+  {
+    "name": "Merzig",
+    "slug": "merzig",
+    "population": 29700,
+    "district": "Merzig-Wadern",
+    "coords": {
+      "lat": "49.450",
+      "lon": "6.617"
+    },
+    "area": 108.79
+  },
+  {
+    "name": "Sankt Wendel",
+    "slug": "sankt-wendel",
+    "population": 25438,
+    "district": "Sankt Wendel",
+    "coords": {
+      "lat": "49.467",
+      "lon": "7.167"
+    },
+    "area": 113.54
+  },
+  {
+    "name": "Blieskastel",
+    "slug": "blieskastel",
+    "population": 20287,
+    "district": "Saarpfalz",
+    "coords": {
+      "lat": "49.23306",
+      "lon": "7.25000"
+    },
+    "area": 108.27
+  }
+]

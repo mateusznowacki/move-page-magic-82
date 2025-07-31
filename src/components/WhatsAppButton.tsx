@@ -10,11 +10,25 @@ interface WhatsAppButtonProps {
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ 
   phoneNumber, 
-  message = "Hello! I'm interested in your moving services.",
+  message,
   className 
 }) => {
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  
+  const defaultMessages: { [key: string]: string } = {
+    pl: "Dzień dobry, proszę o kontakt.",
+    de: "Guten Tag, bitte kontaktieren Sie mich.",
+    en: "Hello, please contact me.",
+    es: "Hola, por favor contácteme."
+  };
+
+  let finalMessage = message;
+  if (!finalMessage) {
+    const lang = typeof window !== "undefined" ? (navigator.language || "en").slice(0,2) : "en";
+    finalMessage = defaultMessages[lang] || defaultMessages["en"];
+  }
+
+  const whatsappUrl = finalMessage
+    ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`
+    : `https://wa.me/${phoneNumber}`;
   return (
     <a 
       href={whatsappUrl} 

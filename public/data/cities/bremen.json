@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Bremen",
+    "slug": "bremen",
+    "population": 566573,
+    "coords": {
+      "lat": "53.083",
+      "lon": "8.800"
+    },
+    "area": 326.73
+  },
+  {
+    "name": "Bremerhaven",
+    "slug": "bremerhaven",
+    "population": 113557,
+    "coords": {
+      "lat": "53.55000",
+      "lon": "8.58333"
+    },
+    "area": 93.82
+  }
+]

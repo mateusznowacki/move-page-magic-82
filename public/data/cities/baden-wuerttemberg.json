@@ -1,0 +1,1135 @@
+[
+  {
+    "name": "Stuttgart",
+    "slug": "stuttgart",
+    "population": 630305,
+    "district": "Stadtkreis",
+    "coords": {
+      "lat": "48.782",
+      "lon": "9.184"
+    },
+    "area": 207.33
+  },
+  {
+    "name": "Mannheim",
+    "slug": "mannheim",
+    "population": 309721,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.48778",
+      "lon": "8.46611"
+    },
+    "area": 144.96
+  },
+  {
+    "name": "Karlsruhe",
+    "slug": "karlsruhe",
+    "population": 308436,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.00920970",
+      "lon": "8.40395140"
+    },
+    "area": 173.46
+  },
+  {
+    "name": "Freiburg im Breisgau",
+    "slug": "freiburg-im-breisgau",
+    "population": 230940,
+    "district": "Stadtkreis",
+    "coords": {
+      "lat": "47.983",
+      "lon": "7.850"
+    },
+    "area": 153.07
+  },
+  {
+    "name": "Heidelberg",
+    "slug": "heidelberg",
+    "population": 158741,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.417",
+      "lon": "8.717"
+    },
+    "area": 108.83
+  },
+  {
+    "name": "Heilbronn",
+    "slug": "heilbronn",
+    "population": 126458,
+    "district": "Stadtkreis",
+    "coords": {
+      "lat": "49.150",
+      "lon": "9.217"
+    },
+    "area": 99.88
+  },
+  {
+    "name": "Ulm",
+    "slug": "ulm",
+    "population": 126405,
+    "district": "Stadtkreis",
+    "coords": {
+      "lat": "48.400",
+      "lon": "9.983"
+    },
+    "area": 118.69
+  },
+  {
+    "name": "Pforzheim",
+    "slug": "pforzheim",
+    "population": 126016,
+    "district": "Stadtkreis",
+    "coords": {
+      "lat": "48.89500",
+      "lon": "8.70500"
+    },
+    "area": 98.03
+  },
+  {
+    "name": "Reutlingen",
+    "slug": "reutlingen",
+    "population": 116031,
+    "district": "Reutlingen",
+    "coords": {
+      "lat": "48.483",
+      "lon": "9.217"
+    },
+    "area": 87.06
+  },
+  {
+    "name": "Ludwigsburg",
+    "slug": "ludwigsburg",
+    "population": 93358,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.89750",
+      "lon": "9.19222"
+    },
+    "area": 43.33
+  },
+  {
+    "name": "Esslingen am Neckar",
+    "slug": "esslingen-am-neckar",
+    "population": 92722,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.73333",
+      "lon": "9.31667"
+    },
+    "area": 46.43
+  },
+  {
+    "name": "Tübingen",
+    "slug": "tuebingen",
+    "population": 91077,
+    "district": "Tübingen",
+    "coords": {
+      "lat": "48.52000",
+      "lon": "9.05556"
+    },
+    "area": 108.12
+  },
+  {
+    "name": "Villingen-Schwenningen",
+    "slug": "villingen-schwenningen",
+    "population": 85686,
+    "district": "Schwarzwald-Baar-Kreis",
+    "coords": {
+      "lat": "48.06028",
+      "lon": "8.45861"
+    },
+    "area": 165.47
+  },
+  {
+    "name": "Constance",
+    "slug": "constance",
+    "population": 84446,
+    "district": "Konstanz",
+    "coords": {
+      "lat": "47.667",
+      "lon": "9.183"
+    },
+    "area": 55.65
+  },
+  {
+    "name": "Aalen",
+    "slug": "aalen",
+    "population": 68361,
+    "district": "Ostalbkreis",
+    "coords": {
+      "lat": "48.833",
+      "lon": "10.100"
+    },
+    "area": 146.63
+  },
+  {
+    "name": "Sindelfingen",
+    "slug": "sindelfingen",
+    "population": 64595,
+    "district": "Böblingen",
+    "coords": {
+      "lat": "48.71333",
+      "lon": "9.00278"
+    },
+    "area": 50.85
+  },
+  {
+    "name": "Friedrichshafen",
+    "slug": "friedrichshafen",
+    "population": 61221,
+    "district": "Bodenseekreis",
+    "coords": {
+      "lat": "47.650",
+      "lon": "9.483"
+    },
+    "area": 69.91
+  },
+  {
+    "name": "Schwäbisch Gmünd",
+    "slug": "schwaebisch-gmuend",
+    "population": 61216,
+    "district": "Ostalbkreis",
+    "coords": {
+      "lat": "48.800",
+      "lon": "9.800"
+    },
+    "area": 113.78
+  },
+  {
+    "name": "Offenburg",
+    "slug": "offenburg",
+    "population": 60388,
+    "district": "Ortenaukreis",
+    "coords": {
+      "lat": "48.467",
+      "lon": "7.933"
+    },
+    "area": 78.38
+  },
+  {
+    "name": "Göppingen",
+    "slug": "goeppingen",
+    "population": 57974,
+    "district": "Göppingen (district)",
+    "coords": {
+      "lat": "48.70250",
+      "lon": "9.65278"
+    },
+    "area": 59.22
+  },
+  {
+    "name": "Waiblingen",
+    "slug": "waiblingen",
+    "population": 55526,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.83028",
+      "lon": "9.31694"
+    },
+    "area": 42.76
+  },
+  {
+    "name": "Baden-Baden",
+    "slug": "baden-baden",
+    "population": 55449,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.76278",
+      "lon": "8.24083"
+    },
+    "area": 140.18
+  },
+  {
+    "name": "Ravensburg",
+    "slug": "ravensburg",
+    "population": 50776,
+    "district": "Ravensburg",
+    "coords": {
+      "lat": "47.78306",
+      "lon": "9.61139"
+    },
+    "area": 92.04
+  },
+  {
+    "name": "Rastatt",
+    "slug": "rastatt",
+    "population": 50165,
+    "district": "Rastatt",
+    "coords": {
+      "lat": "48.850",
+      "lon": "8.200"
+    },
+    "area": 59.02
+  },
+  {
+    "name": "Böblingen",
+    "slug": "boeblingen",
+    "population": 50121,
+    "district": "Böblingen",
+    "coords": {
+      "lat": "48.68556",
+      "lon": "9.01528"
+    },
+    "area": 39.04
+  },
+  {
+    "name": "Heidenheim an der Brenz",
+    "slug": "heidenheim-an-der-brenz",
+    "population": 49342,
+    "district": "Heidenheim",
+    "coords": {
+      "lat": "48.67611",
+      "lon": "10.15444"
+    },
+    "area": 107.1
+  },
+  {
+    "name": "Lörrach",
+    "slug": "loerrach",
+    "population": 49295,
+    "district": "Lörrach",
+    "coords": {
+      "lat": "47.617",
+      "lon": "7.667"
+    },
+    "area": 39.43
+  },
+  {
+    "name": "Leonberg",
+    "slug": "leonberg",
+    "population": 48753,
+    "district": "Böblingen",
+    "coords": {
+      "lat": "48.80139",
+      "lon": "9.01306"
+    },
+    "area": 48.73
+  },
+  {
+    "name": "Singen",
+    "slug": "singen",
+    "population": 48033,
+    "district": "Konstanz",
+    "coords": {
+      "lat": "47.76278",
+      "lon": "8.84000"
+    },
+    "area": 61.75
+  },
+  {
+    "name": "Lahr",
+    "slug": "lahr",
+    "population": 47551,
+    "district": "Ortenau",
+    "coords": {
+      "lat": "48.333",
+      "lon": "7.867"
+    },
+    "area": 69.86
+  },
+  {
+    "name": "Filderstadt",
+    "slug": "filderstadt",
+    "population": 45958,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.68028",
+      "lon": "9.21833"
+    },
+    "area": 38.54
+  },
+  {
+    "name": "Albstadt",
+    "slug": "albstadt",
+    "population": 45472,
+    "district": "Zollernalbkreis",
+    "coords": {
+      "lat": "48.21194",
+      "lon": "9.02389"
+    },
+    "area": 134.41
+  },
+  {
+    "name": "Fellbach",
+    "slug": "fellbach",
+    "population": 45430,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.80861",
+      "lon": "9.27583"
+    },
+    "area": 27.7
+  },
+  {
+    "name": "Bruchsal",
+    "slug": "bruchsal",
+    "population": 45364,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "49.133",
+      "lon": "8.600"
+    },
+    "area": 93.02
+  },
+  {
+    "name": "Weinheim",
+    "slug": "weinheim",
+    "population": 45335,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.550",
+      "lon": "8.667"
+    },
+    "area": 58.11
+  },
+  {
+    "name": "Rottenburg am Neckar",
+    "slug": "rottenburg-am-neckar",
+    "population": 43756,
+    "district": "Tübingen",
+    "coords": {
+      "lat": "48.47722",
+      "lon": "8.93444"
+    },
+    "area": 142.26
+  },
+  {
+    "name": "Bietigheim-Bissingen",
+    "slug": "bietigheim-bissingen",
+    "population": 43146,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.967",
+      "lon": "9.133"
+    },
+    "area": 31.29
+  },
+  {
+    "name": "Nürtingen",
+    "slug": "nuertingen",
+    "population": 41154,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.633",
+      "lon": "9.333"
+    },
+    "area": 46.9
+  },
+  {
+    "name": "Kirchheim unter Teck",
+    "slug": "kirchheim-unter-teck",
+    "population": 40774,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.64833",
+      "lon": "9.45111"
+    },
+    "area": 40.47
+  },
+  {
+    "name": "Schwäbisch Hall",
+    "slug": "schwaebisch-hall",
+    "population": 40679,
+    "district": "Schwäbisch Hall",
+    "coords": {
+      "lat": "49.11222",
+      "lon": "9.73750"
+    },
+    "area": 104.23
+  },
+  {
+    "name": "Leinfelden-Echterdingen",
+    "slug": "leinfelden-echterdingen",
+    "population": 40161,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.69278",
+      "lon": "9.14278"
+    },
+    "area": 29.9
+  },
+  {
+    "name": "Schorndorf",
+    "slug": "schorndorf",
+    "population": 39785,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.800",
+      "lon": "9.533"
+    },
+    "area": 56.86
+  },
+  {
+    "name": "Ostfildern",
+    "slug": "ostfildern",
+    "population": 39431,
+    "district": "Esslingen",
+    "coords": {
+      "lat": "48.733",
+      "lon": "9.250"
+    },
+    "area": 22.81
+  },
+  {
+    "name": "Ettlingen",
+    "slug": "ettlingen",
+    "population": 39401,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "48.933",
+      "lon": "8.400"
+    },
+    "area": 56.74
+  },
+  {
+    "name": "Backnang",
+    "slug": "backnang",
+    "population": 37558,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.94639",
+      "lon": "9.43056"
+    },
+    "area": 39.37
+  },
+  {
+    "name": "Kehl",
+    "slug": "kehl",
+    "population": 36947,
+    "district": "Ortenaukreis",
+    "coords": {
+      "lat": "48.567",
+      "lon": "7.817"
+    },
+    "area": 75.07
+  },
+  {
+    "name": "Tuttlingen",
+    "slug": "tuttlingen",
+    "population": 36507,
+    "district": "Tuttlingen",
+    "coords": {
+      "lat": "47.98500",
+      "lon": "8.82333"
+    },
+    "area": 90.48
+  },
+  {
+    "name": "Sinsheim",
+    "slug": "sinsheim",
+    "population": 35433,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.250",
+      "lon": "8.883"
+    },
+    "area": 127.01
+  },
+  {
+    "name": "Crailsheim",
+    "slug": "crailsheim",
+    "population": 34661,
+    "district": "Schwäbisch Hall",
+    "coords": {
+      "lat": "49.13472",
+      "lon": "10.07056"
+    },
+    "area": 109.08
+  },
+  {
+    "name": "Balingen",
+    "slug": "balingen",
+    "population": 34505,
+    "district": "Zollernalbkreis",
+    "coords": {
+      "lat": "48.27306",
+      "lon": "8.85056"
+    },
+    "area": 90.34
+  },
+  {
+    "name": "Kornwestheim",
+    "slug": "kornwestheim",
+    "population": 33743,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.85980",
+      "lon": "9.18520"
+    },
+    "area": 14.64
+  },
+  {
+    "name": "Biberach an der Riss",
+    "slug": "biberach-an-der-riss",
+    "population": 33510,
+    "district": "Biberach",
+    "coords": {
+      "lat": "48.100",
+      "lon": "9.783"
+    },
+    "area": 72.16
+  },
+  {
+    "name": "Rheinfelden",
+    "slug": "rheinfelden",
+    "population": 32919,
+    "district": "Lörrach",
+    "coords": {
+      "lat": "47.56111",
+      "lon": "7.79167"
+    },
+    "area": 62.84
+  },
+  {
+    "name": "Herrenberg",
+    "slug": "herrenberg",
+    "population": 31818,
+    "district": "Böblingen",
+    "coords": {
+      "lat": "48.59667",
+      "lon": "8.87083"
+    },
+    "area": 65.71
+  },
+  {
+    "name": "Radolfzell",
+    "slug": "radolfzell",
+    "population": 31530,
+    "district": "Konstanz",
+    "coords": {
+      "lat": "47.73333",
+      "lon": "8.96667"
+    },
+    "area": 58.58
+  },
+  {
+    "name": "Weil am Rhein, Germany",
+    "slug": "weil-am-rhein-germany",
+    "population": 30009,
+    "district": "Lörrach",
+    "coords": {
+      "lat": "47.59472",
+      "lon": "7.61083"
+    },
+    "area": 19.47
+  },
+  {
+    "name": "Gaggenau",
+    "slug": "gaggenau",
+    "population": 29932,
+    "district": "Rastatt",
+    "coords": {
+      "lat": "48.80389",
+      "lon": "8.31944"
+    },
+    "area": 65.05
+  },
+  {
+    "name": "Bretten",
+    "slug": "bretten",
+    "population": 29538,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "49.03639",
+      "lon": "8.70611"
+    },
+    "area": 71.12
+  },
+  {
+    "name": "Vaihingen an der Enz",
+    "slug": "vaihingen-an-der-enz",
+    "population": 29307,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.93278",
+      "lon": "8.95639"
+    },
+    "area": 73.41
+  },
+  {
+    "name": "Bühl",
+    "slug": "buehl",
+    "population": 28889,
+    "district": "Rastatt",
+    "coords": {
+      "lat": "48.69528",
+      "lon": "8.13500"
+    },
+    "area": 73.21
+  },
+  {
+    "name": "Geislingen an der Steige",
+    "slug": "geislingen-an-der-steige",
+    "population": 28400,
+    "district": "Göppingen",
+    "coords": {
+      "lat": "48.62444",
+      "lon": "9.83056"
+    },
+    "area": 75.83
+  },
+  {
+    "name": "Winnenden",
+    "slug": "winnenden",
+    "population": 28334,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.87639",
+      "lon": "9.39778"
+    },
+    "area": 28.05
+  },
+  {
+    "name": "Emmendingen",
+    "slug": "emmendingen",
+    "population": 28051,
+    "district": "Emmendingen",
+    "coords": {
+      "lat": "48.12139",
+      "lon": "7.84917"
+    },
+    "area": 33.8
+  },
+  {
+    "name": "Wangen im Allgäu",
+    "slug": "wangen-im-allgaeu",
+    "population": 26927,
+    "district": "Ravensburg",
+    "coords": {
+      "lat": "47.68583",
+      "lon": "9.83417"
+    },
+    "area": 101.28
+  },
+  {
+    "name": "Weinstadt",
+    "slug": "weinstadt",
+    "population": 26916,
+    "district": "Rems-Murr-Kreis",
+    "coords": {
+      "lat": "48.81111",
+      "lon": "9.36556"
+    },
+    "area": 31.71
+  },
+  {
+    "name": "Leimen",
+    "slug": "leimen",
+    "population": 26862,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.34806",
+      "lon": "8.69111"
+    },
+    "area": 20.64
+  },
+  {
+    "name": "Wiesloch",
+    "slug": "wiesloch",
+    "population": 26605,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.29417",
+      "lon": "8.69833"
+    },
+    "area": 30.262
+  },
+  {
+    "name": "Remseck",
+    "slug": "remseck",
+    "population": 26508,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.86889",
+      "lon": "9.27639"
+    },
+    "area": 22.82
+  },
+  {
+    "name": "Ehingen",
+    "slug": "ehingen",
+    "population": 26398,
+    "district": "Alb-Donau-Kreis",
+    "coords": {
+      "lat": "48.28333",
+      "lon": "9.72361"
+    },
+    "area": 178.4
+  },
+  {
+    "name": "Neckarsulm",
+    "slug": "neckarsulm",
+    "population": 26324,
+    "district": "Heilbronn",
+    "coords": {
+      "lat": "49.191694",
+      "lon": "9.224556"
+    },
+    "area": 24.94
+  },
+  {
+    "name": "Mühlacker",
+    "slug": "muehlacker",
+    "population": 26093,
+    "district": "Enzkreis",
+    "coords": {
+      "lat": "48.95000",
+      "lon": "8.83944"
+    },
+    "area": 54.32
+  },
+  {
+    "name": "Achern",
+    "slug": "achern",
+    "population": 25615,
+    "district": "Ortenaukreis",
+    "coords": {
+      "lat": "48.633",
+      "lon": "8.067"
+    },
+    "area": 65.24
+  },
+  {
+    "name": "Weingarten",
+    "slug": "weingarten",
+    "population": 25158,
+    "district": "Ravensburg",
+    "coords": {
+      "lat": "47.80917",
+      "lon": "9.64444"
+    },
+    "area": 12.17
+  },
+  {
+    "name": "Horb am Neckar",
+    "slug": "horb-am-neckar",
+    "population": 25092,
+    "district": "Freudenstadt",
+    "coords": {
+      "lat": "48.44528",
+      "lon": "8.69111"
+    },
+    "area": 119.84
+  },
+  {
+    "name": "Rottweil",
+    "slug": "rottweil",
+    "population": 24975,
+    "district": "Rottweil",
+    "coords": {
+      "lat": "48.16806",
+      "lon": "8.62472"
+    },
+    "area": 71.76
+  },
+  {
+    "name": "Öhringen",
+    "slug": "oehringen",
+    "population": 24925,
+    "district": "Hohenlohekreis",
+    "coords": {
+      "lat": "49.200",
+      "lon": "9.500"
+    },
+    "area": 67.79
+  },
+  {
+    "name": "Stutensee",
+    "slug": "stutensee",
+    "population": 24897,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "49.06472",
+      "lon": "8.47167"
+    },
+    "area": 45.67
+  },
+  {
+    "name": "Ditzingen",
+    "slug": "ditzingen",
+    "population": 24719,
+    "district": "Ludwigsburg",
+    "coords": {
+      "lat": "48.82639",
+      "lon": "9.06667"
+    },
+    "area": 30.4
+  },
+  {
+    "name": "Ellwangen",
+    "slug": "ellwangen",
+    "population": 24477,
+    "district": "Ostalbkreis",
+    "coords": {
+      "lat": "48.96111",
+      "lon": "10.13056"
+    },
+    "area": 127.4
+  },
+  {
+    "name": "Waldshut-Tiengen",
+    "slug": "waldshut-tiengen",
+    "population": 24067,
+    "district": "Waldshut",
+    "coords": {
+      "lat": "47.62306",
+      "lon": "8.21444"
+    },
+    "area": 77.98
+  },
+  {
+    "name": "Bad Mergentheim",
+    "slug": "bad-mergentheim",
+    "population": 24034,
+    "district": "Main-Tauber-Kreis",
+    "coords": {
+      "lat": "49.50000",
+      "lon": "9.76667"
+    },
+    "area": 129.97
+  },
+  {
+    "name": "Freudenstadt",
+    "slug": "freudenstadt",
+    "population": 23760,
+    "district": "Freudenstadt",
+    "coords": {
+      "lat": "48.46333",
+      "lon": "8.41111"
+    },
+    "area": 87.58
+  },
+  {
+    "name": "Calw",
+    "slug": "calw",
+    "population": 23716,
+    "district": "Calw",
+    "coords": {
+      "lat": "48.71667",
+      "lon": "8.73333"
+    },
+    "area": 59.88
+  },
+  {
+    "name": "Mosbach",
+    "slug": "mosbach",
+    "population": 23425,
+    "district": "Neckar-Odenwald-Kreis",
+    "coords": {
+      "lat": "49.35222",
+      "lon": "9.14667"
+    },
+    "area": 62.23
+  },
+  {
+    "name": "Leutkirch im Allgäu",
+    "slug": "leutkirch-im-allgaeu",
+    "population": 23030,
+    "district": "Ravensburg",
+    "coords": {
+      "lat": "47.82556",
+      "lon": "10.02222"
+    },
+    "area": 174.95
+  },
+  {
+    "name": "Wertheim",
+    "slug": "wertheim",
+    "population": 22879,
+    "district": "Main-Tauber-Kreis",
+    "coords": {
+      "lat": "49.75889",
+      "lon": "9.51750"
+    },
+    "area": 138.63
+  },
+  {
+    "name": "Überlingen",
+    "slug": "ueberlingen",
+    "population": 22713,
+    "district": "Bodenseekreis",
+    "coords": {
+      "lat": "47.76667",
+      "lon": "9.15833"
+    },
+    "area": 58.67
+  },
+  {
+    "name": "Nagold",
+    "slug": "nagold",
+    "population": 22672,
+    "district": "Calw",
+    "coords": {
+      "lat": "48.55194",
+      "lon": "8.72556"
+    },
+    "area": 63.09
+  },
+  {
+    "name": "Laupheim",
+    "slug": "laupheim",
+    "population": 22579,
+    "district": "Biberach",
+    "coords": {
+      "lat": "48.22889",
+      "lon": "9.87972"
+    },
+    "area": 61.8
+  },
+  {
+    "name": "Donaueschingen",
+    "slug": "donaueschingen",
+    "population": 22205,
+    "district": "Schwarzwald-Baar-Kreis",
+    "coords": {
+      "lat": "47.95306",
+      "lon": "8.50333"
+    },
+    "area": 104.63
+  },
+  {
+    "name": "Metzingen",
+    "slug": "metzingen",
+    "population": 22117,
+    "district": "Reutlingen",
+    "coords": {
+      "lat": "48.53667",
+      "lon": "9.28583"
+    },
+    "area": 34.61
+  },
+  {
+    "name": "Eppingen",
+    "slug": "eppingen",
+    "population": 22024,
+    "district": "Heilbronn",
+    "coords": {
+      "lat": "49.133",
+      "lon": "8.917"
+    },
+    "area": 88.59
+  },
+  {
+    "name": "Waldkirch",
+    "slug": "waldkirch",
+    "population": 21801,
+    "district": "Emmendingen",
+    "coords": {
+      "lat": "48.100",
+      "lon": "7.967"
+    },
+    "area": 48.47
+  },
+  {
+    "name": "Bad Rappenau",
+    "slug": "bad-rappenau",
+    "population": 21650,
+    "district": "Heilbronn",
+    "coords": {
+      "lat": "49.233",
+      "lon": "9.100"
+    },
+    "area": 73.55
+  },
+  {
+    "name": "Schwetzingen",
+    "slug": "schwetzingen",
+    "population": 21577,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.383",
+      "lon": "8.567"
+    },
+    "area": 21.62
+  },
+  {
+    "name": "Hockenheim",
+    "slug": "hockenheim",
+    "population": 21539,
+    "district": "Rhein-Neckar-Kreis",
+    "coords": {
+      "lat": "49.31806",
+      "lon": "8.54722"
+    },
+    "area": 34.84
+  },
+  {
+    "name": "Eislingen",
+    "slug": "eislingen",
+    "population": 21243,
+    "district": "Göppingen",
+    "coords": {
+      "lat": "48.69333",
+      "lon": "9.70667"
+    },
+    "area": 16.41
+  },
+  {
+    "name": "Waghäusel",
+    "slug": "waghaeusel",
+    "population": 21079,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "49.250",
+      "lon": "8.517"
+    },
+    "area": 42.84
+  },
+  {
+    "name": "Schramberg",
+    "slug": "schramberg",
+    "population": 21059,
+    "district": "Rottweil",
+    "coords": {
+      "lat": "48.22694",
+      "lon": "8.38417"
+    },
+    "area": 80.7
+  },
+  {
+    "name": "Bad Krozingen",
+    "slug": "bad-krozingen",
+    "population": 20783,
+    "district": "Breisgau-Hochschwarzwald",
+    "coords": {
+      "lat": "47.917",
+      "lon": "7.700"
+    },
+    "area": 35.66
+  },
+  {
+    "name": "Mössingen",
+    "slug": "moessingen",
+    "population": 20494,
+    "district": "Tübingen",
+    "coords": {
+      "lat": "48.40639",
+      "lon": "9.05750"
+    },
+    "area": 50.05
+  },
+  {
+    "name": "Rheinstetten",
+    "slug": "rheinstetten",
+    "population": 20178,
+    "district": "Karlsruhe",
+    "coords": {
+      "lat": "48.96056",
+      "lon": "8.28972"
+    },
+    "area": 32.31
+  },
+  {
+    "name": "Bad Waldsee",
+    "slug": "bad-waldsee",
+    "population": 20103,
+    "district": "Ravensburg",
+    "coords": {
+      "lat": "47.92111",
+      "lon": "9.75194"
+    },
+    "area": 108.54
+  }
+]

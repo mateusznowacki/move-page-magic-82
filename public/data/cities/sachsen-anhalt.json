@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Halle (Saale)",
+    "slug": "halle-saale",
+    "population": 237865,
+    "district": "Urban district",
+    "coords": {
+      "lat": "51.48278",
+      "lon": "11.96972"
+    },
+    "area": 135.01
+  },
+  {
+    "name": "Magdeburg",
+    "slug": "magdeburg",
+    "population": 235775,
+    "district": "Urban district",
+    "coords": {
+      "lat": "52.13333",
+      "lon": "11.61667"
+    },
+    "area": 200.95
+  },
+  {
+    "name": "Dessau-Roßlau",
+    "slug": "dessau-rosslau",
+    "population": 79354,
+    "district": "Urban district",
+    "coords": {
+      "lat": "51.833",
+      "lon": "12.250"
+    },
+    "area": 244.62
+  },
+  {
+    "name": "Wittenberg",
+    "slug": "wittenberg",
+    "population": 45425,
+    "district": "Wittenberg",
+    "coords": {
+      "lat": "51.8671",
+      "lon": "12.6484"
+    },
+    "area": 240.32
+  },
+  {
+    "name": "Weißenfels",
+    "slug": "weissenfels",
+    "population": 39958,
+    "district": "Burgenlandkreis",
+    "coords": {
+      "lat": "51.200",
+      "lon": "11.967"
+    },
+    "area": 113.51
+  },
+  {
+    "name": "Halberstadt",
+    "slug": "halberstadt",
+    "population": 39221,
+    "district": "Harz",
+    "coords": {
+      "lat": "51.89583",
+      "lon": "11.04667"
+    },
+    "area": 142.97
+  },
+  {
+    "name": "Stendal",
+    "slug": "stendal",
+    "population": 38778,
+    "district": "Stendal",
+    "coords": {
+      "lat": "52.600",
+      "lon": "11.850"
+    },
+    "area": 268.02
+  },
+  {
+    "name": "Bitterfeld-Wolfen",
+    "slug": "bitterfeld-wolfen",
+    "population": 37568,
+    "district": "Anhalt-Bitterfeld",
+    "coords": {
+      "lat": "51.617",
+      "lon": "12.317"
+    },
+    "area": 87.55
+  },
+  {
+    "name": "Merseburg",
+    "slug": "merseburg",
+    "population": 33593,
+    "district": "Saalekreis",
+    "coords": {
+      "lat": "51.35444",
+      "lon": "11.99278"
+    },
+    "area": 54.73
+  },
+  {
+    "name": "Bernburg",
+    "slug": "bernburg",
+    "population": 32257,
+    "district": "Salzlandkreis",
+    "coords": {
+      "lat": "51.800",
+      "lon": "11.733"
+    },
+    "area": 113.45
+  },
+  {
+    "name": "Wernigerode",
+    "slug": "wernigerode",
+    "population": 32181,
+    "district": "Harz",
+    "coords": {
+      "lat": "51.83500",
+      "lon": "10.78528"
+    },
+    "area": 170.03
+  },
+  {
+    "name": "Naumburg",
+    "slug": "naumburg",
+    "population": 32053,
+    "district": "Burgenlandkreis",
+    "coords": {
+      "lat": "51.150",
+      "lon": "11.817"
+    },
+    "area": 129.88
+  },
+  {
+    "name": "Schönebeck",
+    "slug": "schoenebeck",
+    "population": 30387,
+    "district": "Salzlandkreis",
+    "coords": {
+      "lat": "52.017",
+      "lon": "11.750"
+    },
+    "area": 85.77
+  },
+  {
+    "name": "Zeitz",
+    "slug": "zeitz",
+    "population": 27187,
+    "district": "Burgenlandkreis",
+    "coords": {
+      "lat": "51.04778",
+      "lon": "12.13833"
+    },
+    "area": 87.15
+  },
+  {
+    "name": "Aschersleben",
+    "slug": "aschersleben",
+    "population": 26737,
+    "district": "Salzlandkreis",
+    "coords": {
+      "lat": "51.750",
+      "lon": "11.467"
+    },
+    "area": 156.31
+  },
+  {
+    "name": "Sangerhausen",
+    "slug": "sangerhausen",
+    "population": 25703,
+    "district": "Mansfeld-Südharz",
+    "coords": {
+      "lat": "51.46667",
+      "lon": "11.30000"
+    },
+    "area": 207.64
+  },
+  {
+    "name": "Köthen",
+    "slug": "koethen",
+    "population": 25244,
+    "district": "Anhalt-Bitterfeld",
+    "coords": {
+      "lat": "51.75000",
+      "lon": "11.91667"
+    },
+    "area": 78.42
+  },
+  {
+    "name": "Staßfurt",
+    "slug": "stassfurt",
+    "population": 24618,
+    "district": "Salzlandkreis",
+    "coords": {
+      "lat": "51.867",
+      "lon": "11.567"
+    },
+    "area": 146.53
+  },
+  {
+    "name": "Quedlinburg",
+    "slug": "quedlinburg",
+    "population": 23604,
+    "district": "Harz",
+    "coords": {
+      "lat": "51.79167",
+      "lon": "11.14722"
+    },
+    "area": 120.42
+  },
+  {
+    "name": "Salzwedel",
+    "slug": "salzwedel",
+    "population": 23306,
+    "district": "Altmarkkreis Salzwedel",
+    "coords": {
+      "lat": "52.850",
+      "lon": "11.150"
+    },
+    "area": 304.53
+  },
+  {
+    "name": "Eisleben",
+    "slug": "eisleben",
+    "population": 22668,
+    "district": "Mansfeld-Südharz",
+    "coords": {
+      "lat": "51.517",
+      "lon": "11.550"
+    },
+    "area": 143.81
+  },
+  {
+    "name": "Burg",
+    "slug": "burg",
+    "population": 22240,
+    "district": "Jerichower Land",
+    "coords": {
+      "lat": "52.27250",
+      "lon": "11.85500"
+    },
+    "area": 164.02
+  },
+  {
+    "name": "Gardelegen",
+    "slug": "gardelegen",
+    "population": 22154,
+    "district": "Altmarkkreis Salzwedel",
+    "coords": {
+      "lat": "52.52639",
+      "lon": "11.39250"
+    },
+    "area": 632.43
+  },
+  {
+    "name": "Zerbst",
+    "slug": "zerbst",
+    "population": 21294,
+    "district": "Anhalt-Bitterfeld",
+    "coords": {
+      "lat": "51.96806",
+      "lon": "12.08444"
+    },
+    "area": 467.65
+  }
+]

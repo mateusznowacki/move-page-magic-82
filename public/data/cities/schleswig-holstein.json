@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Kiel",
+    "slug": "kiel",
+    "population": 246601,
+    "district": "Urban district",
+    "coords": {
+      "lat": "54.32333",
+      "lon": "10.13944"
+    },
+    "area": 118.6
+  },
+  {
+    "name": "Lübeck",
+    "slug": "luebeck",
+    "population": 215846,
+    "district": "Urban district",
+    "coords": {
+      "lat": "53.86972",
+      "lon": "10.68639"
+    },
+    "area": 214.13
+  },
+  {
+    "name": "Flensburg",
+    "slug": "flensburg",
+    "population": 89934,
+    "district": "Urban district",
+    "coords": {
+      "lat": "54.78194",
+      "lon": "9.43667"
+    },
+    "area": 56.38
+  },
+  {
+    "name": "Neumünster",
+    "slug": "neumuenster",
+    "population": 79905,
+    "district": "Urban district",
+    "coords": {
+      "lat": "54.07139",
+      "lon": "9.99000"
+    },
+    "area": 71.57
+  },
+  {
+    "name": "Norderstedt",
+    "slug": "norderstedt",
+    "population": 79155,
+    "district": "Kreis Segeberg",
+    "coords": {
+      "lat": "53.70639",
+      "lon": "10.01028"
+    },
+    "area": 58.1
+  },
+  {
+    "name": "Elmshorn",
+    "slug": "elmshorn",
+    "population": 49948,
+    "district": "Pinneberg",
+    "coords": {
+      "lat": "53.75194",
+      "lon": "9.65111"
+    },
+    "area": 21.36
+  },
+  {
+    "name": "Pinneberg",
+    "slug": "pinneberg",
+    "population": 43503,
+    "district": "Pinneberg",
+    "coords": {
+      "lat": "53.633",
+      "lon": "9.800"
+    },
+    "area": 21.54
+  },
+  {
+    "name": "Ahrensburg",
+    "slug": "ahrensburg",
+    "population": 34052,
+    "district": "Stormarn",
+    "coords": {
+      "lat": "53.67472",
+      "lon": "10.24111"
+    },
+    "area": 35.3
+  },
+  {
+    "name": "Wedel",
+    "slug": "wedel",
+    "population": 33935,
+    "district": "Pinneberg",
+    "coords": {
+      "lat": "53.583",
+      "lon": "9.700"
+    },
+    "area": 33.82
+  },
+  {
+    "name": "Itzehoe",
+    "slug": "itzehoe",
+    "population": 31796,
+    "district": "Steinburg",
+    "coords": {
+      "lat": "53.92500",
+      "lon": "9.51639"
+    },
+    "area": 28.03
+  },
+  {
+    "name": "Geesthacht",
+    "slug": "geesthacht",
+    "population": 31160,
+    "district": "Lauenburg",
+    "coords": {
+      "lat": "53.43750",
+      "lon": "10.36750"
+    },
+    "area": 33.18
+  },
+  {
+    "name": "Rendsburg",
+    "slug": "rendsburg",
+    "population": 28705,
+    "district": "Rendsburg-Eckernförde",
+    "coords": {
+      "lat": "54.30000",
+      "lon": "9.66667"
+    },
+    "area": 23.72
+  },
+  {
+    "name": "Reinbek",
+    "slug": "reinbek",
+    "population": 28250,
+    "district": "Stormarn",
+    "coords": {
+      "lat": "53.50889",
+      "lon": "10.24833"
+    },
+    "area": 31.23
+  },
+  {
+    "name": "Schleswig",
+    "slug": "schleswig",
+    "population": 25322,
+    "district": "Schleswig-Flensburg",
+    "coords": {
+      "lat": "54.51806",
+      "lon": "9.57028"
+    },
+    "area": 24.3
+  },
+  {
+    "name": "Bad Oldesloe",
+    "slug": "bad-oldesloe",
+    "population": 24784,
+    "district": "Stormarn",
+    "coords": {
+      "lat": "53.81167",
+      "lon": "10.37417"
+    },
+    "area": 52.6
+  },
+  {
+    "name": "Husum",
+    "slug": "husum",
+    "population": 23249,
+    "district": "Nordfriesland",
+    "coords": {
+      "lat": "54.46667",
+      "lon": "9.05000"
+    },
+    "area": 25.82
+  },
+  {
+    "name": "Kaltenkirchen",
+    "slug": "kaltenkirchen",
+    "population": 22877,
+    "district": "Segeberg",
+    "coords": {
+      "lat": "53.83972",
+      "lon": "9.96028"
+    },
+    "area": 23.1
+  },
+  {
+    "name": "Quickborn",
+    "slug": "quickborn",
+    "population": 21659,
+    "district": "Pinneberg",
+    "coords": {
+      "lat": "53.73333",
+      "lon": "9.89722"
+    },
+    "area": 43.16
+  },
+  {
+    "name": "Eckernförde Eckernföör, Egernførde",
+    "slug": "eckernfoerde-eckernfoeoer-egernfrde",
+    "population": 21637,
+    "district": "Rendsburg-Eckernförde",
+    "coords": {
+      "lat": "54.47417",
+      "lon": "9.83778"
+    },
+    "area": 17.97
+  },
+  {
+    "name": "Heide",
+    "slug": "heide",
+    "population": 21485,
+    "district": "Dithmarschen",
+    "coords": {
+      "lat": "54.19611",
+      "lon": "9.09333"
+    },
+    "area": 31.8938
+  },
+  {
+    "name": "Bad Schwartau",
+    "slug": "bad-schwartau",
+    "population": 20240,
+    "district": "Ostholstein",
+    "coords": {
+      "lat": "53.91944",
+      "lon": "10.69750"
+    },
+    "area": 18.39
+  }
+]

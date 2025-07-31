@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Berlin",
+    "slug": "berlin",
+    "population": 3664088,
+    "coords": {
+      "lat": "52.52000",
+      "lon": "13.40500"
+    },
+    "area": 891.7
+  }
+]

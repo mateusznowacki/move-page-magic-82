@@ -1,0 +1,266 @@
+[
+  {
+    "name": "Potsdam",
+    "slug": "potsdam",
+    "population": 182112,
+    "district": "Urban district",
+    "coords": {
+      "lat": "52.400",
+      "lon": "13.067"
+    },
+    "area": 187.28
+  },
+  {
+    "name": "Cottbus/Chóśebuz",
+    "slug": "cottbuschebuz",
+    "population": 98693,
+    "district": "Urban district",
+    "coords": {
+      "lat": "51.76056",
+      "lon": "14.33417"
+    },
+    "area": 164.28
+  },
+  {
+    "name": "Brandenburg an der Havel",
+    "slug": "brandenburg-an-der-havel",
+    "population": 72040,
+    "district": "Urban district",
+    "coords": {
+      "lat": "52.41667",
+      "lon": "12.53333"
+    },
+    "area": 228.8
+  },
+  {
+    "name": "Frankfurt (Oder)",
+    "slug": "frankfurt-oder",
+    "population": 57015,
+    "district": "Urban district",
+    "coords": {
+      "lat": "52.341944",
+      "lon": "14.551667"
+    },
+    "area": 147.61
+  },
+  {
+    "name": "Oranienburg",
+    "slug": "oranienburg",
+    "population": 45492,
+    "district": "Oberhavel",
+    "coords": {
+      "lat": "52.75444",
+      "lon": "13.23694"
+    },
+    "area": 162.37
+  },
+  {
+    "name": "Falkensee",
+    "slug": "falkensee",
+    "population": 44236,
+    "district": "Havelland",
+    "coords": {
+      "lat": "52.55833",
+      "lon": "13.09167"
+    },
+    "area": 43.3
+  },
+  {
+    "name": "Eberswalde",
+    "slug": "eberswalde",
+    "population": 40965,
+    "district": "Barnim",
+    "coords": {
+      "lat": "52.833",
+      "lon": "13.833"
+    },
+    "area": 58.17
+  },
+  {
+    "name": "Bernau bei Berlin",
+    "slug": "bernau-bei-berlin",
+    "population": 40908,
+    "district": "Barnim",
+    "coords": {
+      "lat": "52.66667",
+      "lon": "13.58306"
+    },
+    "area": 103.73
+  },
+  {
+    "name": "Königs Wusterhausen",
+    "slug": "koenigs-wusterhausen",
+    "population": 38111,
+    "district": "Dahme-Spreewald",
+    "coords": {
+      "lat": "52.29167",
+      "lon": "13.62500"
+    },
+    "area": 95.83
+  },
+  {
+    "name": "Fürstenwalde/Spree",
+    "slug": "fuerstenwaldespree",
+    "population": 31992,
+    "district": "Oder-Spree",
+    "coords": {
+      "lat": "52.367",
+      "lon": "14.067"
+    },
+    "area": 70.55
+  },
+  {
+    "name": "Neuruppin",
+    "slug": "neuruppin",
+    "population": 30764,
+    "district": "Ostprignitz-Ruppin",
+    "coords": {
+      "lat": "52.93306",
+      "lon": "12.80000"
+    },
+    "area": 303.32
+  },
+  {
+    "name": "Schwedt",
+    "slug": "schwedt",
+    "population": 30189,
+    "district": "Uckermark",
+    "coords": {
+      "lat": "53.050",
+      "lon": "14.267"
+    },
+    "area": 252.19
+  },
+  {
+    "name": "Teltow",
+    "slug": "teltow",
+    "population": 27097,
+    "district": "Potsdam-Mittelmark",
+    "coords": {
+      "lat": "52.40222",
+      "lon": "13.27056"
+    },
+    "area": 21.54
+  },
+  {
+    "name": "Strausberg",
+    "slug": "strausberg",
+    "population": 26939,
+    "district": "Märkisch-Oderland",
+    "coords": {
+      "lat": "52.58333",
+      "lon": "13.88333"
+    },
+    "area": 67.86
+  },
+  {
+    "name": "Ludwigsfelde",
+    "slug": "ludwigsfelde",
+    "population": 26936,
+    "district": "Teltow-Fläming",
+    "coords": {
+      "lat": "52.29972",
+      "lon": "13.26667"
+    },
+    "area": 109.3
+  },
+  {
+    "name": "Werder (Havel)",
+    "slug": "werder-havel",
+    "population": 26662,
+    "district": "Potsdam-Mittelmark",
+    "coords": {
+      "lat": "52.37806",
+      "lon": "12.93500"
+    },
+    "area": 115.99
+  },
+  {
+    "name": "Hennigsdorf",
+    "slug": "hennigsdorf",
+    "population": 26559,
+    "district": "Oberhavel",
+    "coords": {
+      "lat": "52.63778",
+      "lon": "13.20361"
+    },
+    "area": 31.29
+  },
+  {
+    "name": "Hohen Neuendorf",
+    "slug": "hohen-neuendorf",
+    "population": 26380,
+    "district": "Oberhavel",
+    "coords": {
+      "lat": "52.667",
+      "lon": "13.283"
+    },
+    "area": 48.06
+  },
+  {
+    "name": "Rathenow",
+    "slug": "rathenow",
+    "population": 24179,
+    "district": "Havelland",
+    "coords": {
+      "lat": "52.600",
+      "lon": "12.333"
+    },
+    "area": 105.68
+  },
+  {
+    "name": "Eisenhüttenstadt",
+    "slug": "eisenhuettenstadt",
+    "population": 23373,
+    "district": "Oder-Spree",
+    "coords": {
+      "lat": "52.14500",
+      "lon": "14.67278"
+    },
+    "area": 63.4
+  },
+  {
+    "name": "Senftenberg",
+    "slug": "senftenberg",
+    "population": 23371,
+    "district": "Oberspreewald-Lausitz",
+    "coords": {
+      "lat": "51.517",
+      "lon": "14.017"
+    },
+    "area": 127.56
+  },
+  {
+    "name": "Spremberg",
+    "slug": "spremberg",
+    "population": 21749,
+    "district": "Spree-Neiße",
+    "coords": {
+      "lat": "51.57167",
+      "lon": "14.37944"
+    },
+    "area": 202.31
+  },
+  {
+    "name": "Luckenwalde",
+    "slug": "luckenwalde",
+    "population": 20586,
+    "district": "Teltow-Fläming",
+    "coords": {
+      "lat": "52.083",
+      "lon": "13.167"
+    },
+    "area": 46.75
+  },
+  {
+    "name": "Zossen",
+    "slug": "zossen",
+    "population": 20182,
+    "district": "Teltow-Fläming",
+    "coords": {
+      "lat": "52.21667",
+      "lon": "13.44972"
+    },
+    "area": 179.57
+  }
+]

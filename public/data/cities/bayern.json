@@ -1,0 +1,739 @@
+[
+  {
+    "name": "Munich",
+    "slug": "munich",
+    "population": 1488202,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.133",
+      "lon": "11.567"
+    },
+    "area": 310.71
+  },
+  {
+    "name": "Nuremberg",
+    "slug": "nuremberg",
+    "population": 515543,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.45389",
+      "lon": "11.07750"
+    },
+    "area": 186.46
+  },
+  {
+    "name": "Augsburg",
+    "slug": "augsburg",
+    "population": 295830,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.367",
+      "lon": "10.900"
+    },
+    "area": 146.84
+  },
+  {
+    "name": "Regensburg",
+    "slug": "regensburg",
+    "population": 152270,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.017",
+      "lon": "12.083"
+    },
+    "area": 80.76
+  },
+  {
+    "name": "Ingolstadt",
+    "slug": "ingolstadt",
+    "population": 136952,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.767",
+      "lon": "11.433"
+    },
+    "area": 133.37
+  },
+  {
+    "name": "Fürth",
+    "slug": "fuerth",
+    "population": 128223,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.467",
+      "lon": "11.000"
+    },
+    "area": 63.35
+  },
+  {
+    "name": "Würzburg",
+    "slug": "wuerzburg",
+    "population": 126954,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.783",
+      "lon": "9.933"
+    },
+    "area": 87.63
+  },
+  {
+    "name": "Erlangen",
+    "slug": "erlangen",
+    "population": 112385,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.583",
+      "lon": "11.017"
+    },
+    "area": 76.95
+  },
+  {
+    "name": "Bamberg",
+    "slug": "bamberg",
+    "population": 76674,
+    "district": "Urban districts of Germany",
+    "coords": {
+      "lat": "49.900",
+      "lon": "10.900"
+    },
+    "area": 54.62
+  },
+  {
+    "name": "Bayreuth",
+    "slug": "bayreuth",
+    "population": 74048,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.94806",
+      "lon": "11.57833"
+    },
+    "area": 66.92
+  },
+  {
+    "name": "Landshut",
+    "slug": "landshut",
+    "population": 73065,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.53972",
+      "lon": "12.15083"
+    },
+    "area": 65.7
+  },
+  {
+    "name": "Aschaffenburg",
+    "slug": "aschaffenburg",
+    "population": 70858,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.96667",
+      "lon": "9.15000"
+    },
+    "area": 62.45
+  },
+  {
+    "name": "Kempten",
+    "slug": "kempten",
+    "population": 68940,
+    "district": "Urban district",
+    "coords": {
+      "lat": "47.733",
+      "lon": "10.317"
+    },
+    "area": 63.29
+  },
+  {
+    "name": "Rosenheim",
+    "slug": "rosenheim",
+    "population": 63591,
+    "district": "urban district",
+    "coords": {
+      "lat": "47.85000",
+      "lon": "12.13333"
+    },
+    "area": 37.22
+  },
+  {
+    "name": "Neu-Ulm",
+    "slug": "neu-ulm",
+    "population": 58841,
+    "district": "Neu-Ulm",
+    "coords": {
+      "lat": "48.383",
+      "lon": "10.000"
+    },
+    "area": 80.5
+  },
+  {
+    "name": "Schweinfurt",
+    "slug": "schweinfurt",
+    "population": 53319,
+    "district": "Urban district",
+    "coords": {
+      "lat": "50.05000",
+      "lon": "10.23333"
+    },
+    "area": 35.71
+  },
+  {
+    "name": "Passau",
+    "slug": "passau",
+    "population": 52415,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.56667",
+      "lon": "13.46667"
+    },
+    "area": 69.58
+  },
+  {
+    "name": "Freising",
+    "slug": "freising",
+    "population": 48872,
+    "district": "Freising",
+    "coords": {
+      "lat": "48.40278",
+      "lon": "11.74889"
+    },
+    "area": 88.45
+  },
+  {
+    "name": "Dachau, Bavaria",
+    "slug": "dachau-bavaria",
+    "population": 47680,
+    "district": "Dachau",
+    "coords": {
+      "lat": "48.26028",
+      "lon": "11.43417"
+    },
+    "area": 34.85
+  },
+  {
+    "name": "Straubing",
+    "slug": "straubing",
+    "population": 47612,
+    "district": "Urban district",
+    "coords": {
+      "lat": "48.883",
+      "lon": "12.567"
+    },
+    "area": 67.58
+  },
+  {
+    "name": "Hof",
+    "slug": "hof",
+    "population": 45173,
+    "district": "Urban district",
+    "coords": {
+      "lat": "50.31667",
+      "lon": "11.91667"
+    },
+    "area": 58.02
+  },
+  {
+    "name": "Kaufbeuren",
+    "slug": "kaufbeuren",
+    "population": 44662,
+    "district": "Urban district",
+    "coords": {
+      "lat": "47.88000",
+      "lon": "10.62250"
+    },
+    "area": 40.02
+  },
+  {
+    "name": "Memmingen",
+    "slug": "memmingen",
+    "population": 44360,
+    "district": "Urban district",
+    "coords": {
+      "lat": "47.98778",
+      "lon": "10.18111"
+    },
+    "area": 70.17
+  },
+  {
+    "name": "Weiden in der Oberpfalz",
+    "slug": "weiden-in-der-oberpfalz",
+    "population": 42535,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.667",
+      "lon": "12.150"
+    },
+    "area": 68.5
+  },
+  {
+    "name": "Amberg",
+    "slug": "amberg",
+    "population": 42052,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.44444",
+      "lon": "11.84833"
+    },
+    "area": 50.04
+  },
+  {
+    "name": "Ansbach",
+    "slug": "ansbach",
+    "population": 41681,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.30000",
+      "lon": "10.58333"
+    },
+    "area": 99.92
+  },
+  {
+    "name": "Schwabach",
+    "slug": "schwabach",
+    "population": 41056,
+    "district": "Urban district",
+    "coords": {
+      "lat": "49.32917",
+      "lon": "11.02083"
+    },
+    "area": 40.71
+  },
+  {
+    "name": "Coburg",
+    "slug": "coburg",
+    "population": 40842,
+    "district": "Urban district",
+    "coords": {
+      "lat": "50.267",
+      "lon": "10.967"
+    },
+    "area": 48.3
+  },
+  {
+    "name": "Germering",
+    "slug": "germering",
+    "population": 40511,
+    "district": "Fürstenfeldbruck",
+    "coords": {
+      "lat": "48.133",
+      "lon": "11.367"
+    },
+    "area": 21.61
+  },
+  {
+    "name": "Neumarkt in der Oberpfalz",
+    "slug": "neumarkt-in-der-oberpfalz",
+    "population": 40243,
+    "district": "Neumarkt in der Oberpfalz",
+    "coords": {
+      "lat": "49.283",
+      "lon": "11.467"
+    },
+    "area": 79.03
+  },
+  {
+    "name": "Fürstenfeldbruck",
+    "slug": "fuerstenfeldbruck",
+    "population": 36843,
+    "district": "Fürstenfeldbruck",
+    "coords": {
+      "lat": "48.17778",
+      "lon": "11.25556"
+    },
+    "area": 32.53
+  },
+  {
+    "name": "Erding",
+    "slug": "erding",
+    "population": 36455,
+    "district": "Erding",
+    "coords": {
+      "lat": "48.283",
+      "lon": "11.900"
+    },
+    "area": 54.64
+  },
+  {
+    "name": "Deggendorf",
+    "slug": "deggendorf",
+    "population": 33750,
+    "district": "Deggendorf",
+    "coords": {
+      "lat": "48.833",
+      "lon": "12.967"
+    },
+    "area": 77.21
+  },
+  {
+    "name": "Forchheim",
+    "slug": "forchheim",
+    "population": 32374,
+    "district": "Forchheim",
+    "coords": {
+      "lat": "49.71972",
+      "lon": "11.05806"
+    },
+    "area": 44.95
+  },
+  {
+    "name": "Friedberg",
+    "slug": "friedberg",
+    "population": 29916,
+    "district": "Aichach-Friedberg",
+    "coords": {
+      "lat": "48.350",
+      "lon": "10.983"
+    },
+    "area": 81.2
+  },
+  {
+    "name": "Neuburg a.d. Donau",
+    "slug": "neuburg-ad-donau",
+    "population": 29662,
+    "district": "Neuburg-Schrobenhausen",
+    "coords": {
+      "lat": "48.733",
+      "lon": "11.183"
+    },
+    "area": 81.32
+  },
+  {
+    "name": "Landsberg am Lech",
+    "slug": "landsberg-am-lech",
+    "population": 29346,
+    "district": "Landsberg am Lech",
+    "coords": {
+      "lat": "48.04778",
+      "lon": "10.89889"
+    },
+    "area": 57.89
+  },
+  {
+    "name": "Schwandorf",
+    "slug": "schwandorf",
+    "population": 29020,
+    "district": "Schwandorf",
+    "coords": {
+      "lat": "49.32833",
+      "lon": "12.11000"
+    },
+    "area": 123.76
+  },
+  {
+    "name": "Unterschleißheim",
+    "slug": "unterschleissheim",
+    "population": 28824,
+    "district": "Munich",
+    "coords": {
+      "lat": "48.28333",
+      "lon": "11.56667"
+    },
+    "area": 14.93
+  },
+  {
+    "name": "Königsbrunn",
+    "slug": "koenigsbrunn",
+    "population": 28075,
+    "district": "Augsburg",
+    "coords": {
+      "lat": "48.26889",
+      "lon": "10.89083"
+    },
+    "area": 18.4
+  },
+  {
+    "name": "Olching",
+    "slug": "olching",
+    "population": 27930,
+    "district": "Fürstenfeldbruck",
+    "coords": {
+      "lat": "48.200",
+      "lon": "11.317"
+    },
+    "area": 29.91
+  },
+  {
+    "name": "Lauf an der Pegnitz",
+    "slug": "lauf-an-der-pegnitz",
+    "population": 26434,
+    "district": "Nürnberger Land",
+    "coords": {
+      "lat": "49.51028",
+      "lon": "11.27722"
+    },
+    "area": 59.8
+  },
+  {
+    "name": "Pfaffenhofen a.d.Ilm",
+    "slug": "pfaffenhofen-adilm",
+    "population": 26272,
+    "district": "Pfaffenhofen a.d.Ilm",
+    "coords": {
+      "lat": "48.533",
+      "lon": "11.517"
+    },
+    "area": 92.39
+  },
+  {
+    "name": "Kulmbach",
+    "slug": "kulmbach",
+    "population": 25781,
+    "district": "Kulmbach",
+    "coords": {
+      "lat": "50.100",
+      "lon": "11.433"
+    },
+    "area": 92.77
+  },
+  {
+    "name": "Zirndorf",
+    "slug": "zirndorf",
+    "population": 25748,
+    "district": "Fürth",
+    "coords": {
+      "lat": "49.450",
+      "lon": "10.950"
+    },
+    "area": 28.78
+  },
+  {
+    "name": "Lindau",
+    "slug": "lindau",
+    "population": 25543,
+    "district": "Lindau",
+    "coords": {
+      "lat": "47.54583",
+      "lon": "9.68333"
+    },
+    "area": 33.18
+  },
+  {
+    "name": "Geretsried",
+    "slug": "geretsried",
+    "population": 25380,
+    "district": "Bad Tölz-Wolfratshausen",
+    "coords": {
+      "lat": "47.867",
+      "lon": "11.467"
+    },
+    "area": 24.65
+  },
+  {
+    "name": "Roth",
+    "slug": "roth",
+    "population": 25232,
+    "district": "Roth",
+    "coords": {
+      "lat": "49.24611",
+      "lon": "11.09111"
+    },
+    "area": 96.25
+  },
+  {
+    "name": "Herzogenaurach",
+    "slug": "herzogenaurach",
+    "population": 23616,
+    "district": "Erlangen-Höchstadt",
+    "coords": {
+      "lat": "49.567",
+      "lon": "10.883"
+    },
+    "area": 47.6
+  },
+  {
+    "name": "Waldkraiburg",
+    "slug": "waldkraiburg",
+    "population": 23604,
+    "district": "Mühldorf am Inn",
+    "coords": {
+      "lat": "48.217",
+      "lon": "12.400"
+    },
+    "area": 21.53
+  },
+  {
+    "name": "Starnberg",
+    "slug": "starnberg",
+    "population": 23511,
+    "district": "Starnberg",
+    "coords": {
+      "lat": "47.99722",
+      "lon": "11.34056"
+    },
+    "area": 61.77
+  },
+  {
+    "name": "Weilheim in Oberbayern",
+    "slug": "weilheim-in-oberbayern",
+    "population": 22727,
+    "district": "Weilheim-Schongau",
+    "coords": {
+      "lat": "47.833",
+      "lon": "11.150"
+    },
+    "area": 55.44
+  },
+  {
+    "name": "Gersthofen",
+    "slug": "gersthofen",
+    "population": 22602,
+    "district": "Augsburg",
+    "coords": {
+      "lat": "48.417",
+      "lon": "10.867"
+    },
+    "area": 33.95
+  },
+  {
+    "name": "Senden",
+    "slug": "senden",
+    "population": 22587,
+    "district": "Neu-Ulm",
+    "coords": {
+      "lat": "48.317",
+      "lon": "10.067"
+    },
+    "area": 25.17
+  },
+  {
+    "name": "Neusäß",
+    "slug": "neusaess",
+    "population": 22482,
+    "district": "Augsburg",
+    "coords": {
+      "lat": "48.400",
+      "lon": "10.833"
+    },
+    "area": 25.14
+  },
+  {
+    "name": "Bad Kissingen",
+    "slug": "bad-kissingen",
+    "population": 22421,
+    "district": "Bad Kissingen",
+    "coords": {
+      "lat": "50.200",
+      "lon": "10.067"
+    },
+    "area": 69.42
+  },
+  {
+    "name": "Kitzingen",
+    "slug": "kitzingen",
+    "population": 22141,
+    "district": "Kitzingen",
+    "coords": {
+      "lat": "49.733",
+      "lon": "10.167"
+    },
+    "area": 46.99
+  },
+  {
+    "name": "Sonthofen",
+    "slug": "sonthofen",
+    "population": 21517,
+    "district": "Oberallgäu",
+    "coords": {
+      "lat": "47.51583",
+      "lon": "10.28111"
+    },
+    "area": 20.982
+  },
+  {
+    "name": "Aichach",
+    "slug": "aichach",
+    "population": 21488,
+    "district": "Aichach-Friedberg",
+    "coords": {
+      "lat": "48.45000",
+      "lon": "11.13333"
+    },
+    "area": 92.97
+  },
+  {
+    "name": "Puchheim",
+    "slug": "puchheim",
+    "population": 21235,
+    "district": "Fürstenfeldbruck",
+    "coords": {
+      "lat": "48.150",
+      "lon": "11.350"
+    },
+    "area": 12.23
+  },
+  {
+    "name": "Mühldorf am Inn",
+    "slug": "muehldorf-am-inn",
+    "population": 20962,
+    "district": "Mühldorf am Inn",
+    "coords": {
+      "lat": "48.24167",
+      "lon": "12.52500"
+    },
+    "area": 29.42
+  },
+  {
+    "name": "Günzburg",
+    "slug": "guenzburg",
+    "population": 20958,
+    "district": "Günzburg",
+    "coords": {
+      "lat": "48.45267",
+      "lon": "10.27133"
+    },
+    "area": 55.4
+  },
+  {
+    "name": "Traunreut",
+    "slug": "traunreut",
+    "population": 20951,
+    "district": "Traunstein",
+    "coords": {
+      "lat": "47.967",
+      "lon": "12.583"
+    },
+    "area": 45.05
+  },
+  {
+    "name": "Nördlingen",
+    "slug": "noerdlingen",
+    "population": 20674,
+    "district": "Donau-Ries",
+    "coords": {
+      "lat": "48.85111",
+      "lon": "10.48833"
+    },
+    "area": 68.1
+  },
+  {
+    "name": "Traunstein",
+    "slug": "traunstein",
+    "population": 20530,
+    "district": "Traunstein",
+    "coords": {
+      "lat": "47.867",
+      "lon": "12.633"
+    },
+    "area": 48.53
+  },
+  {
+    "name": "Lichtenfels",
+    "slug": "lichtenfels",
+    "population": 20034,
+    "district": "Lichtenfels",
+    "coords": {
+      "lat": "50.133",
+      "lon": "11.033"
+    },
+    "area": 122.27
+  },
+  {
+    "name": "Dingolfing",
+    "slug": "dingolfing",
+    "population": 20003,
+    "district": "Dingolfing-Landau",
+    "coords": {
+      "lat": "48.633",
+      "lon": "12.500"
+    },
+    "area": 44.04
+  }
+]
