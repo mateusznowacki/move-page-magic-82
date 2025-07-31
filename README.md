@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+# MP Transporte und Umzüge - Website
 
-## Project info
+Profesjonalna strona internetowa firmy przeprowadzkowej MP Transporte und Umzüge z siedzibą w Berlinie.
 
-**URL**: https://lovable.dev/projects/87195185-1ad6-454e-9bba-1a638ce61fcf
+## 🚀 Funkcje
 
-## How can I edit this code?
+- **Wielojęzyczność**: Polski, Niemiecki, Angielski, Hiszpański
+- **Responsywny design**: Dostosowany do wszystkich urządzeń
+- **Mapy interaktywne**: Mapbox z obszarami działania
+- **Formularz kontaktowy**: Integracja z WhatsApp
+- **SEO zoptymalizowany**: Strukturalne dane i meta tagi
+- **Strony prawne**: Polityka prywatności, regulamin, polityka cookies
 
-There are several ways of editing your application.
+## 🛠️ Technologie
 
-**Use Lovable**
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- React Router
+- Mapbox GL JS
+- Lucide React Icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/87195185-1ad6-454e-9bba-1a638ce61fcf) and start prompting.
+## 📦 Instalacja
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+# Klonowanie repozytorium
+git clone [repository-url]
+cd meisterumzuege24.de
 
-**Use your preferred IDE**
+# Instalacja zależności
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Uruchomienie w trybie deweloperskim
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🐳 Docker Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Podstawowy deployment
 
-**Use GitHub Codespaces**
+```bash
+# Budowanie obrazu
+docker build -t meisterumzuege24 .
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Uruchomienie kontenera
+docker run -d -p 80:80 --name meisterumzuege24-web meisterumzuege24
+```
 
-## What technologies are used for this project?
+### Z docker-compose
 
-This project is built with:
+```bash
+# Uruchomienie aplikacji
+docker-compose up -d
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Z SSL (wymaga certyfikatów w folderze ./ssl)
+docker-compose --profile ssl up -d
+```
 
-## How can I deploy this project?
+### Struktura plików SSL
 
-Simply open [Lovable](https://lovable.dev/projects/87195185-1ad6-454e-9bba-1a638ce61fcf) and click on Share -> Publish.
+```
+ssl/
+├── cert.pem    # Certyfikat SSL
+└── key.pem     # Klucz prywatny
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🌐 Dostępne ścieżki
 
-Yes, you can!
+- `/` - Strona główna
+- `/dienstleistungen` - Usługi
+- `/einsatzgebiete` - Obszary działania
+- `/angebot` - Wycena
+- `/privacy-policy` - Polityka prywatności
+- `/terms-of-service` - Regulamin
+- `/cookie-policy` - Polityka cookies
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔧 Konfiguracja
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Zmienne środowiskowe
+
+```bash
+# Mapbox API Key
+VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_token
+
+# Google Analytics
+VITE_GA_MEASUREMENT_ID=your_ga_id
+```
+
+### Nginx konfiguracja
+
+Aplikacja używa nginx jako serwera produkcyjnego z:
+- Kompresją gzip
+- Cache'owaniem statycznych plików
+- Nagłówkami bezpieczeństwa
+- Obsługą SPA routing
+- Health check endpoint
+
+## 📊 Monitoring
+
+- Health check: `GET /health`
+- Logi nginx: `/var/log/nginx/`
+- Docker logs: `docker logs meisterumzuege24-web`
+
+## 🔒 Bezpieczeństwo
+
+- Nagłówki bezpieczeństwa (HSTS, XSS Protection, etc.)
+- Rate limiting
+- Blokowanie dostępu do ukrytych plików
+- SSL/TLS konfiguracja
+
+## 📝 Licencja
+
+Wszystkie prawa zastrzeżone - MP Transporte und Umzüge 2025
