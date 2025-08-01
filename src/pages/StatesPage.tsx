@@ -289,7 +289,7 @@ const StatesPage: React.FC = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                         {state.cities.map((city) => (
                           <Link
-                            key={city.slug}
+                            key={`${state.slug}-${city.slug}`}
                             to={`/staedte/${state.slug}/${city.slug}`}
                             className="block p-3 bg-white rounded-lg hover:bg-moving-lightblue hover:text-moving-blue transition-colors border border-gray-200 hover:border-moving-blue"
                           >
