@@ -470,6 +470,124 @@ const CityDetailPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Detailed Services Section */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
+              Moving Services {cityData.name}
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                    Residential Moving {cityData.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our residential moving services in {cityData.name} provide comprehensive solutions for homes and apartments of all sizes. We understand that moving can be stressful, which is why our experienced team in {cityData.name} handles every aspect of your move with care and professionalism. From packing your belongings to assembling furniture in your new home in {cityData.name}, we ensure a smooth transition.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                    Commercial Moving {cityData.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Professional commercial moving services in {cityData.name} help businesses minimize downtime during relocation. Our team in {cityData.name} specializes in office moves, retail relocations, and industrial equipment transport. We work efficiently to ensure your business operations in {cityData.name} continue with minimal disruption.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                    Packing Services {cityData.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Expert packing and unpacking services in {cityData.name} protect your valuable belongings during the move. Our professional packers in {cityData.name} use high-quality materials and techniques to ensure everything arrives safely at your new location. We offer both full-service packing and partial packing options in {cityData.name}.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                    Long Distance Moving {cityData.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Reliable long-distance moving services from {cityData.name} to any destination in Germany and the EU. Our experienced team handles cross-country moves with precision and care. Whether you're moving from {cityData.name} to another city or country, we provide comprehensive logistics solutions and ensure your belongings arrive safely and on time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Local Expertise Section */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
+              Local Moving Expertise in {cityData.name}
+            </h2>
+            <div className="bg-white rounded-lg p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                    Why Choose Our Moving Services in {cityData.name}?
+                  </h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Over 10 years of experience in {cityData.name} and surrounding areas</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Local knowledge of {cityData.name} neighborhoods and traffic patterns</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Professional team familiar with {cityData.name} building regulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Comprehensive moving solutions tailored for {cityData.name} residents</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Competitive pricing for moving services in {cityData.name}</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                    Moving Services Available in {cityData.name}
+                  </h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Residential moving {cityData.name} - apartments and houses</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Commercial moving {cityData.name} - offices and businesses</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Packing and unpacking services {cityData.name}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Furniture assembly and disassembly {cityData.name}</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>Storage solutions for {cityData.name} residents</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-moving-blue mr-2">•</span>
+                      <span>International moving from {cityData.name}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Why Choose Us */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
@@ -488,17 +606,128 @@ const CityDetailPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Additional SEO Content */}
+          <div className="mb-12">
+            <div className="bg-white rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-moving-dark mb-6">
+                Professional Moving Company in {cityData.name}
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                    Moving Services {cityData.name} - Your Trusted Partner
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    As a leading moving company in {cityData.name}, we provide comprehensive relocation services tailored to meet the unique needs of {cityData.name} residents and businesses. Our local expertise in {cityData.name} ensures that every move is handled with precision and care.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Whether you're moving within {cityData.name} or relocating to another city, our experienced team in {cityData.name} has the knowledge and resources to make your move stress-free. We understand the local area of {cityData.name} and can navigate efficiently through the city's neighborhoods and traffic patterns.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our moving services in {cityData.name} include residential moves, commercial relocations, packing services, furniture assembly, and storage solutions. We serve all areas of {cityData.name} and surrounding communities with the same high level of professionalism and attention to detail.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                    Why Choose Our Moving Company in {cityData.name}?
+                  </h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-moving-dark mb-2">Local Expertise in {cityData.name}</h4>
+                      <p className="text-gray-600 text-sm">
+                        Our team knows {cityData.name} inside and out, from the best routes to take during moves to understanding local building regulations and parking restrictions in {cityData.name}.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-moving-dark mb-2">Comprehensive Moving Solutions {cityData.name}</h4>
+                      <p className="text-gray-600 text-sm">
+                        From small apartment moves to large commercial relocations in {cityData.name}, we offer complete moving solutions including packing, transportation, and setup services.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-moving-dark mb-2">Competitive Pricing in {cityData.name}</h4>
+                      <p className="text-gray-600 text-sm">
+                        We offer fair and transparent pricing for all our moving services in {cityData.name}, with no hidden fees or surprise charges.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-moving-dark mb-2">Reliable Service in {cityData.name}</h4>
+                      <p className="text-gray-600 text-sm">
+                        Our reputation in {cityData.name} is built on reliability, punctuality, and exceptional customer service. We're committed to making your move in {cityData.name} as smooth as possible.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="bg-moving-blue text-white rounded-lg p-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready to Move in {cityData.name}?
             </h2>
             <p className="text-lg mb-6">
-              Get your free quote today and experience professional moving services!
+              Get your free quote today and experience professional moving services in {cityData.name}!
             </p>
-            <Button size="lg" variant="secondary" className="bg-white text-moving-blue hover:bg-gray-100">
-              Get Free Quote
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Button size="lg" variant="secondary" className="bg-white text-moving-blue hover:bg-gray-100">
+                Get Free Quote for {cityData.name}
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-moving-blue">
+                Contact Us in {cityData.name}
+              </Button>
+            </div>
+            <p className="text-sm opacity-90">
+              Professional moving services in {cityData.name} - Residential, Commercial, Packing, and Long Distance moves
+            </p>
+          </div>
+
+          {/* Final SEO Section */}
+          <div className="mt-12 bg-gray-50 rounded-lg p-8">
+            <h2 className="text-2xl font-bold text-moving-dark mb-6 text-center">
+              Moving Services {cityData.name} - Complete Relocation Solutions
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold text-moving-dark mb-3">
+                  Residential Moving {cityData.name}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Our residential moving services in {cityData.name} cater to all types of homes and apartments. Whether you're moving from a small studio in {cityData.name} or a large family home, our team in {cityData.name} provides personalized moving solutions. We handle everything from packing your belongings in {cityData.name} to setting up your new home, ensuring a stress-free moving experience in {cityData.name}.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-moving-dark mb-3">
+                  Commercial Moving {cityData.name}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Professional commercial moving services in {cityData.name} help businesses relocate efficiently with minimal downtime. Our commercial moving team in {cityData.name} specializes in office moves, retail relocations, and industrial equipment transport. We understand the importance of keeping your business operations in {cityData.name} running smoothly during the move.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-moving-dark mb-3">
+                  Packing Services {cityData.name}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Expert packing and unpacking services in {cityData.name} ensure your valuable belongings are protected during the move. Our professional packers in {cityData.name} use high-quality materials and proven techniques to pack everything safely. We offer both full-service packing in {cityData.name} and partial packing options to meet your specific needs.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-moving-dark mb-3">
+                  Long Distance Moving from {cityData.name}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Reliable long-distance moving services from {cityData.name} to any destination in Germany and the EU. Our experienced team handles cross-country moves from {cityData.name} with precision and care. Whether you're moving from {cityData.name} to another German city or international destination, we provide comprehensive logistics solutions.
+                </p>
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <p className="text-gray-600">
+                <strong>Moving Company {cityData.name}</strong> - Professional, Reliable, and Affordable Moving Services in {cityData.name} and Surrounding Areas
+              </p>
+            </div>
           </div>
         </div>
       </div>
