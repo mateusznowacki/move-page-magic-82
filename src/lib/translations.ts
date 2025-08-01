@@ -97,6 +97,12 @@ export const translations: Translations = {
     de: 'Kundendienst',
     es: 'Atención al cliente'
   },
+  'hero.learnMore': {
+    en: 'Learn More',
+    pl: 'Dowiedz się więcej',
+    de: 'Mehr erfahren',
+    es: 'Saber más'
+  },
   'nav.home': {
     en: 'Home',
     pl: 'Strona główna',
@@ -155,7 +161,7 @@ export const translations: Translations = {
   },
   'services.title': {
     en: 'Professional Moving Services',
-    pl: '',
+    pl: 'Profesjonalne usługi przeprowadzkowe',
     de: 'Professionelle Umzugsdienste',
     es: 'Servicios Profesionales de Mudanza'
   },
@@ -176,6 +182,90 @@ export const translations: Translations = {
     pl: 'Zobacz wszystkie usługi',
     de: 'Alle Dienstleistungen anzeigen',
     es: 'Ver todos los servicios'
+  },
+  'services.residential.title': {
+    en: 'Residential Moving',
+    pl: 'Przeprowadzki mieszkaniowe',
+    de: 'Wohnungsumzug',
+    es: 'Mudanzas residenciales'
+  },
+  'services.residential.description': {
+    en: 'Professional moving services for homes and apartments of all sizes.',
+    pl: 'Profesjonalne usługi przeprowadzkowe dla domów i mieszkań każdej wielkości.',
+    de: 'Professionelle Umzugsdienste für Häuser und Wohnungen aller Größen.',
+    es: 'Servicios profesionales de mudanza para hogares y apartamentos de todos los tamaños.'
+  },
+  'services.commercial.title': {
+    en: 'Commercial Moving',
+    pl: 'Przeprowadzki komercyjne',
+    de: 'Geschäftsumzug',
+    es: 'Mudanzas comerciales'
+  },
+  'services.commercial.description': {
+    en: 'Efficient office and business relocation services with minimal downtime.',
+    pl: 'Efektywne usługi relokacji biur i firm z minimalnymi przestojami.',
+    de: 'Effiziente Büro- und Geschäftsumzugsdienste mit minimalen Ausfallzeiten.',
+    es: 'Servicios eficientes de reubicación de oficinas y negocios con tiempo de inactividad mínimo.'
+  },
+  'services.longDistance.title': {
+    en: 'Long Distance Moving',
+    pl: 'Przeprowadzki na duże odległości',
+    de: 'Fernumzug',
+    es: 'Mudanzas de larga distancia'
+  },
+  'services.longDistance.description': {
+    en: 'Reliable cross-country moving services with careful planning and execution.',
+    pl: 'Niezawodne usługi przeprowadzkowe na duże odległości z dokładnym planowaniem i wykonaniem.',
+    de: 'Zuverlässige Fernumzugsdienste mit sorgfältiger Planung und Durchführung.',
+    es: 'Servicios confiables de mudanza de larga distancia con planificación cuidadosa y ejecución.'
+  },
+  'services.international.title': {
+    en: 'International Moving',
+    pl: 'Przeprowadzki międzynarodowe',
+    de: 'Internationale Umzüge',
+    es: 'Mudanzas internacionales'
+  },
+  'services.international.description': {
+    en: 'Professional moving services across all EU countries with customs handling.',
+    pl: 'Profesjonalne usługi przeprowadzkowe na terenie całej UE z obsługą celną.',
+    de: 'Professionelle Umzugsdienste in allen EU-Ländern mit Zollabwicklung.',
+    es: 'Servicios profesionales de mudanza en todos los países de la UE con gestión aduanera.'
+  },
+  'services.packing.title': {
+    en: 'Packing & Unpacking',
+    pl: 'Pakowanie i rozpakowywanie',
+    de: 'Verpackung & Auspackung',
+    es: 'Embalaje y desempaquetado'
+  },
+  'services.packing.description': {
+    en: 'Professional packing and unpacking services to protect your valuable belongings.',
+    pl: 'Profesjonalne usługi pakowania i rozpakowywania, aby chronić Twoje cenne rzeczy.',
+    de: 'Professionelle Verpackungs- und Auspackungsdienste zum Schutz Ihrer wertvollen Gegenstände.',
+    es: 'Servicios profesionales de embalaje y desempaquetado para proteger sus pertenencias valiosas.'
+  },
+  'services.assembly.title': {
+    en: 'Furniture Assembly',
+    pl: 'Montaż mebli',
+    de: 'Möbelmontage',
+    es: 'Ensamblaje de muebles'
+  },
+  'services.assembly.description': {
+    en: 'Expert furniture disassembly and reassembly to make your move seamless.',
+    pl: 'Ekspercki demontaż i montaż mebli, aby przeprowadzka była bezproblemowa.',
+    de: 'Experten-Demontage und -Montage von Möbeln für einen nahtlosen Umzug.',
+    es: 'Desmontaje y montaje experto de muebles para hacer su mudanza sin problemas.'
+  },
+  'services.storage.title': {
+    en: 'Storage Solutions',
+    pl: 'Rozwiązania magazynowe',
+    de: 'Lagerungslösungen',
+    es: 'Soluciones de almacenamiento'
+  },
+  'services.storage.description': {
+    en: 'Secure storage options for short-term and long-term needs during your move.',
+    pl: 'Bezpieczne opcje przechowywania na krótki i długi termin podczas przeprowadzki.',
+    de: 'Sichere Lagerungsoptionen für kurz- und langfristige Bedürfnisse während Ihres Umzugs.',
+    es: 'Opciones de almacenamiento seguras para necesidades a corto y largo plazo durante su mudanza.'
   },
   'about.title': {
     en: 'Why Choose Us',
@@ -206,6 +296,12 @@ export const translations: Translations = {
     pl: 'Kontakt',
     de: 'Kontaktiere uns',
     es: 'Contáctenos'
+  },
+  'about.learnMore': {
+    en: 'Learn More',
+    pl: 'Dowiedz się więcej',
+    de: 'Mehr erfahren',
+    es: 'Saber más'
   },
   'about.feature1.title': {
     en: 'Reliable & Safe',
@@ -471,6 +567,12 @@ export const translations: Translations = {
     de: 'Name',
     es: 'Nombre'
   },
+  'contact.nameField': {
+    en: 'Name',
+    pl: 'Imię',
+    de: 'Name',
+    es: 'Nombre'
+  },
   'contact.phoneField': {
     en: 'Phone',
     pl: 'Telefon',
@@ -543,6 +645,12 @@ export const translations: Translations = {
     de: 'Lagerungslösungen',
     es: 'Soluciones de almacenamiento'
   },
+  'footer.internationalMoving': {
+    en: 'International Moving',
+    pl: 'Przeprowadzki międzynarodowe',
+    de: 'Internationale Umzüge',
+    es: 'Mudanzas internacionales'
+  },
   'footer.quickLinksTitle': {
     en: 'Quick Links',
     pl: 'Szybkie linki',
@@ -598,10 +706,10 @@ export const translations: Translations = {
     es: '¡Reserve su servicio de mudanza en línea y obtenga un 10% de descuento en su primer pedido!'
   },
   'footer.promotionTerms': {
-    en: '',
-    pl: '',
-    de: '',
-    es: ''
+    en: 'Terms and conditions apply',
+    pl: 'Obowiązują warunki i zasady',
+    de: 'Geschäftsbedingungen gelten',
+    es: 'Se aplican términos y condiciones'
   },
   'footer.copyright': {
     en: '© 2025 MP Transporte und Umzüge. All rights reserved.',
