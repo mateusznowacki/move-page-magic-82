@@ -106,8 +106,8 @@ const StatesPage: React.FC = () => {
   const getHeaderText = () => {
     const texts = {
       en: {
-        title: "German Cities & Federal States",
-        subtitle: "Discover our comprehensive moving services across all German cities and federal states. From Berlin to Munich, Hamburg to Cologne - we serve over 2000 cities throughout Germany with professional relocation services.",
+        title: "German Cities",
+        subtitle: "Discover our comprehensive moving services across all German cities. From Berlin to Munich, Hamburg to Cologne - we serve over 2000 cities throughout Germany with professional relocation services.",
         stats: {
           states: "Federal States",
           cities: "Total Cities",
@@ -115,8 +115,8 @@ const StatesPage: React.FC = () => {
         }
       },
       pl: {
-        title: "Niemieckie miasta i kraje związkowe",
-        subtitle: "Odkryj nasze kompleksowe usługi przeprowadzkowe we wszystkich niemieckich miastach i krajach związkowych. Od Berlina po Monachium, od Hamburga po Kolonię - obsługujemy ponad 2000 miast w całych Niemczech z profesjonalnymi usługami przeprowadzkowymi.",
+        title: "Niemieckie miasta",
+        subtitle: "Odkryj nasze kompleksowe usługi przeprowadzkowe we wszystkich niemieckich miastach. Od Berlina po Monachium, od Hamburga po Kolonię - obsługujemy ponad 2000 miast w całych Niemczech z profesjonalnymi usługami przeprowadzkowymi.",
         stats: {
           states: "Kraje związkowe",
           cities: "Łącznie miast",
@@ -124,8 +124,8 @@ const StatesPage: React.FC = () => {
         }
       },
       de: {
-        title: "Deutsche Städte & Bundesländer",
-        subtitle: "Entdecken Sie unsere umfassenden Umzugsdienste in allen deutschen Städten und Bundesländern. Von Berlin bis München, von Hamburg bis Köln - wir bedienen über 2000 Städte in ganz Deutschland mit professionellen Umzugsdiensten.",
+        title: "Deutsche Städte",
+        subtitle: "Entdecken Sie unsere umfassenden Umzugsdienste in allen deutschen Städten. Von Berlin bis München, von Hamburg bis Köln - wir bedienen über 2000 Städte in ganz Deutschland mit professionellen Umzugsdiensten.",
         stats: {
           states: "Bundesländer",
           cities: "Städte insgesamt",
@@ -133,8 +133,8 @@ const StatesPage: React.FC = () => {
         }
       },
       es: {
-        title: "Ciudades y Estados federados de Alemania",
-        subtitle: "Descubra nuestros servicios completos de mudanza en todas las ciudades y estados federados de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia - servimos más de 2000 ciudades en toda Alemania con servicios profesionales de mudanza.",
+        title: "Ciudades alemanas",
+        subtitle: "Descubra nuestros servicios completos de mudanza en todas las ciudades de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia - servimos más de 2000 ciudades en toda Alemania con servicios profesionales de mudanza.",
         stats: {
           states: "Estados federados",
           cities: "Ciudades totales",
@@ -148,23 +148,23 @@ const StatesPage: React.FC = () => {
   const getSEOData = () => {
     const seoData = {
       en: {
-        title: "German Cities & States - Moving Services | Meister Umzüge 24",
-        description: "Professional moving services in all German cities and federal states. From Berlin to Munich, Hamburg to Cologne. Over 2000 cities covered. Get your free quote today!",
-        keywords: "German cities, moving services Germany, Berlin moving, Munich moving, Hamburg moving, Cologne moving, relocation Germany, Umzug Deutschland, Bundesländer, deutsche Städte"
+        title: "German Cities - Moving Services | Meister Umzüge 24",
+        description: "Professional moving services in all German cities. From Berlin to Munich, Hamburg to Cologne. Over 2000 cities covered. Get your free quote today!",
+        keywords: "German cities, moving services Germany, Berlin moving, Munich moving, Hamburg moving, Cologne moving, relocation Germany, Umzug Deutschland, deutsche Städte"
       },
       pl: {
-        title: "Niemieckie miasta i kraje - Usługi przeprowadzkowe | Meister Umzüge 24",
-        description: "Profesjonalne usługi przeprowadzkowe we wszystkich niemieckich miastach i krajach związkowych. Od Berlina po Monachium, od Hamburga po Kolonię. Ponad 2000 miast. Darmowa wycena!",
+        title: "Niemieckie miasta - Usługi przeprowadzkowe | Meister Umzüge 24",
+        description: "Profesjonalne usługi przeprowadzkowe we wszystkich niemieckich miastach. Od Berlina po Monachium, od Hamburga po Kolonię. Ponad 2000 miast. Darmowa wycena!",
         keywords: "niemieckie miasta, usługi przeprowadzkowe Niemcy, przeprowadzka Berlin, przeprowadzka Monachium, przeprowadzka Hamburg, przeprowadzka Kolonia, Umzug Deutschland"
       },
       de: {
-        title: "Deutsche Städte & Bundesländer - Umzugsdienste | Meister Umzüge 24",
-        description: "Professionelle Umzugsdienste in allen deutschen Städten und Bundesländern. Von Berlin bis München, von Hamburg bis Köln. Über 2000 Städte abgedeckt. Jetzt kostenloses Angebot!",
-        keywords: "deutsche Städte, Umzugsdienste Deutschland, Berlin Umzug, München Umzug, Hamburg Umzug, Köln Umzug, Umzug Deutschland, Bundesländer"
+        title: "Deutsche Städte - Umzugsdienste | Meister Umzüge 24",
+        description: "Professionelle Umzugsdienste in allen deutschen Städten. Von Berlin bis München, von Hamburg bis Köln. Über 2000 Städte abgedeckt. Jetzt kostenloses Angebot!",
+        keywords: "deutsche Städte, Umzugsdienste Deutschland, Berlin Umzug, München Umzug, Hamburg Umzug, Köln Umzug, Umzug Deutschland"
       },
       es: {
-        title: "Ciudades y Estados alemanes - Servicios de mudanza | Meister Umzüge 24",
-        description: "Servicios profesionales de mudanza en todas las ciudades y estados federados de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia. Más de 2000 ciudades cubiertas. ¡Presupuesto gratuito!",
+        title: "Ciudades alemanas - Servicios de mudanza | Meister Umzüge 24",
+        description: "Servicios profesionales de mudanza en todas las ciudades de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia. Más de 2000 ciudades cubiertas. ¡Presupuesto gratuito!",
         keywords: "ciudades alemanas, servicios de mudanza Alemania, mudanza Berlín, mudanza Múnich, mudanza Hamburgo, mudanza Colonia, Umzug Deutschland"
       }
     };
