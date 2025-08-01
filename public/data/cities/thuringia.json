@@ -1,0 +1,470 @@
+[
+  {
+    "name": "Altenburg",
+    "slug": "altenburg"
+  },
+  {
+    "name": "Amt Creuzburg",
+    "slug": "amt-creuzburg"
+  },
+  {
+    "name": "An der Schmücke",
+    "slug": "an-der-schmuecke"
+  },
+  {
+    "name": "Apolda",
+    "slug": "apolda"
+  },
+  {
+    "name": "Arnstadt",
+    "slug": "arnstadt"
+  },
+  {
+    "name": "Artern",
+    "slug": "artern"
+  },
+  {
+    "name": "Auma-Weidatal",
+    "slug": "auma-weidatal"
+  },
+  {
+    "name": "Bad Berka",
+    "slug": "bad-berka"
+  },
+  {
+    "name": "Bad Blankenburg",
+    "slug": "bad-blankenburg"
+  },
+  {
+    "name": "Bad Frankenhausen",
+    "slug": "bad-frankenhausen"
+  },
+  {
+    "name": "Bad Köstritz",
+    "slug": "bad-koestritz"
+  },
+  {
+    "name": "Bad Langensalza",
+    "slug": "bad-langensalza"
+  },
+  {
+    "name": "Bad Liebenstein",
+    "slug": "bad-liebenstein"
+  },
+  {
+    "name": "Bad Lobenstein",
+    "slug": "bad-lobenstein"
+  },
+  {
+    "name": "Bad Salzungen",
+    "slug": "bad-salzungen"
+  },
+  {
+    "name": "Bad Sulza",
+    "slug": "bad-sulza"
+  },
+  {
+    "name": "Bad Tennstedt",
+    "slug": "bad-tennstedt"
+  },
+  {
+    "name": "Berga",
+    "slug": "berga"
+  },
+  {
+    "name": "Blankenhain",
+    "slug": "blankenhain"
+  },
+  {
+    "name": "Bleicherode",
+    "slug": "bleicherode"
+  },
+  {
+    "name": "Brotterode-Trusetal",
+    "slug": "brotterode-trusetal"
+  },
+  {
+    "name": "Bürgel",
+    "slug": "buergel"
+  },
+  {
+    "name": "Clingen",
+    "slug": "clingen"
+  },
+  {
+    "name": "Dingelstädt",
+    "slug": "dingelstaedt"
+  },
+  {
+    "name": "Dornburg-Camburg",
+    "slug": "dornburg-camburg"
+  },
+  {
+    "name": "Ebeleben",
+    "slug": "ebeleben"
+  },
+  {
+    "name": "Eisenach",
+    "slug": "eisenach"
+  },
+  {
+    "name": "Eisenberg",
+    "slug": "eisenberg"
+  },
+  {
+    "name": "Eisfeld",
+    "slug": "eisfeld"
+  },
+  {
+    "name": "Ellrich",
+    "slug": "ellrich"
+  },
+  {
+    "name": "Erfurt",
+    "slug": "erfurt"
+  },
+  {
+    "name": "Friedrichroda",
+    "slug": "friedrichroda"
+  },
+  {
+    "name": "Gebesee",
+    "slug": "gebesee"
+  },
+  {
+    "name": "Gefell",
+    "slug": "gefell"
+  },
+  {
+    "name": "Geisa",
+    "slug": "geisa"
+  },
+  {
+    "name": "Gera",
+    "slug": "gera"
+  },
+  {
+    "name": "Gotha",
+    "slug": "gotha"
+  },
+  {
+    "name": "Greiz",
+    "slug": "greiz"
+  },
+  {
+    "name": "Greußen",
+    "slug": "greussen"
+  },
+  {
+    "name": "Großbreitenbach",
+    "slug": "grossbreitenbach"
+  },
+  {
+    "name": "Gräfenthal",
+    "slug": "graefenthal"
+  },
+  {
+    "name": "Gößnitz",
+    "slug": "goessnitz"
+  },
+  {
+    "name": "Heilbad Heiligenstadt",
+    "slug": "heilbad-heiligenstadt"
+  },
+  {
+    "name": "Heldburg",
+    "slug": "heldburg"
+  },
+  {
+    "name": "Heringen",
+    "slug": "heringen"
+  },
+  {
+    "name": "Hermsdorf",
+    "slug": "hermsdorf"
+  },
+  {
+    "name": "Hildburghausen",
+    "slug": "hildburghausen"
+  },
+  {
+    "name": "Hirschberg",
+    "slug": "hirschberg"
+  },
+  {
+    "name": "Hohenleuben",
+    "slug": "hohenleuben"
+  },
+  {
+    "name": "Ilmenau",
+    "slug": "ilmenau"
+  },
+  {
+    "name": "Jena",
+    "slug": "jena"
+  },
+  {
+    "name": "Kahla",
+    "slug": "kahla"
+  },
+  {
+    "name": "Kaltennordheim",
+    "slug": "kaltennordheim"
+  },
+  {
+    "name": "Kranichfeld",
+    "slug": "kranichfeld"
+  },
+  {
+    "name": "Kölleda",
+    "slug": "koelleda"
+  },
+  {
+    "name": "Königsee",
+    "slug": "koenigsee"
+  },
+  {
+    "name": "Lauscha",
+    "slug": "lauscha"
+  },
+  {
+    "name": "Lehesten",
+    "slug": "lehesten"
+  },
+  {
+    "name": "Leinefelde-Worbis",
+    "slug": "leinefelde-worbis"
+  },
+  {
+    "name": "Leutenberg",
+    "slug": "leutenberg"
+  },
+  {
+    "name": "Lucka",
+    "slug": "lucka"
+  },
+  {
+    "name": "Magdala",
+    "slug": "magdala"
+  },
+  {
+    "name": "Meiningen",
+    "slug": "meiningen"
+  },
+  {
+    "name": "Meuselwitz",
+    "slug": "meuselwitz"
+  },
+  {
+    "name": "Mühlhausen",
+    "slug": "muehlhausen"
+  },
+  {
+    "name": "Münchenbernsdorf",
+    "slug": "muenchenbernsdorf"
+  },
+  {
+    "name": "Neuhaus am Rennweg",
+    "slug": "neuhaus-am-rennweg"
+  },
+  {
+    "name": "Neumark",
+    "slug": "neumark"
+  },
+  {
+    "name": "Neustadt an der Orla",
+    "slug": "neustadt-an-der-orla"
+  },
+  {
+    "name": "Nordhausen, Thuringia",
+    "slug": "nordhausen-thuringia"
+  },
+  {
+    "name": "Nottertal-Heilinger Höhen",
+    "slug": "nottertal-heilinger-hoehen"
+  },
+  {
+    "name": "Oberhof",
+    "slug": "oberhof"
+  },
+  {
+    "name": "Ohrdruf",
+    "slug": "ohrdruf"
+  },
+  {
+    "name": "Orlamünde",
+    "slug": "orlamuende"
+  },
+  {
+    "name": "Plaue",
+    "slug": "plaue"
+  },
+  {
+    "name": "Pößneck",
+    "slug": "poessneck"
+  },
+  {
+    "name": "Ranis",
+    "slug": "ranis"
+  },
+  {
+    "name": "Rastenberg",
+    "slug": "rastenberg"
+  },
+  {
+    "name": "Ronneburg",
+    "slug": "ronneburg"
+  },
+  {
+    "name": "Roßleben-Wiehe",
+    "slug": "rossleben-wiehe"
+  },
+  {
+    "name": "Rudolstadt",
+    "slug": "rudolstadt"
+  },
+  {
+    "name": "Ruhla",
+    "slug": "ruhla"
+  },
+  {
+    "name": "Römhild",
+    "slug": "roemhild"
+  },
+  {
+    "name": "Saalburg-Ebersdorf",
+    "slug": "saalburg-ebersdorf"
+  },
+  {
+    "name": "Saalfeld",
+    "slug": "saalfeld"
+  },
+  {
+    "name": "Schalkau",
+    "slug": "schalkau"
+  },
+  {
+    "name": "Schkölen",
+    "slug": "schkoelen"
+  },
+  {
+    "name": "Schleiz",
+    "slug": "schleiz"
+  },
+  {
+    "name": "Schleusingen",
+    "slug": "schleusingen"
+  },
+  {
+    "name": "Schmalkalden",
+    "slug": "schmalkalden"
+  },
+  {
+    "name": "Schmölln",
+    "slug": "schmoelln"
+  },
+  {
+    "name": "Schwarzatal",
+    "slug": "schwarzatal"
+  },
+  {
+    "name": "Sondershausen",
+    "slug": "sondershausen"
+  },
+  {
+    "name": "Sonneberg",
+    "slug": "sonneberg"
+  },
+  {
+    "name": "Stadtilm",
+    "slug": "stadtilm"
+  },
+  {
+    "name": "Stadtroda",
+    "slug": "stadtroda"
+  },
+  {
+    "name": "Steinach",
+    "slug": "steinach"
+  },
+  {
+    "name": "Steinbach-Hallenberg",
+    "slug": "steinbach-hallenberg"
+  },
+  {
+    "name": "Suhl",
+    "slug": "suhl"
+  },
+  {
+    "name": "Sömmerda",
+    "slug": "soemmerda"
+  },
+  {
+    "name": "Tambach-Dietharz",
+    "slug": "tambach-dietharz"
+  },
+  {
+    "name": "Tanna",
+    "slug": "tanna"
+  },
+  {
+    "name": "Themar",
+    "slug": "themar"
+  },
+  {
+    "name": "Treffurt",
+    "slug": "treffurt"
+  },
+  {
+    "name": "Triptis",
+    "slug": "triptis"
+  },
+  {
+    "name": "Ummerstadt",
+    "slug": "ummerstadt"
+  },
+  {
+    "name": "Vacha",
+    "slug": "vacha"
+  },
+  {
+    "name": "Waltershausen",
+    "slug": "waltershausen"
+  },
+  {
+    "name": "Wasungen",
+    "slug": "wasungen"
+  },
+  {
+    "name": "Weida",
+    "slug": "weida"
+  },
+  {
+    "name": "Weimar",
+    "slug": "weimar"
+  },
+  {
+    "name": "Weißensee",
+    "slug": "weissensee"
+  },
+  {
+    "name": "Werra-Suhl-Tal",
+    "slug": "werra-suhl-tal"
+  },
+  {
+    "name": "Wurzbach",
+    "slug": "wurzbach"
+  },
+  {
+    "name": "Zella-Mehlis",
+    "slug": "zella-mehlis"
+  },
+  {
+    "name": "Zeulenroda-Triebes",
+    "slug": "zeulenroda-triebes"
+  },
+  {
+    "name": "Ziegenrück",
+    "slug": "ziegenrueck"
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "name": "Altentreptow",
+    "slug": "altentreptow"
+  },
+  {
+    "name": "Anklam",
+    "slug": "anklam"
+  },
+  {
+    "name": "Bad Doberan",
+    "slug": "bad-doberan"
+  },
+  {
+    "name": "Bad Sülze",
+    "slug": "bad-suelze"
+  },
+  {
+    "name": "Barth",
+    "slug": "barth"
+  },
+  {
+    "name": "Bergen auf Rügen",
+    "slug": "bergen-auf-ruegen"
+  },
+  {
+    "name": "Boizenburg",
+    "slug": "boizenburg"
+  },
+  {
+    "name": "Brüel",
+    "slug": "brueel"
+  },
+  {
+    "name": "Burg Stargard",
+    "slug": "burg-stargard"
+  },
+  {
+    "name": "Bützow",
+    "slug": "buetzow"
+  },
+  {
+    "name": "Crivitz",
+    "slug": "crivitz"
+  },
+  {
+    "name": "Dargun",
+    "slug": "dargun"
+  },
+  {
+    "name": "Dassow",
+    "slug": "dassow"
+  },
+  {
+    "name": "Demmin",
+    "slug": "demmin"
+  },
+  {
+    "name": "Dömitz",
+    "slug": "doemitz"
+  },
+  {
+    "name": "Eggesin",
+    "slug": "eggesin"
+  },
+  {
+    "name": "Franzburg",
+    "slug": "franzburg"
+  },
+  {
+    "name": "Friedland",
+    "slug": "friedland"
+  },
+  {
+    "name": "Gadebusch",
+    "slug": "gadebusch"
+  },
+  {
+    "name": "Garz",
+    "slug": "garz"
+  },
+  {
+    "name": "Gnoien",
+    "slug": "gnoien"
+  },
+  {
+    "name": "Goldberg",
+    "slug": "goldberg"
+  },
+  {
+    "name": "Grabow",
+    "slug": "grabow"
+  },
+  {
+    "name": "Greifswald",
+    "slug": "greifswald"
+  },
+  {
+    "name": "Grevesmühlen",
+    "slug": "grevesmuehlen"
+  },
+  {
+    "name": "Grimmen",
+    "slug": "grimmen"
+  },
+  {
+    "name": "Güstrow",
+    "slug": "guestrow"
+  },
+  {
+    "name": "Gützkow",
+    "slug": "guetzkow"
+  },
+  {
+    "name": "Hagenow",
+    "slug": "hagenow"
+  },
+  {
+    "name": "Jarmen",
+    "slug": "jarmen"
+  },
+  {
+    "name": "Klütz",
+    "slug": "kluetz"
+  },
+  {
+    "name": "Krakow am See",
+    "slug": "krakow-am-see"
+  },
+  {
+    "name": "Kröpelin",
+    "slug": "kroepelin"
+  },
+  {
+    "name": "Kühlungsborn",
+    "slug": "kuehlungsborn"
+  },
+  {
+    "name": "Laage",
+    "slug": "laage"
+  },
+  {
+    "name": "Lassan",
+    "slug": "lassan"
+  },
+  {
+    "name": "Loitz",
+    "slug": "loitz"
+  },
+  {
+    "name": "Ludwigslust",
+    "slug": "ludwigslust"
+  },
+  {
+    "name": "Lübtheen",
+    "slug": "luebtheen"
+  },
+  {
+    "name": "Lübz",
+    "slug": "luebz"
+  },
+  {
+    "name": "Malchin",
+    "slug": "malchin"
+  },
+  {
+    "name": "Malchow",
+    "slug": "malchow"
+  },
+  {
+    "name": "Marlow",
+    "slug": "marlow"
+  },
+  {
+    "name": "Mirow",
+    "slug": "mirow"
+  },
+  {
+    "name": "Neubrandenburg",
+    "slug": "neubrandenburg"
+  },
+  {
+    "name": "Neubukow",
+    "slug": "neubukow"
+  },
+  {
+    "name": "Neukalen",
+    "slug": "neukalen"
+  },
+  {
+    "name": "Neukloster",
+    "slug": "neukloster"
+  },
+  {
+    "name": "Neustadt-Glewe",
+    "slug": "neustadt-glewe"
+  },
+  {
+    "name": "Neustrelitz",
+    "slug": "neustrelitz"
+  },
+  {
+    "name": "Parchim",
+    "slug": "parchim"
+  },
+  {
+    "name": "Pasewalk",
+    "slug": "pasewalk"
+  },
+  {
+    "name": "Penkun",
+    "slug": "penkun"
+  },
+  {
+    "name": "Penzlin",
+    "slug": "penzlin"
+  },
+  {
+    "name": "Plau am See",
+    "slug": "plau-am-see"
+  },
+  {
+    "name": "Putbus",
+    "slug": "putbus"
+  },
+  {
+    "name": "Rehna",
+    "slug": "rehna"
+  },
+  {
+    "name": "Rerik",
+    "slug": "rerik"
+  },
+  {
+    "name": "Ribnitz-Damgarten",
+    "slug": "ribnitz-damgarten"
+  },
+  {
+    "name": "Richtenberg",
+    "slug": "richtenberg"
+  },
+  {
+    "name": "Rostock",
+    "slug": "rostock"
+  },
+  {
+    "name": "Röbel",
+    "slug": "roebel"
+  },
+  {
+    "name": "Sassnitz",
+    "slug": "sassnitz"
+  },
+  {
+    "name": "Schwaan",
+    "slug": "schwaan"
+  },
+  {
+    "name": "Schwerin",
+    "slug": "schwerin"
+  },
+  {
+    "name": "Schönberg",
+    "slug": "schoenberg"
+  },
+  {
+    "name": "Stavenhagen",
+    "slug": "stavenhagen"
+  },
+  {
+    "name": "Sternberg",
+    "slug": "sternberg"
+  },
+  {
+    "name": "Stralsund",
+    "slug": "stralsund"
+  },
+  {
+    "name": "Strasburg",
+    "slug": "strasburg"
+  },
+  {
+    "name": "Tessin",
+    "slug": "tessin"
+  },
+  {
+    "name": "Teterow",
+    "slug": "teterow"
+  },
+  {
+    "name": "Torgelow",
+    "slug": "torgelow"
+  },
+  {
+    "name": "Tribsees",
+    "slug": "tribsees"
+  },
+  {
+    "name": "Ueckermünde",
+    "slug": "ueckermuende"
+  },
+  {
+    "name": "Usedom",
+    "slug": "usedom"
+  },
+  {
+    "name": "Waren",
+    "slug": "waren"
+  },
+  {
+    "name": "Warin",
+    "slug": "warin"
+  },
+  {
+    "name": "Wesenberg",
+    "slug": "wesenberg"
+  },
+  {
+    "name": "Wismar",
+    "slug": "wismar"
+  },
+  {
+    "name": "Wittenburg",
+    "slug": "wittenburg"
+  },
+  {
+    "name": "Woldegk",
+    "slug": "woldegk"
+  },
+  {
+    "name": "Wolgast",
+    "slug": "wolgast"
+  },
+  {
+    "name": "Zarrentin am Schaalsee",
+    "slug": "zarrentin-am-schaalsee"
+  }
+]

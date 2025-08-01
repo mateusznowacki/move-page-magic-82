@@ -1,0 +1,418 @@
+[
+  {
+    "name": "Aken",
+    "slug": "aken"
+  },
+  {
+    "name": "Allstedt",
+    "slug": "allstedt"
+  },
+  {
+    "name": "Alsleben",
+    "slug": "alsleben"
+  },
+  {
+    "name": "Annaburg",
+    "slug": "annaburg"
+  },
+  {
+    "name": "Arendsee",
+    "slug": "arendsee"
+  },
+  {
+    "name": "Arneburg",
+    "slug": "arneburg"
+  },
+  {
+    "name": "Arnstein",
+    "slug": "arnstein"
+  },
+  {
+    "name": "Aschersleben",
+    "slug": "aschersleben"
+  },
+  {
+    "name": "Bad Bibra",
+    "slug": "bad-bibra"
+  },
+  {
+    "name": "Bad Dürrenberg",
+    "slug": "bad-duerrenberg"
+  },
+  {
+    "name": "Bad Lauchstädt",
+    "slug": "bad-lauchstaedt"
+  },
+  {
+    "name": "Bad Schmiedeberg",
+    "slug": "bad-schmiedeberg"
+  },
+  {
+    "name": "Ballenstedt",
+    "slug": "ballenstedt"
+  },
+  {
+    "name": "Barby",
+    "slug": "barby"
+  },
+  {
+    "name": "Bernburg",
+    "slug": "bernburg"
+  },
+  {
+    "name": "Bismark",
+    "slug": "bismark"
+  },
+  {
+    "name": "Bitterfeld-Wolfen",
+    "slug": "bitterfeld-wolfen"
+  },
+  {
+    "name": "Blankenburg",
+    "slug": "blankenburg"
+  },
+  {
+    "name": "Braunsbedra",
+    "slug": "braunsbedra"
+  },
+  {
+    "name": "Burg",
+    "slug": "burg"
+  },
+  {
+    "name": "Calbe",
+    "slug": "calbe"
+  },
+  {
+    "name": "Coswig",
+    "slug": "coswig"
+  },
+  {
+    "name": "Dessau-Roßlau",
+    "slug": "dessau-rosslau"
+  },
+  {
+    "name": "Eckartsberga",
+    "slug": "eckartsberga"
+  },
+  {
+    "name": "Egeln",
+    "slug": "egeln"
+  },
+  {
+    "name": "Eisleben",
+    "slug": "eisleben"
+  },
+  {
+    "name": "Falkenstein/Harz",
+    "slug": "falkensteinharz"
+  },
+  {
+    "name": "Freyburg",
+    "slug": "freyburg"
+  },
+  {
+    "name": "Gardelegen",
+    "slug": "gardelegen"
+  },
+  {
+    "name": "Genthin",
+    "slug": "genthin"
+  },
+  {
+    "name": "Gerbstedt",
+    "slug": "gerbstedt"
+  },
+  {
+    "name": "Gommern",
+    "slug": "gommern"
+  },
+  {
+    "name": "Gräfenhainichen",
+    "slug": "graefenhainichen"
+  },
+  {
+    "name": "Gröningen",
+    "slug": "groeningen"
+  },
+  {
+    "name": "Güsten",
+    "slug": "guesten"
+  },
+  {
+    "name": "Halberstadt",
+    "slug": "halberstadt"
+  },
+  {
+    "name": "Haldensleben",
+    "slug": "haldensleben"
+  },
+  {
+    "name": "Halle (Saale)",
+    "slug": "halle-saale"
+  },
+  {
+    "name": "Harzgerode",
+    "slug": "harzgerode"
+  },
+  {
+    "name": "Havelberg",
+    "slug": "havelberg"
+  },
+  {
+    "name": "Hecklingen",
+    "slug": "hecklingen"
+  },
+  {
+    "name": "Hettstedt",
+    "slug": "hettstedt"
+  },
+  {
+    "name": "Hohenmölsen",
+    "slug": "hohenmoelsen"
+  },
+  {
+    "name": "Ilsenburg",
+    "slug": "ilsenburg"
+  },
+  {
+    "name": "Jerichow",
+    "slug": "jerichow"
+  },
+  {
+    "name": "Jessen",
+    "slug": "jessen"
+  },
+  {
+    "name": "Kalbe, Saxony-Anhalt",
+    "slug": "kalbe-saxony-anhalt"
+  },
+  {
+    "name": "Kelbra",
+    "slug": "kelbra"
+  },
+  {
+    "name": "Kemberg",
+    "slug": "kemberg"
+  },
+  {
+    "name": "Klötze",
+    "slug": "kloetze"
+  },
+  {
+    "name": "Kroppenstedt",
+    "slug": "kroppenstedt"
+  },
+  {
+    "name": "Könnern",
+    "slug": "koennern"
+  },
+  {
+    "name": "Köthen",
+    "slug": "koethen"
+  },
+  {
+    "name": "Landsberg",
+    "slug": "landsberg"
+  },
+  {
+    "name": "Laucha an der Unstrut",
+    "slug": "laucha-an-der-unstrut"
+  },
+  {
+    "name": "Leuna",
+    "slug": "leuna"
+  },
+  {
+    "name": "Lützen",
+    "slug": "luetzen"
+  },
+  {
+    "name": "Magdeburg",
+    "slug": "magdeburg"
+  },
+  {
+    "name": "Mansfeld",
+    "slug": "mansfeld"
+  },
+  {
+    "name": "Merseburg",
+    "slug": "merseburg"
+  },
+  {
+    "name": "Möckern",
+    "slug": "moeckern"
+  },
+  {
+    "name": "Mücheln",
+    "slug": "muecheln"
+  },
+  {
+    "name": "Naumburg",
+    "slug": "naumburg"
+  },
+  {
+    "name": "Nebra",
+    "slug": "nebra"
+  },
+  {
+    "name": "Nienburg",
+    "slug": "nienburg"
+  },
+  {
+    "name": "Oberharz am Brocken",
+    "slug": "oberharz-am-brocken"
+  },
+  {
+    "name": "Oebisfelde-Weferlingen",
+    "slug": "oebisfelde-weferlingen"
+  },
+  {
+    "name": "Oranienbaum-Wörlitz",
+    "slug": "oranienbaum-woerlitz"
+  },
+  {
+    "name": "Oschersleben",
+    "slug": "oschersleben"
+  },
+  {
+    "name": "Osterburg",
+    "slug": "osterburg"
+  },
+  {
+    "name": "Osterfeld",
+    "slug": "osterfeld"
+  },
+  {
+    "name": "Osterwieck",
+    "slug": "osterwieck"
+  },
+  {
+    "name": "Quedlinburg",
+    "slug": "quedlinburg"
+  },
+  {
+    "name": "Querfurt",
+    "slug": "querfurt"
+  },
+  {
+    "name": "Raguhn-Jeßnitz",
+    "slug": "raguhn-jessnitz"
+  },
+  {
+    "name": "Salzwedel",
+    "slug": "salzwedel"
+  },
+  {
+    "name": "Sandau",
+    "slug": "sandau"
+  },
+  {
+    "name": "Sandersdorf-Brehna",
+    "slug": "sandersdorf-brehna"
+  },
+  {
+    "name": "Sangerhausen",
+    "slug": "sangerhausen"
+  },
+  {
+    "name": "Schraplau",
+    "slug": "schraplau"
+  },
+  {
+    "name": "Schwanebeck",
+    "slug": "schwanebeck"
+  },
+  {
+    "name": "Schönebeck",
+    "slug": "schoenebeck"
+  },
+  {
+    "name": "Seehausen",
+    "slug": "seehausen"
+  },
+  {
+    "name": "Seeland",
+    "slug": "seeland"
+  },
+  {
+    "name": "Staßfurt",
+    "slug": "stassfurt"
+  },
+  {
+    "name": "Stendal",
+    "slug": "stendal"
+  },
+  {
+    "name": "Stößen",
+    "slug": "stoessen"
+  },
+  {
+    "name": "Südliches Anhalt",
+    "slug": "suedliches-anhalt"
+  },
+  {
+    "name": "Tangerhütte",
+    "slug": "tangerhuette"
+  },
+  {
+    "name": "Tangermünde",
+    "slug": "tangermuende"
+  },
+  {
+    "name": "Teuchern",
+    "slug": "teuchern"
+  },
+  {
+    "name": "Thale",
+    "slug": "thale"
+  },
+  {
+    "name": "Wanzleben-Börde",
+    "slug": "wanzleben-boerde"
+  },
+  {
+    "name": "Wegeleben",
+    "slug": "wegeleben"
+  },
+  {
+    "name": "Weißenfels",
+    "slug": "weissenfels"
+  },
+  {
+    "name": "Werben",
+    "slug": "werben"
+  },
+  {
+    "name": "Wernigerode",
+    "slug": "wernigerode"
+  },
+  {
+    "name": "Wettin-Löbejün",
+    "slug": "wettin-loebejuen"
+  },
+  {
+    "name": "Wittenberg",
+    "slug": "wittenberg"
+  },
+  {
+    "name": "Wolmirstedt",
+    "slug": "wolmirstedt"
+  },
+  {
+    "name": "Zahna-Elster",
+    "slug": "zahna-elster"
+  },
+  {
+    "name": "Zeitz",
+    "slug": "zeitz"
+  },
+  {
+    "name": "Zerbst",
+    "slug": "zerbst"
+  },
+  {
+    "name": "Zörbig",
+    "slug": "zoerbig"
+  }
+]

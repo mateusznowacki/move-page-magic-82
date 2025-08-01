@@ -1,0 +1,112 @@
+[
+  {
+    "area": "160.85",
+    "coords": {
+      "lat": "50.77556",
+      "lon": "6.08361"
+    },
+    "district": "Aachen",
+    "name": "Aachen",
+    "population": "248878",
+    "state": "North Rhine-Westphalia"
+  },
+  {
+    "area": "219.35",
+    "coords": {
+      "lat": "51.22556",
+      "lon": "6.78278"
+    },
+    "district": "Düsseldorf",
+    "name": "Düsseldorf",
+    "population": "619294",
+    "state": "North Rhine-Westphalia"
+  },
+  {
+    "area": "405.02",
+    "coords": {
+      "lat": "50.93333",
+      "lon": "6.95"
+    },
+    "district": "Cologne",
+    "name": "Cologne",
+    "population": "1085664",
+    "state": "North Rhine-Westphalia"
+  },
+  {
+    "area": "281.05",
+    "coords": {
+      "lat": "52.51667",
+      "lon": "13.38333"
+    },
+    "district": "Berlin",
+    "name": "Berlin",
+    "population": "3669491",
+    "state": "Berlin"
+  },
+  {
+    "area": "310.43",
+    "coords": {
+      "lat": "48.13513",
+      "lon": "11.58198"
+    },
+    "district": "Munich",
+    "name": "Munich",
+    "population": "1484226",
+    "state": "Bavaria"
+  },
+  {
+    "area": "755.22",
+    "coords": {
+      "lat": "53.55056",
+      "lon": "9.99333"
+    },
+    "district": "Hamburg",
+    "name": "Hamburg",
+    "population": "1841179",
+    "state": "Hamburg"
+  },
+  {
+    "area": "326.71",
+    "coords": {
+      "lat": "50.11056",
+      "lon": "8.68222"
+    },
+    "district": "Frankfurt",
+    "name": "Frankfurt",
+    "population": "753056",
+    "state": "Hesse"
+  },
+  {
+    "area": "207.35",
+    "coords": {
+      "lat": "48.77556",
+      "lon": "9.18278"
+    },
+    "district": "Stuttgart",
+    "name": "Stuttgart",
+    "population": "632743",
+    "state": "Baden-Württemberg"
+  },
+  {
+    "area": "385.18",
+    "coords": {
+      "lat": "52.51667",
+      "lon": "13.38333"
+    },
+    "district": "Dresden",
+    "name": "Dresden",
+    "population": "556780",
+    "state": "Saxony"
+  },
+  {
+    "area": "297.02",
+    "coords": {
+      "lat": "51.33944",
+      "lon": "12.37306"
+    },
+    "district": "Leipzig",
+    "name": "Leipzig",
+    "population": "587857",
+    "state": "Saxony"
+  }
+] 

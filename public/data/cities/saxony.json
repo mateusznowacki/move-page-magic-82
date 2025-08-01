@@ -1,0 +1,678 @@
+[
+  {
+    "name": "Adorf",
+    "slug": "adorf"
+  },
+  {
+    "name": "Altenberg",
+    "slug": "altenberg"
+  },
+  {
+    "name": "Annaberg-Buchholz",
+    "slug": "annaberg-buchholz"
+  },
+  {
+    "name": "Aue-Bad Schlema",
+    "slug": "aue-bad-schlema"
+  },
+  {
+    "name": "Auerbach",
+    "slug": "auerbach"
+  },
+  {
+    "name": "Augustusburg",
+    "slug": "augustusburg"
+  },
+  {
+    "name": "Bad Düben",
+    "slug": "bad-dueben"
+  },
+  {
+    "name": "Bad Elster",
+    "slug": "bad-elster"
+  },
+  {
+    "name": "Bad Gottleuba-Berggießhübel",
+    "slug": "bad-gottleuba-berggiesshuebel"
+  },
+  {
+    "name": "Bad Lausick",
+    "slug": "bad-lausick"
+  },
+  {
+    "name": "Bad Muskau",
+    "slug": "bad-muskau"
+  },
+  {
+    "name": "Bad Schandau",
+    "slug": "bad-schandau"
+  },
+  {
+    "name": "Bautzen",
+    "slug": "bautzen"
+  },
+  {
+    "name": "Belgern-Schildau",
+    "slug": "belgern-schildau"
+  },
+  {
+    "name": "Bernsdorf",
+    "slug": "bernsdorf"
+  },
+  {
+    "name": "Bernstadt auf dem Eigen",
+    "slug": "bernstadt-auf-dem-eigen"
+  },
+  {
+    "name": "Bischofswerda",
+    "slug": "bischofswerda"
+  },
+  {
+    "name": "Borna",
+    "slug": "borna"
+  },
+  {
+    "name": "Brand-Erbisdorf",
+    "slug": "brand-erbisdorf"
+  },
+  {
+    "name": "Brandis",
+    "slug": "brandis"
+  },
+  {
+    "name": "Burgstädt",
+    "slug": "burgstaedt"
+  },
+  {
+    "name": "Böhlen",
+    "slug": "boehlen"
+  },
+  {
+    "name": "Chemnitz",
+    "slug": "chemnitz"
+  },
+  {
+    "name": "Colditz",
+    "slug": "colditz"
+  },
+  {
+    "name": "Coswig",
+    "slug": "coswig"
+  },
+  {
+    "name": "Crimmitschau",
+    "slug": "crimmitschau"
+  },
+  {
+    "name": "Dahlen",
+    "slug": "dahlen"
+  },
+  {
+    "name": "Delitzsch",
+    "slug": "delitzsch"
+  },
+  {
+    "name": "Dippoldiswalde",
+    "slug": "dippoldiswalde"
+  },
+  {
+    "name": "Dohna",
+    "slug": "dohna"
+  },
+  {
+    "name": "Dommitzsch",
+    "slug": "dommitzsch"
+  },
+  {
+    "name": "Dresden",
+    "slug": "dresden"
+  },
+  {
+    "name": "Döbeln",
+    "slug": "doebeln"
+  },
+  {
+    "name": "Ebersbach-Neugersdorf",
+    "slug": "ebersbach-neugersdorf"
+  },
+  {
+    "name": "Ehrenfriedersdorf",
+    "slug": "ehrenfriedersdorf"
+  },
+  {
+    "name": "Eibenstock",
+    "slug": "eibenstock"
+  },
+  {
+    "name": "Eilenburg",
+    "slug": "eilenburg"
+  },
+  {
+    "name": "Elsterberg",
+    "slug": "elsterberg"
+  },
+  {
+    "name": "Elstra",
+    "slug": "elstra"
+  },
+  {
+    "name": "Elterlein",
+    "slug": "elterlein"
+  },
+  {
+    "name": "Falkenstein",
+    "slug": "falkenstein"
+  },
+  {
+    "name": "Flöha",
+    "slug": "floeha"
+  },
+  {
+    "name": "Frankenberg",
+    "slug": "frankenberg"
+  },
+  {
+    "name": "Frauenstein",
+    "slug": "frauenstein"
+  },
+  {
+    "name": "Freiberg",
+    "slug": "freiberg"
+  },
+  {
+    "name": "Freital",
+    "slug": "freital"
+  },
+  {
+    "name": "Frohburg",
+    "slug": "frohburg"
+  },
+  {
+    "name": "Geithain",
+    "slug": "geithain"
+  },
+  {
+    "name": "Geringswalde",
+    "slug": "geringswalde"
+  },
+  {
+    "name": "Geyer",
+    "slug": "geyer"
+  },
+  {
+    "name": "Glashütte",
+    "slug": "glashuette"
+  },
+  {
+    "name": "Glauchau",
+    "slug": "glauchau"
+  },
+  {
+    "name": "Grimma",
+    "slug": "grimma"
+  },
+  {
+    "name": "Groitzsch",
+    "slug": "groitzsch"
+  },
+  {
+    "name": "Großenhain",
+    "slug": "grossenhain"
+  },
+  {
+    "name": "Großröhrsdorf",
+    "slug": "grossroehrsdorf"
+  },
+  {
+    "name": "Großschirma",
+    "slug": "grossschirma"
+  },
+  {
+    "name": "Gröditz",
+    "slug": "groeditz"
+  },
+  {
+    "name": "Grünhain-Beierfeld",
+    "slug": "gruenhain-beierfeld"
+  },
+  {
+    "name": "Görlitz",
+    "slug": "goerlitz"
+  },
+  {
+    "name": "Hainichen",
+    "slug": "hainichen"
+  },
+  {
+    "name": "Hartenstein",
+    "slug": "hartenstein"
+  },
+  {
+    "name": "Hartha",
+    "slug": "hartha"
+  },
+  {
+    "name": "Heidenau",
+    "slug": "heidenau"
+  },
+  {
+    "name": "Herrnhut",
+    "slug": "herrnhut"
+  },
+  {
+    "name": "Hohenstein-Ernstthal",
+    "slug": "hohenstein-ernstthal"
+  },
+  {
+    "name": "Hohnstein",
+    "slug": "hohnstein"
+  },
+  {
+    "name": "Hoyerswerda",
+    "slug": "hoyerswerda"
+  },
+  {
+    "name": "Johanngeorgenstadt",
+    "slug": "johanngeorgenstadt"
+  },
+  {
+    "name": "Jöhstadt",
+    "slug": "joehstadt"
+  },
+  {
+    "name": "Kamenz",
+    "slug": "kamenz"
+  },
+  {
+    "name": "Kirchberg",
+    "slug": "kirchberg"
+  },
+  {
+    "name": "Kitzscher",
+    "slug": "kitzscher"
+  },
+  {
+    "name": "Klingenthal",
+    "slug": "klingenthal"
+  },
+  {
+    "name": "Königsbrück",
+    "slug": "koenigsbrueck"
+  },
+  {
+    "name": "Königstein",
+    "slug": "koenigstein"
+  },
+  {
+    "name": "Lauta",
+    "slug": "lauta"
+  },
+  {
+    "name": "Lauter-Bernsbach",
+    "slug": "lauter-bernsbach"
+  },
+  {
+    "name": "Leipzig",
+    "slug": "leipzig"
+  },
+  {
+    "name": "Leisnig",
+    "slug": "leisnig"
+  },
+  {
+    "name": "Lengenfeld",
+    "slug": "lengenfeld"
+  },
+  {
+    "name": "Lichtenstein",
+    "slug": "lichtenstein"
+  },
+  {
+    "name": "Liebstadt",
+    "slug": "liebstadt"
+  },
+  {
+    "name": "Limbach-Oberfrohna",
+    "slug": "limbach-oberfrohna"
+  },
+  {
+    "name": "Lommatzsch",
+    "slug": "lommatzsch"
+  },
+  {
+    "name": "Lugau",
+    "slug": "lugau"
+  },
+  {
+    "name": "Lunzenau",
+    "slug": "lunzenau"
+  },
+  {
+    "name": "Löbau",
+    "slug": "loebau"
+  },
+  {
+    "name": "Lößnitz",
+    "slug": "loessnitz"
+  },
+  {
+    "name": "Marienberg",
+    "slug": "marienberg"
+  },
+  {
+    "name": "Markkleeberg",
+    "slug": "markkleeberg"
+  },
+  {
+    "name": "Markneukirchen",
+    "slug": "markneukirchen"
+  },
+  {
+    "name": "Markranstädt",
+    "slug": "markranstaedt"
+  },
+  {
+    "name": "Meerane",
+    "slug": "meerane"
+  },
+  {
+    "name": "Meissen",
+    "slug": "meissen"
+  },
+  {
+    "name": "Mittweida",
+    "slug": "mittweida"
+  },
+  {
+    "name": "Mügeln",
+    "slug": "muegeln"
+  },
+  {
+    "name": "Naunhof",
+    "slug": "naunhof"
+  },
+  {
+    "name": "Netzschkau",
+    "slug": "netzschkau"
+  },
+  {
+    "name": "Neusalza-Spremberg",
+    "slug": "neusalza-spremberg"
+  },
+  {
+    "name": "Neustadt in Sachsen",
+    "slug": "neustadt-in-sachsen"
+  },
+  {
+    "name": "Niesky",
+    "slug": "niesky"
+  },
+  {
+    "name": "Nossen",
+    "slug": "nossen"
+  },
+  {
+    "name": "Oberlungwitz",
+    "slug": "oberlungwitz"
+  },
+  {
+    "name": "Oberwiesenthal",
+    "slug": "oberwiesenthal"
+  },
+  {
+    "name": "Oederan",
+    "slug": "oederan"
+  },
+  {
+    "name": "Oelsnitz",
+    "slug": "oelsnitz"
+  },
+  {
+    "name": "Oelsnitz",
+    "slug": "oelsnitz"
+  },
+  {
+    "name": "Olbernhau",
+    "slug": "olbernhau"
+  },
+  {
+    "name": "Oschatz",
+    "slug": "oschatz"
+  },
+  {
+    "name": "Ostritz",
+    "slug": "ostritz"
+  },
+  {
+    "name": "Pausa-Mühltroff",
+    "slug": "pausa-muehltroff"
+  },
+  {
+    "name": "Pegau",
+    "slug": "pegau"
+  },
+  {
+    "name": "Penig",
+    "slug": "penig"
+  },
+  {
+    "name": "Pirna",
+    "slug": "pirna"
+  },
+  {
+    "name": "Plauen",
+    "slug": "plauen"
+  },
+  {
+    "name": "Pockau-Lengefeld",
+    "slug": "pockau-lengefeld"
+  },
+  {
+    "name": "Pulsnitz",
+    "slug": "pulsnitz"
+  },
+  {
+    "name": "Rabenau",
+    "slug": "rabenau"
+  },
+  {
+    "name": "Radeberg",
+    "slug": "radeberg"
+  },
+  {
+    "name": "Radebeul",
+    "slug": "radebeul"
+  },
+  {
+    "name": "Radeburg",
+    "slug": "radeburg"
+  },
+  {
+    "name": "Regis-Breitingen",
+    "slug": "regis-breitingen"
+  },
+  {
+    "name": "Reichenbach im Vogtland",
+    "slug": "reichenbach-im-vogtland"
+  },
+  {
+    "name": "Reichenbach",
+    "slug": "reichenbach"
+  },
+  {
+    "name": "Riesa",
+    "slug": "riesa"
+  },
+  {
+    "name": "Rochlitz",
+    "slug": "rochlitz"
+  },
+  {
+    "name": "Rodewisch",
+    "slug": "rodewisch"
+  },
+  {
+    "name": "Rothenburg",
+    "slug": "rothenburg"
+  },
+  {
+    "name": "Roßwein",
+    "slug": "rosswein"
+  },
+  {
+    "name": "Rötha",
+    "slug": "roetha"
+  },
+  {
+    "name": "Sayda, Saxony",
+    "slug": "sayda-saxony"
+  },
+  {
+    "name": "Scheibenberg",
+    "slug": "scheibenberg"
+  },
+  {
+    "name": "Schirgiswalde-Kirschau",
+    "slug": "schirgiswalde-kirschau"
+  },
+  {
+    "name": "Schkeuditz",
+    "slug": "schkeuditz"
+  },
+  {
+    "name": "Schlettau",
+    "slug": "schlettau"
+  },
+  {
+    "name": "Schneeberg",
+    "slug": "schneeberg"
+  },
+  {
+    "name": "Schwarzenberg",
+    "slug": "schwarzenberg"
+  },
+  {
+    "name": "Schöneck",
+    "slug": "schoeneck"
+  },
+  {
+    "name": "Sebnitz",
+    "slug": "sebnitz"
+  },
+  {
+    "name": "Seifhennersdorf",
+    "slug": "seifhennersdorf"
+  },
+  {
+    "name": "Stadt Wehlen",
+    "slug": "stadt-wehlen"
+  },
+  {
+    "name": "Stollberg",
+    "slug": "stollberg"
+  },
+  {
+    "name": "Stolpen",
+    "slug": "stolpen"
+  },
+  {
+    "name": "Strehla",
+    "slug": "strehla"
+  },
+  {
+    "name": "Taucha",
+    "slug": "taucha"
+  },
+  {
+    "name": "Thalheim",
+    "slug": "thalheim"
+  },
+  {
+    "name": "Tharandt",
+    "slug": "tharandt"
+  },
+  {
+    "name": "Thum",
+    "slug": "thum"
+  },
+  {
+    "name": "Torgau",
+    "slug": "torgau"
+  },
+  {
+    "name": "Trebsen",
+    "slug": "trebsen"
+  },
+  {
+    "name": "Treuen",
+    "slug": "treuen"
+  },
+  {
+    "name": "Waldenburg",
+    "slug": "waldenburg"
+  },
+  {
+    "name": "Waldheim",
+    "slug": "waldheim"
+  },
+  {
+    "name": "Weißenberg",
+    "slug": "weissenberg"
+  },
+  {
+    "name": "Weißwasser",
+    "slug": "weisswasser"
+  },
+  {
+    "name": "Werdau",
+    "slug": "werdau"
+  },
+  {
+    "name": "Wildenfels",
+    "slug": "wildenfels"
+  },
+  {
+    "name": "Wilkau-Haßlau",
+    "slug": "wilkau-hasslau"
+  },
+  {
+    "name": "Wilsdruff",
+    "slug": "wilsdruff"
+  },
+  {
+    "name": "Wilthen",
+    "slug": "wilthen"
+  },
+  {
+    "name": "Wittichenau",
+    "slug": "wittichenau"
+  },
+  {
+    "name": "Wolkenstein",
+    "slug": "wolkenstein"
+  },
+  {
+    "name": "Wurzen",
+    "slug": "wurzen"
+  },
+  {
+    "name": "Zittau",
+    "slug": "zittau"
+  },
+  {
+    "name": "Zschopau",
+    "slug": "zschopau"
+  },
+  {
+    "name": "Zwenkau",
+    "slug": "zwenkau"
+  },
+  {
+    "name": "Zwickau",
+    "slug": "zwickau"
+  },
+  {
+    "name": "Zwönitz",
+    "slug": "zwoenitz"
+  }
+]

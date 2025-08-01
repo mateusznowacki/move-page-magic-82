@@ -1,0 +1,454 @@
+[
+  {
+    "name": "Altlandsberg",
+    "slug": "altlandsberg"
+  },
+  {
+    "name": "Angermünde",
+    "slug": "angermuende"
+  },
+  {
+    "name": "Bad Belzig",
+    "slug": "bad-belzig"
+  },
+  {
+    "name": "Bad Freienwalde",
+    "slug": "bad-freienwalde"
+  },
+  {
+    "name": "Bad Liebenwerda",
+    "slug": "bad-liebenwerda"
+  },
+  {
+    "name": "Bad Wilsnack",
+    "slug": "bad-wilsnack"
+  },
+  {
+    "name": "Baruth/Mark",
+    "slug": "baruthmark"
+  },
+  {
+    "name": "Beelitz",
+    "slug": "beelitz"
+  },
+  {
+    "name": "Beeskow",
+    "slug": "beeskow"
+  },
+  {
+    "name": "Bernau bei Berlin",
+    "slug": "bernau-bei-berlin"
+  },
+  {
+    "name": "Biesenthal",
+    "slug": "biesenthal"
+  },
+  {
+    "name": "Brandenburg an der Havel",
+    "slug": "brandenburg-an-der-havel"
+  },
+  {
+    "name": "Brück",
+    "slug": "brueck"
+  },
+  {
+    "name": "Brüssow",
+    "slug": "bruessow"
+  },
+  {
+    "name": "Buckow",
+    "slug": "buckow"
+  },
+  {
+    "name": "Calau",
+    "slug": "calau"
+  },
+  {
+    "name": "Cottbus/Chóśebuz",
+    "slug": "cottbuschebuz"
+  },
+  {
+    "name": "Dahme",
+    "slug": "dahme"
+  },
+  {
+    "name": "Doberlug-Kirchhain",
+    "slug": "doberlug-kirchhain"
+  },
+  {
+    "name": "Drebkau",
+    "slug": "drebkau"
+  },
+  {
+    "name": "Döbern",
+    "slug": "doebern"
+  },
+  {
+    "name": "Eberswalde",
+    "slug": "eberswalde"
+  },
+  {
+    "name": "Eisenhüttenstadt",
+    "slug": "eisenhuettenstadt"
+  },
+  {
+    "name": "Elsterwerda",
+    "slug": "elsterwerda"
+  },
+  {
+    "name": "Erkner",
+    "slug": "erkner"
+  },
+  {
+    "name": "Falkenberg/Elster",
+    "slug": "falkenbergelster"
+  },
+  {
+    "name": "Falkensee",
+    "slug": "falkensee"
+  },
+  {
+    "name": "Finsterwalde",
+    "slug": "finsterwalde"
+  },
+  {
+    "name": "Forst (Lausitz)",
+    "slug": "forst-lausitz"
+  },
+  {
+    "name": "Frankfurt (Oder)",
+    "slug": "frankfurt-oder"
+  },
+  {
+    "name": "Friedland",
+    "slug": "friedland"
+  },
+  {
+    "name": "Friesack",
+    "slug": "friesack"
+  },
+  {
+    "name": "Fürstenberg",
+    "slug": "fuerstenberg"
+  },
+  {
+    "name": "Fürstenwalde/Spree",
+    "slug": "fuerstenwaldespree"
+  },
+  {
+    "name": "Gartz",
+    "slug": "gartz"
+  },
+  {
+    "name": "Golßen",
+    "slug": "golssen"
+  },
+  {
+    "name": "Gransee",
+    "slug": "gransee"
+  },
+  {
+    "name": "Großräschen",
+    "slug": "grossraeschen"
+  },
+  {
+    "name": "Guben",
+    "slug": "guben"
+  },
+  {
+    "name": "Havelsee",
+    "slug": "havelsee"
+  },
+  {
+    "name": "Hennigsdorf",
+    "slug": "hennigsdorf"
+  },
+  {
+    "name": "Herzberg",
+    "slug": "herzberg"
+  },
+  {
+    "name": "Hohen Neuendorf",
+    "slug": "hohen-neuendorf"
+  },
+  {
+    "name": "Joachimsthal",
+    "slug": "joachimsthal"
+  },
+  {
+    "name": "Jüterbog",
+    "slug": "jueterbog"
+  },
+  {
+    "name": "Ketzin",
+    "slug": "ketzin"
+  },
+  {
+    "name": "Kremmen",
+    "slug": "kremmen"
+  },
+  {
+    "name": "Kyritz",
+    "slug": "kyritz"
+  },
+  {
+    "name": "Königs Wusterhausen",
+    "slug": "koenigs-wusterhausen"
+  },
+  {
+    "name": "Lauchhammer",
+    "slug": "lauchhammer"
+  },
+  {
+    "name": "Lebus",
+    "slug": "lebus"
+  },
+  {
+    "name": "Lenzen",
+    "slug": "lenzen"
+  },
+  {
+    "name": "Liebenwalde",
+    "slug": "liebenwalde"
+  },
+  {
+    "name": "Lieberose",
+    "slug": "lieberose"
+  },
+  {
+    "name": "Lindow",
+    "slug": "lindow"
+  },
+  {
+    "name": "Luckau",
+    "slug": "luckau"
+  },
+  {
+    "name": "Luckenwalde",
+    "slug": "luckenwalde"
+  },
+  {
+    "name": "Ludwigsfelde",
+    "slug": "ludwigsfelde"
+  },
+  {
+    "name": "Lychen",
+    "slug": "lychen"
+  },
+  {
+    "name": "Lübben/Lubin",
+    "slug": "luebbenlubin"
+  },
+  {
+    "name": "Lübbenau/Spreewald",
+    "slug": "luebbenauspreewald"
+  },
+  {
+    "name": "Meyenburg",
+    "slug": "meyenburg"
+  },
+  {
+    "name": "Mittenwalde",
+    "slug": "mittenwalde"
+  },
+  {
+    "name": "Märkisch Buchholz",
+    "slug": "maerkisch-buchholz"
+  },
+  {
+    "name": "Mühlberg",
+    "slug": "muehlberg"
+  },
+  {
+    "name": "Müllrose",
+    "slug": "muellrose"
+  },
+  {
+    "name": "Müncheberg",
+    "slug": "muencheberg"
+  },
+  {
+    "name": "Nauen",
+    "slug": "nauen"
+  },
+  {
+    "name": "Neuruppin",
+    "slug": "neuruppin"
+  },
+  {
+    "name": "Neustadt",
+    "slug": "neustadt"
+  },
+  {
+    "name": "Niemegk",
+    "slug": "niemegk"
+  },
+  {
+    "name": "Oderberg",
+    "slug": "oderberg"
+  },
+  {
+    "name": "Oranienburg",
+    "slug": "oranienburg"
+  },
+  {
+    "name": "Ortrand",
+    "slug": "ortrand"
+  },
+  {
+    "name": "Peitz",
+    "slug": "peitz"
+  },
+  {
+    "name": "Perleberg",
+    "slug": "perleberg"
+  },
+  {
+    "name": "Potsdam",
+    "slug": "potsdam"
+  },
+  {
+    "name": "Premnitz",
+    "slug": "premnitz"
+  },
+  {
+    "name": "Prenzlau",
+    "slug": "prenzlau"
+  },
+  {
+    "name": "Pritzwalk",
+    "slug": "pritzwalk"
+  },
+  {
+    "name": "Putlitz",
+    "slug": "putlitz"
+  },
+  {
+    "name": "Rathenow",
+    "slug": "rathenow"
+  },
+  {
+    "name": "Rheinsberg",
+    "slug": "rheinsberg"
+  },
+  {
+    "name": "Rhinow",
+    "slug": "rhinow"
+  },
+  {
+    "name": "Ruhland",
+    "slug": "ruhland"
+  },
+  {
+    "name": "Schlieben",
+    "slug": "schlieben"
+  },
+  {
+    "name": "Schwarzheide",
+    "slug": "schwarzheide"
+  },
+  {
+    "name": "Schwedt",
+    "slug": "schwedt"
+  },
+  {
+    "name": "Schönewalde",
+    "slug": "schoenewalde"
+  },
+  {
+    "name": "Seelow",
+    "slug": "seelow"
+  },
+  {
+    "name": "Senftenberg",
+    "slug": "senftenberg"
+  },
+  {
+    "name": "Sonnewalde",
+    "slug": "sonnewalde"
+  },
+  {
+    "name": "Spremberg",
+    "slug": "spremberg"
+  },
+  {
+    "name": "Storkow",
+    "slug": "storkow"
+  },
+  {
+    "name": "Strausberg",
+    "slug": "strausberg"
+  },
+  {
+    "name": "Teltow",
+    "slug": "teltow"
+  },
+  {
+    "name": "Templin",
+    "slug": "templin"
+  },
+  {
+    "name": "Teupitz",
+    "slug": "teupitz"
+  },
+  {
+    "name": "Trebbin",
+    "slug": "trebbin"
+  },
+  {
+    "name": "Treuenbrietzen",
+    "slug": "treuenbrietzen"
+  },
+  {
+    "name": "Uebigau-Wahrenbrück",
+    "slug": "uebigau-wahrenbrueck"
+  },
+  {
+    "name": "Velten",
+    "slug": "velten"
+  },
+  {
+    "name": "Vetschau",
+    "slug": "vetschau"
+  },
+  {
+    "name": "Welzow",
+    "slug": "welzow"
+  },
+  {
+    "name": "Werder (Havel)",
+    "slug": "werder-havel"
+  },
+  {
+    "name": "Werneuchen",
+    "slug": "werneuchen"
+  },
+  {
+    "name": "Wildau",
+    "slug": "wildau"
+  },
+  {
+    "name": "Wittenberge",
+    "slug": "wittenberge"
+  },
+  {
+    "name": "Wittstock",
+    "slug": "wittstock"
+  },
+  {
+    "name": "Wriezen",
+    "slug": "wriezen"
+  },
+  {
+    "name": "Zehdenick",
+    "slug": "zehdenick"
+  },
+  {
+    "name": "Ziesar",
+    "slug": "ziesar"
+  },
+  {
+    "name": "Zossen",
+    "slug": "zossen"
+  }
+]
