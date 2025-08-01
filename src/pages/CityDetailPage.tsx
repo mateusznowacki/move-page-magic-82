@@ -690,7 +690,7 @@ const CityDetailPage: React.FC = () => {
                  language === 'es' ? `Presupuesto gratis para ${cityData.name}` :
                  `Get Free Quote for ${cityData.name}`}
               </Button>
-              <Button size="lg" className="border border-white text-white hover:bg-white hover:text-moving-blue">
+              <Button size="lg" className="bg-transparent border border-white text-white hover:bg-white hover:text-moving-blue">
                 {language === 'de' ? `Kontaktieren Sie uns in ${cityData.name}` :
                  language === 'pl' ? `Skontaktuj się z nami w ${cityData.name}` :
                  language === 'es' ? `Contáctenos en ${cityData.name}` :
