@@ -678,10 +678,10 @@ const CityDetailPage: React.FC = () => {
               Get your free quote today and experience professional moving services in {cityData.name}!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button size="lg" variant="secondary" className="bg-white text-moving-blue hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-moving-blue hover:bg-gray-100">
                 Get Free Quote for {cityData.name}
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-moving-blue">
+              <Button size="lg" className="border border-white text-white hover:bg-white hover:text-moving-blue">
                 Contact Us in {cityData.name}
               </Button>
             </div>
