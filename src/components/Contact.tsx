@@ -1,12 +1,15 @@
 
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Clock, Building } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useToast } from '@/hooks/use-toast';
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -18,117 +21,116 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = language === 'pl' ? 'Imię jest wymagane' :
+                      language === 'de' ? 'Name ist erforderlich' :
+                      language === 'es' ? 'El nombre es requerido' :
+                      'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = language === 'pl' ? 'Email jest wymagany' :
+                       language === 'de' ? 'E-Mail ist erforderlich' :
+                       language === 'es' ? 'El email es requerido' :
+                       'Email is required';
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        newErrors.email = language === 'pl' ? 'Nieprawidłowy format email' :
+                         language === 'de' ? 'Ungültiges E-Mail-Format' :
+                         language === 'es' ? 'Formato de email inválido' :
+                         'Invalid email format';
+      }
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = language === 'pl' ? 'Wiadomość jest wymagana' :
+                         language === 'de' ? 'Nachricht ist erforderlich' :
+                         language === 'es' ? 'El mensaje es requerido' :
+                         'Message is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Podstawowa walidacja
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Błąd",
-        description: "Proszę wypełnić wszystkie wymagane pola (imię, email, wiadomość)",
-        variant: "destructive",
-      });
+    if (!validateForm()) {
       return;
-    }
-
-    // Walidacja email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Błąd",
-        description: "Proszę podać prawidłowy adres email",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Walidacja telefonu (jeśli podano) - format europejski
-    if (formData.phone) {
-      const phoneRegex = /^(\+?[1-9]\d{1,3}[\s\-]?)?(\d{2,4}[\s\-]?){2,4}\d{2,4}$/;
-      if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
-        toast({
-          title: "Błąd",
-          description: "Proszę podać prawidłowy numer telefonu (format europejski)",
-          variant: "destructive",
-        });
-        return;
-      }
     }
 
     setIsSubmitting(true);
 
     try {
-      // Tłumaczenia typów przeprowadzek
-      const moveTypeTranslations: { [key: string]: string } = {
-        'Residential Moving': 'Przeprowadzka mieszkaniowa',
-        'Commercial Moving': 'Przeprowadzka komercyjna',
-        'Long Distance Moving': 'Przeprowadzka na duże odległości',
-        'International Moving': 'Przeprowadzka międzynarodowa',
-        'Przeprowadzka mieszkaniowa': 'Przeprowadzka mieszkaniowa',
-        'Przeprowadzka komercyjna': 'Przeprowadzka komercyjna',
-        'Przeprowadzka na duże odległości': 'Przeprowadzka na duże odległości',
-        'Przeprowadzka międzynarodowa': 'Przeprowadzka międzynarodowa',
-        'Wohnungsumzug': 'Wohnungsumzug',
-        'Geschäftsumzug': 'Geschäftsumzug',
-        'Fernumzug': 'Fernumzug',
-        'Internationale Umzüge': 'Internationale Umzüge',
-        'Mudanza residencial': 'Mudanza residencial',
-        'Mudanza comercial': 'Mudanza comercial',
-        'Mudanza de larga distancia': 'Mudanza de larga distancia',
-        'Mudanza internacional': 'Mudanza internacional'
-      };
+      const whatsappMessage = `
+🌍 *Meister Umzüge 24 - Nowa wiadomość*
 
-      const translatedMoveType = moveTypeTranslations[formData.moveType] || formData.moveType;
-      
-      // Konstruuj wiadomość email
-      const moveTypeText = formData.moveType ? `\n${t('contact.moveTypeField')}: ${translatedMoveType}` : '';
-      const moveDateText = formData.moveDate ? `\n${t('contact.moveDateField')}: ${formData.moveDate}` : '';
-      const phoneText = formData.phone ? `\n${t('contact.phoneField')}: ${formData.phone}` : '';
-      
-      const emailSubject = `Nowe zapytanie o przeprowadzkę - ${formData.name}`;
-      const emailBody = `Nowe zapytanie o przeprowadzkę
+*Dane kontaktowe:*
+👤 Imię: ${formData.name}
+📧 Email: ${formData.email}
+📱 Telefon: ${formData.phone || 'Nie podano'}
 
-Dane kontaktowe:
-Imię: ${formData.name}
-Email: ${formData.email}${phoneText}${moveDateText}${moveTypeText}
+*Szczegóły przeprowadzki:*
+📅 Data: ${formData.moveDate || 'Nie podano'}
+🏠 Typ: ${formData.moveType || 'Nie podano'}
 
-Wiadomość:
+*Wiadomość:*
 ${formData.message}
 
 ---
-Wiadomość wysłana ze strony internetowej`;
+*Wysłane ze strony: meisterumzuege24.de*
+      `.trim();
 
-      // Przygotuj wiadomość WhatsApp w odpowiednim języku
-      const whatsappMessage = `${t('contact.whatsappTitle')}
-
-${t('contact.contactInfo')}:
-${t('contact.name')}: ${formData.name}
-Email: ${formData.email}${phoneText}${moveDateText}${moveTypeText}
-
-${t('contact.messageField')}:
-${formData.message}
-
----
-${t('contact.sentFromWebsite')}`;
-
-      // Otwórz WhatsApp
-      const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
       window.open(whatsappUrl, '_blank');
-      
+
       toast({
-        title: "Sukces!",
-        description: "Otwieram WhatsApp z gotową wiadomością. Możesz ją wysłać lub edytować.",
+        title: language === 'pl' ? 'Wiadomość wysłana!' :
+              language === 'de' ? 'Nachricht gesendet!' :
+              language === 'es' ? '¡Mensaje enviado!' :
+              'Message sent!',
+        description: language === 'pl' ? 'Przekierowujemy Cię do WhatsApp...' :
+                    language === 'de' ? 'Wir leiten Sie zu WhatsApp weiter...' :
+                    language === 'es' ? 'Te redirigimos a WhatsApp...' :
+                    'Redirecting you to WhatsApp...',
       });
 
-      // Resetowanie formularza
       setFormData({
         name: '',
         email: '',
@@ -137,13 +139,17 @@ ${t('contact.sentFromWebsite')}`;
         moveType: '',
         message: ''
       });
-
     } catch (error) {
-      console.error('Błąd wysyłania:', error);
       toast({
-        title: "Błąd",
-        description: "Wystąpił problem z otwieraniem aplikacji email. Spróbuj ponownie.",
-        variant: "destructive",
+        title: language === 'pl' ? 'Błąd!' :
+              language === 'de' ? 'Fehler!' :
+              language === 'es' ? '¡Error!' :
+              'Error!',
+        description: language === 'pl' ? 'Nie udało się wysłać wiadomości' :
+                    language === 'de' ? 'Nachricht konnte nicht gesendet werden' :
+                    language === 'es' ? 'No se pudo enviar el mensaje' :
+                    'Failed to send message',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
@@ -151,80 +157,75 @@ ${t('contact.sentFromWebsite')}`;
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding" role="main" aria-labelledby="contact-heading">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="sr-only">{t('contact.title')}</h2>
-            <h3 className="section-title">{t('contact.subtitle')}</h3>
-            <p className="text-gray-600 mb-8">
-              {t('contact.description')}
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="order-2 lg:order-1">
+            <header className="mb-8">
+              <h2 id="contact-heading" className="sr-only">{t('contact.title')}</h2>
+              <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">{t('contact.subtitle')}</h3>
+              <p className="text-gray-700 mb-8">
+                {t('contact.description')}
+              </p>
+            </header>
             
-            <div className="space-y-8 text-left">
-              <div className="flex items-start">
-                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
-                  <Building className="w-7 h-7 text-moving-blue" />
+            <div className="space-y-6 mb-8">
+              <div className="flex items-center">
+                <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
+                  <Phone className="w-6 h-6 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-moving-dark text-lg mb-2">Firma</h4>
                   <p className="text-gray-700 font-bold text-lg">MP Transporte <span className="text-moving-blue">und Umzüge</span></p>
+                  <a 
+                    href="tel:+4915223031473"
+                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg"
+                    aria-label="Zadzwoń do nas: +49 152 230 314 73"
+                  >
+                    +49 152 230 314 73
+                  </a>
                 </div>
               </div>
-
-              <div className="flex items-start">
-                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
-                  <MapPin className="w-7 h-7 text-moving-blue" />
+              
+              <div className="flex items-center">
+                <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
+                  <Mail className="w-6 h-6 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.location')}</h4>
+                  <p className="text-gray-700 font-bold text-lg">Email</p>
                   <a 
-                    href="https://maps.google.com/?q=Kolonnenstr.+8,+10827+Berlin" 
-                    target="_blank" 
+                    href="mailto:info@meisterumzuege24.de"
+                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg font-medium"
+                    aria-label="Napisz do nas: info@meisterumzuege24.de"
+                  >
+                    info@meisterumzuege24.de
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
+                  <MapPin className="w-6 h-6 text-moving-blue" />
+                </div>
+                <div>
+                  <p className="text-gray-700 font-bold text-lg">Adres</p>
+                  <a 
+                    href="https://maps.google.com/?q=Kolonnenstr.+8,+10827+Berlin"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg"
+                    aria-label="Zobacz nasz adres na mapie: Kolonnenstr. 8, 10827 Berlin"
                   >
-                    Kolonnenstr. 8<br />10827 Berlin
+                    Kolonnenstr. 8, 10827 Berlin
                   </a>
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
-                  <Phone className="w-7 h-7 text-moving-blue" />
+              <div className="flex items-center">
+                <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
+                  <Clock className="w-6 h-6 text-moving-blue" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.phone')}</h4>
-                  <a 
-                    href="tel:+4915223031473" 
-                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg font-medium"
-                  >
-                    +49 1522 3031473
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
-                  <Mail className="w-7 h-7 text-moving-blue" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.email')}</h4>
-                  <a 
-                    href="mailto:mptransporte24@web.de" 
-                    className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg"
-                  >
-                    mptransporte24@web.de
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-moving-lightblue p-4 rounded-xl mr-5">
-                  <Clock className="w-7 h-7 text-moving-blue" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-moving-dark text-lg mb-2">{t('contact.hours')}</h4>
+                  <p className="text-gray-700 font-bold text-lg">Godziny pracy</p>
                   <p className="text-gray-700 text-lg">{t('contact.hoursWeekdays')}</p>
                   <p className="text-gray-700 text-lg">{t('contact.hoursSaturday')}</p>
                 </div>
@@ -232,107 +233,144 @@ ${t('contact.sentFromWebsite')}`;
             </div>
           </div>
           
-          <div className="bg-white p-8 md:p-10 rounded-xl shadow-lg border border-gray-100">
-            <h3 className="text-2xl font-semibold mb-8 text-moving-dark">{t('contact.formTitle')}</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          <div className="order-1 lg:order-2">
+            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6 md:p-8 space-y-6">
+              <h4 className="text-xl font-semibold text-moving-dark mb-6">{t('contact.formTitle')}</h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700">
-                    {t('contact.nameLabel')} <span className="text-red-500">*</span>
+                    {t('contact.nameLabel')} *
                   </label>
-                  <input 
-                    type="text" 
+                  <Input
                     id="name"
                     name="name"
+                    type="text"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
                     placeholder={t('contact.namePlaceholder')}
+                    className={errors.name ? 'border-red-500' : ''}
                     required
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                   />
+                  {errors.name && (
+                    <p id="name-error" className="text-red-500 text-sm mt-1" role="alert">{errors.name}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
-                    {t('contact.emailLabel')} <span className="text-red-500">*</span>
+                    {t('contact.emailLabel')} *
                   </label>
-                  <input 
-                    type="email" 
+                  <Input
                     id="email"
                     name="email"
+                    type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
                     placeholder={t('contact.emailPlaceholder')}
+                    className={errors.email ? 'border-red-500' : ''}
                     required
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                   />
+                  {errors.email && (
+                    <p id="email-error" className="text-red-500 text-sm mt-1" role="alert">{errors.email}</p>
+                  )}
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.phoneLabel')}</label>
-                  <input 
-                    type="tel" 
+                  <Input
                     id="phone"
                     name="phone"
+                    type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
                     placeholder={t('contact.phonePlaceholder')}
+                    className={errors.phone ? 'border-red-500' : ''}
+                    aria-describedby={errors.phone ? 'phone-error' : undefined}
                   />
+                  {errors.phone && (
+                    <p id="phone-error" className="text-red-500 text-sm mt-1" role="alert">{errors.phone}</p>
+                  )}
                 </div>
+                
                 <div>
                   <label htmlFor="move-date" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.dateLabel')}</label>
-                  <input 
-                    type="date" 
+                  <Input
                     id="move-date"
                     name="moveDate"
+                    type="date"
                     value={formData.moveDate}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
+                    className={errors.moveDate ? 'border-red-500' : ''}
+                    aria-describedby={errors.moveDate ? 'date-error' : undefined}
                   />
+                  {errors.moveDate && (
+                    <p id="date-error" className="text-red-500 text-sm mt-1" role="alert">{errors.moveDate}</p>
+                  )}
                 </div>
               </div>
               
               <div>
                 <label htmlFor="move-type" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.moveTypeLabel')}</label>
-                <select 
-                  id="move-type"
-                  name="moveType"
-                  value={formData.moveType}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
-                >
-                  <option value="">{t('contact.moveTypePlaceholder')}</option>
-                  <option value="residential">{t('contact.moveTypeResidential')}</option>
-                  <option value="commercial">{t('contact.moveTypeCommercial')}</option>
-                  <option value="long-distance">{t('contact.moveTypeLongDistance')}</option>
-                  <option value="international">{t('contact.moveTypeInternational')}</option>
-                </select>
+                <Select value={formData.moveType} onValueChange={(value) => handleSelectChange('moveType', value)}>
+                  <SelectTrigger id="move-type" className={errors.moveType ? 'border-red-500' : ''}>
+                    <SelectValue placeholder={t('contact.moveTypePlaceholder')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="residential">{t('contact.moveTypeResidential')}</SelectItem>
+                    <SelectItem value="commercial">{t('contact.moveTypeCommercial')}</SelectItem>
+                    <SelectItem value="international">{t('contact.moveTypeInternational')}</SelectItem>
+                  </SelectContent>
+                </Select>
+                {errors.moveType && (
+                  <p className="text-red-500 text-sm mt-1" role="alert">{errors.moveType}</p>
+                )}
               </div>
               
               <div>
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">
-                  {t('contact.messageLabel')} <span className="text-red-500">*</span>
+                  {t('contact.messageLabel')} *
                 </label>
-                <textarea 
+                <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-moving-blue focus:border-transparent transition-colors"
                   placeholder={t('contact.messagePlaceholder')}
+                  rows={4}
+                  className={errors.message ? 'border-red-500' : ''}
                   required
-                ></textarea>
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                />
+                {errors.message && (
+                  <p id="message-error" className="text-red-500 text-sm mt-1" role="alert">{errors.message}</p>
+                )}
               </div>
               
               <Button 
-                type="submit" 
-                className="btn-primary w-full py-4 text-lg font-semibold" 
+                type="submit"
+                className="w-full bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 px-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 disabled={isSubmitting}
+                aria-label={isSubmitting ? 'Wysyłanie wiadomości...' : 'Wyślij wiadomość'}
               >
-                {isSubmitting ? 'Wysyłam wiadomość...' : t('contact.submitButton')}
+                {isSubmitting ? (
+                  <>
+                    <Send className="w-5 h-5 mr-2 animate-spin" />
+                    {language === 'pl' ? 'Wysyłanie...' :
+                     language === 'de' ? 'Senden...' :
+                     language === 'es' ? 'Enviando...' :
+                     'Sending...'}
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    {t('contact.submitButton')}
+                  </>
+                )}
               </Button>
             </form>
           </div>

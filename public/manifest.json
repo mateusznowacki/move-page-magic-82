@@ -1,0 +1,19 @@
+{
+  "name": "Meister Umzüge 24",
+  "short_name": "Meister Umzüge",
+  "description": "Profesjonalne usługi przeprowadzkowe w Berlinie i wschodnich Niemczech",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "transportation"],
+  "lang": "de",
+  "dir": "ltr"
+} 

@@ -31,7 +31,7 @@ const ServiceCard = React.memo(({ service }: { service: any }) => {
         )}
       </div>
       <h3 className="text-xl font-semibold mb-3 text-moving-dark" itemProp="name">{service.title}</h3>
-      <p className="text-gray-600" itemProp="description">{service.description}</p>
+                  <p className="text-gray-700" itemProp="description">{service.description}</p>
     </article>
   );
 });
@@ -48,7 +48,7 @@ const Services: React.FC = () => {
         <header className="text-center max-w-3xl mx-auto mb-12">
           <h2 id="services-heading" className="sr-only">{t('services.title')}</h2>
           <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{t('services.subtitle')}</h3>
-          <p className="text-gray-600 text-base sm:text-lg">
+          <p className="text-gray-700 text-base sm:text-lg">
             {t('services.description')}
           </p>
         </header>

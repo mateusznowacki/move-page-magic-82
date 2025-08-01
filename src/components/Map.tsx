@@ -49,7 +49,12 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
 
     // Destroy previous map instance if it exists
     if (map.current) {
-      map.current.remove();
+      try {
+        map.current.remove();
+      } catch (error) {
+        console.warn('Error removing previous map:', error);
+      }
+      map.current = null;
     }
 
     try {
@@ -186,7 +191,12 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       // Clean up on unmount
       return () => {
         if (map.current) {
-          map.current.remove();
+          try {
+            map.current.remove();
+          } catch (error) {
+            console.warn('Error removing map:', error);
+          }
+          map.current = null;
         }
       };
     } catch (error) {

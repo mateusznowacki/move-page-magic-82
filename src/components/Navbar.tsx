@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
             }
           }}
         >
-          <img alt="Meister Umzuge Logo" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/meister-umzunge-logo.png" />
+          <img alt="Meister Umzuge Logo" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" />
         </Link>
         
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">

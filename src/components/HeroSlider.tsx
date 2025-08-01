@@ -3,15 +3,15 @@ import React, { useState, useEffect } from 'react';
 
 const sliderImages = [
   {
-    url: "/hero-image-1.jpg",
+    url: "/optimized/hero-image-1.webp",
     alt: "Moving services"
   },
   {
-    url: "/hero-image-2.jpg", 
+    url: "/optimized/hero-image-2.webp", 
     alt: "Professional movers loading a truck" 
   },
   {
-    url: "/hero-image-3.jpg",
+    url: "/optimized/hero-image-3.webp",
     alt: "Home relocation"
   }
 ];

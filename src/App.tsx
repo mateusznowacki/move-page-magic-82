@@ -1,54 +1,61 @@
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Toaster } from './components/ui/toaster';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
+import LoadingSpinner from './components/LoadingSpinner';
+import CookieConsent from './components/CookieConsent';
 
-// Pages
-import Index from './pages/Index';
-import QuotePage from './pages/QuotePage';
-import ServicesPage from './pages/ServicesPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import CookiePolicy from './pages/CookiePolicy';
-import NotFound from './pages/NotFound';
+// Lazy load pages for code splitting
+const Index = lazy(() => import('./pages/Index'));
+const QuotePage = lazy(() => import('./pages/QuotePage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 import './App.css';
 
 function App() {
   return (
-    <LanguageProvider>
-      <Router>
-        <div className="App">
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/angebot" element={<QuotePage />} />
-              <Route path="/dienstleistungen" element={<ServicesPage />} />
-              <Route path="/uber-uns" element={<AboutPage />} />
-              <Route path="/kontakt" element={<ContactPage />} />
+    <HelmetProvider>
+      <LanguageProvider>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <main>
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/angebot" element={<QuotePage />} />
+                  <Route path="/dienstleistungen" element={<ServicesPage />} />
+                  <Route path="/uber-uns" element={<AboutPage />} />
+                  <Route path="/kontakt" element={<ContactPage />} />
 
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/cookie-policy" element={<CookiePolicy />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-          <WhatsAppButton phoneNumber="+4915223031473" />
-          <ScrollToTop />
-          <Toaster />
-        </div>
-      </Router>
-    </LanguageProvider>
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                  <Route path="/cookie-policy" element={<CookiePolicy />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
+            <WhatsAppButton phoneNumber="+4915223031473" />
+            <ScrollToTop />
+            <CookieConsent />
+            <Toaster />
+          </div>
+        </Router>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 }
 

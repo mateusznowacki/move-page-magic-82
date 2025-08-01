@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEOHead from '../components/SEOHead';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -20,6 +21,34 @@ import {
 const ContactPage: React.FC = () => {
   const { language } = useLanguage();
   const { toast } = useToast();
+
+  const getSEOData = () => {
+    const seoData = {
+      pl: {
+        title: "Kontakt - Meister Umzüge 24 | Profesjonalne Usługi Przeprowadzkowe",
+        description: "Skontaktuj się z nami w sprawie profesjonalnych usług przeprowadzkowych w Berlinie i wschodnich Niemczech. Bezpłatna wycena i wsparcie 24/7.",
+        keywords: "kontakt przeprowadzki, wycena przeprowadzki, usługi przeprowadzkowe Berlin, przeprowadzki wschodnie Niemcy"
+      },
+      de: {
+        title: "Kontakt - Meister Umzüge 24 | Professionelle Umzugsdienste",
+        description: "Kontaktieren Sie uns für professionelle Umzugsdienste in Berlin und Ostdeutschland. Kostenloses Angebot und 24/7 Support.",
+        keywords: "Umzug Kontakt, Umzugsangebot, Umzugsdienste Berlin, Umzug Ostdeutschland"
+      },
+      es: {
+        title: "Contacto - Meister Umzüge 24 | Servicios Profesionales de Mudanza",
+        description: "Contáctenos para servicios profesionales de mudanza en Berlín y el este de Alemania. Presupuesto gratuito y soporte 24/7.",
+        keywords: "contacto mudanza, presupuesto mudanza, servicios mudanza Berlín, mudanza este Alemania"
+      },
+      en: {
+        title: "Contact - Meister Umzüge 24 | Professional Moving Services",
+        description: "Contact us for professional moving services in Berlin and Eastern Germany. Free quote and 24/7 support.",
+        keywords: "moving contact, moving quote, moving services Berlin, moving Eastern Germany"
+      }
+    };
+    return seoData[language as keyof typeof seoData] || seoData.en;
+  };
+
+  const seoData = getSEOData();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -250,7 +279,14 @@ ${t.footer}`;
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonical="/kontakt"
+      />
+      <div className="min-h-screen bg-gray-50">
       <div className="pt-24 pb-12">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white py-12 mb-12">
@@ -589,6 +625,7 @@ ${t.footer}`;
         </div>
       </div>
     </div>
+    </>
   );
 };
 

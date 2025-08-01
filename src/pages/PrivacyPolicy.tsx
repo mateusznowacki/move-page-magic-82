@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEOHead from '@/components/SEOHead';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +8,34 @@ import { useNavigate } from 'react-router-dom';
 const PrivacyPolicy: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+
+  const getSEOData = () => {
+    const seoData = {
+      pl: {
+        title: "Polityka Prywatności - Meister Umzüge 24 | Ochrona Danych Osobowych",
+        description: "Polityka prywatności Meister Umzüge 24. Dowiedz się, jak chronimy Twoje dane osobowe zgodnie z RODO i niemieckim prawem o ochronie danych.",
+        keywords: "polityka prywatności, ochrona danych, RODO, dane osobowe, umzug"
+      },
+      de: {
+        title: "Datenschutzerklärung - Meister Umzüge 24 | Datenschutz",
+        description: "Datenschutzerklärung von Meister Umzüge 24. Erfahren Sie, wie wir Ihre persönlichen Daten gemäß DSGVO und deutschem Datenschutzrecht schützen.",
+        keywords: "datenschutzerklärung, datenschutz, DSGVO, persönliche daten, umzug"
+      },
+      es: {
+        title: "Política de Privacidad - Meister Umzüge 24 | Protección de Datos",
+        description: "Política de privacidad de Meister Umzüge 24. Conozca cómo protegemos sus datos personales de acuerdo con el RGPD y la ley alemana de protección de datos.",
+        keywords: "política de privacidad, protección de datos, RGPD, datos personales, mudanza"
+      },
+      en: {
+        title: "Privacy Policy - Meister Umzüge 24 | Data Protection",
+        description: "Privacy policy of Meister Umzüge 24. Learn how we protect your personal data in accordance with GDPR and German data protection law.",
+        keywords: "privacy policy, data protection, GDPR, personal data, moving"
+      }
+    };
+    return seoData[language as keyof typeof seoData] || seoData.en;
+  };
+
+  const seoData = getSEOData();
 
   const content = {
     pl: {
@@ -389,7 +418,14 @@ const PrivacyPolicy: React.FC = () => {
   const currentContent = content[language as keyof typeof content] || content.en;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonical="/privacy-policy"
+      />
+      <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
@@ -535,6 +571,7 @@ const PrivacyPolicy: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

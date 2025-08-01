@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
               <p className="text-moving-dark text-xs sm:text-sm mb-3 leading-relaxed">{t('footer.promotionDescription')}</p>
-              <div className="text-xs sm:text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-700">
                 {t('footer.promotionTerms')}
               </div>
             </div>
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.yearsDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-600">Doświadczenie i profesjonalizm</p>
+              <p className="text-xs sm:text-sm text-gray-700">Doświadczenie i profesjonalizm</p>
             </div>
           </div>
           
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.customersDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-600">W całym kraju</p>
+              <p className="text-xs sm:text-sm text-gray-700">W całym kraju</p>
             </div>
           </div>
           
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-moving-dark text-sm sm:text-base">{t('hero.supportDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-600">Zawsze gotowi pomóc</p>
+              <p className="text-xs sm:text-sm text-gray-700">Zawsze gotowi pomóc</p>
             </div>
           </div>
         </div>

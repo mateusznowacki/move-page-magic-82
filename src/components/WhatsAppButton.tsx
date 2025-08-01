@@ -35,7 +35,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       target="_blank" 
       rel="noopener noreferrer"
       className={cn(
-        "fixed bottom-20 left-8 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300",
+        "fixed bottom-8 left-8 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300",
         className
       )}
       aria-label="Contact us on WhatsApp"

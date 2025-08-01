@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEOHead from '../components/SEOHead';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { 
@@ -76,6 +77,34 @@ const ServicesPage: React.FC = () => {
 
   const headerText = getHeaderText();
 
+  const getSEOData = () => {
+    const seoData = {
+      pl: {
+        title: "Usługi Przeprowadzkowe - Meister Umzüge 24 | Profesjonalne Przeprowadzki",
+        description: "Kompletne usługi przeprowadzkowe we wschodnich Niemczech. Mieszkaniowe, biurowe i międzynarodowe przeprowadzki z 10+ latami doświadczenia. Bezpłatna wycena!",
+        keywords: "usługi przeprowadzkowe, przeprowadzki mieszkaniowe, przeprowadzki biurowe, przeprowadzki międzynarodowe, pakowanie, transport mebli"
+      },
+      de: {
+        title: "Umzugsdienste - Meister Umzüge 24 | Professionelle Umzüge",
+        description: "Vollständige Umzugsdienste in Ostdeutschland. Wohnungs-, Büro- und internationale Umzüge mit über 10 Jahren Erfahrung. Kostenloses Angebot!",
+        keywords: "Umzugsdienste, Wohnungsumzüge, Büroumzüge, internationale Umzüge, Verpackung, Möbeltransport"
+      },
+      es: {
+        title: "Servicios de Mudanza - Meister Umzüge 24 | Mudanzas Profesionales",
+        description: "Servicios completos de mudanza en el este de Alemania. Mudanzas residenciales, comerciales e internacionales con más de 10 años de experiencia. ¡Presupuesto gratuito!",
+        keywords: "servicios de mudanza, mudanzas residenciales, mudanzas comerciales, mudanzas internacionales, empaquetado, transporte de muebles"
+      },
+      en: {
+        title: "Moving Services - Meister Umzüge 24 | Professional Moving",
+        description: "Complete moving services in Eastern Germany. Residential, commercial and international moves with over 10 years of experience. Free quote!",
+        keywords: "moving services, residential moving, commercial moving, international moving, packing, furniture transport"
+      }
+    };
+    return seoData[language as keyof typeof seoData] || seoData.en;
+  };
+
+  const seoData = getSEOData();
+
   const features = [
     {
       icon: CheckCircle,
@@ -100,8 +129,15 @@ const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-moving-gray">
-      <div className="px-4 pt-24 pb-8">
+    <>
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonical="/dienstleistungen"
+      />
+      <div className="min-h-screen bg-moving-gray">
+        <div className="px-4 pt-24 pb-8">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 md:mb-16 overflow-hidden relative">
           {/* Background Pattern */}
@@ -511,6 +547,7 @@ const ServicesPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

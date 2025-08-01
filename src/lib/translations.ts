@@ -2,6 +2,9 @@ type TranslationKey =
   | 'nav.home' | 'nav.about' | 'nav.services' | 'nav.contact' | 'nav.quote' | 'nav.testimonials' | 'nav.getQuote' | 'nav.areas'
   | 'hero.title' | 'hero.subtitle' | 'hero.years' | 'hero.yearsDesc' | 'hero.getQuote' | 'hero.learnMore' | 'hero.services' | 'hero.customers' | 'hero.customersDesc' | 'hero.support' | 'hero.supportDesc'
   | 'about.title' | 'about.subtitle' | 'about.description' | 'about.getStarted' | 'about.learnMore' | 'about.contactUs'
+  | 'about.feature1.title' | 'about.feature1.description'
+  | 'about.feature2.title' | 'about.feature2.description'
+  | 'about.feature3.title' | 'about.feature3.description'
   | 'services.title' | 'services.subtitle' | 'services.description' | 'services.viewAll'
   | 'services.residential.title' | 'services.residential.description'
   | 'services.commercial.title' | 'services.commercial.description'
@@ -21,7 +24,8 @@ type TranslationKey =
   | 'footer.description' | 'footer.servicesTitle' | 'footer.residentialMoving' | 'footer.commercialMoving' | 'footer.packingUnpacking'
   | 'footer.longDistanceMoving' | 'footer.internationalMoving' | 'footer.storageSolutions' | 'footer.quickLinksTitle' | 'footer.home' | 'footer.aboutUs' | 'footer.services' | 'footer.testimonials' | 'footer.contactUs'
   | 'footer.promotionTitle' | 'footer.discount' | 'footer.promotionDescription' | 'footer.promotionTerms' | 'footer.copyright' | 'footer.allRightsReserved'
-  | 'footer.privacyPolicy' | 'footer.termsOfService' | 'footer.cookiePolicy';
+  | 'footer.privacyPolicy' | 'footer.termsOfService' | 'footer.cookiePolicy'
+  | 'footer.quickLinks' | 'footer.legal' | 'footer.rights';
 
 type Translations = {
   [key in TranslationKey]: {
@@ -196,6 +200,42 @@ export const translations: Translations = {
     pl: 'Kontakt',
     de: 'Kontaktiere uns',
     es: 'Contáctenos'
+  },
+  'about.feature1.title': {
+    en: 'Reliable & Safe',
+    pl: 'Niezawodne i bezpieczne',
+    de: 'Zuverlässig & Sicher',
+    es: 'Fiable y seguro'
+  },
+  'about.feature1.description': {
+    en: 'Our experienced team ensures your belongings are handled with care and transported safely to your new location.',
+    pl: 'Nasz doświadczony zespół zapewnia, że Twoje rzeczy są przetrzymywane z dokładnością i bezpiecznie przewiezione do nowej lokalizacji.',
+    de: 'Unser erfahrenes Team sorgt dafür, dass Ihre Sachen mit Sorgfalt und Sicherheit zu Ihrem neuen Standort transportiert werden.',
+    es: 'Nuestro equipo experimentado asegura que sus pertenencias se manejen con cuidado y se transporten de forma segura a su nueva ubicación.'
+  },
+  'about.feature2.title': {
+    en: 'Customized Solutions',
+    pl: 'Rozwiązania spersonalizowane',
+    de: 'Individuelle Lösungen',
+    es: 'Soluciones personalizadas'
+  },
+  'about.feature2.description': {
+    en: 'We offer flexible and customized moving solutions to meet your specific needs and budget.',
+    pl: 'Oferujemy elastyczne i spersonalizowane rozwiązania przeprowadzkowe, które spełniają Twoje konkretne potrzeby i budżet.',
+    de: 'Wir bieten flexible und individuelle Umzugslösungen, die Ihren spezifischen Bedürfnissen und Budget entsprechen.',
+    es: 'Ofrecemos soluciones de mudanza flexibles y personalizadas que se adaptan a sus necesidades específicas y presupuesto.'
+  },
+  'about.feature3.title': {
+    en: '24/7 Customer Support',
+    pl: 'Obsługa klienta 24/7',
+    de: 'Kundendienst 24/7',
+    es: 'Atención al cliente 24/7'
+  },
+  'about.feature3.description': {
+    en: 'Our dedicated support team is available 24/7 to assist you with any questions or concerns you may have.',
+    pl: 'Nasza dedykowana obsługa klienta jest dostępna 24/7, aby pomóc Ci z każdym pytaniem lub problemem, który możesz mieć.',
+    de: 'Unser dediziertes Support-Team ist rund um die Uhr für Sie da, um Ihnen bei allen Fragen oder Bedenken zu helfen, die Sie haben könnten.',
+    es: 'Nuestro equipo de soporte dedicado está disponible las 24 horas del día, 7 días a la semana, para ayudarte con cualquier pregunta o inquietud que puedas tener.'
   },
   'testimonials.title': {
     en: 'Client Testimonials',
@@ -586,6 +626,24 @@ export const translations: Translations = {
     pl: 'Polityka cookies',
     de: 'Cookie-Richtlinie',
     es: 'Política de cookies'
+  },
+  'footer.quickLinks': {
+    en: 'Quick Links',
+    pl: 'Szybkie linki',
+    de: 'Schnelle Links',
+    es: 'Enlaces rápidos'
+  },
+  'footer.legal': {
+    en: 'Legal',
+    pl: 'Prawo',
+    de: 'Recht',
+    es: 'Legal'
+  },
+  'footer.rights': {
+    en: 'All rights reserved.',
+    pl: 'Wszystkie prawa zastrzeżone.',
+    de: 'Alle Rechte vorbehalten.',
+    es: 'Todos los derechos reservados.'
   }
 };
 
@@ -677,7 +735,12 @@ export const serviceTranslations = {
       title: "Przeprowadzki komercyjne",
       description: "Zminimalizuj przestoje dzięki naszym efektywnym usługom relokacji biur i firm.",
     },
-
+    {
+      id: 3,
+      icon: "📦",
+      title: "Pakowanie i rozpakowywanie",
+      description: "Profesjonalne usługi pakowania i rozpakowywania, aby chronić Twoje cenne rzeczy.",
+    },
     {
       id: 4,
       icon: "🚚",
@@ -690,9 +753,44 @@ export const serviceTranslations = {
       title: "Rozwiązania magazynowe",
       description: "Bezpieczne opcje przechowywania na krótki i długi termin podczas przeprowadzki.",
     },
-
     {
-      id: 3,
+      id: 6,
+      icon: "🛋️",
+      title: "Montaż mebli",
+      description: "Ekspercki demontaż i montaż mebli, aby przeprowadzka była bezproblemowa.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Instalacja lamp",
+      description: "Profesjonalna instalacja lamp i oświetlenia w domu lub biurze.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Montaż luster",
+      description: "Ekspercka instalacja luster i dekoracji ściennych do wnętrza.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Malowanie ścian",
+      description: "Jakościowe usługi malowania ścian i wypełniania ubytków i niedoskonałości.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Czyszczenie i naprawa mebli",
+      description: "Podstawowe usługi czyszczenia, konserwacji i naprawy mebli, aby przedłużyć życie Twoich elementów.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Produkty czyszczące",
+      description: "Sprzedajemy sprawdzone produkty czyszczące i konserwujące dla mebli tapicerowanych i skórzanych.",
+    },
+    {
+      id: 12,
       icon: "🇪🇺",
       title: "Przeprowadzki międzynarodowe",
       description: "Profesjonalne usługi przeprowadzkowe na terenie całej Unii Europejskiej z obsługą celną i wiedzą z zakresu logistyki międzynarodowej.",
@@ -711,7 +809,12 @@ export const serviceTranslations = {
       title: "Geschäftsumzug",
       description: "Minimieren Sie Ausfallzeiten mit unseren effizienten Büro- und Geschäftsumzugsdiensten.",
     },
-
+    {
+      id: 3,
+      icon: "📦",
+      title: "Verpackung & Auspackung",
+      description: "Professionelle Verpackungs- und Auspackungsdienste zum Schutz Ihrer wertvollen Gegenstände.",
+    },
     {
       id: 4,
       icon: "🚚",
@@ -724,9 +827,44 @@ export const serviceTranslations = {
       title: "Lagerungslösungen",
       description: "Sichere Lagerungsoptionen für kurz- und langfristige Bedürfnisse während Ihres Umzugs.",
     },
-
     {
-      id: 3,
+      id: 6,
+      icon: "🛋️",
+      title: "Möbelmontage",
+      description: "Experten-Demontage und -Montage von Möbeln für einen nahtlosen Umzug.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Lampeninstallation",
+      description: "Professionelle Installation von Lampen und Beleuchtungskörpern in Ihrem Zuhause oder Büro.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Spiegelmontage",
+      description: "Experten-Installation von Spiegeln und Wanddekorationen für Ihr Interieur.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Wandmalerei",
+      description: "Qualitäts-Wandmalereidienste und Ausbesserung von Wandfehlern und -unvollkommenheiten.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Möbelreinigung & -reparatur",
+      description: "Grundlegende Möbelreinigungs-, Wartungs- und Reparaturdienste zur Verlängerung der Lebensdauer Ihrer Stücke.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Reinigungsprodukte",
+      description: "Wir verkaufen bewährte Reinigungs- und Pflegeprodukte für Polstermöbel und Ledermöbel.",
+    },
+    {
+      id: 12,
       icon: "🇪🇺",
       title: "Internationale Umzüge",
       description: "Professionelle Umzugsdienste in allen EU-Ländern mit Zollabwicklung und Fachwissen in internationaler Logistik.",
@@ -745,17 +883,62 @@ export const serviceTranslations = {
       title: "Mudanzas comerciales",
       description: "Minimice el tiempo de inactividad con nuestros eficientes servicios de reubicación de oficinas y negocios.",
     },
-
-
+    {
+      id: 3,
+      icon: "📦",
+      title: "Embalaje y desempaquetado",
+      description: "Servicios profesionales de embalaje y desempaquetado para proteger sus pertenencias valiosas.",
+    },
+    {
+      id: 4,
+      icon: "🚚",
+      title: "Mudanzas de larga distancia",
+      description: "Servicios confiables de mudanza de larga distancia con planificación cuidadosa y ejecución.",
+    },
     {
       id: 5,
       icon: "🔒",
       title: "Soluciones de almacenamiento",
       description: "Opciones de almacenamiento seguras para necesidades a corto y largo plazo durante su mudanza.",
     },
-
     {
-      id: 3,
+      id: 6,
+      icon: "🛋️",
+      title: "Ensamblaje de muebles",
+      description: "Desmontaje y montaje experto de muebles para hacer su mudanza sin problemas.",
+    },
+    {
+      id: 7,
+      icon: "💡",
+      title: "Instalación de lámparas",
+      description: "Instalación profesional de lámparas y accesorios de iluminación en su hogar u oficina.",
+    },
+    {
+      id: 8,
+      icon: "🪞",
+      title: "Montaje de espejos",
+      description: "Instalación experta de espejos y decoraciones de pared para su interior.",
+    },
+    {
+      id: 9,
+      icon: "🖌️",
+      title: "Pintura de paredes",
+      description: "Servicios de pintura de paredes de calidad y relleno de defectos e imperfecciones.",
+    },
+    {
+      id: 10,
+      icon: "🧹",
+      title: "Limpieza y reparación de muebles",
+      description: "Servicios básicos de limpieza, mantenimiento y reparación de muebles para extender la vida de sus piezas.",
+    },
+    {
+      id: 11,
+      icon: "🛋️",
+      title: "Productos de limpieza",
+      description: "Vendemos productos de limpieza y mantenimiento probados para muebles tapizados y de cuero.",
+    },
+    {
+      id: 12,
       icon: "🇪🇺",
       title: "Mudanzas internacionales",
       description: "Servicios profesionales de mudanza en todos los países de la UE con gestión aduanera y experiencia en logística internacional.",

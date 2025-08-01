@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import SEOHead from '../components/SEOHead';
 import { Card, CardContent } from '../components/ui/card';
 import { 
   Users, 
@@ -18,6 +19,34 @@ import {
 
 const AboutPage: React.FC = () => {
   const { language } = useLanguage();
+
+  const getSEOData = () => {
+    const seoData = {
+      pl: {
+        title: "O Nas - Meister Umzüge 24 | Profesjonalne Usługi Przeprowadzkowe",
+        description: "Poznaj naszą firmę przeprowadzkową z 10+ latami doświadczenia we wschodnich Niemczech. Specjalizujemy się w przeprowadzkach mieszkaniowych, biurowych i międzynarodowych.",
+        keywords: "o nas przeprowadzki, firma przeprowadzkowa, doświadczenie przeprowadzki, przeprowadzki wschodnie Niemcy"
+      },
+      de: {
+        title: "Über Uns - Meister Umzüge 24 | Professionelle Umzugsdienste",
+        description: "Lernen Sie unser Umzugsunternehmen mit über 10 Jahren Erfahrung in Ostdeutschland kennen. Wir sind spezialisiert auf Wohnungs-, Büro- und internationale Umzüge.",
+        keywords: "über uns Umzug, Umzugsunternehmen, Umzugserfahrung, Umzug Ostdeutschland"
+      },
+      es: {
+        title: "Sobre Nosotros - Meister Umzüge 24 | Servicios Profesionales de Mudanza",
+        description: "Conozca nuestra empresa de mudanzas con más de 10 años de experiencia en el este de Alemania. Nos especializamos en mudanzas residenciales, comerciales e internacionales.",
+        keywords: "sobre nosotros mudanza, empresa mudanza, experiencia mudanza, mudanza este Alemania"
+      },
+      en: {
+        title: "About Us - Meister Umzüge 24 | Professional Moving Services",
+        description: "Learn about our moving company with over 10 years of experience in Eastern Germany. We specialize in residential, commercial and international moves.",
+        keywords: "about us moving, moving company, moving experience, moving Eastern Germany"
+      }
+    };
+    return seoData[language as keyof typeof seoData] || seoData.en;
+  };
+
+  const seoData = getSEOData();
 
   const getHeaderText = () => {
     const texts = {
@@ -192,7 +221,14 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-moving-gray">
+    <>
+      <SEOHead
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonical="/uber-uns"
+      />
+      <div className="min-h-screen bg-moving-gray">
       <div className="px-4 pt-24 pb-8">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 md:mb-16 overflow-hidden relative">
@@ -369,6 +405,7 @@ const AboutPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
