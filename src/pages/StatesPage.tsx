@@ -275,7 +275,7 @@ const StatesPage: React.FC = () => {
                           {state.name}
                         </CardTitle>
                         <Badge variant="secondary" className="text-sm">
-                          {state.cities.length} miast
+                          {state.cities.length} {t('cities')}
                         </Badge>
                       </div>
                       <ChevronRight 

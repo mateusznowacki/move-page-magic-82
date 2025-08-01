@@ -25,7 +25,8 @@ type TranslationKey =
   | 'footer.longDistanceMoving' | 'footer.internationalMoving' | 'footer.storageSolutions' | 'footer.quickLinksTitle' | 'footer.home' | 'footer.aboutUs' | 'footer.services' | 'footer.testimonials' | 'footer.contactUs'
   | 'footer.promotionTitle' | 'footer.discount' | 'footer.promotionDescription' | 'footer.promotionTerms' | 'footer.copyright' | 'footer.allRightsReserved'
   | 'footer.privacyPolicy' | 'footer.termsOfService' | 'footer.cookiePolicy'
-  | 'footer.quickLinks' | 'footer.legal' | 'footer.rights';
+  | 'footer.quickLinks' | 'footer.legal' | 'footer.rights'
+  | 'cities';
 
 type Translations = {
   [key in TranslationKey]: {
@@ -758,6 +759,12 @@ export const translations: Translations = {
     pl: 'Wszystkie prawa zastrzeżone.',
     de: 'Alle Rechte vorbehalten.',
     es: 'Todos los derechos reservados.'
+  },
+  'cities': {
+    en: 'cities',
+    pl: 'miast',
+    de: 'Städte',
+    es: 'ciudades'
   }
 };
 
