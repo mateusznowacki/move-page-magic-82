@@ -1,7 +1,5 @@
 
 import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MapProps {
@@ -10,8 +8,9 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({ mapType }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
+  const map = useRef<any>(null);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [mapboxLoaded, setMapboxLoaded] = React.useState(false);
   const { language } = useLanguage();
   
   // Mapbox access token
@@ -44,243 +43,256 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
     }
   };
 
+  // Load Mapbox GL JS dynamically
   useEffect(() => {
-    if (!mapContainer.current) return;
-
-    // Destroy previous map instance if it exists
-    if (map.current) {
+    const loadMapbox = async () => {
       try {
-        map.current.remove();
+        const mapboxgl = await import('mapbox-gl');
+        await import('mapbox-gl/dist/mapbox-gl.css');
+        setMapboxLoaded(true);
       } catch (error) {
-        console.warn('Error removing previous map:', error);
+        console.error('Error loading Mapbox:', error);
       }
-      map.current = null;
-    }
+    };
 
-    try {
-      // Initialize map
-      mapboxgl.accessToken = MAPBOX_TOKEN;
-      
-      const settings = mapSettings[mapType];
-      
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/light-v11',
-        center: settings.center,
-        zoom: settings.zoom,
-          interactive: false,
-          attributionControl: false,
-          logoPosition: 'bottom-left'
-      });
+    loadMapbox();
+  }, []);
 
-      // Add navigation controls
-              // Removed NavigationControl to disable zoom controls
+  useEffect(() => {
+    if (!mapContainer.current || !mapboxLoaded) return;
 
-      // Add company location marker
-      map.current.on('load', () => {
-        setIsLoading(false);
-        if (map.current) {
-          // Create a custom marker element
-          const markerEl = document.createElement('div');
-          markerEl.className = 'company-marker';
-          markerEl.style.width = '30px';
-          markerEl.style.height = '30px';
-          markerEl.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ef4444\'%3E%3Cpath d=\'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z\'/%3E%3C/svg%3E")';
-          markerEl.style.backgroundSize = 'contain';
-          markerEl.style.backgroundRepeat = 'no-repeat';
-          markerEl.style.cursor = 'pointer';
-
-          // Add marker to map
-          new mapboxgl.Marker(markerEl)
-            .setLngLat(COMPANY_LOCATION)
-            .setPopup(
-              new mapboxgl.Popup({ offset: 25 })
-                .setHTML(`
-                  <div class="p-2">
-                    <h3 class="font-bold text-lg">Meister Umzüge</h3>
-                    <p class="text-sm">Kolonnenstr. 8</p>
-                    <p class="text-sm">10827 Berlin</p>
-                  </div>
-                `)
-            )
-            .addTo(map.current);
-
-          // Add Berlin boundary for Berlin map
-          if (mapType === 'berlin') {
-            // Load the GeoJSON data to get exact Berlin boundaries
-            fetch('/germany-states-low.geojson')
-              .then(response => response.json())
-              .then(data => {
-                if (map.current) {
-                  // Find Berlin feature in GeoJSON
-                  const berlinFeature = data.features.find((f: any) => f.properties.name === 'Berlin');
-                  if (berlinFeature) {
-                    // Add Berlin boundary highlight
-                    const berlinData: GeoJSON.FeatureCollection = {
-                      type: 'FeatureCollection',
-                      features: [berlinFeature]
-                    };
-
-                    map.current.addSource('berlin-boundary', {
-                      type: 'geojson',
-                      data: berlinData
-                    });
-
-                    map.current.addLayer({
-                      id: 'berlin-boundary-fill',
-                      type: 'fill',
-                      source: 'berlin-boundary',
-                      paint: {
-                        'fill-color': '#3b82f6',
-                        'fill-opacity': 0.4
-                      }
-                    });
-
-                    map.current.addLayer({
-                      id: 'berlin-boundary-border',
-                      type: 'line',
-                      source: 'berlin-boundary',
-                      paint: {
-                        'line-color': '#1d4ed8',
-                        'line-width': 3
-                      }
-                    });
-
-                    // Create bounds from Berlin's actual coordinates
-                    const bounds = new mapboxgl.LngLatBounds();
-                    berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
-                      bounds.extend(coord as [number, number]);
-                    });
-                    
-                    // Fit map to Berlin bounds
-                    map.current.fitBounds(bounds, {
-                      padding: 20,
-                      maxZoom: 12
-                    });
-                  }
-                }
-              })
-              .catch(error => {
-                console.error('Error loading GeoJSON data:', error);
-              });
-          }
-
-          // Add highlighted states for Germany map using real GeoJSON data
-          if (mapType === 'germany') {
-            // Load the GeoJSON data
-            fetch('/germany-states-low.geojson')
-              .then(response => response.json())
-              .then(data => {
-                if (map.current) {
-                  // Show all German states with different styling
-                  const allStates = data.features;
-                  
-                  // Add source for all states
-                  map.current.addSource('all-states', {
-                    type: 'geojson',
-                    data: data
-                  });
-
-                  // Add layer for all states (light blue fill)
-                  map.current.addLayer({
-                    id: 'all-states-fill',
-                    type: 'fill',
-                    source: 'all-states',
-                    paint: {
-                      'fill-color': '#3b82f6',
-                      'fill-opacity': 0.1
-                    }
-                  });
-
-                  // Add layer for all states borders
-                  map.current.addLayer({
-                    id: 'all-states-border',
-                    type: 'line',
-                    source: 'all-states',
-                    paint: {
-                      'line-color': '#3b82f6',
-                      'line-width': 1
-                    }
-                  });
-
-                  // Add Berlin boundary highlight
-                  const berlinFeature = allStates.find((feature: any) => feature.properties.name === 'Berlin');
-                  if (berlinFeature) {
-                    const berlinData: GeoJSON.FeatureCollection = {
-                      type: 'FeatureCollection',
-                      features: [berlinFeature]
-                    };
-
-                    map.current.addSource('berlin-boundary', {
-                      type: 'geojson',
-                      data: berlinData
-                    });
-
-                    map.current.addLayer({
-                      id: 'berlin-boundary-fill',
-                      type: 'fill',
-                      source: 'berlin-boundary',
-                      paint: {
-                        'fill-color': '#3b82f6',
-                        'fill-opacity': 0.4
-                      }
-                    });
-
-                    map.current.addLayer({
-                      id: 'berlin-boundary-border',
-                      type: 'line',
-                      source: 'berlin-boundary',
-                      paint: {
-                        'line-color': '#1d4ed8',
-                        'line-width': 3
-                      }
-                    });
-                  }
-
-                  // Fit map to show all of Germany
-                  const bounds = new mapboxgl.LngLatBounds();
-                  allStates.forEach((feature: any) => {
-                    if (feature.geometry.type === 'Polygon') {
-                      feature.geometry.coordinates[0].forEach((coord: number[]) => {
-                        bounds.extend(coord as [number, number]);
-                      });
-                    } else if (feature.geometry.type === 'MultiPolygon') {
-                      feature.geometry.coordinates.forEach((polygon: number[][][]) => {
-                        polygon[0].forEach((coord: number[]) => {
-                          bounds.extend(coord as [number, number]);
-                        });
-                      });
-                    }
-                  });
-                  
-                  map.current.fitBounds(bounds, {
-                    padding: 50,
-                    maxZoom: 7
-                  });
-                }
-              })
-              .catch(error => {
-                console.error('Error loading GeoJSON data:', error);
-              });
-          }
-        }
-      });
-
-      // Clean up on unmount
-      return () => {
+    const initializeMap = async () => {
+      try {
+        const mapboxgl = await import('mapbox-gl');
+        
+        // Destroy previous map instance if it exists
         if (map.current) {
           try {
             map.current.remove();
           } catch (error) {
-            console.warn('Error removing map:', error);
+            console.warn('Error removing previous map:', error);
           }
           map.current = null;
         }
-      };
-    } catch (error) {
-      console.error('Error initializing map:', error);
-    }
-  }, [mapType]);
+
+        // Initialize map
+        mapboxgl.default.accessToken = MAPBOX_TOKEN;
+        
+        const settings = mapSettings[mapType];
+        
+        map.current = new mapboxgl.default.Map({
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/light-v11',
+          center: settings.center,
+          zoom: settings.zoom,
+          interactive: false,
+          attributionControl: false,
+          logoPosition: 'bottom-left'
+        });
+
+        // Add company location marker
+        map.current.on('load', () => {
+          setIsLoading(false);
+          if (map.current) {
+            // Create a custom marker element
+            const markerEl = document.createElement('div');
+            markerEl.className = 'company-marker';
+            markerEl.style.width = '30px';
+            markerEl.style.height = '30px';
+            markerEl.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ef4444\'%3E%3Cpath d=\'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z\'/%3E%3C/svg%3E")';
+            markerEl.style.backgroundSize = 'contain';
+            markerEl.style.backgroundRepeat = 'no-repeat';
+            markerEl.style.cursor = 'pointer';
+
+            // Add marker to map
+            new mapboxgl.default.Marker(markerEl)
+              .setLngLat(COMPANY_LOCATION)
+              .setPopup(
+                new mapboxgl.default.Popup({ offset: 25 })
+                  .setHTML(`
+                    <div class="p-2">
+                      <h3 class="font-bold text-lg">Meister Umzüge</h3>
+                      <p class="text-sm text-gray-600">Kolonnenstr. 8, 10827 Berlin</p>
+                    </div>
+                  `)
+              )
+              .addTo(map.current);
+
+            // Load GeoJSON data and add layers based on map type
+            if (mapType === 'berlin') {
+              // Load the GeoJSON data to get exact Berlin boundaries
+              fetch('/germany-states-low.geojson')
+                .then(response => response.json())
+                .then(data => {
+                  if (map.current) {
+                    // Find Berlin feature in GeoJSON
+                    const berlinFeature = data.features.find((f: any) => f.properties.name === 'Berlin');
+                    if (berlinFeature) {
+                      // Add Berlin boundary highlight
+                      const berlinData: any = {
+                        type: 'FeatureCollection',
+                        features: [berlinFeature]
+                      };
+
+                      map.current.addSource('berlin-boundary', {
+                        type: 'geojson',
+                        data: berlinData
+                      });
+
+                      map.current.addLayer({
+                        id: 'berlin-boundary-fill',
+                        type: 'fill',
+                        source: 'berlin-boundary',
+                        paint: {
+                          'fill-color': '#3b82f6',
+                          'fill-opacity': 0.4
+                        }
+                      });
+
+                      map.current.addLayer({
+                        id: 'berlin-boundary-border',
+                        type: 'line',
+                        source: 'berlin-boundary',
+                        paint: {
+                          'line-color': '#1d4ed8',
+                          'line-width': 3
+                        }
+                      });
+
+                      // Create bounds from Berlin's actual coordinates
+                      const bounds = new mapboxgl.default.LngLatBounds();
+                      berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
+                        bounds.extend(coord as [number, number]);
+                      });
+                      
+                      // Fit map to Berlin bounds
+                      map.current.fitBounds(bounds, {
+                        padding: 20,
+                        maxZoom: 12
+                      });
+                    }
+                  }
+                })
+                .catch(error => {
+                  console.error('Error loading GeoJSON data:', error);
+                });
+            } else if (mapType === 'germany') {
+              // Load GeoJSON data for all German states
+              fetch('/germany-states-low.geojson')
+                .then(response => response.json())
+                .then(data => {
+                  if (map.current) {
+                    const allStates = data.features;
+
+                    // Add source for all states
+                    map.current.addSource('germany-states', {
+                      type: 'geojson',
+                      data: data
+                    });
+
+                    // Add fill layer for all states
+                    map.current.addLayer({
+                      id: 'all-states-fill',
+                      type: 'fill',
+                      source: 'germany-states',
+                      paint: {
+                        'fill-color': '#3b82f6',
+                        'fill-opacity': 0.1
+                      }
+                    });
+
+                    // Add border layer for all states
+                    map.current.addLayer({
+                      id: 'all-states-border',
+                      type: 'line',
+                      source: 'germany-states',
+                      paint: {
+                        'line-color': '#3b82f6',
+                        'line-width': 1
+                      }
+                    });
+
+                    // Add Berlin boundary highlight for germany map too
+                    const berlinFeature = data.features.find((f: any) => f.properties.name === 'Berlin');
+                    if (berlinFeature) {
+                      const berlinData: any = {
+                        type: 'FeatureCollection',
+                        features: [berlinFeature]
+                      };
+
+                      map.current.addSource('berlin-boundary', {
+                        type: 'geojson',
+                        data: berlinData
+                      });
+
+                      map.current.addLayer({
+                        id: 'berlin-boundary-fill',
+                        type: 'fill',
+                        source: 'berlin-boundary',
+                        paint: {
+                          'fill-color': '#3b82f6',
+                          'fill-opacity': 0.4
+                        }
+                      });
+
+                      map.current.addLayer({
+                        id: 'berlin-boundary-border',
+                        type: 'line',
+                        source: 'berlin-boundary',
+                        paint: {
+                          'line-color': '#1d4ed8',
+                          'line-width': 3
+                        }
+                      });
+                    }
+
+                    // Fit map to show all of Germany
+                    const bounds = new mapboxgl.default.LngLatBounds();
+                    allStates.forEach((feature: any) => {
+                      if (feature.geometry.type === 'Polygon') {
+                        feature.geometry.coordinates[0].forEach((coord: number[]) => {
+                          bounds.extend(coord as [number, number]);
+                        });
+                      } else if (feature.geometry.type === 'MultiPolygon') {
+                        feature.geometry.coordinates.forEach((polygon: number[][][]) => {
+                          polygon[0].forEach((coord: number[]) => {
+                            bounds.extend(coord as [number, number]);
+                          });
+                        });
+                      }
+                    });
+                    
+                    map.current.fitBounds(bounds, {
+                      padding: 50,
+                      maxZoom: 7
+                    });
+                  }
+                })
+                .catch(error => {
+                  console.error('Error loading GeoJSON data:', error);
+                });
+            }
+          }
+        });
+
+        // Clean up on unmount
+        return () => {
+          if (map.current) {
+            try {
+              map.current.remove();
+            } catch (error) {
+              console.warn('Error removing map:', error);
+            }
+            map.current = null;
+          }
+        };
+      } catch (error) {
+        console.error('Error initializing map:', error);
+      }
+    };
+
+    initializeMap();
+  }, [mapType, mapboxLoaded]);
 
   const currentTitle = mapSettings[mapType].title[language as keyof typeof mapSettings.berlin.title] || 
                       mapSettings[mapType].title.en;

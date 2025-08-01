@@ -166,3 +166,14 @@
 .testimonial-card:hover {
   transform: scale(1.03);
 }
+
+/* Image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Reduce layout shift for images */
+img[loading="lazy"] {
+  background: #f3f4f6;
+}

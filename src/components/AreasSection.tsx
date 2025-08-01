@@ -1,11 +1,54 @@
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MapPin, Signpost } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Map from '@/components/Map';
+
+// Lazy load Map component
+const Map = React.lazy(() => import('@/components/Map'));
 
 const AreasSection: React.FC = () => {
   const { language } = useLanguage();
+  const [visibleMaps, setVisibleMaps] = useState<{ berlin: boolean; germany: boolean }>({
+    berlin: false,
+    germany: false
+  });
+  
+  const berlinRef = useRef<HTMLDivElement>(null);
+  const germanyRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer for lazy loading maps with delay
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const mapType = entry.target.getAttribute('data-map-type');
+            
+            // Add a small delay to prioritize other content
+            setTimeout(() => {
+              if (mapType === 'berlin') {
+                setVisibleMaps(prev => ({ ...prev, berlin: true }));
+              } else if (mapType === 'germany') {
+                setVisibleMaps(prev => ({ ...prev, germany: true }));
+              }
+            }, 100);
+            
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '200px' }
+    );
+
+    if (berlinRef.current) {
+      observer.observe(berlinRef.current);
+    }
+    if (germanyRef.current) {
+      observer.observe(germanyRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const getTitle = (key: string) => {
     const translations = {
@@ -64,7 +107,7 @@ const AreasSection: React.FC = () => {
         </div>
         
         {/* Berlin Map Section */}
-        <div className="mb-16">
+        <div className="mb-16" ref={berlinRef} data-map-type="berlin">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center bg-moving-lightblue p-3 rounded-full mb-4">
               <MapPin className="h-8 w-8 text-moving-blue" />
@@ -78,12 +121,30 @@ const AreasSection: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6">
-            <Map mapType="berlin" />
+            {visibleMaps.berlin ? (
+              <React.Suspense fallback={
+                <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
+                  </div>
+                </div>
+              }>
+                <Map mapType="berlin" />
+              </React.Suspense>
+            ) : (
+              <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                  <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         
         {/* German States Map Section */}
-        <div>
+        <div ref={germanyRef} data-map-type="germany">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center bg-moving-lightblue p-3 rounded-full mb-4">
               <Signpost className="h-8 w-8 text-moving-blue" />
@@ -97,7 +158,25 @@ const AreasSection: React.FC = () => {
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6">
-            <Map mapType="germany" />
+            {visibleMaps.germany ? (
+              <React.Suspense fallback={
+                <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
+                  </div>
+                </div>
+              }>
+                <Map mapType="germany" />
+              </React.Suspense>
+            ) : (
+              <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                  <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

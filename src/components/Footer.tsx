@@ -19,6 +19,8 @@ const Footer: React.FC = () => {
                 src="/optimized/meister-umzunge-logo.webp" 
                 alt="Meister Umzüge 24 Logo" 
                 className="h-12 md:h-16 object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">

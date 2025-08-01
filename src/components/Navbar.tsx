@@ -135,7 +135,7 @@ const Navbar: React.FC = () => {
           }}
           aria-label="Strona główna - Meister Umzüge 24"
         >
-          <img alt="Logo Meister Umzüge 24" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" />
+          <img alt="Logo Meister Umzüge 24" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" loading="eager" decoding="async" />
         </Link>
         
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">

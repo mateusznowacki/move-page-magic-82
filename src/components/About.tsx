@@ -93,6 +93,7 @@ const About: React.FC = () => {
                 alt="Profesjonalny zespół przeprowadzkowy w akcji - pakowanie i transport mebli"
                 className="w-full h-auto rounded-lg shadow-lg"
                 loading="lazy"
+                decoding="async"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg p-4 shadow-lg">
                 <div className="flex items-center">
