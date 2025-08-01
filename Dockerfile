@@ -5,10 +5,9 @@ WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-COPY bun.lockb ./
 
 # Install dependencies
-RUN npm ci
+RUN npm ci && npm cache clean --force
 
 # Copy source code
 COPY . .
@@ -19,14 +18,40 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Create nginx user (skip if already exists)
+RUN addgroup -g 1001 -S nginx || true && \
+    adduser -S -D -H -u 1001 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx || true
+
 # Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
+# Set proper permissions
+RUN chown -R nginx:nginx /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html && \
+    chown -R nginx:nginx /var/cache/nginx && \
+    chown -R nginx:nginx /var/log/nginx && \
+    chown -R nginx:nginx /etc/nginx/conf.d && \
+    touch /var/run/nginx.pid && \
+    chown -R nginx:nginx /var/run/nginx.pid
+
+# Create logs directory
+RUN mkdir -p /var/log/nginx && chown nginx:nginx /var/log/nginx
+
 # Expose port 80
 EXPOSE 80
+
+# Switch to nginx user
+USER nginx
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost/health || exit 1
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"] 

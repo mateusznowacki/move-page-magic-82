@@ -9,16 +9,16 @@ const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-moving-dark text-white py-8 md:py-12" role="contentinfo">
+    <footer className="bg-slate-900 text-white py-8 md:py-12" role="contentinfo">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {/* Logo and Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
               <img 
-                src="/optimized/meister-umzunge-logo.webp" 
+                src="/logo.svg" 
                 alt="Meister Umzüge 24 Logo" 
-                className="h-12 md:h-16 object-contain"
+                className="h-16 md:h-20 object-contain"
                 loading="lazy"
                 decoding="async"
               />
@@ -82,15 +82,15 @@ const Footer: React.FC = () => {
 
           {/* Promotion Box */}
           <div>
-            <div className="bg-moving-blue/10 border border-moving-blue/20 rounded-lg p-4">
+            <div className="bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-lg p-4">
               <div className="flex items-center mb-3">
-                <BadgePercent className="w-6 h-6 text-moving-blue mr-2" />
-                <Badge variant="default" className="bg-moving-blue text-white text-sm">
+                <BadgePercent className="w-6 h-6 text-[#3b82f6] mr-2" />
+                <Badge variant="default" className="bg-[#3b82f6] text-white text-sm">
                   {t('footer.promotionTitle')}
                 </Badge>
               </div>
               <div className="flex items-center mb-2">
-                <span className="text-2xl font-bold text-moving-blue">10%</span>
+                <span className="text-2xl font-bold text-[#3b82f6]">10%</span>
                 <span className="text-white font-semibold ml-2">{t('footer.discount')}</span>
               </div>
               <p className="text-gray-300 text-sm mb-2">{t('footer.promotionDescription')}</p>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-400">
             <div>
-              © 2024 Meister Umzüge 24. {t('footer.rights')}
+              © 2025 Meister Umzüge 24. {t('footer.rights')}
             </div>
             <div className="flex space-x-6 mt-2 sm:mt-0">
               <a 

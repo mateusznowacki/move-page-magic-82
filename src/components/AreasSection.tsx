@@ -109,8 +109,8 @@ const AreasSection: React.FC = () => {
         {/* Berlin Map Section */}
         <div className="mb-16" ref={berlinRef} data-map-type="berlin">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center bg-moving-lightblue p-3 rounded-full mb-4">
-              <MapPin className="h-8 w-8 text-moving-blue" />
+            <div className="inline-flex items-center justify-center bg-blue-100 p-3 rounded-full mb-4">
+              <MapPin className="h-8 w-8 text-blue-600" />
             </div>
             <h4 className="text-2xl md:text-3xl font-bold mb-4">
               {getTitle('berlinDistricts')}
@@ -118,6 +118,17 @@ const AreasSection: React.FC = () => {
             <p className="text-lg max-w-3xl mx-auto mb-8">
               {getDescription('berlin')}
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
+              {[
+                'Mitte', 'Friedrichshain-Kreuzberg', 'Pankow', 'Charlottenburg-Wilmersdorf',
+                'Spandau', 'Steglitz-Zehlendorf', 'Tempelhof-Schöneberg', 'Neukölln',
+                'Treptow-Köpenick', 'Marzahn-Hellersdorf', 'Lichtenberg', 'Reinickendorf'
+              ].map((district) => (
+                <button key={district} className="bg-[#3b82f6] hover:bg-[#2563eb] text-white rounded-lg p-3 text-center transition-colors duration-300 font-medium text-sm md:text-base">
+                  {district}
+                </button>
+              ))}
+            </div>
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6">
@@ -125,7 +136,7 @@ const AreasSection: React.FC = () => {
               <React.Suspense fallback={
                 <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
                     <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
                   </div>
                 </div>
@@ -135,7 +146,7 @@ const AreasSection: React.FC = () => {
             ) : (
               <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
                   <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
                 </div>
               </div>
@@ -146,8 +157,8 @@ const AreasSection: React.FC = () => {
         {/* German States Map Section */}
         <div ref={germanyRef} data-map-type="germany">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center bg-moving-lightblue p-3 rounded-full mb-4">
-              <Signpost className="h-8 w-8 text-moving-blue" />
+            <div className="inline-flex items-center justify-center bg-blue-100 p-3 rounded-full mb-4">
+              <Signpost className="h-8 w-8 text-blue-600" />
             </div>
             <h4 className="text-2xl md:text-3xl font-bold mb-4">
               {getTitle('germanStates')}
@@ -162,7 +173,7 @@ const AreasSection: React.FC = () => {
               <React.Suspense fallback={
                 <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
                     <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
                   </div>
                 </div>
@@ -172,7 +183,7 @@ const AreasSection: React.FC = () => {
             ) : (
               <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
                   <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
                 </div>
               </div>

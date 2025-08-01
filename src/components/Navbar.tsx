@@ -91,8 +91,8 @@ const Navbar: React.FC = () => {
     item: typeof navigationItems[0];
     isMobile?: boolean;
   }) => {
-    const baseClasses = "text-moving-dark font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-moving-blue after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2 active:outline-none border-none";
-    const mobileClasses = isMobile ? "py-3 text-lg text-gray-800 hover:bg-moving-lightblue px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2 active:outline-none border-none after:hidden" : "";
+    const baseClasses = "text-white font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 active:outline-none border-none";
+    const mobileClasses = isMobile ? "py-3 text-lg text-white hover:bg-slate-800 px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 active:outline-none border-none after:hidden" : "";
     
     if (item.isLink) {
       return (
@@ -127,11 +127,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md py-2 md:py-3")}>
-      <div className="container flex justify-between items-center">
+    <header className={cn("bg-slate-900 text-white shadow-lg sticky top-0 z-50")}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between py-2 sm:py-4">
         <Link 
           to="/" 
-          className="text-moving-dark flex items-center gap-2 md:gap-3 group"
+          className="text-white flex items-center gap-2 md:gap-3 group"
           onClick={() => {
             if (location.pathname === '/') {
               window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -139,39 +140,57 @@ const Navbar: React.FC = () => {
           }}
           aria-label="Strona główna - Meister Umzüge 24"
         >
-          <img alt="Logo Meister Umzüge 24" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" loading="eager" decoding="async" />
+          <img alt="Logo Meister Umzüge 24" className="h-14 sm:h-16 md:h-18 lg:h-20 object-contain" src="/logo.svg" loading="eager" decoding="async" />
         </Link>
         
-        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">
+        <nav className="hidden md:flex items-center space-x-8">
           {navigationItems.map(item => <NavItem key={item.key} item={item} />)}
           <LanguageSwitcher />
+          <a 
+            href="https://wa.me/4915223031473?text=Dzień%20dobry,%20proszę%20o%20kontakt." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
+            aria-label="Contact us on WhatsApp"
+          >
+            <span className="text-base font-medium">WhatsApp</span>
+          </a>
         </nav>
         
-        <div className="lg:hidden flex items-center gap-2">
-          <LanguageSwitcher />
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-            className="outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2"
-            aria-label={isMobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            <Menu className="h-6 w-6 sm:h-7 sm:w-7 text-moving-dark" />
-          </Button>
+        <button 
+          className="md:hidden transition-all duration-300 hover:scale-110 hover:text-green-400"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <Menu className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+        </button>
         </div>
       </div>
       
       {isMobileMenuOpen && (
         <div 
           id="mobile-menu"
-          className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-lg border-t border-gray-200 animate-slide-in-right"
+          className="lg:hidden bg-slate-900 absolute top-full left-0 right-0 shadow-lg border-t border-gray-700 animate-slide-in-right"
           role="navigation"
           aria-label="Menu mobilne"
         >
           <div className="container py-4 flex flex-col space-y-3">
             {navigationItems.map(item => <NavItem key={item.key} item={item} isMobile />)}
+            <div className="flex flex-col space-y-3 pt-4 border-t border-gray-700">
+              <div className="flex justify-center">
+                <LanguageSwitcher />
+              </div>
+              <a 
+                href="https://wa.me/4915223031473?text=Dzień%20dobry,%20proszę%20o%20kontakt." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center text-white font-medium"
+                aria-label="Contact us on WhatsApp"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="text-base font-medium">WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

@@ -34,7 +34,7 @@ const HeroSlider = React.memo(() => {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden w-full">
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/40 z-10"></div>
       <div className="h-full w-full">
         {sliderImages.map((image, index) => (
           <div 

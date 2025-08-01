@@ -1,9 +1,13 @@
 #!/bin/bash
 
 # Meister Umzüge 24 - Deployment Script
-# This script builds and deploys the application using Docker
+# Usage: ./deploy.sh [build|start|stop|restart|logs|clean]
 
 set -e
+
+COMPOSE_FILE="docker-compose.yml"
+SERVICE_NAME="meisterumzuege24"
+IMAGE_NAME="meisterumzuege24-web"
 
 # Colors for output
 RED='\033[0;31m'
@@ -29,179 +33,137 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Check if Docker is installed
+# Function to check if Docker is running
 check_docker() {
-    if ! command -v docker &> /dev/null; then
-        print_error "Docker is not installed. Please install Docker first."
+    if ! docker info > /dev/null 2>&1; then
+        print_error "Docker is not running. Please start Docker first."
         exit 1
     fi
-
-    if ! command -v docker-compose &> /dev/null; then
-        print_error "Docker Compose is not installed. Please install Docker Compose first."
-        exit 1
-    fi
-
-    print_success "Docker and Docker Compose are installed"
 }
 
-# Stop and remove existing containers
-cleanup() {
-    print_status "Cleaning up existing containers..."
-    docker-compose down --remove-orphans || true
-    print_success "Cleanup completed"
-}
-
-# Build the application
+# Function to build the application
 build() {
-    print_status "Building the application..."
-    docker-compose build --no-cache
-    print_success "Build completed"
+    print_status "Building Docker image..."
+    docker-compose -f $COMPOSE_FILE build --no-cache
+    print_success "Build completed successfully!"
 }
 
-# Start the application
+# Function to start the application
 start() {
-    print_status "Starting the application..."
-    docker-compose up -d
-    print_success "Application started"
-}
-
-# Check application health
-health_check() {
-    print_status "Checking application health..."
+    print_status "Starting application..."
+    docker-compose -f $COMPOSE_FILE up -d
+    print_success "Application started successfully!"
     
-    # Wait for the application to start
-    sleep 10
+    # Wait a moment for the container to start
+    sleep 5
     
-    # Check if the application is responding
-    if curl -f http://localhost/health &> /dev/null; then
-        print_success "Application is healthy and responding"
+    # Check if the application is healthy
+    if docker-compose -f $COMPOSE_FILE ps | grep -q "Up"; then
+        print_success "Application is running and healthy!"
+        print_status "You can access the application at: http://localhost"
     else
-        print_warning "Application health check failed. Check logs with: docker-compose logs"
-    fi
-}
-
-# Show application status
-show_status() {
-    print_status "Application status:"
-    docker-compose ps
-    
-    echo ""
-    print_status "Application URLs:"
-    echo "  - Local: http://localhost"
-    echo "  - Health: http://localhost/health"
-    echo ""
-    print_status "Useful commands:"
-    echo "  - View logs: docker-compose logs -f"
-    echo "  - Stop: docker-compose down"
-    echo "  - Restart: docker-compose restart"
-}
-
-# Main deployment function
-deploy() {
-    print_status "Starting deployment..."
-    
-    check_docker
-    cleanup
-    build
-    start
-    health_check
-    show_status
-    
-    print_success "Deployment completed successfully!"
-}
-
-# SSL deployment function
-deploy_ssl() {
-    print_status "Starting SSL deployment..."
-    
-    # Check if SSL certificates exist
-    if [ ! -f "./ssl/cert.pem" ] || [ ! -f "./ssl/key.pem" ]; then
-        print_error "SSL certificates not found. Please place your SSL certificates in the ./ssl/ directory:"
-        echo "  - ./ssl/cert.pem (certificate)"
-        echo "  - ./ssl/key.pem (private key)"
+        print_error "Application failed to start properly."
         exit 1
     fi
-    
-    check_docker
-    cleanup
-    build
-    start
-    health_check
-    
-    print_status "Starting SSL proxy..."
-    docker-compose --profile ssl up -d nginx-proxy
-    
-    print_success "SSL deployment completed successfully!"
-    print_status "Application URLs:"
-    echo "  - HTTPS: https://localhost"
-    echo "  - Health: https://localhost/health"
 }
 
-# Show help
+# Function to stop the application
+stop() {
+    print_status "Stopping application..."
+    docker-compose -f $COMPOSE_FILE down
+    print_success "Application stopped successfully!"
+}
+
+# Function to restart the application
+restart() {
+    print_status "Restarting application..."
+    docker-compose -f $COMPOSE_FILE down
+    docker-compose -f $COMPOSE_FILE up -d
+    print_success "Application restarted successfully!"
+}
+
+# Function to show logs
+logs() {
+    print_status "Showing application logs..."
+    docker-compose -f $COMPOSE_FILE logs -f
+}
+
+# Function to clean up
+clean() {
+    print_warning "This will remove all containers, images, and volumes. Are you sure? (y/N)"
+    read -r response
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        print_status "Cleaning up Docker resources..."
+        docker-compose -f $COMPOSE_FILE down -v --rmi all
+        docker system prune -f
+        print_success "Cleanup completed!"
+    else
+        print_status "Cleanup cancelled."
+    fi
+}
+
+# Function to show status
+status() {
+    print_status "Application status:"
+    docker-compose -f $COMPOSE_FILE ps
+}
+
+# Function to show help
 show_help() {
-    echo "Meister Umzüge 24 - Deployment Script"
-    echo ""
     echo "Usage: $0 [COMMAND]"
     echo ""
     echo "Commands:"
-    echo "  deploy     Deploy the application (HTTP)"
-    echo "  deploy-ssl Deploy the application with SSL (HTTPS)"
-    echo "  build      Build the Docker image"
-    echo "  start      Start the application"
-    echo "  stop       Stop the application"
-    echo "  restart    Restart the application"
-    echo "  logs       Show application logs"
-    echo "  status     Show application status"
-    echo "  cleanup    Stop and remove containers"
-    echo "  help       Show this help message"
+    echo "  build     Build the Docker image"
+    echo "  start     Start the application"
+    echo "  stop      Stop the application"
+    echo "  restart   Restart the application"
+    echo "  logs      Show application logs"
+    echo "  status    Show application status"
+    echo "  clean     Clean up Docker resources"
+    echo "  help      Show this help message"
     echo ""
     echo "Examples:"
-    echo "  $0 deploy      # Deploy with HTTP"
-    echo "  $0 deploy-ssl  # Deploy with HTTPS (requires SSL certificates)"
-    echo "  $0 logs        # View logs"
+    echo "  $0 build    # Build the image"
+    echo "  $0 start    # Start the application"
+    echo "  $0 logs     # View logs"
 }
 
-# Parse command line arguments
-case "${1:-deploy}" in
-    deploy)
-        deploy
-        ;;
-    deploy-ssl)
-        deploy_ssl
-        ;;
-    build)
-        check_docker
-        build
-        ;;
-    start)
-        check_docker
-        start
-        ;;
-    stop)
-        docker-compose down
-        print_success "Application stopped"
-        ;;
-    restart)
-        check_docker
-        docker-compose restart
-        print_success "Application restarted"
-        ;;
-    logs)
-        docker-compose logs -f
-        ;;
-    status)
-        show_status
-        ;;
-    cleanup)
-        cleanup
-        ;;
-    help|--help|-h)
-        show_help
-        ;;
-    *)
-        print_error "Unknown command: $1"
-        echo ""
-        show_help
-        exit 1
-        ;;
-esac 
+# Main script logic
+main() {
+    check_docker
+    
+    case "${1:-help}" in
+        build)
+            build
+            ;;
+        start)
+            start
+            ;;
+        stop)
+            stop
+            ;;
+        restart)
+            restart
+            ;;
+        logs)
+            logs
+            ;;
+        status)
+            status
+            ;;
+        clean)
+            clean
+            ;;
+        help|--help|-h)
+            show_help
+            ;;
+        *)
+            print_error "Unknown command: $1"
+            show_help
+            exit 1
+            ;;
+    esac
+}
+
+# Run main function with all arguments
+main "$@" 

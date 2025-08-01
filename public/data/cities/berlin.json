@@ -2,5 +2,53 @@
   {
     "name": "Berlin",
     "slug": "berlin"
+  },
+  {
+    "name": "Mitte",
+    "slug": "mitte"
+  },
+  {
+    "name": "Friedrichshain-Kreuzberg",
+    "slug": "friedrichshain-kreuzberg"
+  },
+  {
+    "name": "Pankow",
+    "slug": "pankow"
+  },
+  {
+    "name": "Charlottenburg-Wilmersdorf",
+    "slug": "charlottenburg-wilmersdorf"
+  },
+  {
+    "name": "Spandau",
+    "slug": "spandau"
+  },
+  {
+    "name": "Steglitz-Zehlendorf",
+    "slug": "steglitz-zehlendorf"
+  },
+  {
+    "name": "Tempelhof-Schöneberg",
+    "slug": "tempelhof-schoeneberg"
+  },
+  {
+    "name": "Neukölln",
+    "slug": "neukoelln"
+  },
+  {
+    "name": "Treptow-Köpenick",
+    "slug": "treptow-koepenick"
+  },
+  {
+    "name": "Marzahn-Hellersdorf",
+    "slug": "marzahn-hellersdorf"
+  },
+  {
+    "name": "Lichtenberg",
+    "slug": "lichtenberg"
+  },
+  {
+    "name": "Reinickendorf",
+    "slug": "reinickendorf"
   }
 ]

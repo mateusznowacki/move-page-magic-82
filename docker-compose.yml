@@ -8,12 +8,11 @@ services:
     container_name: meisterumzuege24-web
     ports:
       - "80:80"
-      - "443:443"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
     volumes:
-      # Optional: mount logs for debugging
+      # Mount logs for debugging
       - ./logs:/var/log/nginx
     networks:
       - meisterumzuege24-network
@@ -23,24 +22,14 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-
-  # Optional: Nginx reverse proxy with SSL
-  nginx-proxy:
-    image: nginx:alpine
-    container_name: meisterumzuege24-proxy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
-    depends_on:
-      - meisterumzuege24
-    networks:
-      - meisterumzuege24-network
-    restart: unless-stopped
-    profiles:
-      - ssl
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
 
 networks:
   meisterumzuege24-network:

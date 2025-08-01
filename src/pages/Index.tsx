@@ -103,16 +103,22 @@ const Index: React.FC = () => {
       />
       <div className="min-h-screen bg-white">
         <Hero />
-        <Services />
+        <div className="bg-slate-50">
+          <Services />
+        </div>
         <Suspense fallback={<div className="h-32 bg-gray-50 animate-pulse"></div>}>
           <About />
         </Suspense>
-        <Suspense fallback={<div className="h-32 bg-gray-50 animate-pulse"></div>}>
-          <Testimonials />
-        </Suspense>
-        <Suspense fallback={<div className="h-32 bg-gray-50 animate-pulse"></div>}>
-          <AreasSection />
-        </Suspense>
+        <div className="bg-slate-100">
+          <Suspense fallback={<div className="h-32 bg-slate-100 animate-pulse"></div>}>
+            <Testimonials />
+          </Suspense>
+        </div>
+        <div className="bg-slate-50">
+          <Suspense fallback={<div className="h-32 bg-slate-50 animate-pulse"></div>}>
+            <AreasSection />
+          </Suspense>
+        </div>
         <Suspense fallback={<div className="h-32 bg-gray-50 animate-pulse"></div>}>
           <Contact />
         </Suspense>

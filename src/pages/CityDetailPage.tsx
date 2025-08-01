@@ -687,20 +687,34 @@ const CityDetailPage: React.FC = () => {
           </div>
 
           {/* Hero Section */}
-          <div className="text-center mb-12 py-16 md:py-24 min-h-[60vh] flex flex-col justify-center bg-gradient-to-br from-moving-blue/5 to-moving-darkblue/5 rounded-2xl border border-moving-blue/10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-moving-dark mb-6">
-              {headerText.heroTitle}
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-              {headerText.heroSubtitle}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-moving-blue hover:bg-moving-darkblue text-lg px-8 py-3">
-                {headerText.getQuote}
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-3">
-                {headerText.contactUs}
-              </Button>
+          <div className="relative h-screen flex items-center pt-16 w-full mb-12" role="banner">
+            <div className="absolute inset-0 bg-gradient-to-br from-moving-blue/10 to-moving-darkblue/10 rounded-2xl"></div>
+            
+            <div className="relative z-20 px-4 w-full">
+              <div className="max-w-7xl mx-auto">
+                <div className="text-center">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-moving-dark">
+                    {headerText.heroTitle}
+                  </h1>
+                  <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 px-4 sm:px-0 max-w-4xl mx-auto leading-relaxed">
+                    {headerText.heroSubtitle}
+                  </h2>
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0 justify-center">
+                    <Button 
+                      className="bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                      aria-label="Uzyskaj bezpłatną wycenę przeprowadzki"
+                    >
+                      {headerText.getQuote}
+                    </Button>
+                    <Button 
+                      className="bg-white text-moving-blue hover:bg-gray-100 font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-moving-blue"
+                      aria-label="Skontaktuj się z nami"
+                    >
+                      {headerText.contactUs}
+                    </Button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
