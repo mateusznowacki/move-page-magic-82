@@ -1,0 +1,1270 @@
+[
+  {
+    "name": "Abenberg",
+    "slug": "abenberg"
+  },
+  {
+    "name": "Abensberg",
+    "slug": "abensberg"
+  },
+  {
+    "name": "Aichach",
+    "slug": "aichach"
+  },
+  {
+    "name": "Altdorf bei Nürnberg",
+    "slug": "altdorf-bei-nuernberg"
+  },
+  {
+    "name": "Altötting",
+    "slug": "altoetting"
+  },
+  {
+    "name": "Alzenau",
+    "slug": "alzenau"
+  },
+  {
+    "name": "Amberg",
+    "slug": "amberg"
+  },
+  {
+    "name": "Amorbach",
+    "slug": "amorbach"
+  },
+  {
+    "name": "Ansbach",
+    "slug": "ansbach"
+  },
+  {
+    "name": "Arnstein",
+    "slug": "arnstein"
+  },
+  {
+    "name": "Arzberg",
+    "slug": "arzberg"
+  },
+  {
+    "name": "Aschaffenburg",
+    "slug": "aschaffenburg"
+  },
+  {
+    "name": "Aub",
+    "slug": "aub"
+  },
+  {
+    "name": "Auerbach in der Oberpfalz",
+    "slug": "auerbach-in-der-oberpfalz"
+  },
+  {
+    "name": "Augsburg",
+    "slug": "augsburg"
+  },
+  {
+    "name": "Bad Aibling",
+    "slug": "bad-aibling"
+  },
+  {
+    "name": "Bad Berneck i.Fichtelgebirge",
+    "slug": "bad-berneck-ifichtelgebirge"
+  },
+  {
+    "name": "Bad Brückenau",
+    "slug": "bad-brueckenau"
+  },
+  {
+    "name": "Bad Griesbach im Rottal",
+    "slug": "bad-griesbach-im-rottal"
+  },
+  {
+    "name": "Bad Kissingen",
+    "slug": "bad-kissingen"
+  },
+  {
+    "name": "Bad Königshofen",
+    "slug": "bad-koenigshofen"
+  },
+  {
+    "name": "Bad Kötzting",
+    "slug": "bad-koetzting"
+  },
+  {
+    "name": "Bad Neustadt an der Saale",
+    "slug": "bad-neustadt-an-der-saale"
+  },
+  {
+    "name": "Bad Reichenhall",
+    "slug": "bad-reichenhall"
+  },
+  {
+    "name": "Bad Rodach",
+    "slug": "bad-rodach"
+  },
+  {
+    "name": "Bad Staffelstein",
+    "slug": "bad-staffelstein"
+  },
+  {
+    "name": "Bad Tölz",
+    "slug": "bad-toelz"
+  },
+  {
+    "name": "Bad Windsheim",
+    "slug": "bad-windsheim"
+  },
+  {
+    "name": "Bad Wörishofen",
+    "slug": "bad-woerishofen"
+  },
+  {
+    "name": "Baiersdorf",
+    "slug": "baiersdorf"
+  },
+  {
+    "name": "Bamberg",
+    "slug": "bamberg"
+  },
+  {
+    "name": "Baunach",
+    "slug": "baunach"
+  },
+  {
+    "name": "Bayreuth",
+    "slug": "bayreuth"
+  },
+  {
+    "name": "Beilngries",
+    "slug": "beilngries"
+  },
+  {
+    "name": "Berching",
+    "slug": "berching"
+  },
+  {
+    "name": "Betzenstein",
+    "slug": "betzenstein"
+  },
+  {
+    "name": "Bischofsheim i.d.Rhön",
+    "slug": "bischofsheim-idrhoen"
+  },
+  {
+    "name": "Bobingen",
+    "slug": "bobingen"
+  },
+  {
+    "name": "Bogen",
+    "slug": "bogen"
+  },
+  {
+    "name": "Buchloe",
+    "slug": "buchloe"
+  },
+  {
+    "name": "Burgau",
+    "slug": "burgau"
+  },
+  {
+    "name": "Burgbernheim",
+    "slug": "burgbernheim"
+  },
+  {
+    "name": "Burghausen",
+    "slug": "burghausen"
+  },
+  {
+    "name": "Burgkunstadt",
+    "slug": "burgkunstadt"
+  },
+  {
+    "name": "Burglengenfeld",
+    "slug": "burglengenfeld"
+  },
+  {
+    "name": "Bärnau",
+    "slug": "baernau"
+  },
+  {
+    "name": "Cham",
+    "slug": "cham"
+  },
+  {
+    "name": "Coburg",
+    "slug": "coburg"
+  },
+  {
+    "name": "Creußen",
+    "slug": "creussen"
+  },
+  {
+    "name": "Dachau, Bavaria",
+    "slug": "dachau-bavaria"
+  },
+  {
+    "name": "Deggendorf",
+    "slug": "deggendorf"
+  },
+  {
+    "name": "Dettelbach",
+    "slug": "dettelbach"
+  },
+  {
+    "name": "Dietfurt a.d. Altmühl",
+    "slug": "dietfurt-ad-altmuehl"
+  },
+  {
+    "name": "Dillingen an der Donau",
+    "slug": "dillingen-an-der-donau"
+  },
+  {
+    "name": "Dingolfing",
+    "slug": "dingolfing"
+  },
+  {
+    "name": "Dinkelsbühl",
+    "slug": "dinkelsbuehl"
+  },
+  {
+    "name": "Donauwörth",
+    "slug": "donauwoerth"
+  },
+  {
+    "name": "Dorfen",
+    "slug": "dorfen"
+  },
+  {
+    "name": "Ebermannstadt",
+    "slug": "ebermannstadt"
+  },
+  {
+    "name": "Ebern",
+    "slug": "ebern"
+  },
+  {
+    "name": "Ebersberg",
+    "slug": "ebersberg"
+  },
+  {
+    "name": "Eggenfelden",
+    "slug": "eggenfelden"
+  },
+  {
+    "name": "Eibelstadt",
+    "slug": "eibelstadt"
+  },
+  {
+    "name": "Eichstätt",
+    "slug": "eichstaett"
+  },
+  {
+    "name": "Ellingen",
+    "slug": "ellingen"
+  },
+  {
+    "name": "Eltmann",
+    "slug": "eltmann"
+  },
+  {
+    "name": "Erbendorf",
+    "slug": "erbendorf"
+  },
+  {
+    "name": "Erding",
+    "slug": "erding"
+  },
+  {
+    "name": "Erlangen",
+    "slug": "erlangen"
+  },
+  {
+    "name": "Erlenbach a.Main",
+    "slug": "erlenbach-amain"
+  },
+  {
+    "name": "Eschenbach in der Oberpfalz",
+    "slug": "eschenbach-in-der-oberpfalz"
+  },
+  {
+    "name": "Feuchtwangen",
+    "slug": "feuchtwangen"
+  },
+  {
+    "name": "Fladungen",
+    "slug": "fladungen"
+  },
+  {
+    "name": "Forchheim",
+    "slug": "forchheim"
+  },
+  {
+    "name": "Freilassing",
+    "slug": "freilassing"
+  },
+  {
+    "name": "Freising",
+    "slug": "freising"
+  },
+  {
+    "name": "Freystadt",
+    "slug": "freystadt"
+  },
+  {
+    "name": "Freyung",
+    "slug": "freyung"
+  },
+  {
+    "name": "Friedberg",
+    "slug": "friedberg"
+  },
+  {
+    "name": "Furth im Wald",
+    "slug": "furth-im-wald"
+  },
+  {
+    "name": "Fürstenfeldbruck",
+    "slug": "fuerstenfeldbruck"
+  },
+  {
+    "name": "Fürth",
+    "slug": "fuerth"
+  },
+  {
+    "name": "Füssen",
+    "slug": "fuessen"
+  },
+  {
+    "name": "Garching bei München",
+    "slug": "garching-bei-muenchen"
+  },
+  {
+    "name": "Gefrees",
+    "slug": "gefrees"
+  },
+  {
+    "name": "Geiselhöring",
+    "slug": "geiselhoering"
+  },
+  {
+    "name": "Geisenfeld",
+    "slug": "geisenfeld"
+  },
+  {
+    "name": "Gemünden am Main",
+    "slug": "gemuenden-am-main"
+  },
+  {
+    "name": "Geretsried",
+    "slug": "geretsried"
+  },
+  {
+    "name": "Germering",
+    "slug": "germering"
+  },
+  {
+    "name": "Gerolzhofen",
+    "slug": "gerolzhofen"
+  },
+  {
+    "name": "Gersthofen",
+    "slug": "gersthofen"
+  },
+  {
+    "name": "Goldkronach",
+    "slug": "goldkronach"
+  },
+  {
+    "name": "Grafenau",
+    "slug": "grafenau"
+  },
+  {
+    "name": "Grafenwöhr",
+    "slug": "grafenwoehr"
+  },
+  {
+    "name": "Grafing bei München",
+    "slug": "grafing-bei-muenchen"
+  },
+  {
+    "name": "Greding",
+    "slug": "greding"
+  },
+  {
+    "name": "Gräfenberg, Bavaria",
+    "slug": "graefenberg-bavaria"
+  },
+  {
+    "name": "Gundelfingen an der Donau",
+    "slug": "gundelfingen-an-der-donau"
+  },
+  {
+    "name": "Gunzenhausen",
+    "slug": "gunzenhausen"
+  },
+  {
+    "name": "Günzburg",
+    "slug": "guenzburg"
+  },
+  {
+    "name": "Hallstadt",
+    "slug": "hallstadt"
+  },
+  {
+    "name": "Hammelburg",
+    "slug": "hammelburg"
+  },
+  {
+    "name": "Harburg",
+    "slug": "harburg"
+  },
+  {
+    "name": "Hauzenberg",
+    "slug": "hauzenberg"
+  },
+  {
+    "name": "Haßfurt",
+    "slug": "hassfurt"
+  },
+  {
+    "name": "Heideck",
+    "slug": "heideck"
+  },
+  {
+    "name": "Heilsbronn",
+    "slug": "heilsbronn"
+  },
+  {
+    "name": "Helmbrechts",
+    "slug": "helmbrechts"
+  },
+  {
+    "name": "Hemau",
+    "slug": "hemau"
+  },
+  {
+    "name": "Herrieden",
+    "slug": "herrieden"
+  },
+  {
+    "name": "Hersbruck",
+    "slug": "hersbruck"
+  },
+  {
+    "name": "Herzogenaurach",
+    "slug": "herzogenaurach"
+  },
+  {
+    "name": "Hilpoltstein",
+    "slug": "hilpoltstein"
+  },
+  {
+    "name": "Hirschau",
+    "slug": "hirschau"
+  },
+  {
+    "name": "Hofheim in Unterfranken",
+    "slug": "hofheim-in-unterfranken"
+  },
+  {
+    "name": "Hof",
+    "slug": "hof"
+  },
+  {
+    "name": "Hohenberg a.d.Eger",
+    "slug": "hohenberg-adeger"
+  },
+  {
+    "name": "Hollfeld",
+    "slug": "hollfeld"
+  },
+  {
+    "name": "Höchstadt",
+    "slug": "hoechstadt"
+  },
+  {
+    "name": "Höchstädt an der Donau",
+    "slug": "hoechstaedt-an-der-donau"
+  },
+  {
+    "name": "Ichenhausen",
+    "slug": "ichenhausen"
+  },
+  {
+    "name": "Illertissen",
+    "slug": "illertissen"
+  },
+  {
+    "name": "Immenstadt",
+    "slug": "immenstadt"
+  },
+  {
+    "name": "Ingolstadt",
+    "slug": "ingolstadt"
+  },
+  {
+    "name": "Iphofen",
+    "slug": "iphofen"
+  },
+  {
+    "name": "Karlstadt am Main",
+    "slug": "karlstadt-am-main"
+  },
+  {
+    "name": "Kaufbeuren",
+    "slug": "kaufbeuren"
+  },
+  {
+    "name": "Kelheim",
+    "slug": "kelheim"
+  },
+  {
+    "name": "Kemnath",
+    "slug": "kemnath"
+  },
+  {
+    "name": "Kempten",
+    "slug": "kempten"
+  },
+  {
+    "name": "Kirchenlamitz",
+    "slug": "kirchenlamitz"
+  },
+  {
+    "name": "Kitzingen",
+    "slug": "kitzingen"
+  },
+  {
+    "name": "Klingenberg am Main",
+    "slug": "klingenberg-am-main"
+  },
+  {
+    "name": "Kolbermoor",
+    "slug": "kolbermoor"
+  },
+  {
+    "name": "Kronach",
+    "slug": "kronach"
+  },
+  {
+    "name": "Krumbach",
+    "slug": "krumbach"
+  },
+  {
+    "name": "Kulmbach",
+    "slug": "kulmbach"
+  },
+  {
+    "name": "Kupferberg",
+    "slug": "kupferberg"
+  },
+  {
+    "name": "Königsberg in Bayern",
+    "slug": "koenigsberg-in-bayern"
+  },
+  {
+    "name": "Königsbrunn",
+    "slug": "koenigsbrunn"
+  },
+  {
+    "name": "Landau an der Isar",
+    "slug": "landau-an-der-isar"
+  },
+  {
+    "name": "Landsberg am Lech",
+    "slug": "landsberg-am-lech"
+  },
+  {
+    "name": "Landshut",
+    "slug": "landshut"
+  },
+  {
+    "name": "Langenzenn",
+    "slug": "langenzenn"
+  },
+  {
+    "name": "Lauf an der Pegnitz",
+    "slug": "lauf-an-der-pegnitz"
+  },
+  {
+    "name": "Laufen",
+    "slug": "laufen"
+  },
+  {
+    "name": "Lauingen",
+    "slug": "lauingen"
+  },
+  {
+    "name": "Leipheim",
+    "slug": "leipheim"
+  },
+  {
+    "name": "Leutershausen",
+    "slug": "leutershausen"
+  },
+  {
+    "name": "Lichtenberg",
+    "slug": "lichtenberg"
+  },
+  {
+    "name": "Lichtenfels",
+    "slug": "lichtenfels"
+  },
+  {
+    "name": "Lindau",
+    "slug": "lindau"
+  },
+  {
+    "name": "Lindenberg im Allgäu",
+    "slug": "lindenberg-im-allgaeu"
+  },
+  {
+    "name": "Lohr a. Main",
+    "slug": "lohr-a-main"
+  },
+  {
+    "name": "Ludwigsstadt",
+    "slug": "ludwigsstadt"
+  },
+  {
+    "name": "Mainbernheim",
+    "slug": "mainbernheim"
+  },
+  {
+    "name": "Mainburg",
+    "slug": "mainburg"
+  },
+  {
+    "name": "Marktbreit",
+    "slug": "marktbreit"
+  },
+  {
+    "name": "Marktheidenfeld",
+    "slug": "marktheidenfeld"
+  },
+  {
+    "name": "Marktleuthen",
+    "slug": "marktleuthen"
+  },
+  {
+    "name": "Marktoberdorf",
+    "slug": "marktoberdorf"
+  },
+  {
+    "name": "Marktredwitz",
+    "slug": "marktredwitz"
+  },
+  {
+    "name": "Marktsteft",
+    "slug": "marktsteft"
+  },
+  {
+    "name": "Maxhütte-Haidhof",
+    "slug": "maxhuette-haidhof"
+  },
+  {
+    "name": "Mellrichstadt",
+    "slug": "mellrichstadt"
+  },
+  {
+    "name": "Memmingen",
+    "slug": "memmingen"
+  },
+  {
+    "name": "Merkendorf",
+    "slug": "merkendorf"
+  },
+  {
+    "name": "Miesbach",
+    "slug": "miesbach"
+  },
+  {
+    "name": "Miltenberg",
+    "slug": "miltenberg"
+  },
+  {
+    "name": "Mindelheim",
+    "slug": "mindelheim"
+  },
+  {
+    "name": "Mitterteich",
+    "slug": "mitterteich"
+  },
+  {
+    "name": "Monheim",
+    "slug": "monheim"
+  },
+  {
+    "name": "Moosburg an der Isar",
+    "slug": "moosburg-an-der-isar"
+  },
+  {
+    "name": "Munich",
+    "slug": "munich"
+  },
+  {
+    "name": "Mühldorf am Inn",
+    "slug": "muehldorf-am-inn"
+  },
+  {
+    "name": "Münchberg",
+    "slug": "muenchberg"
+  },
+  {
+    "name": "Münnerstadt",
+    "slug": "muennerstadt"
+  },
+  {
+    "name": "Nabburg",
+    "slug": "nabburg"
+  },
+  {
+    "name": "Naila",
+    "slug": "naila"
+  },
+  {
+    "name": "Neu-Ulm",
+    "slug": "neu-ulm"
+  },
+  {
+    "name": "Neuburg a.d. Donau",
+    "slug": "neuburg-ad-donau"
+  },
+  {
+    "name": "Neumarkt in der Oberpfalz",
+    "slug": "neumarkt-in-der-oberpfalz"
+  },
+  {
+    "name": "Neumarkt-Sankt Veit",
+    "slug": "neumarkt-sankt-veit"
+  },
+  {
+    "name": "Neunburg vorm Wald",
+    "slug": "neunburg-vorm-wald"
+  },
+  {
+    "name": "Neustadt a.d.Donau",
+    "slug": "neustadt-addonau"
+  },
+  {
+    "name": "Neustadt a.d.Waldnaab",
+    "slug": "neustadt-adwaldnaab"
+  },
+  {
+    "name": "Neustadt am Kulm",
+    "slug": "neustadt-am-kulm"
+  },
+  {
+    "name": "Neustadt an der Aisch",
+    "slug": "neustadt-an-der-aisch"
+  },
+  {
+    "name": "Neustadt b.Coburg",
+    "slug": "neustadt-bcoburg"
+  },
+  {
+    "name": "Neusäß",
+    "slug": "neusaess"
+  },
+  {
+    "name": "Neutraubling",
+    "slug": "neutraubling"
+  },
+  {
+    "name": "Neuötting",
+    "slug": "neuoetting"
+  },
+  {
+    "name": "Nittenau",
+    "slug": "nittenau"
+  },
+  {
+    "name": "Nuremberg",
+    "slug": "nuremberg"
+  },
+  {
+    "name": "Nördlingen",
+    "slug": "noerdlingen"
+  },
+  {
+    "name": "Oberasbach",
+    "slug": "oberasbach"
+  },
+  {
+    "name": "Obernburg a.Main",
+    "slug": "obernburg-amain"
+  },
+  {
+    "name": "Oberviechtach",
+    "slug": "oberviechtach"
+  },
+  {
+    "name": "Ochsenfurt",
+    "slug": "ochsenfurt"
+  },
+  {
+    "name": "Oettingen in Bayern",
+    "slug": "oettingen-in-bayern"
+  },
+  {
+    "name": "Olching",
+    "slug": "olching"
+  },
+  {
+    "name": "Ornbau",
+    "slug": "ornbau"
+  },
+  {
+    "name": "Osterhofen",
+    "slug": "osterhofen"
+  },
+  {
+    "name": "Ostheim",
+    "slug": "ostheim"
+  },
+  {
+    "name": "Pappenheim",
+    "slug": "pappenheim"
+  },
+  {
+    "name": "Parsberg",
+    "slug": "parsberg"
+  },
+  {
+    "name": "Passau",
+    "slug": "passau"
+  },
+  {
+    "name": "Pegnitz",
+    "slug": "pegnitz"
+  },
+  {
+    "name": "Penzberg",
+    "slug": "penzberg"
+  },
+  {
+    "name": "Pfaffenhofen a.d.Ilm",
+    "slug": "pfaffenhofen-adilm"
+  },
+  {
+    "name": "Pfarrkirchen",
+    "slug": "pfarrkirchen"
+  },
+  {
+    "name": "Pfreimd",
+    "slug": "pfreimd"
+  },
+  {
+    "name": "Plattling",
+    "slug": "plattling"
+  },
+  {
+    "name": "Pleystein",
+    "slug": "pleystein"
+  },
+  {
+    "name": "Pocking",
+    "slug": "pocking"
+  },
+  {
+    "name": "Pottenstein",
+    "slug": "pottenstein"
+  },
+  {
+    "name": "Pressath",
+    "slug": "pressath"
+  },
+  {
+    "name": "Prichsenstadt",
+    "slug": "prichsenstadt"
+  },
+  {
+    "name": "Puchheim",
+    "slug": "puchheim"
+  },
+  {
+    "name": "Rain",
+    "slug": "rain"
+  },
+  {
+    "name": "Regensburg",
+    "slug": "regensburg"
+  },
+  {
+    "name": "Regen",
+    "slug": "regen"
+  },
+  {
+    "name": "Rehau",
+    "slug": "rehau"
+  },
+  {
+    "name": "Riedenburg",
+    "slug": "riedenburg"
+  },
+  {
+    "name": "Rieneck",
+    "slug": "rieneck"
+  },
+  {
+    "name": "Roding",
+    "slug": "roding"
+  },
+  {
+    "name": "Rosenheim",
+    "slug": "rosenheim"
+  },
+  {
+    "name": "Rothenburg ob der Tauber",
+    "slug": "rothenburg-ob-der-tauber"
+  },
+  {
+    "name": "Rothenfels",
+    "slug": "rothenfels"
+  },
+  {
+    "name": "Roth",
+    "slug": "roth"
+  },
+  {
+    "name": "Rottenburg a.d.Laaber",
+    "slug": "rottenburg-adlaaber"
+  },
+  {
+    "name": "Rödental",
+    "slug": "roedental"
+  },
+  {
+    "name": "Röthenbach an der Pegnitz",
+    "slug": "roethenbach-an-der-pegnitz"
+  },
+  {
+    "name": "Röttingen",
+    "slug": "roettingen"
+  },
+  {
+    "name": "Rötz",
+    "slug": "roetz"
+  },
+  {
+    "name": "Schauenstein",
+    "slug": "schauenstein"
+  },
+  {
+    "name": "Scheinfeld",
+    "slug": "scheinfeld"
+  },
+  {
+    "name": "Scheßlitz",
+    "slug": "schesslitz"
+  },
+  {
+    "name": "Schillingsfürst",
+    "slug": "schillingsfuerst"
+  },
+  {
+    "name": "Schlüsselfeld",
+    "slug": "schluesselfeld"
+  },
+  {
+    "name": "Schnaittenbach",
+    "slug": "schnaittenbach"
+  },
+  {
+    "name": "Schongau",
+    "slug": "schongau"
+  },
+  {
+    "name": "Schrobenhausen",
+    "slug": "schrobenhausen"
+  },
+  {
+    "name": "Schwabach",
+    "slug": "schwabach"
+  },
+  {
+    "name": "Schwabmünchen",
+    "slug": "schwabmuenchen"
+  },
+  {
+    "name": "Schwandorf",
+    "slug": "schwandorf"
+  },
+  {
+    "name": "Schwarzenbach a.Wald",
+    "slug": "schwarzenbach-awald"
+  },
+  {
+    "name": "Schwarzenbach a.d.Saale",
+    "slug": "schwarzenbach-adsaale"
+  },
+  {
+    "name": "Schweinfurt",
+    "slug": "schweinfurt"
+  },
+  {
+    "name": "Schönsee",
+    "slug": "schoensee"
+  },
+  {
+    "name": "Schönwald",
+    "slug": "schoenwald"
+  },
+  {
+    "name": "Selbitz",
+    "slug": "selbitz"
+  },
+  {
+    "name": "Selb",
+    "slug": "selb"
+  },
+  {
+    "name": "Senden",
+    "slug": "senden"
+  },
+  {
+    "name": "Seßlach",
+    "slug": "sesslach"
+  },
+  {
+    "name": "Simbach am Inn",
+    "slug": "simbach-am-inn"
+  },
+  {
+    "name": "Sonthofen",
+    "slug": "sonthofen"
+  },
+  {
+    "name": "Spalt",
+    "slug": "spalt"
+  },
+  {
+    "name": "Stadt Tegernsee",
+    "slug": "stadt-tegernsee"
+  },
+  {
+    "name": "Stadtbergen",
+    "slug": "stadtbergen"
+  },
+  {
+    "name": "Stadtprozelten",
+    "slug": "stadtprozelten"
+  },
+  {
+    "name": "Stadtsteinach",
+    "slug": "stadtsteinach"
+  },
+  {
+    "name": "Starnberg",
+    "slug": "starnberg"
+  },
+  {
+    "name": "Stein",
+    "slug": "stein"
+  },
+  {
+    "name": "Straubing",
+    "slug": "straubing"
+  },
+  {
+    "name": "Sulzbach-Rosenberg",
+    "slug": "sulzbach-rosenberg"
+  },
+  {
+    "name": "Teublitz",
+    "slug": "teublitz"
+  },
+  {
+    "name": "Teuschnitz",
+    "slug": "teuschnitz"
+  },
+  {
+    "name": "Thannhausen",
+    "slug": "thannhausen"
+  },
+  {
+    "name": "Tirschenreuth",
+    "slug": "tirschenreuth"
+  },
+  {
+    "name": "Tittmoning",
+    "slug": "tittmoning"
+  },
+  {
+    "name": "Traunreut",
+    "slug": "traunreut"
+  },
+  {
+    "name": "Traunstein",
+    "slug": "traunstein"
+  },
+  {
+    "name": "Treuchtlingen",
+    "slug": "treuchtlingen"
+  },
+  {
+    "name": "Trostberg",
+    "slug": "trostberg"
+  },
+  {
+    "name": "Töging am Inn",
+    "slug": "toeging-am-inn"
+  },
+  {
+    "name": "Uffenheim",
+    "slug": "uffenheim"
+  },
+  {
+    "name": "Unterschleißheim",
+    "slug": "unterschleissheim"
+  },
+  {
+    "name": "Velburg",
+    "slug": "velburg"
+  },
+  {
+    "name": "Velden",
+    "slug": "velden"
+  },
+  {
+    "name": "Viechtach",
+    "slug": "viechtach"
+  },
+  {
+    "name": "Vilsbiburg",
+    "slug": "vilsbiburg"
+  },
+  {
+    "name": "Vilseck",
+    "slug": "vilseck"
+  },
+  {
+    "name": "Vilshofen an der Donau",
+    "slug": "vilshofen-an-der-donau"
+  },
+  {
+    "name": "Vohburg a.d.Donau",
+    "slug": "vohburg-addonau"
+  },
+  {
+    "name": "Vohenstrauß",
+    "slug": "vohenstrauss"
+  },
+  {
+    "name": "Volkach",
+    "slug": "volkach"
+  },
+  {
+    "name": "Vöhringen",
+    "slug": "voehringen"
+  },
+  {
+    "name": "Waischenfeld",
+    "slug": "waischenfeld"
+  },
+  {
+    "name": "Waldershof",
+    "slug": "waldershof"
+  },
+  {
+    "name": "Waldkirchen",
+    "slug": "waldkirchen"
+  },
+  {
+    "name": "Waldkraiburg",
+    "slug": "waldkraiburg"
+  },
+  {
+    "name": "Waldmünchen",
+    "slug": "waldmuenchen"
+  },
+  {
+    "name": "Waldsassen",
+    "slug": "waldsassen"
+  },
+  {
+    "name": "Wallenfels",
+    "slug": "wallenfels"
+  },
+  {
+    "name": "Wasserburg am Inn",
+    "slug": "wasserburg-am-inn"
+  },
+  {
+    "name": "Wassertrüdingen",
+    "slug": "wassertruedingen"
+  },
+  {
+    "name": "Weiden in der Oberpfalz",
+    "slug": "weiden-in-der-oberpfalz"
+  },
+  {
+    "name": "Weilheim in Oberbayern",
+    "slug": "weilheim-in-oberbayern"
+  },
+  {
+    "name": "Weismain",
+    "slug": "weismain"
+  },
+  {
+    "name": "Weißenburg in Bayern",
+    "slug": "weissenburg-in-bayern"
+  },
+  {
+    "name": "Weißenhorn",
+    "slug": "weissenhorn"
+  },
+  {
+    "name": "Weißenstadt",
+    "slug": "weissenstadt"
+  },
+  {
+    "name": "Wemding",
+    "slug": "wemding"
+  },
+  {
+    "name": "Wertingen",
+    "slug": "wertingen"
+  },
+  {
+    "name": "Windischeschenbach",
+    "slug": "windischeschenbach"
+  },
+  {
+    "name": "Windsbach",
+    "slug": "windsbach"
+  },
+  {
+    "name": "Wolframs-Eschenbach",
+    "slug": "wolframs-eschenbach"
+  },
+  {
+    "name": "Wolfratshausen",
+    "slug": "wolfratshausen"
+  },
+  {
+    "name": "Wunsiedel",
+    "slug": "wunsiedel"
+  },
+  {
+    "name": "Wörth am Main",
+    "slug": "woerth-am-main"
+  },
+  {
+    "name": "Wörth an der Donau",
+    "slug": "woerth-an-der-donau"
+  },
+  {
+    "name": "Würzburg",
+    "slug": "wuerzburg"
+  },
+  {
+    "name": "Zeil am Main",
+    "slug": "zeil-am-main"
+  },
+  {
+    "name": "Zirndorf",
+    "slug": "zirndorf"
+  },
+  {
+    "name": "Zwiesel",
+    "slug": "zwiesel"
+  }
+]

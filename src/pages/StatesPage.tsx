@@ -51,13 +51,21 @@ const StatesPage: React.FC = () => {
         for (const stateFile of stateFiles) {
           try {
             const response = await fetch(`/data/cities/${stateFile}.json`);
+            
+            if (!response.ok) {
+              console.error(`HTTP error! status: ${response.status} for ${stateFile}`);
+              continue;
+            }
+            
             const cities: City[] = await response.json();
             
-            states.push({
-              name: getStateDisplayName(stateFile),
-              slug: stateFile,
-              cities: cities
-            });
+            if (Array.isArray(cities) && cities.length > 0) {
+              states.push({
+                name: getStateDisplayName(stateFile),
+                slug: stateFile,
+                cities: cities
+              });
+            }
           } catch (error) {
             console.error(`Błąd podczas ładowania ${stateFile}:`, error);
           }

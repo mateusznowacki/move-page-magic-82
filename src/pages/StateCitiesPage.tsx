@@ -30,13 +30,21 @@ const StateCitiesPage: React.FC = () => {
       
       try {
         const response = await fetch(`/data/cities/${stateSlug}.json`);
+        
+        if (!response.ok) {
+          console.error(`HTTP error! status: ${response.status} for ${stateSlug}`);
+          return;
+        }
+        
         const cities: City[] = await response.json();
         
-        setStateData({
-          name: getStateDisplayName(stateSlug),
-          slug: stateSlug,
-          cities: cities
-        });
+        if (Array.isArray(cities) && cities.length > 0) {
+          setStateData({
+            name: getStateDisplayName(stateSlug),
+            slug: stateSlug,
+            cities: cities
+          });
+        }
       } catch (error) {
         console.error('Błąd podczas ładowania miast:', error);
       } finally {

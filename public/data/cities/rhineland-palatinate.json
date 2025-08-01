@@ -1,0 +1,522 @@
+[
+  {
+    "name": "Adenau",
+    "slug": "adenau"
+  },
+  {
+    "name": "Altenkirchen",
+    "slug": "altenkirchen"
+  },
+  {
+    "name": "Alzey",
+    "slug": "alzey"
+  },
+  {
+    "name": "Andernach",
+    "slug": "andernach"
+  },
+  {
+    "name": "Annweiler am Trifels",
+    "slug": "annweiler-am-trifels"
+  },
+  {
+    "name": "Bacharach",
+    "slug": "bacharach"
+  },
+  {
+    "name": "Bad Bergzabern",
+    "slug": "bad-bergzabern"
+  },
+  {
+    "name": "Bad Breisig",
+    "slug": "bad-breisig"
+  },
+  {
+    "name": "Bad Dürkheim",
+    "slug": "bad-duerkheim"
+  },
+  {
+    "name": "Bad Ems",
+    "slug": "bad-ems"
+  },
+  {
+    "name": "Bad Hönningen",
+    "slug": "bad-hoenningen"
+  },
+  {
+    "name": "Bad Kreuznach",
+    "slug": "bad-kreuznach"
+  },
+  {
+    "name": "Bad Marienberg",
+    "slug": "bad-marienberg"
+  },
+  {
+    "name": "Bad Neuenahr-Ahrweiler",
+    "slug": "bad-neuenahr-ahrweiler"
+  },
+  {
+    "name": "Bad Sobernheim",
+    "slug": "bad-sobernheim"
+  },
+  {
+    "name": "Baumholder",
+    "slug": "baumholder"
+  },
+  {
+    "name": "Bendorf",
+    "slug": "bendorf"
+  },
+  {
+    "name": "Bernkastel-Kues",
+    "slug": "bernkastel-kues"
+  },
+  {
+    "name": "Betzdorf",
+    "slug": "betzdorf"
+  },
+  {
+    "name": "Bingen am Rhein",
+    "slug": "bingen-am-rhein"
+  },
+  {
+    "name": "Birkenfeld",
+    "slug": "birkenfeld"
+  },
+  {
+    "name": "Bitburg",
+    "slug": "bitburg"
+  },
+  {
+    "name": "Boppard",
+    "slug": "boppard"
+  },
+  {
+    "name": "Braubach",
+    "slug": "braubach"
+  },
+  {
+    "name": "Cochem",
+    "slug": "cochem"
+  },
+  {
+    "name": "Daaden",
+    "slug": "daaden"
+  },
+  {
+    "name": "Dahn",
+    "slug": "dahn"
+  },
+  {
+    "name": "Daun",
+    "slug": "daun"
+  },
+  {
+    "name": "Deidesheim",
+    "slug": "deidesheim"
+  },
+  {
+    "name": "Dierdorf",
+    "slug": "dierdorf"
+  },
+  {
+    "name": "Diez, Germany",
+    "slug": "diez-germany"
+  },
+  {
+    "name": "Edenkoben",
+    "slug": "edenkoben"
+  },
+  {
+    "name": "Eisenberg",
+    "slug": "eisenberg"
+  },
+  {
+    "name": "Emmelshausen",
+    "slug": "emmelshausen"
+  },
+  {
+    "name": "Frankenthal (Pfalz)",
+    "slug": "frankenthal-pfalz"
+  },
+  {
+    "name": "Freinsheim",
+    "slug": "freinsheim"
+  },
+  {
+    "name": "Gau-Algesheim",
+    "slug": "gau-algesheim"
+  },
+  {
+    "name": "Germersheim",
+    "slug": "germersheim"
+  },
+  {
+    "name": "Gerolstein",
+    "slug": "gerolstein"
+  },
+  {
+    "name": "Grünstadt",
+    "slug": "gruenstadt"
+  },
+  {
+    "name": "Hachenburg",
+    "slug": "hachenburg"
+  },
+  {
+    "name": "Hagenbach",
+    "slug": "hagenbach"
+  },
+  {
+    "name": "Herdorf",
+    "slug": "herdorf"
+  },
+  {
+    "name": "Hermeskeil",
+    "slug": "hermeskeil"
+  },
+  {
+    "name": "Hillesheim",
+    "slug": "hillesheim"
+  },
+  {
+    "name": "Hornbach",
+    "slug": "hornbach"
+  },
+  {
+    "name": "Höhr-Grenzhausen",
+    "slug": "hoehr-grenzhausen"
+  },
+  {
+    "name": "Idar-Oberstein",
+    "slug": "idar-oberstein"
+  },
+  {
+    "name": "Ingelheim am Rhein",
+    "slug": "ingelheim-am-rhein"
+  },
+  {
+    "name": "Kaisersesch",
+    "slug": "kaisersesch"
+  },
+  {
+    "name": "Kaiserslautern",
+    "slug": "kaiserslautern"
+  },
+  {
+    "name": "Kandel",
+    "slug": "kandel"
+  },
+  {
+    "name": "Kastellaun",
+    "slug": "kastellaun"
+  },
+  {
+    "name": "Katzenelnbogen",
+    "slug": "katzenelnbogen"
+  },
+  {
+    "name": "Kaub",
+    "slug": "kaub"
+  },
+  {
+    "name": "Kirchberg",
+    "slug": "kirchberg"
+  },
+  {
+    "name": "Kirchen",
+    "slug": "kirchen"
+  },
+  {
+    "name": "Kirchheimbolanden",
+    "slug": "kirchheimbolanden"
+  },
+  {
+    "name": "Kirn",
+    "slug": "kirn"
+  },
+  {
+    "name": "Koblenz",
+    "slug": "koblenz"
+  },
+  {
+    "name": "Konz",
+    "slug": "konz"
+  },
+  {
+    "name": "Kusel",
+    "slug": "kusel"
+  },
+  {
+    "name": "Kyllburg",
+    "slug": "kyllburg"
+  },
+  {
+    "name": "Lahnstein",
+    "slug": "lahnstein"
+  },
+  {
+    "name": "Lambrecht, Rhineland-Palatinate",
+    "slug": "lambrecht-rhineland-palatinate"
+  },
+  {
+    "name": "Landau in der Pfalz",
+    "slug": "landau-in-der-pfalz"
+  },
+  {
+    "name": "Landstuhl",
+    "slug": "landstuhl"
+  },
+  {
+    "name": "Lauterecken",
+    "slug": "lauterecken"
+  },
+  {
+    "name": "Linz am Rhein",
+    "slug": "linz-am-rhein"
+  },
+  {
+    "name": "Ludwigshafen am Rhein",
+    "slug": "ludwigshafen-am-rhein"
+  },
+  {
+    "name": "Mainz",
+    "slug": "mainz"
+  },
+  {
+    "name": "Manderscheid",
+    "slug": "manderscheid"
+  },
+  {
+    "name": "Mayen",
+    "slug": "mayen"
+  },
+  {
+    "name": "Meisenheim",
+    "slug": "meisenheim"
+  },
+  {
+    "name": "Mendig",
+    "slug": "mendig"
+  },
+  {
+    "name": "Montabaur",
+    "slug": "montabaur"
+  },
+  {
+    "name": "Mülheim-Kärlich",
+    "slug": "muelheim-kaerlich"
+  },
+  {
+    "name": "Münstermaifeld",
+    "slug": "muenstermaifeld"
+  },
+  {
+    "name": "Nassau",
+    "slug": "nassau"
+  },
+  {
+    "name": "Nastätten",
+    "slug": "nastaetten"
+  },
+  {
+    "name": "Neuerburg",
+    "slug": "neuerburg"
+  },
+  {
+    "name": "Neustadt an der Weinstraße",
+    "slug": "neustadt-an-der-weinstrasse"
+  },
+  {
+    "name": "Neuwied",
+    "slug": "neuwied"
+  },
+  {
+    "name": "Nieder-Olm",
+    "slug": "nieder-olm"
+  },
+  {
+    "name": "Nierstein",
+    "slug": "nierstein"
+  },
+  {
+    "name": "Obermoschel",
+    "slug": "obermoschel"
+  },
+  {
+    "name": "Oberwesel",
+    "slug": "oberwesel"
+  },
+  {
+    "name": "Oppenheim",
+    "slug": "oppenheim"
+  },
+  {
+    "name": "Osthofen",
+    "slug": "osthofen"
+  },
+  {
+    "name": "Otterberg",
+    "slug": "otterberg"
+  },
+  {
+    "name": "Pirmasens",
+    "slug": "pirmasens"
+  },
+  {
+    "name": "Polch",
+    "slug": "polch"
+  },
+  {
+    "name": "Prüm",
+    "slug": "pruem"
+  },
+  {
+    "name": "Ramstein-Miesenbach",
+    "slug": "ramstein-miesenbach"
+  },
+  {
+    "name": "Ransbach-Baumbach",
+    "slug": "ransbach-baumbach"
+  },
+  {
+    "name": "Remagen",
+    "slug": "remagen"
+  },
+  {
+    "name": "Rennerod",
+    "slug": "rennerod"
+  },
+  {
+    "name": "Rheinböllen",
+    "slug": "rheinboellen"
+  },
+  {
+    "name": "Rhens",
+    "slug": "rhens"
+  },
+  {
+    "name": "Rockenhausen",
+    "slug": "rockenhausen"
+  },
+  {
+    "name": "Rodalben",
+    "slug": "rodalben"
+  },
+  {
+    "name": "Saarburg",
+    "slug": "saarburg"
+  },
+  {
+    "name": "Sankt Goarshausen",
+    "slug": "sankt-goarshausen"
+  },
+  {
+    "name": "Sankt Goar",
+    "slug": "sankt-goar"
+  },
+  {
+    "name": "Schifferstadt",
+    "slug": "schifferstadt"
+  },
+  {
+    "name": "Schweich",
+    "slug": "schweich"
+  },
+  {
+    "name": "Selters",
+    "slug": "selters"
+  },
+  {
+    "name": "Simmern",
+    "slug": "simmern"
+  },
+  {
+    "name": "Sinzig",
+    "slug": "sinzig"
+  },
+  {
+    "name": "Speicher",
+    "slug": "speicher"
+  },
+  {
+    "name": "Speyer",
+    "slug": "speyer"
+  },
+  {
+    "name": "Stromberg",
+    "slug": "stromberg"
+  },
+  {
+    "name": "Traben-Trarbach",
+    "slug": "traben-trarbach"
+  },
+  {
+    "name": "Trier",
+    "slug": "trier"
+  },
+  {
+    "name": "Ulmen",
+    "slug": "ulmen"
+  },
+  {
+    "name": "Unkel",
+    "slug": "unkel"
+  },
+  {
+    "name": "Vallendar",
+    "slug": "vallendar"
+  },
+  {
+    "name": "Wachenheim",
+    "slug": "wachenheim"
+  },
+  {
+    "name": "Waldmohr",
+    "slug": "waldmohr"
+  },
+  {
+    "name": "Weißenthurm",
+    "slug": "weissenthurm"
+  },
+  {
+    "name": "Westerburg",
+    "slug": "westerburg"
+  },
+  {
+    "name": "Wirges",
+    "slug": "wirges"
+  },
+  {
+    "name": "Wissen",
+    "slug": "wissen"
+  },
+  {
+    "name": "Wittlich",
+    "slug": "wittlich"
+  },
+  {
+    "name": "Wolfstein",
+    "slug": "wolfstein"
+  },
+  {
+    "name": "Worms",
+    "slug": "worms"
+  },
+  {
+    "name": "Wörrstadt",
+    "slug": "woerrstadt"
+  },
+  {
+    "name": "Wörth am Rhein",
+    "slug": "woerth-am-rhein"
+  },
+  {
+    "name": "Zell",
+    "slug": "zell"
+  },
+  {
+    "name": "Zweibrücken",
+    "slug": "zweibruecken"
+  }
+]

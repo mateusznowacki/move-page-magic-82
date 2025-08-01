@@ -26,6 +26,12 @@ const CityDetailPage: React.FC = () => {
       try {
         // Pobierz dane miasta z pliku JSON
         const response = await fetch(`/data/cities/${stateSlug}.json`);
+        
+        if (!response.ok) {
+          console.error(`HTTP error! status: ${response.status} for ${stateSlug}`);
+          return;
+        }
+        
         const cities: CityData[] = await response.json();
         const city = cities.find(c => c.slug === citySlug);
         
