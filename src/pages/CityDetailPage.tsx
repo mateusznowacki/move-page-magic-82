@@ -494,18 +494,18 @@ const CityDetailPage: React.FC = () => {
           </div>
 
           {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-moving-dark mb-6">
+          <div className="text-center mb-12 py-16 md:py-24 min-h-[60vh] flex flex-col justify-center bg-gradient-to-br from-moving-blue/5 to-moving-darkblue/5 rounded-2xl border border-moving-blue/10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-moving-dark mb-6">
               {headerText.heroTitle}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
               {headerText.heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-moving-blue hover:bg-moving-darkblue">
+              <Button size="lg" className="bg-moving-blue hover:bg-moving-darkblue text-lg px-8 py-3">
                 {headerText.getQuote}
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-3">
                 {headerText.contactUs}
               </Button>
             </div>
