@@ -24,46 +24,46 @@ const About: React.FC = () => {
           <div className="order-2 lg:order-1">
             <header className="mb-6">
               <h2 id="about-heading" className="sr-only">{t('about.title')}</h2>
-              <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">{t('about.subtitle')}</h3>
-              <p className="text-gray-700 mb-6 text-lg">
+              <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 text-slate-800">{t('about.subtitle')}</h3>
+              <p className="text-slate-600 mb-6 text-lg">
                 {t('about.description')}
               </p>
             </header>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start">
-                <div className="mr-4 bg-moving-lightblue p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
+                <div className="mr-4 bg-moving-blue/10 p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
                   <svg className="w-5 h-5 text-moving-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature1.title')}</h4>
-                  <p className="text-gray-700">{t('about.feature1.description')}</p>
+                  <h4 className="font-semibold text-lg mb-2 text-slate-800">{t('about.feature1.title')}</h4>
+                  <p className="text-slate-600">{t('about.feature1.description')}</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="mr-4 bg-moving-lightblue p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
+                <div className="mr-4 bg-moving-blue/10 p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
                   <svg className="w-5 h-5 text-moving-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature2.title')}</h4>
-                  <p className="text-gray-700">{t('about.feature2.description')}</p>
+                  <h4 className="font-semibold text-lg mb-2 text-slate-800">{t('about.feature2.title')}</h4>
+                  <p className="text-slate-600">{t('about.feature2.description')}</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="mr-4 bg-moving-lightblue p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
+                <div className="mr-4 bg-moving-blue/10 p-2 rounded-full h-max mt-1" role="img" aria-label="Ikona checkmark">
                   <svg className="w-5 h-5 text-moving-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature3.title')}</h4>
-                  <p className="text-gray-700">{t('about.feature3.description')}</p>
+                  <h4 className="font-semibold text-lg mb-2 text-slate-800">{t('about.feature3.title')}</h4>
+                  <p className="text-slate-600">{t('about.feature3.description')}</p>
                 </div>
               </div>
             </div>
@@ -105,8 +105,8 @@ const About: React.FC = () => {
                     ))}
                   </div>
                   <div className="ml-3">
-                    <div className="font-bold text-lg text-moving-dark">4.9</div>
-                    <p className="text-sm text-gray-700">{t('hero.customers')}</p>
+                    <div className="font-bold text-lg text-slate-800">4.9</div>
+                    <p className="text-sm text-slate-600">{t('hero.customers')}</p>
                   </div>
                 </div>
               </div>

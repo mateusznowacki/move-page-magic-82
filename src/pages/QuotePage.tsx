@@ -249,70 +249,68 @@ ${formData.message}
       
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                <BadgePercent className="w-4 h-4" />
-                <span className="text-sm font-medium">
-                  {language === 'pl' ? 'Bezpłatna wycena' :
-                   language === 'de' ? 'Kostenlose Angebot' :
-                   language === 'es' ? 'Presupuesto gratuito' :
-                   'Free quote'}
-                </span>
+        <section className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-b-2xl p-6 md:p-8 lg:p-10 mb-8 md:mb-12 overflow-hidden relative">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 mb-4">
+              <BadgePercent className="w-3 h-3" />
+              <span className="text-xs font-medium">
+                {language === 'pl' ? 'Bezpłatna wycena' :
+                 language === 'de' ? 'Kostenlose Angebot' :
+                 language === 'es' ? 'Presupuesto gratuito' :
+                 'Free quote'}
+              </span>
+            </div>
+            
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              {getPageTitle()}
+            </h1>
+            
+            {/* Description */}
+            <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl mx-auto">
+              {getPageSubtitle()}
+            </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="flex items-center justify-center mb-2">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-xl font-bold mb-1">24h</div>
+                <p className="text-xs opacity-80">
+                  {language === 'pl' ? 'Szybka odpowiedź' :
+                   language === 'de' ? 'Schnelle Antwort' :
+                   language === 'es' ? 'Respuesta rápida' :
+                   'Quick response'}
+                </p>
               </div>
               
-              {/* Title */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                {getPageTitle()}
-              </h1>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="flex items-center justify-center mb-2">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-xl font-bold mb-1">100%</div>
+                <p className="text-xs opacity-80">
+                  {language === 'pl' ? 'Bezpieczeństwo' :
+                   language === 'de' ? 'Sicherheit' :
+                   language === 'es' ? 'Seguridad' :
+                   'Security'}
+                </p>
+              </div>
               
-              {/* Description */}
-              <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto">
-                {getPageSubtitle()}
-              </p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="flex items-center justify-center mb-3">
-                    <Clock className="w-8 h-8 text-yellow-400" />
-                  </div>
-                  <div className="text-2xl font-bold mb-1">24h</div>
-                  <p className="text-sm opacity-80">
-                    {language === 'pl' ? 'Szybka odpowiedź' :
-                     language === 'de' ? 'Schnelle Antwort' :
-                     language === 'es' ? 'Respuesta rápida' :
-                     'Quick response'}
-                  </p>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="flex items-center justify-center mb-2">
+                  <Star className="w-6 h-6 text-white" />
                 </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="flex items-center justify-center mb-3">
-                    <Shield className="w-8 h-8 text-green-400" />
-                  </div>
-                  <div className="text-2xl font-bold mb-1">100%</div>
-                  <p className="text-sm opacity-80">
-                    {language === 'pl' ? 'Bezpieczeństwo' :
-                     language === 'de' ? 'Sicherheit' :
-                     language === 'es' ? 'Seguridad' :
-                     'Security'}
-                  </p>
-                </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="flex items-center justify-center mb-3">
-                    <Star className="w-8 h-8 text-yellow-400" />
-                  </div>
-                  <div className="text-2xl font-bold mb-1">4.9</div>
-                  <p className="text-sm opacity-80">
-                    {language === 'pl' ? 'Ocena klientów' :
-                     language === 'de' ? 'Kundenbewertung' :
-                     language === 'es' ? 'Valoración' :
-                     'Rating'}
-                  </p>
-                </div>
+                <div className="text-xl font-bold mb-1">4.9</div>
+                <p className="text-xs opacity-80">
+                  {language === 'pl' ? 'Ocena klientów' :
+                   language === 'de' ? 'Kundenbewertung' :
+                   language === 'es' ? 'Valoración' :
+                   'Rating'}
+                </p>
               </div>
             </div>
           </div>
@@ -320,12 +318,12 @@ ${formData.message}
 
         {/* Form Section */}
         <section className="py-16">
-          <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-moving-blue/10 rounded-full mb-4">
-                    <Calculator className="w-8 h-8 text-moving-blue" />
+  <Calculator className="w-8 h-8 text-moving-blue" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
                     {language === 'pl' ? 'Formularz Wyceny' :

@@ -144,7 +144,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                         type: 'fill',
                         source: 'berlin-boundary',
                         paint: {
-                          'fill-color': '#3b82f6',
+                          'fill-color': '#4882c9',
                           'fill-opacity': 0.4
                         }
                       });
@@ -196,7 +196,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                       type: 'fill',
                       source: 'germany-states',
                       paint: {
-                        'fill-color': '#3b82f6',
+                        'fill-color': '#4882c9',
                         'fill-opacity': 0.1
                       }
                     });
@@ -207,7 +207,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                       type: 'line',
                       source: 'germany-states',
                       paint: {
-                        'line-color': '#3b82f6',
+                        'line-color': '#4882c9',
                         'line-width': 1
                       }
                     });
@@ -230,7 +230,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                         type: 'fill',
                         source: 'berlin-boundary',
                         paint: {
-                          'fill-color': '#3b82f6',
+                          'fill-color': '#4882c9',
                           'fill-opacity': 0.4
                         }
                       });

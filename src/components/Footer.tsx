@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               <img 
                 src="/logo.svg" 
                 alt="Meister Umzüge 24 Logo" 
-                className="h-16 md:h-20 object-contain"
+                className="h-20 md:h-24 lg:h-28 object-contain bg-transparent"
                 loading="lazy"
                 decoding="async"
               />
@@ -82,15 +82,15 @@ const Footer: React.FC = () => {
 
           {/* Promotion Box */}
           <div>
-            <div className="bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-lg p-4">
+            <div className="bg-moving-blue/10 border border-moving-blue/20 rounded-lg p-4">
               <div className="flex items-center mb-3">
-                <BadgePercent className="w-6 h-6 text-[#3b82f6] mr-2" />
-                <Badge variant="default" className="bg-[#3b82f6] text-white text-sm">
+                <BadgePercent className="w-6 h-6 text-moving-blue mr-2" />
+                <Badge variant="default" className="bg-moving-blue text-white text-sm">
                   {t('footer.promotionTitle')}
                 </Badge>
               </div>
               <div className="flex items-center mb-2">
-                <span className="text-2xl font-bold text-[#3b82f6]">10%</span>
+                <span className="text-2xl font-bold text-moving-blue">10%</span>
                 <span className="text-white font-semibold ml-2">{t('footer.discount')}</span>
               </div>
               <p className="text-gray-300 text-sm mb-2">{t('footer.promotionDescription')}</p>

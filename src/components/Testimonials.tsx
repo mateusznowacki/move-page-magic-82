@@ -17,12 +17,12 @@ const Testimonials: React.FC = () => {
   const testimonials = getTestimonialData();
 
   return (
-    <section id="testimonials" className="section-padding bg-moving-lightblue" role="main" aria-labelledby="testimonials-heading">
+    <section id="testimonials" className="section-padding bg-slate-50" role="main" aria-labelledby="testimonials-heading">
       <div className="container">
         <header className="text-center max-w-3xl mx-auto mb-12">
           <h2 id="testimonials-heading" className="sr-only">{t('testimonials.title')}</h2>
-          <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{t('testimonials.subtitle')}</h3>
-          <p className="text-gray-700">
+          <h3 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-slate-800">{t('testimonials.subtitle')}</h3>
+          <p className="text-slate-600">
             {t('testimonials.description')}
           </p>
         </header>

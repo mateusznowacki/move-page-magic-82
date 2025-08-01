@@ -175,5 +175,5 @@ img {
 
 /* Reduce layout shift for images */
 img[loading="lazy"] {
-  background: #f3f4f6;
+  background: transparent;
 }

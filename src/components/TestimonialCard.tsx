@@ -38,7 +38,7 @@ const TestimonialCard = React.memo(({ testimonial }: TestimonialCardProps) => {
         {renderStars(testimonial.rating)}
         <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
       </div>
-      <blockquote className="text-gray-700 mb-6 italic" itemProp="reviewBody">
+      <blockquote className="text-slate-600 mb-6 italic" itemProp="reviewBody">
         "{testimonial.quote}"
       </blockquote>
       <div className="flex items-center">
@@ -51,8 +51,8 @@ const TestimonialCard = React.memo(({ testimonial }: TestimonialCardProps) => {
           height="48"
         />
         <div itemScope itemType="https://schema.org/Person">
-          <h4 className="font-medium text-moving-dark" itemProp="name">{testimonial.name}</h4>
-          <p className="text-sm text-gray-700" itemProp="jobTitle">{testimonial.role}</p>
+          <h4 className="font-medium text-slate-800" itemProp="name">{testimonial.name}</h4>
+          <p className="text-sm text-slate-600" itemProp="jobTitle">{testimonial.role}</p>
         </div>
       </div>
     </article>

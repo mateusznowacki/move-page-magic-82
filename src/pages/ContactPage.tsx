@@ -287,9 +287,8 @@ ${t.footer}`;
         canonical="/kontakt"
       />
       <div className="min-h-screen bg-gray-50">
-      <div className="pt-24 pb-12">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white py-12 mb-12">
+        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-b-2xl p-8 md:p-12 lg:p-16 mb-12 md:mb-16 overflow-hidden relative">
           <div className="container mx-auto px-4 text-center">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
               <MessageCircle className="w-5 h-5" />
@@ -317,7 +316,7 @@ ${t.footer}`;
           </div>
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <Card className="shadow-lg p-8">
@@ -624,7 +623,7 @@ ${t.footer}`;
           </div>
         </div>
       </div>
-    </div>
+      <div className="pb-12"></div>
     </>
   );
 };

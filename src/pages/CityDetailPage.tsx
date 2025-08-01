@@ -670,106 +670,109 @@ const CityDetailPage: React.FC = () => {
         keywords={seoData.keywords}
       />
       <div className="min-h-screen bg-moving-gray">
-        <div className="container mx-auto px-4 py-8">
-          {/* Breadcrumb */}
-          <div className="mb-8">
-            <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
-              <Link to="/staedte" className="hover:text-moving-blue transition-colors">
-                {headerText.backToStates}
-              </Link>
-              <span>/</span>
-              <Link to={`/staedte/${stateSlug}`} className="hover:text-moving-blue transition-colors">
-                {headerText.backToState}
-              </Link>
-              <span>/</span>
-              <span className="text-moving-dark font-medium">{translatedCityName}</span>
-            </div>
-          </div>
+        <div className="pt-0 pb-8">
+
 
           {/* Hero Section */}
-          <div className="relative h-screen flex items-center pt-16 w-full mb-12" role="banner">
-            <div className="absolute inset-0 bg-gradient-to-br from-moving-blue/10 to-moving-darkblue/10 rounded-2xl"></div>
+          <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-b-2xl p-8 md:p-12 lg:p-16 mb-12 md:mb-16 overflow-hidden relative">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-12 -translate-x-12"></div>
+            </div>
             
-            <div className="relative z-20 px-4 w-full">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-moving-dark">
-                    {headerText.heroTitle}
-                  </h1>
-                  <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 px-4 sm:px-0 max-w-4xl mx-auto leading-relaxed">
-                    {headerText.heroSubtitle}
-                  </h2>
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0 justify-center">
-                    <Button 
-                      className="bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                      aria-label="Uzyskaj bezpłatną wycenę przeprowadzki"
-                    >
-                      {headerText.getQuote}
-                    </Button>
-                    <Button 
-                      className="bg-white text-moving-blue hover:bg-gray-100 font-semibold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-moving-blue"
-                      aria-label="Skontaktuj się z nami"
-                    >
-                      {headerText.contactUs}
-                    </Button>
-                  </div>
+            <div className="relative max-w-4xl mx-auto text-center">
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm font-medium">
+                    {language === 'pl' ? 'Specjalizacja: Wschodnie Niemcy' :
+                     language === 'de' ? 'Spezialisierung: Ostdeutschland' :
+                     language === 'es' ? 'Especialización: Este de Alemania' :
+                     'Specialization: Eastern Germany'}
+                  </span>
                 </div>
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+                {headerText.heroTitle}
+              </h1>
+              
+              <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+                {headerText.heroSubtitle}
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  className="bg-white hover:bg-gray-100 text-moving-blue font-semibold py-3 px-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  aria-label="Uzyskaj bezpłatną wycenę przeprowadzki"
+                >
+                  {headerText.getQuote}
+                </Button>
+                <Button 
+                  className="bg-transparent border border-white text-white hover:bg-white hover:text-moving-blue font-semibold py-3 px-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  aria-label="Skontaktuj się z nami"
+                >
+                  {headerText.contactUs}
+                </Button>
               </div>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <Phone className="w-8 h-8 text-moving-blue mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-lg">{pageTexts.phone}</h3>
-                    <a href="tel:+4915223031473" className="text-moving-blue hover:underline">
-                      +49 152 230 314 73
-                    </a>
+          <div className="max-w-6xl mx-auto px-4 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="flex items-center">
+                    <Phone className="w-8 h-8 text-moving-blue mr-4" />
+                    <div>
+                      <h3 className="font-semibold text-lg">{pageTexts.phone}</h3>
+                      <a href="tel:+4915223031473" className="text-moving-blue hover:underline">
+                        +49 152 230 314 73
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <Mail className="w-8 h-8 text-moving-blue mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-lg">{pageTexts.email}</h3>
-                    <a href="mailto:info@meisterumzuege24.de" className="text-moving-blue hover:underline">
-                      info@meisterumzuege24.de
-                    </a>
+              <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="flex items-center">
+                    <Mail className="w-8 h-8 text-moving-blue mr-4" />
+                    <div>
+                      <h3 className="font-semibold text-lg">{pageTexts.email}</h3>
+                      <a href="mailto:info@meisterumzuege24.de" className="text-moving-blue hover:underline">
+                        info@meisterumzuege24.de
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <Clock className="w-8 h-8 text-moving-blue mr-4" />
-                  <div>
-                    <h3 className="font-semibold text-lg">{pageTexts.workingHours}</h3>
-                    <p className="text-sm">{pageTexts.monFri}</p>
-                    <p className="text-sm">{pageTexts.sat}</p>
+              <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="flex items-center">
+                    <Clock className="w-8 h-8 text-moving-blue mr-4" />
+                    <div>
+                      <h3 className="font-semibold text-lg">{pageTexts.workingHours}</h3>
+                      <p className="text-sm">{pageTexts.monFri}</p>
+                      <p className="text-sm">{pageTexts.sat}</p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Services */}
-          <div className="mb-12">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
             <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
               {pageTexts.ourServices}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((service, index) => (
-                <Card key={index} className="text-center">
+                <Card key={index} className="text-center backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <service.icon className="w-12 h-12 text-moving-blue mx-auto mb-4" />
                     <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
@@ -781,131 +784,141 @@ const CityDetailPage: React.FC = () => {
           </div>
 
           {/* Detailed Services Section */}
-          <div className="mb-12">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
             <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
               {pageTexts.movingServices}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
-                    {pageTexts.residentialMoving}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {pageTexts.residentialText}
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
-                    {pageTexts.commercialMoving}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {pageTexts.commercialText}
-                  </p>
-                </div>
-              </div>
+              <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                        {pageTexts.residentialMoving}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {pageTexts.residentialText}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                        {pageTexts.commercialMoving}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {pageTexts.commercialText}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
               
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
-                    {pageTexts.packingServices}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {pageTexts.packingText}
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-3">
-                    {pageTexts.longDistanceMoving}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {pageTexts.longDistanceText}
-                  </p>
-                </div>
-              </div>
+              <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+                <CardContent className="p-6">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                        {pageTexts.packingServices}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {pageTexts.packingText}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold text-moving-dark mb-3">
+                        {pageTexts.longDistanceMoving}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {pageTexts.longDistanceText}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
           {/* Local Expertise Section */}
-          <div className="mb-12">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
             <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
               {pageTexts.localExpertise}
             </h2>
-            <div className="bg-white rounded-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
-                    {pageTexts.whyChooseUs}
-                  </h3>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.over10Years}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.localKnowledge}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.professionalTeam}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.comprehensiveSolutionsDesc}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.competitivePricingDesc}</span>
-                    </li>
-                  </ul>
+            <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                      {pageTexts.whyChooseUs}
+                    </h3>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.over10Years}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.localKnowledge}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.professionalTeam}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.comprehensiveSolutionsDesc}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.competitivePricingDesc}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                      {pageTexts.movingServicesAvailable}
+                    </h3>
+                    <ul className="space-y-3 text-gray-600">
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.residentialMovingDesc}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.commercialMovingDesc}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.packingServicesDesc}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.furnitureAssembly}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.storageSolutions}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-moving-blue mr-2">•</span>
+                        <span>{pageTexts.internationalMoving}</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-moving-dark mb-4">
-                    {pageTexts.movingServicesAvailable}
-                  </h3>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.residentialMovingDesc}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.commercialMovingDesc}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.packingServicesDesc}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.furnitureAssembly}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.storageSolutions}</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-moving-blue mr-2">•</span>
-                      <span>{pageTexts.internationalMoving}</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Why Choose Us */}
-          <div className="mb-12">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
             <h2 className="text-3xl font-bold text-moving-dark text-center mb-8">
               {pageTexts.whyChooseUsSection}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyChooseUs.map((reason, index) => (
-                <Card key={index} className="text-center">
+                <Card key={index} className="text-center backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
                     <reason.icon className="w-12 h-12 text-moving-blue mx-auto mb-4" />
                     <h3 className="font-semibold text-lg mb-2">{reason.title}</h3>
@@ -917,14 +930,15 @@ const CityDetailPage: React.FC = () => {
           </div>
 
           {/* Additional SEO Content */}
-          <div className="mb-12">
-            <div className="bg-white rounded-lg p-8">
-                              <h2 className="text-2xl font-bold text-moving-dark mb-6">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
+            <Card className="backdrop-blur-sm bg-white/80 border border-white/20 shadow-lg">
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-moving-dark mb-6">
                   {pageTexts.professionalCompany}
                 </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                                      <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-semibold text-moving-dark mb-4">
                       {pageTexts.trustedPartner}
                     </h3>
                     <p className="text-gray-600 leading-relaxed mb-4">
@@ -936,45 +950,47 @@ const CityDetailPage: React.FC = () => {
                     <p className="text-gray-600 leading-relaxed">
                       {pageTexts.servicesIncludeText}
                     </p>
-                </div>
-                
-                <div>
-                                      <h3 className="text-xl font-semibold text-moving-dark mb-4">
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-semibold text-moving-dark mb-4">
                       {pageTexts.whyChooseCompany}
                     </h3>
-                  <div className="space-y-4">
-                    <div>
-                                              <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.localExpertiseTitle}</h4>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.localExpertiseTitle}</h4>
                         <p className="text-gray-600 text-sm">
                           {pageTexts.localExpertiseText}
                         </p>
-                    </div>
-                    <div>
-                                              <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.comprehensiveSolutions}</h4>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.comprehensiveSolutions}</h4>
                         <p className="text-gray-600 text-sm">
                           {pageTexts.comprehensiveText}
                         </p>
-                    </div>
-                    <div>
-                                              <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.competitivePricing}</h4>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.competitivePricing}</h4>
                         <p className="text-gray-600 text-sm">
                           {pageTexts.pricingText}
                         </p>
-                    </div>
-                    <div>
-                                              <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.reliableService}</h4>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-moving-dark mb-2">{pageTexts.reliableService}</h4>
                         <p className="text-gray-600 text-sm">
                           {pageTexts.reputationText}
                         </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* CTA Section */}
-          <div className="bg-moving-blue text-white rounded-lg p-8 text-center">
+          <div className="max-w-6xl mx-auto px-4 mb-12">
+            <Card className="bg-moving-blue text-white rounded-lg p-8 text-center backdrop-blur-sm border border-white/20 shadow-lg">
             <h2 className="text-3xl font-bold mb-4">
               {language === 'de' ? `Bereit für den Umzug in ${translatedCityName}?` : 
                language === 'pl' ? `Gotowy na przeprowadzkę w ${translatedCityName}?` :
@@ -1007,10 +1023,12 @@ const CityDetailPage: React.FC = () => {
                language === 'es' ? `Servicios profesionales de mudanza en ${translatedCityName} - Mudanzas residenciales, comerciales, embalaje y de larga distancia` :
                `Professional moving services in ${translatedCityName} - Residential, Commercial, Packing, and Long Distance moves`}
             </p>
+            </Card>
           </div>
 
           {/* Final SEO Section */}
-          <div className="mt-12 bg-gray-50 rounded-lg p-8">
+          <div className="max-w-6xl mx-auto px-4 mt-12">
+            <Card className="bg-gray-50 rounded-lg p-8 backdrop-blur-sm border border-white/20 shadow-lg">
             <h2 className="text-2xl font-bold text-moving-dark mb-6 text-center">
               {language === 'de' ? `Umzugsdienste ${translatedCityName} - Komplette Umzugslösungen` :
                language === 'pl' ? `Usługi przeprowadzkowe ${translatedCityName} - Kompletne rozwiązania przeprowadzkowe` :
@@ -1088,6 +1106,7 @@ const CityDetailPage: React.FC = () => {
                                    `Professional, Reliable, and Affordable Moving Services in ${translatedCityName} and Surrounding Areas`}
               </p>
             </div>
+            </Card>
           </div>
         </div>
       </div>

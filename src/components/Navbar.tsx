@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
     isMobile?: boolean;
   }) => {
     const baseClasses = "text-white font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 active:outline-none border-none";
-    const mobileClasses = isMobile ? "py-3 text-lg text-white hover:bg-slate-800 px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 active:outline-none border-none after:hidden" : "";
+    const mobileClasses = isMobile ? "py-3 text-lg text-white hover:bg-[#3a6ba0] px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none focus:ring-2 focus:ring-slate-600 focus:ring-offset-2 active:outline-none border-none after:hidden" : "";
     
     if (item.isLink) {
       return (
@@ -127,7 +127,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={cn("bg-slate-900 text-white shadow-lg sticky top-0 z-50")}>
+    <header className={cn("bg-[#4882c9]/95 backdrop-blur-sm text-white shadow-lg sticky top-0 z-50")}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-2 sm:py-4">
         <Link 
@@ -170,7 +170,7 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div 
           id="mobile-menu"
-          className="lg:hidden bg-slate-900 absolute top-full left-0 right-0 shadow-lg border-t border-gray-700 animate-slide-in-right"
+          className="lg:hidden bg-[#4882c9]/95 backdrop-blur-sm absolute top-full left-0 right-0 shadow-lg border-t border-gray-700 animate-slide-in-right"
           role="navigation"
           aria-label="Menu mobilne"
         >

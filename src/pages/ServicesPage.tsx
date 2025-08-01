@@ -137,19 +137,17 @@ const ServicesPage: React.FC = () => {
         canonical="/dienstleistungen"
       />
       <div className="min-h-screen bg-moving-gray">
-        <div className="px-4 pt-24 pb-8">
+        <div className="pt-0 pb-8">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 md:mb-16 overflow-hidden relative">
+        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-b-2xl p-8 md:p-12 lg:p-16 mb-12 md:mb-16 overflow-hidden relative">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-12 -translate-x-12"></div>
           </div>
           
-          <div className="relative max-w-5xl mx-auto text-center">
-
-            
-            <div className="mb-6">
+          <div className="relative max-w-4xl mx-auto text-center">
+            <div className="mb-8">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/20">
                 <CheckCircle className="w-4 h-4" />
                 <span className="text-sm font-medium">
@@ -161,46 +159,36 @@ const ServicesPage: React.FC = () => {
               </div>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {headerText.title}
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
               {headerText.subtitle}
             </p>
             
-            <p className="text-sm sm:text-base text-white/80 max-w-2xl mx-auto px-4 mb-6">
-              {language === 'pl' ? 
-                'Oferujemy kompleksowe usługi przeprowadzkowe we wschodnich Niemczech z ponad 10-letnim doświadczeniem. Od przeprowadzek mieszkaniowych po międzynarodowe, nasz profesjonalny zespół zapewnia płynne i bezstresowe doświadczenie przeprowadzkowe.' :
-               language === 'de' ? 
-                'Wir bieten umfassende Umzugsdienste in ganz Ostdeutschland mit über 10 Jahren Erfahrung. Von Wohnungsumzügen bis hin zu internationalen Umzügen sorgt unser professionelles Team für ein reibungsloses und stressfreies Umzugserlebnis.' :
-               language === 'es' ? 
-                'Ofrecemos servicios completos de mudanza en el este de Alemania con más de 10 años de experiencia. Desde mudanzas residenciales hasta mudanzas internacionales, nuestro equipo profesional garantiza una experiencia de mudanza fluida y sin estrés.' :
-               'We offer comprehensive moving services throughout Eastern Germany with over 10 years of experience. From residential moves to international relocations, our professional team ensures a smooth and stress-free moving experience.'}
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto px-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
-                <div className="text-xl sm:text-2xl font-bold mb-1">10+</div>
-                <div className="text-xs sm:text-sm text-white/80">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-2xl font-bold mb-1">10+</div>
+                <div className="text-sm text-white/80">
                   {language === 'pl' ? 'Lat doświadczenia' :
                    language === 'de' ? 'Jahre Erfahrung' :
                    language === 'es' ? 'Años de experiencia' :
                    'Years Experience'}
                 </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
-                <div className="text-xl sm:text-2xl font-bold mb-1">6</div>
-                <div className="text-xs sm:text-sm text-white/80">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-2xl font-bold mb-1">6</div>
+                <div className="text-sm text-white/80">
                   {language === 'pl' ? 'Landów wschodnich' :
                    language === 'de' ? 'Ostdeutsche Länder' :
                    language === 'es' ? 'Estados del este' :
                    'Eastern States'}
                 </div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/20">
-                <div className="text-xl sm:text-2xl font-bold mb-1">24/7</div>
-                <div className="text-xs sm:text-sm text-white/80">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                <div className="text-2xl font-bold mb-1">24/7</div>
+                <div className="text-sm text-white/80">
                   {language === 'pl' ? 'Wsparcie klienta' :
                    language === 'de' ? 'Kundenservice' :
                    language === 'es' ? 'Soporte al cliente' :

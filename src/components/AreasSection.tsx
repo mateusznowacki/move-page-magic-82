@@ -124,7 +124,7 @@ const AreasSection: React.FC = () => {
                 'Spandau', 'Steglitz-Zehlendorf', 'Tempelhof-Schöneberg', 'Neukölln',
                 'Treptow-Köpenick', 'Marzahn-Hellersdorf', 'Lichtenberg', 'Reinickendorf'
               ].map((district) => (
-                <button key={district} className="bg-[#3b82f6] hover:bg-[#2563eb] text-white rounded-lg p-3 text-center transition-colors duration-300 font-medium text-sm md:text-base">
+                <button key={district} className="bg-moving-blue hover:bg-moving-darkblue text-white rounded-lg p-3 text-center transition-colors duration-300 font-medium text-sm md:text-base">
                   {district}
                 </button>
               ))}

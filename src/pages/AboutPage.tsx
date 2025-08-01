@@ -98,7 +98,7 @@ const AboutPage: React.FC = () => {
         de: "Zufriedene Kunden",
         es: "Clientes satisfechos"
       },
-      color: "text-blue-600"
+      color: "text-moving-blue"
     },
     {
       icon: Truck,
@@ -109,7 +109,7 @@ const AboutPage: React.FC = () => {
         de: "Jahre Erfahrung",
         es: "Años de experiencia"
       },
-      color: "text-green-600"
+      color: "text-moving-blue"
     },
     {
       icon: MapPin,
@@ -120,7 +120,7 @@ const AboutPage: React.FC = () => {
         de: "Ostdeutsche Länder",
         es: "Estados del este"
       },
-      color: "text-purple-600"
+      color: "text-moving-blue"
     },
     {
       icon: Star,
@@ -131,7 +131,7 @@ const AboutPage: React.FC = () => {
         de: "Kundenbewertung",
         es: "Valoración de clientes"
       },
-      color: "text-yellow-600"
+      color: "text-moving-blue"
     },
     {
       icon: Shield,
@@ -142,7 +142,7 @@ const AboutPage: React.FC = () => {
         de: "Versicherte Umzüge",
         es: "Mudanzas aseguradas"
       },
-      color: "text-red-600"
+      color: "text-moving-blue"
     },
     {
       icon: Clock,
@@ -153,7 +153,7 @@ const AboutPage: React.FC = () => {
         de: "Kundenservice",
         es: "Soporte al cliente"
       },
-      color: "text-indigo-600"
+      color: "text-moving-blue"
     }
   ];
 
@@ -229,9 +229,9 @@ const AboutPage: React.FC = () => {
         canonical="/uber-uns"
       />
       <div className="min-h-screen bg-moving-gray">
-      <div className="px-4 pt-24 pb-8">
+      <div className="pt-0 pb-8">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 md:mb-16 overflow-hidden relative">
+        <div className="bg-gradient-to-br from-moving-blue to-moving-darkblue text-white rounded-b-2xl p-6 sm:p-8 md:p-12 mb-12 md:mb-16 overflow-hidden relative">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
