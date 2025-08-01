@@ -3,339 +3,291 @@ import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Input } from '../components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { MapPin, Users, Search, ArrowLeft } from 'lucide-react';
+import { MapPin, ChevronLeft, Search, Building } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 interface City {
   name: string;
   slug: string;
-  population: number;
-  district: string;
-  coords: {
-    lat: string;
-    lon: string;
-  };
-  area: number;
+}
+
+interface StateData {
+  name: string;
+  slug: string;
+  cities: City[];
 }
 
 const StateCitiesPage: React.FC = () => {
-  const { t } = useLanguage();
   const { stateSlug } = useParams<{ stateSlug: string }>();
-  const [cities, setCities] = useState<City[]>([]);
+  const { t, language } = useLanguage();
+  const [stateData, setStateData] = useState<StateData | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState<'population' | 'name'>('population');
 
   useEffect(() => {
-    const loadCities = async () => {
+    const loadStateCities = async () => {
       if (!stateSlug) return;
       
       try {
         const response = await fetch(`/data/cities/${stateSlug}.json`);
-        const data = await response.json();
-        setCities(data);
+        const cities: City[] = await response.json();
+        
+        setStateData({
+          name: getStateDisplayName(stateSlug),
+          slug: stateSlug,
+          cities: cities
+        });
       } catch (error) {
-        console.error('Błąd podczas ładowania danych miast:', error);
+        console.error('Błąd podczas ładowania miast:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    loadCities();
+    loadStateCities();
   }, [stateSlug]);
 
-  const formatPopulation = (population: number) => {
-    return new Intl.NumberFormat('de-DE').format(population);
-  };
-
-  const formatArea = (area: number) => {
-    return `${area.toFixed(1)} km²`;
-  };
-
-  const getStateName = (stateSlug: string) => {
-    const stateMapping: { [key: string]: string } = {
-      'nordrhein-westfalen': 'Nordrhein-Westfalen',
+  const getStateDisplayName = (stateSlug: string) => {
+    const stateNames: { [key: string]: string } = {
       'baden-wuerttemberg': 'Baden-Württemberg',
-      'bayern': 'Bayern',
-      'niedersachsen': 'Niedersachsen',
-      'rheinland-pfalz': 'Rheinland-Pfalz',
-      'sachsen': 'Sachsen',
-      'schleswig-holstein': 'Schleswig-Holstein',
-      'sachsen-anhalt': 'Sachsen-Anhalt',
-      'hessen': 'Hessen',
-      'thueringen': 'Thüringen',
-      'mecklenburg-vorpommern': 'Mecklenburg-Vorpommern',
-      'brandenburg': 'Brandenburg',
+      'bavaria': 'Bayern',
       'berlin': 'Berlin',
-      'saarland': 'Saarland',
+      'brandenburg': 'Brandenburg',
       'bremen': 'Bremen',
-      'hamburg': 'Hamburg'
+      'hamburg': 'Hamburg',
+      'hesse': 'Hessen',
+      'lower-saxony': 'Niedersachsen',
+      'mecklenburg-western-pomerania': 'Mecklenburg-Vorpommern',
+      'north-rhine-westphalia': 'Nordrhein-Westfalen',
+      'rhineland-palatinate': 'Rheinland-Pfalz',
+      'saarland': 'Saarland',
+      'saxony': 'Sachsen',
+      'saxony-anhalt': 'Sachsen-Anhalt',
+      'schleswig-holstein': 'Schleswig-Holstein',
+      'thuringia': 'Thüringen'
     };
-    return stateMapping[stateSlug] || stateSlug;
+    return stateNames[stateSlug] || stateSlug;
   };
 
-  const getPopulationCategory = (population: number) => {
-    if (population >= 1000000) return 'Millionenstadt';
-    if (population >= 100000) return 'Großstadt';
-    if (population >= 50000) return 'Mittelstadt';
-    return 'Kleinstadt';
-  };
+  const filteredCities = stateData?.cities.filter(city =>
+    city.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
 
-  const getPopulationColor = (population: number) => {
-    if (population >= 1000000) return 'bg-red-500';
-    if (population >= 100000) return 'bg-orange-500';
-    if (population >= 50000) return 'bg-blue-500';
-    return 'bg-gray-500';
-  };
-
-  const getFilteredCities = () => {
-    let filteredCities = [...cities];
-
-    // Filtruj według wyszukiwania
-    if (searchTerm) {
-      filteredCities = filteredCities.filter(city =>
-        city.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        city.district.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    // Sortuj
-    filteredCities.sort((a, b) => {
-      if (sortBy === 'population') {
-        return b.population - a.population;
-      } else {
-        return a.name.localeCompare(b.name);
+  const getHeaderText = () => {
+    const texts = {
+      en: {
+        title: `Moving Services in ${stateData?.name || ''}`,
+        subtitle: `Professional moving services in all cities of ${stateData?.name || ''}. From residential to commercial moves, we provide comprehensive relocation solutions throughout the region.`,
+        searchPlaceholder: 'Search cities...',
+        backToStates: 'Back to States'
+      },
+      pl: {
+        title: `Usługi przeprowadzkowe w ${stateData?.name || ''}`,
+        subtitle: `Profesjonalne usługi przeprowadzkowe we wszystkich miastach ${stateData?.name || ''}. Od przeprowadzek mieszkaniowych po komercyjne, zapewniamy kompleksowe rozwiązania relokacyjne w całym regionie.`,
+        searchPlaceholder: 'Szukaj miast...',
+        backToStates: 'Powrót do krajów'
+      },
+      de: {
+        title: `Umzugsdienste in ${stateData?.name || ''}`,
+        subtitle: `Professionelle Umzugsdienste in allen Städten von ${stateData?.name || ''}. Von Wohnungs- bis Geschäftsumzügen bieten wir umfassende Umzugslösungen in der gesamten Region.`,
+        searchPlaceholder: 'Städte suchen...',
+        backToStates: 'Zurück zu Bundesländern'
+      },
+      es: {
+        title: `Servicios de mudanza en ${stateData?.name || ''}`,
+        subtitle: `Servicios profesionales de mudanza en todas las ciudades de ${stateData?.name || ''}. Desde mudanzas residenciales hasta comerciales, proporcionamos soluciones completas de reubicación en toda la región.`,
+        searchPlaceholder: 'Buscar ciudades...',
+        backToStates: 'Volver a Estados'
       }
-    });
-
-    return filteredCities;
+    };
+    return texts[language as keyof typeof texts] || texts.en;
   };
 
-  const getStateStats = () => {
-    const totalPopulation = cities.reduce((sum, city) => sum + city.population, 0);
-    const millionCities = cities.filter(city => city.population >= 1000000).length;
-    const largeCities = cities.filter(city => city.population >= 100000).length;
-    const mediumCities = cities.filter(city => city.population >= 50000 && city.population < 100000).length;
-    
-    return {
-      totalPopulation,
-      millionCities,
-      largeCities,
-      mediumCities,
-      totalCities: cities.length
+  const getSEOData = () => {
+    const stateName = stateData?.name || '';
+    const seoData = {
+      en: {
+        title: `Moving Services in ${stateName} - Professional Relocation | Meister Umzüge 24`,
+        description: `Professional moving services in ${stateName}. Residential and commercial moves, packing, furniture assembly. Over ${stateData?.cities.length || 0} cities covered. Free quote!`,
+        keywords: `moving services ${stateName}, relocation ${stateName}, residential moving ${stateName}, commercial moving ${stateName}, packing services ${stateName}, furniture assembly ${stateName}, Umzug ${stateName}`
+      },
+      pl: {
+        title: `Usługi przeprowadzkowe w ${stateName} - Profesjonalne przeprowadzki | Meister Umzüge 24`,
+        description: `Profesjonalne usługi przeprowadzkowe w ${stateName}. Przeprowadzki mieszkaniowe i komercyjne, pakowanie, montaż mebli. Ponad ${stateData?.cities.length || 0} miast. Darmowa wycena!`,
+        keywords: `usługi przeprowadzkowe ${stateName}, przeprowadzki ${stateName}, przeprowadzki mieszkaniowe ${stateName}, przeprowadzki komercyjne ${stateName}, pakowanie ${stateName}, montaż mebli ${stateName}`
+      },
+      de: {
+        title: `Umzugsdienste in ${stateName} - Professionelle Umzüge | Meister Umzüge 24`,
+        description: `Professionelle Umzugsdienste in ${stateName}. Wohnungs- und Geschäftsumzüge, Verpackung, Möbelmontage. Über ${stateData?.cities.length || 0} Städte abgedeckt. Kostenloses Angebot!`,
+        keywords: `Umzugsdienste ${stateName}, Umzug ${stateName}, Wohnungsumzug ${stateName}, Geschäftsumzug ${stateName}, Verpackung ${stateName}, Möbelmontage ${stateName}`
+      },
+      es: {
+        title: `Servicios de mudanza en ${stateName} - Mudanzas profesionales | Meister Umzüge 24`,
+        description: `Servicios profesionales de mudanza en ${stateName}. Mudanzas residenciales y comerciales, embalaje, montaje de muebles. Más de ${stateData?.cities.length || 0} ciudades cubiertas. ¡Presupuesto gratuito!`,
+        keywords: `servicios de mudanza ${stateName}, mudanzas ${stateName}, mudanzas residenciales ${stateName}, mudanzas comerciales ${stateName}, embalaje ${stateName}, montaje de muebles ${stateName}`
+      }
     };
+    return seoData[language as keyof typeof seoData] || seoData.en;
   };
 
   if (loading) {
+    const seoData = getSEOData();
     return (
-      <div className="min-h-screen bg-moving-gray flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-moving-blue mx-auto mb-4"></div>
-          <p className="text-moving-dark">Ładowanie danych miast...</p>
+      <>
+        <SEOHead 
+          title={seoData.title}
+          description={seoData.description}
+          keywords={seoData.keywords}
+        />
+        <div className="min-h-screen bg-moving-gray flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-moving-blue mx-auto mb-4"></div>
+            <p className="text-moving-dark">Ładowanie miast...</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
-  if (!stateSlug) {
+  if (!stateData) {
     return (
       <div className="min-h-screen bg-moving-gray flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-moving-dark mb-4">Nie znaleziono landu</h1>
+          <h1 className="text-2xl font-bold text-moving-dark mb-4">Land nie został znaleziony</h1>
           <Link to="/staedte" className="text-moving-blue hover:underline">
-            Wróć do listy landów
+            Powrót do listy landów
           </Link>
         </div>
       </div>
     );
   }
 
-  const filteredCities = getFilteredCities();
-  const stats = getStateStats();
-  const stateName = getStateName(stateSlug);
+  const headerText = getHeaderText();
+  const seoData = getSEOData();
 
   return (
-    <div className="min-h-screen bg-moving-gray">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <Link 
-            to="/staedte" 
-            className="inline-flex items-center text-moving-blue hover:text-moving-darkblue mb-4 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Wróć do listy landów
-          </Link>
-          
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-moving-dark mb-4">
-              Miasta w {stateName}
+    <>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+      />
+      <div className="min-h-screen bg-moving-gray">
+        <div className="container mx-auto px-4 py-8">
+          {/* Header */}
+          <div className="mb-8">
+            <Link 
+              to="/staedte" 
+              className="inline-flex items-center text-moving-blue hover:text-moving-dark transition-colors mb-4"
+            >
+              <ChevronLeft className="w-4 h-4 mr-2" />
+              {headerText.backToStates}
+            </Link>
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-moving-dark mb-6">
+              {headerText.title}
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Lista wszystkich miast i gmin w {stateName} z populacją powyżej 20,000 mieszkańców.
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl leading-relaxed">
+              {headerText.subtitle}
             </p>
           </div>
-        </div>
 
-        {/* Statystyki landu */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <MapPin className="w-8 h-8 text-moving-blue mr-3" />
-                <div>
-                  <p className="text-sm text-gray-600">Miast</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {stats.totalCities}
-                  </p>
+          {/* Statystyki */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <Building className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">Federal State</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      {stateData.name}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <Users className="w-8 h-8 text-moving-blue mr-3" />
-                <div>
-                  <p className="text-sm text-gray-600">Populacja</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {formatPopulation(stats.totalPopulation)}
-                  </p>
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <MapPin className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">Total Cities</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      {stateData.cities.length}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-red-500 rounded-full mr-3"></div>
-                <div>
-                  <p className="text-sm text-gray-600">Milionowe</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {stats.millionCities}
-                  </p>
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <MapPin className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">Coverage</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      100%
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
 
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-orange-500 rounded-full mr-3"></div>
-                <div>
-                  <p className="text-sm text-gray-600">Duże</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {stats.largeCities}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-500 rounded-full mr-3"></div>
-                <div>
-                  <p className="text-sm text-gray-600">Średnie</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {stats.mediumCities}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Filtry */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Wyszukiwanie */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <Input
-                placeholder="Szukaj miasta lub powiatu..."
+          {/* Wyszukiwarka */}
+          <div className="mb-8">
+            <div className="relative max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder={headerText.searchPlaceholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-moving-blue focus:border-transparent"
               />
             </div>
-
-            {/* Sortowanie */}
-            <Select value={sortBy} onValueChange={(value: 'population' | 'name') => setSortBy(value)}>
-              <SelectTrigger>
-                <SelectValue placeholder="Sortuj według" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="population">Według populacji</SelectItem>
-                <SelectItem value="name">Według nazwy</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
-        </div>
 
-        {/* Lista miast */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCities.map((city, index) => (
-            <Link key={`${city.slug}-${index}`} to={`/staedte/${stateSlug}/${city.slug}`}>
-              <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
-                <CardHeader className="pb-3">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-lg font-semibold text-moving-dark">
-                      {city.name}
-                    </CardTitle>
-                    <Badge 
-                      variant="secondary" 
-                      className={`${getPopulationColor(city.population)} text-white`}
-                    >
-                      {getPopulationCategory(city.population)}
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-gray-600">{city.district}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Populacja:</span>
-                      <span className="font-semibold text-moving-dark">
-                        {formatPopulation(city.population)}
-                      </span>
+          {/* Lista miast */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {filteredCities.map((city) => (
+              <Link
+                key={city.slug}
+                to={`/staedte/${stateSlug}/${city.slug}`}
+                className="block"
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="font-semibold text-lg text-moving-dark mb-2">
+                          {city.name}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {stateData.name}
+                        </p>
+                      </div>
+                      <MapPin className="w-5 h-5 text-moving-blue" />
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Powierzchnia:</span>
-                      <span className="font-semibold text-moving-dark">
-                        {formatArea(city.area)}
-                      </span>
-                    </div>
-                    <div className="pt-2 border-t border-gray-200">
-                      <p className="text-sm text-gray-500">
-                        Kliknij, aby zobaczyć szczegóły
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {filteredCities.length === 0 && (
-          <div className="text-center py-12">
-            <Search className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-600 mb-2">
-              Nie znaleziono miast
-            </h3>
-            <p className="text-gray-500">
-              Spróbuj zmienić kryteria wyszukiwania.
-            </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
-        )}
+
+          {filteredCities.length === 0 && searchTerm && (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">
+                Nie znaleziono miast pasujących do wyszukiwania "{searchTerm}"
+              </p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
