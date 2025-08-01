@@ -672,66 +672,116 @@ const CityDetailPage: React.FC = () => {
           {/* CTA Section */}
           <div className="bg-moving-blue text-white rounded-lg p-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Move in {cityData.name}?
+              {language === 'de' ? `Bereit für den Umzug in ${cityData.name}?` : 
+               language === 'pl' ? `Gotowy na przeprowadzkę w ${cityData.name}?` :
+               language === 'es' ? `¿Listo para mudarse a ${cityData.name}?` :
+               `Ready to Move in ${cityData.name}?`}
             </h2>
             <p className="text-lg mb-6">
-              Get your free quote today and experience professional moving services in {cityData.name}!
+              {language === 'de' ? `Erhalten Sie noch heute Ihr kostenloses Angebot und erleben Sie professionelle Umzugsdienste in ${cityData.name}!` :
+               language === 'pl' ? `Uzyskaj darmową wycenę już dziś i doświadcz profesjonalnych usług przeprowadzkowych w ${cityData.name}!` :
+               language === 'es' ? `¡Obtenga su presupuesto gratuito hoy y experimente servicios profesionales de mudanza en ${cityData.name}!` :
+               `Get your free quote today and experience professional moving services in ${cityData.name}!`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="bg-white text-moving-blue hover:bg-gray-100">
-                Get Free Quote for {cityData.name}
+                {language === 'de' ? `Kostenloses Angebot für ${cityData.name}` :
+                 language === 'pl' ? `Darmowa wycena dla ${cityData.name}` :
+                 language === 'es' ? `Presupuesto gratis para ${cityData.name}` :
+                 `Get Free Quote for ${cityData.name}`}
               </Button>
               <Button size="lg" className="border border-white text-white hover:bg-white hover:text-moving-blue">
-                Contact Us in {cityData.name}
+                {language === 'de' ? `Kontaktieren Sie uns in ${cityData.name}` :
+                 language === 'pl' ? `Skontaktuj się z nami w ${cityData.name}` :
+                 language === 'es' ? `Contáctenos en ${cityData.name}` :
+                 `Contact Us in ${cityData.name}`}
               </Button>
             </div>
             <p className="text-sm opacity-90">
-              Professional moving services in {cityData.name} - Residential, Commercial, Packing, and Long Distance moves
+              {language === 'de' ? `Professionelle Umzugsdienste in ${cityData.name} - Wohnungs-, Geschäfts-, Verpackungs- und Fernumzüge` :
+               language === 'pl' ? `Profesjonalne usługi przeprowadzkowe w ${cityData.name} - Przeprowadzki mieszkaniowe, komercyjne, pakowanie i długodystansowe` :
+               language === 'es' ? `Servicios profesionales de mudanza en ${cityData.name} - Mudanzas residenciales, comerciales, embalaje y de larga distancia` :
+               `Professional moving services in ${cityData.name} - Residential, Commercial, Packing, and Long Distance moves`}
             </p>
           </div>
 
           {/* Final SEO Section */}
           <div className="mt-12 bg-gray-50 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-moving-dark mb-6 text-center">
-              Moving Services {cityData.name} - Complete Relocation Solutions
+              {language === 'de' ? `Umzugsdienste ${cityData.name} - Komplette Umzugslösungen` :
+               language === 'pl' ? `Usługi przeprowadzkowe ${cityData.name} - Kompletne rozwiązania przeprowadzkowe` :
+               language === 'es' ? `Servicios de mudanza ${cityData.name} - Soluciones completas de mudanza` :
+               `Moving Services ${cityData.name} - Complete Relocation Solutions`}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold text-moving-dark mb-3">
-                  Residential Moving {cityData.name}
+                  {language === 'de' ? `Wohnungsumzug ${cityData.name}` :
+                   language === 'pl' ? `Przeprowadzki mieszkaniowe ${cityData.name}` :
+                   language === 'es' ? `Mudanzas residenciales ${cityData.name}` :
+                   `Residential Moving ${cityData.name}`}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Our residential moving services in {cityData.name} cater to all types of homes and apartments. Whether you're moving from a small studio in {cityData.name} or a large family home, our team in {cityData.name} provides personalized moving solutions. We handle everything from packing your belongings in {cityData.name} to setting up your new home, ensuring a stress-free moving experience in {cityData.name}.
+                  {language === 'de' ? `Unsere Wohnungsumzugsdienste in ${cityData.name} betreuen alle Arten von Häusern und Wohnungen. Ob Sie aus einem kleinen Studio in ${cityData.name} oder einem großen Familienhaus umziehen, unser Team in ${cityData.name} bietet personalisierte Umzugslösungen. Wir kümmern uns um alles, von der Verpackung Ihrer Habseligkeiten in ${cityData.name} bis zur Einrichtung Ihres neuen Zuhauses und gewährleisten ein stressfreies Umzugserlebnis in ${cityData.name}.` :
+                   language === 'pl' ? `Nasze usługi przeprowadzek mieszkaniowych w ${cityData.name} obsługują wszystkie rodzaje domów i mieszkań. Czy przeprowadzasz się z małego studia w ${cityData.name} czy dużego domu rodzinnego, nasz zespół w ${cityData.name} zapewnia spersonalizowane rozwiązania przeprowadzkowe. Zajmujemy się wszystkim, od pakowania Twoich rzeczy w ${cityData.name} po urządzenie nowego domu, zapewniając bezstresowe doświadczenie przeprowadzki w ${cityData.name}.` :
+                   language === 'es' ? `Nuestros servicios de mudanza residencial en ${cityData.name} atienden todo tipo de hogares y apartamentos. Ya sea que se mude de un pequeño estudio en ${cityData.name} o una gran casa familiar, nuestro equipo en ${cityData.name} proporciona soluciones de mudanza personalizadas. Nos encargamos de todo, desde empacar sus pertenencias en ${cityData.name} hasta configurar su nuevo hogar, asegurando una experiencia de mudanza sin estrés en ${cityData.name}.` :
+                   `Our residential moving services in ${cityData.name} cater to all types of homes and apartments. Whether you're moving from a small studio in ${cityData.name} or a large family home, our team in ${cityData.name} provides personalized moving solutions. We handle everything from packing your belongings in ${cityData.name} to setting up your new home, ensuring a stress-free moving experience in ${cityData.name}.`}
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-moving-dark mb-3">
-                  Commercial Moving {cityData.name}
+                  {language === 'de' ? `Geschäftsumzug ${cityData.name}` :
+                   language === 'pl' ? `Przeprowadzki komercyjne ${cityData.name}` :
+                   language === 'es' ? `Mudanzas comerciales ${cityData.name}` :
+                   `Commercial Moving ${cityData.name}`}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Professional commercial moving services in {cityData.name} help businesses relocate efficiently with minimal downtime. Our commercial moving team in {cityData.name} specializes in office moves, retail relocations, and industrial equipment transport. We understand the importance of keeping your business operations in {cityData.name} running smoothly during the move.
+                  {language === 'de' ? `Professionelle Geschäftsumzugsdienste in ${cityData.name} helfen Unternehmen, sich effizient mit minimalen Ausfallzeiten umzusiedeln. Unser Geschäftsumzugsteam in ${cityData.name} ist auf Büroumzüge, Einzelhandelsverlagerungen und industriellen Gerätetransport spezialisiert. Wir verstehen die Bedeutung, Ihre Geschäftsabläufe in ${cityData.name} während des Umzugs reibungslos am Laufen zu halten.` :
+                   language === 'pl' ? `Profesjonalne usługi przeprowadzek komercyjnych w ${cityData.name} pomagają firmom przeprowadzać się efektywnie z minimalnymi przestojami. Nasz zespół przeprowadzek komercyjnych w ${cityData.name} specjalizuje się w przeprowadzkach biurowych, relokacjach handlowych i transporcie sprzętu przemysłowego. Rozumiemy znaczenie utrzymania płynnego działania Twojej firmy w ${cityData.name} podczas przeprowadzki.` :
+                   language === 'es' ? `Los servicios profesionales de mudanza comercial en ${cityData.name} ayudan a las empresas a reubicarse eficientemente con un tiempo de inactividad mínimo. Nuestro equipo de mudanza comercial en ${cityData.name} se especializa en mudanzas de oficinas, reubicaciones minoristas y transporte de equipos industriales. Entendemos la importancia de mantener sus operaciones comerciales en ${cityData.name} funcionando sin problemas durante la mudanza.` :
+                   `Professional commercial moving services in ${cityData.name} help businesses relocate efficiently with minimal downtime. Our commercial moving team in ${cityData.name} specializes in office moves, retail relocations, and industrial equipment transport. We understand the importance of keeping your business operations in ${cityData.name} running smoothly during the move.`}
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-moving-dark mb-3">
-                  Packing Services {cityData.name}
+                  {language === 'de' ? `Verpackungsdienste ${cityData.name}` :
+                   language === 'pl' ? `Usługi pakowania ${cityData.name}` :
+                   language === 'es' ? `Servicios de embalaje ${cityData.name}` :
+                   `Packing Services ${cityData.name}`}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Expert packing and unpacking services in {cityData.name} ensure your valuable belongings are protected during the move. Our professional packers in {cityData.name} use high-quality materials and proven techniques to pack everything safely. We offer both full-service packing in {cityData.name} and partial packing options to meet your specific needs.
+                  {language === 'de' ? `Experten-Verpackungs- und Auspackungsdienste in ${cityData.name} stellen sicher, dass Ihre wertvollen Habseligkeiten während des Umzugs geschützt sind. Unsere professionellen Packer in ${cityData.name} verwenden hochwertige Materialien und bewährte Techniken, um alles sicher zu verpacken. Wir bieten sowohl Vollservice-Verpackung in ${cityData.name} als auch Teilverpackungsoptionen, um Ihren spezifischen Bedürfnissen gerecht zu werden.` :
+                   language === 'pl' ? `Eksperckie usługi pakowania i rozpakowywania w ${cityData.name} zapewniają ochronę Twoich cennych rzeczy podczas przeprowadzki. Nasi profesjonalni pakowacze w ${cityData.name} używają wysokiej jakości materiałów i sprawdzonych technik, aby bezpiecznie zapakować wszystko. Oferujemy zarówno pełne usługi pakowania w ${cityData.name}, jak i opcje częściowego pakowania, aby sprostać Twoim konkretnym potrzebom.` :
+                   language === 'es' ? `Los servicios expertos de embalaje y desempaque en ${cityData.name} aseguran que sus pertenencias valiosas estén protegidas durante la mudanza. Nuestros empacadores profesionales en ${cityData.name} usan materiales de alta calidad y técnicas probadas para empacar todo de manera segura. Ofrecemos tanto embalaje de servicio completo en ${cityData.name} como opciones de embalaje parcial para satisfacer sus necesidades específicas.` :
+                   `Expert packing and unpacking services in ${cityData.name} ensure your valuable belongings are protected during the move. Our professional packers in ${cityData.name} use high-quality materials and proven techniques to pack everything safely. We offer both full-service packing in ${cityData.name} and partial packing options to meet your specific needs.`}
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-moving-dark mb-3">
-                  Long Distance Moving from {cityData.name}
+                  {language === 'de' ? `Fernumzug von ${cityData.name}` :
+                   language === 'pl' ? `Przeprowadzki długodystansowe z ${cityData.name}` :
+                   language === 'es' ? `Mudanzas de larga distancia desde ${cityData.name}` :
+                   `Long Distance Moving from ${cityData.name}`}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Reliable long-distance moving services from {cityData.name} to any destination in Germany and the EU. Our experienced team handles cross-country moves from {cityData.name} with precision and care. Whether you're moving from {cityData.name} to another German city or international destination, we provide comprehensive logistics solutions.
+                  {language === 'de' ? `Zuverlässige Fernumzugsdienste von ${cityData.name} zu jedem Ziel in Deutschland und der EU. Unser erfahrenes Team behandelt grenzüberschreitende Umzüge von ${cityData.name} mit Präzision und Sorgfalt. Ob Sie von ${cityData.name} in eine andere deutsche Stadt oder ein internationales Ziel umziehen, wir bieten umfassende Logistiklösungen.` :
+                   language === 'pl' ? `Niezawodne usługi przeprowadzek długodystansowych z ${cityData.name} do każdego celu w Niemczech i UE. Nasz doświadczony zespół obsługuje przeprowadzki międzykrajowe z ${cityData.name} z precyzją i dbałością. Czy przeprowadzasz się z ${cityData.name} do innego niemieckiego miasta czy międzynarodowego celu, zapewniamy kompleksowe rozwiązania logistyczne.` :
+                   language === 'es' ? `Servicios confiables de mudanza de larga distancia desde ${cityData.name} a cualquier destino en Alemania y la UE. Nuestro equipo experimentado maneja mudanzas transfronterizas desde ${cityData.name} con precisión y cuidado. Ya sea que se mude desde ${cityData.name} a otra ciudad alemana o destino internacional, proporcionamos soluciones logísticas completas.` :
+                   `Reliable long-distance moving services from ${cityData.name} to any destination in Germany and the EU. Our experienced team handles cross-country moves from ${cityData.name} with precision and care. Whether you're moving from ${cityData.name} to another German city or international destination, we provide comprehensive logistics solutions.`}
                 </p>
               </div>
             </div>
             <div className="text-center mt-8">
               <p className="text-gray-600">
-                <strong>Moving Company {cityData.name}</strong> - Professional, Reliable, and Affordable Moving Services in {cityData.name} and Surrounding Areas
+                <strong>
+                  {language === 'de' ? `Umzugsfirma ${cityData.name}` :
+                   language === 'pl' ? `Firma przeprowadzkowa ${cityData.name}` :
+                   language === 'es' ? `Empresa de mudanzas ${cityData.name}` :
+                   `Moving Company ${cityData.name}`}
+                </strong> - {language === 'de' ? `Professionelle, zuverlässige und erschwingliche Umzugsdienste in ${cityData.name} und Umgebung` :
+                                   language === 'pl' ? `Profesjonalne, niezawodne i przystępne usługi przeprowadzkowe w ${cityData.name} i okolicach` :
+                                   language === 'es' ? `Servicios profesionales, confiables y asequibles de mudanza en ${cityData.name} y áreas circundantes` :
+                                   `Professional, Reliable, and Affordable Moving Services in ${cityData.name} and Surrounding Areas`}
               </p>
             </div>
           </div>
