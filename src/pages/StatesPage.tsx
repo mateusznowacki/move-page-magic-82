@@ -26,23 +26,13 @@ const StatesPage: React.FC = () => {
   useEffect(() => {
     const loadStates = async () => {
       try {
-        // Lista wszystkich landów niemieckich
+        // Lista 6 landów niemieckich
         const stateFiles = [
-          'baden-wuerttemberg',
-          'bavaria', 
           'berlin',
           'brandenburg',
-          'bremen',
-          'hamburg',
-          'hesse',
-          'lower-saxony',
           'mecklenburg-western-pomerania',
-          'north-rhine-westphalia',
-          'rhineland-palatinate',
-          'saarland',
           'saxony',
           'saxony-anhalt',
-          'schleswig-holstein',
           'thuringia'
         ];
 
@@ -124,7 +114,7 @@ const StatesPage: React.FC = () => {
       },
       pl: {
         title: "Niemieckie miasta",
-        subtitle: "Odkryj nasze kompleksowe usługi przeprowadzkowe we wszystkich niemieckich miastach. Od Berlina po Monachium, od Hamburga po Kolonię - obsługujemy ponad 2000 miast w całych Niemczech z profesjonalnymi usługami przeprowadzkowymi.",
+        subtitle: "Odkryj nasze kompleksowe usługi przeprowadzkowe w 6 krajach związkowych. Od Berlina po Drezno, od Brandenburgii po Turyngię - obsługujemy ponad 2000 miast w regionie wschodnich Niemiec z profesjonalnymi usługami przeprowadzkowymi.",
         stats: {
           states: "Kraje związkowe",
           cities: "Łącznie miast",
@@ -133,7 +123,7 @@ const StatesPage: React.FC = () => {
       },
       de: {
         title: "Deutsche Städte",
-        subtitle: "Entdecken Sie unsere umfassenden Umzugsdienste in allen deutschen Städten. Von Berlin bis München, von Hamburg bis Köln - wir bedienen über 2000 Städte in ganz Deutschland mit professionellen Umzugsdiensten.",
+        subtitle: "Entdecken Sie unsere umfassenden Umzugsdienste in 6 Bundesländern. Von Berlin bis Dresden, von Brandenburg bis Thüringen - wir bedienen über 2000 Städte in der ostdeutschen Region mit professionellen Umzugsdiensten.",
         stats: {
           states: "Bundesländer",
           cities: "Städte insgesamt",
@@ -142,7 +132,7 @@ const StatesPage: React.FC = () => {
       },
       es: {
         title: "Ciudades alemanas",
-        subtitle: "Descubra nuestros servicios completos de mudanza en todas las ciudades de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia - servimos más de 2000 ciudades en toda Alemania con servicios profesionales de mudanza.",
+        subtitle: "Descubra nuestros servicios completos de mudanza en 6 estados federados. Desde Berlín hasta Dresde, desde Brandeburgo hasta Turingia - servimos más de 2000 ciudades en la región del este de Alemania con servicios profesionales de mudanza.",
         stats: {
           states: "Estados federados",
           cities: "Ciudades totales",
@@ -157,23 +147,23 @@ const StatesPage: React.FC = () => {
     const seoData = {
       en: {
         title: "German Cities - Moving Services | Meister Umzüge 24",
-        description: "Professional moving services in all German cities. From Berlin to Munich, Hamburg to Cologne. Over 2000 cities covered. Get your free quote today!",
-        keywords: "German cities, moving services Germany, Berlin moving, Munich moving, Hamburg moving, Cologne moving, relocation Germany, Umzug Deutschland, deutsche Städte"
+        description: "Professional moving services in 6 German federal states. From Berlin to Dresden, Brandenburg to Thuringia. Over 2000 cities covered in eastern Germany. Get your free quote today!",
+        keywords: "German cities, moving services Germany, Berlin moving, Dresden moving, Brandenburg moving, Thuringia moving, relocation Germany, Umzug Deutschland, deutsche Städte, eastern Germany"
       },
       pl: {
         title: "Niemieckie miasta - Usługi przeprowadzkowe | Meister Umzüge 24",
-        description: "Profesjonalne usługi przeprowadzkowe we wszystkich niemieckich miastach. Od Berlina po Monachium, od Hamburga po Kolonię. Ponad 2000 miast. Darmowa wycena!",
-        keywords: "niemieckie miasta, usługi przeprowadzkowe Niemcy, przeprowadzka Berlin, przeprowadzka Monachium, przeprowadzka Hamburg, przeprowadzka Kolonia, Umzug Deutschland"
+        description: "Profesjonalne usługi przeprowadzkowe w 6 krajach związkowych. Od Berlina po Drezno, od Brandenburgii po Turyngię. Ponad 2000 miast w regionie wschodnich Niemiec. Darmowa wycena!",
+        keywords: "niemieckie miasta, usługi przeprowadzkowe Niemcy, przeprowadzka Berlin, przeprowadzka Drezno, przeprowadzka Brandenburgia, przeprowadzka Turyngia, Umzug Deutschland, wschodnie Niemcy"
       },
       de: {
         title: "Deutsche Städte - Umzugsdienste | Meister Umzüge 24",
-        description: "Professionelle Umzugsdienste in allen deutschen Städten. Von Berlin bis München, von Hamburg bis Köln. Über 2000 Städte abgedeckt. Jetzt kostenloses Angebot!",
-        keywords: "deutsche Städte, Umzugsdienste Deutschland, Berlin Umzug, München Umzug, Hamburg Umzug, Köln Umzug, Umzug Deutschland"
+        description: "Professionelle Umzugsdienste in 6 deutschen Bundesländern. Von Berlin bis Dresden, von Brandenburg bis Thüringen. Über 2000 Städte in der ostdeutschen Region abgedeckt. Jetzt kostenloses Angebot!",
+        keywords: "deutsche Städte, Umzugsdienste Deutschland, Berlin Umzug, Dresden Umzug, Brandenburg Umzug, Thüringen Umzug, Umzug Deutschland, Ostdeutschland"
       },
       es: {
         title: "Ciudades alemanas - Servicios de mudanza | Meister Umzüge 24",
-        description: "Servicios profesionales de mudanza en todas las ciudades de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia. Más de 2000 ciudades cubiertas. ¡Presupuesto gratuito!",
-        keywords: "ciudades alemanas, servicios de mudanza Alemania, mudanza Berlín, mudanza Múnich, mudanza Hamburgo, mudanza Colonia, Umzug Deutschland"
+        description: "Servicios profesionales de mudanza en 6 estados federados alemanes. Desde Berlín hasta Dresde, desde Brandeburgo hasta Turingia. Más de 2000 ciudades cubiertas en la región del este de Alemania. ¡Presupuesto gratuito!",
+        keywords: "ciudades alemanas, servicios de mudanza Alemania, mudanza Berlín, mudanza Dresde, mudanza Brandeburgo, mudanza Turingia, Umzug Deutschland, Alemania del Este"
       }
     };
     return seoData[language as keyof typeof seoData] || seoData.en;
