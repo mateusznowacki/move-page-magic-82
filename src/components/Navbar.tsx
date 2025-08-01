@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
     isLink: true
   }, {
     key: 'states',
-    href: '/states',
+    href: '/staedte',
     isLink: true
   }, {
     key: 'testimonials',

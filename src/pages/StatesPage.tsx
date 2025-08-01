@@ -80,21 +80,21 @@ const StatesPage: React.FC = () => {
   const getStateDisplayName = (stateSlug: string) => {
     const stateNames: { [key: string]: string } = {
       'baden-wuerttemberg': 'Baden-Württemberg',
-      'bavaria': 'Bavaria',
+      'bavaria': 'Bayern',
       'berlin': 'Berlin',
       'brandenburg': 'Brandenburg',
       'bremen': 'Bremen',
       'hamburg': 'Hamburg',
-      'hesse': 'Hesse',
-      'lower-saxony': 'Lower Saxony',
-      'mecklenburg-western-pomerania': 'Mecklenburg-Western Pomerania',
-      'north-rhine-westphalia': 'North Rhine-Westphalia',
-      'rhineland-palatinate': 'Rhineland-Palatinate',
+      'hesse': 'Hessen',
+      'lower-saxony': 'Niedersachsen',
+      'mecklenburg-western-pomerania': 'Mecklenburg-Vorpommern',
+      'north-rhine-westphalia': 'Nordrhein-Westfalen',
+      'rhineland-palatinate': 'Rheinland-Pfalz',
       'saarland': 'Saarland',
-      'saxony': 'Saxony',
-      'saxony-anhalt': 'Saxony-Anhalt',
+      'saxony': 'Sachsen',
+      'saxony-anhalt': 'Sachsen-Anhalt',
       'schleswig-holstein': 'Schleswig-Holstein',
-      'thuringia': 'Thuringia'
+      'thuringia': 'Thüringen'
     };
     return stateNames[stateSlug] || stateSlug;
   };
@@ -106,8 +106,8 @@ const StatesPage: React.FC = () => {
   const getHeaderText = () => {
     const texts = {
       en: {
-        title: "German Federal States",
-        subtitle: "Explore our moving services across all German federal states. Click on any state to see the cities we serve, or browse through our comprehensive coverage of 16 states and over 2000 cities throughout Germany.",
+        title: "German Cities & Federal States",
+        subtitle: "Discover our comprehensive moving services across all German cities and federal states. From Berlin to Munich, Hamburg to Cologne - we serve over 2000 cities throughout Germany with professional relocation services.",
         stats: {
           states: "Federal States",
           cities: "Total Cities",
@@ -115,8 +115,8 @@ const StatesPage: React.FC = () => {
         }
       },
       pl: {
-        title: "Niemieckie kraje związkowe",
-        subtitle: "Poznaj nasze usługi przeprowadzkowe we wszystkich niemieckich krajach związkowych. Kliknij na dowolny kraj, aby zobaczyć miasta, które obsługujemy, lub przejrzyj nasze kompleksowe pokrycie 16 krajów i ponad 2000 miast w całych Niemczech.",
+        title: "Niemieckie miasta i kraje związkowe",
+        subtitle: "Odkryj nasze kompleksowe usługi przeprowadzkowe we wszystkich niemieckich miastach i krajach związkowych. Od Berlina po Monachium, od Hamburga po Kolonię - obsługujemy ponad 2000 miast w całych Niemczech z profesjonalnymi usługami przeprowadzkowymi.",
         stats: {
           states: "Kraje związkowe",
           cities: "Łącznie miast",
@@ -124,8 +124,8 @@ const StatesPage: React.FC = () => {
         }
       },
       de: {
-        title: "Deutsche Bundesländer",
-        subtitle: "Entdecken Sie unsere Umzugsdienste in allen deutschen Bundesländern. Klicken Sie auf ein Bundesland, um die Städte zu sehen, die wir bedienen, oder durchsuchen Sie unsere umfassende Abdeckung von 16 Bundesländern und über 2000 Städten in ganz Deutschland.",
+        title: "Deutsche Städte & Bundesländer",
+        subtitle: "Entdecken Sie unsere umfassenden Umzugsdienste in allen deutschen Städten und Bundesländern. Von Berlin bis München, von Hamburg bis Köln - wir bedienen über 2000 Städte in ganz Deutschland mit professionellen Umzugsdiensten.",
         stats: {
           states: "Bundesländer",
           cities: "Städte insgesamt",
@@ -133,8 +133,8 @@ const StatesPage: React.FC = () => {
         }
       },
       es: {
-        title: "Estados federados de Alemania",
-        subtitle: "Explore nuestros servicios de mudanza en todos los estados federados de Alemania. Haga clic en cualquier estado para ver las ciudades que servimos, o navegue por nuestra cobertura integral de 16 estados y más de 2000 ciudades en toda Alemania.",
+        title: "Ciudades y Estados federados de Alemania",
+        subtitle: "Descubra nuestros servicios completos de mudanza en todas las ciudades y estados federados de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia - servimos más de 2000 ciudades en toda Alemania con servicios profesionales de mudanza.",
         stats: {
           states: "Estados federados",
           cities: "Ciudades totales",
@@ -145,13 +145,40 @@ const StatesPage: React.FC = () => {
     return texts[language as keyof typeof texts] || texts.en;
   };
 
+  const getSEOData = () => {
+    const seoData = {
+      en: {
+        title: "German Cities & States - Moving Services | Meister Umzüge 24",
+        description: "Professional moving services in all German cities and federal states. From Berlin to Munich, Hamburg to Cologne. Over 2000 cities covered. Get your free quote today!",
+        keywords: "German cities, moving services Germany, Berlin moving, Munich moving, Hamburg moving, Cologne moving, relocation Germany, Umzug Deutschland, Bundesländer, deutsche Städte"
+      },
+      pl: {
+        title: "Niemieckie miasta i kraje - Usługi przeprowadzkowe | Meister Umzüge 24",
+        description: "Profesjonalne usługi przeprowadzkowe we wszystkich niemieckich miastach i krajach związkowych. Od Berlina po Monachium, od Hamburga po Kolonię. Ponad 2000 miast. Darmowa wycena!",
+        keywords: "niemieckie miasta, usługi przeprowadzkowe Niemcy, przeprowadzka Berlin, przeprowadzka Monachium, przeprowadzka Hamburg, przeprowadzka Kolonia, Umzug Deutschland"
+      },
+      de: {
+        title: "Deutsche Städte & Bundesländer - Umzugsdienste | Meister Umzüge 24",
+        description: "Professionelle Umzugsdienste in allen deutschen Städten und Bundesländern. Von Berlin bis München, von Hamburg bis Köln. Über 2000 Städte abgedeckt. Jetzt kostenloses Angebot!",
+        keywords: "deutsche Städte, Umzugsdienste Deutschland, Berlin Umzug, München Umzug, Hamburg Umzug, Köln Umzug, Umzug Deutschland, Bundesländer"
+      },
+      es: {
+        title: "Ciudades y Estados alemanes - Servicios de mudanza | Meister Umzüge 24",
+        description: "Servicios profesionales de mudanza en todas las ciudades y estados federados de Alemania. Desde Berlín hasta Múnich, desde Hamburgo hasta Colonia. Más de 2000 ciudades cubiertas. ¡Presupuesto gratuito!",
+        keywords: "ciudades alemanas, servicios de mudanza Alemania, mudanza Berlín, mudanza Múnich, mudanza Hamburgo, mudanza Colonia, Umzug Deutschland"
+      }
+    };
+    return seoData[language as keyof typeof seoData] || seoData.en;
+  };
+
   if (loading) {
+    const seoData = getSEOData();
     return (
       <>
         <SEOHead 
-          title="German Federal States - Moving Services | Meister Umzüge 24"
-          description="Explore our moving services across all 16 German federal states. Professional relocation services in Bavaria, North Rhine-Westphalia, Berlin, Hamburg and more. Get a free quote today!"
-          keywords="German federal states, moving services Germany, relocation Bavaria, North Rhine-Westphalia moving, Berlin moving company, Hamburg relocation"
+          title={seoData.title}
+          description={seoData.description}
+          keywords={seoData.keywords}
         />
         <div className="min-h-screen bg-moving-gray flex items-center justify-center">
           <div className="text-center">
@@ -164,14 +191,15 @@ const StatesPage: React.FC = () => {
   }
 
   const headerText = getHeaderText();
+  const seoData = getSEOData();
   const totalCities = statesData.reduce((sum, state) => sum + state.cities.length, 0);
 
   return (
     <>
       <SEOHead 
-        title="German Federal States - Moving Services | Meister Umzüge 24"
-        description="Explore our moving services across all 16 German federal states. Professional relocation services in Bavaria, North Rhine-Westphalia, Berlin, Hamburg and more. Get a free quote today!"
-        keywords="German federal states, moving services Germany, relocation Bavaria, North Rhine-Westphalia moving, Berlin moving company, Hamburg relocation"
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
       />
       <div className="min-h-screen bg-moving-gray">
         <div className="container mx-auto px-4 py-8">
@@ -264,7 +292,7 @@ const StatesPage: React.FC = () => {
                         {state.cities.map((city) => (
                           <Link
                             key={city.slug}
-                            to={`/cities/${state.slug}/${city.slug}`}
+                            to={`/staedte/${state.slug}/${city.slug}`}
                             className="block p-3 bg-white rounded-lg hover:bg-moving-lightblue hover:text-moving-blue transition-colors border border-gray-200 hover:border-moving-blue"
                           >
                             <div className="flex items-center justify-between">

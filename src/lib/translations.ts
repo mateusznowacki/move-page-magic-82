@@ -140,10 +140,10 @@ export const translations: Translations = {
     es: 'Áreas'
   },
   'nav.states': {
-    en: 'States',
-    pl: 'Kraje',
-    de: 'Bundesländer',
-    es: 'Estados'
+    en: 'Cities & States',
+    pl: 'Miasta i Kraje',
+    de: 'Städte & Bundesländer',
+    es: 'Ciudades y Estados'
   },
 
 
