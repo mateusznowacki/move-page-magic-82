@@ -67,6 +67,10 @@ const Navbar: React.FC = () => {
     href: '/uber-uns',
     isLink: true
   }, {
+    key: 'states',
+    href: '/states',
+    isLink: true
+  }, {
     key: 'testimonials',
     href: '#testimonials',
     sectionId: 'testimonials'

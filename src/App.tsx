@@ -17,6 +17,7 @@ const QuotePage = lazy(() => import('./pages/QuotePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const StatesPage = lazy(() => import('./pages/StatesPage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const CookiePolicy = lazy(() => import('./pages/CookiePolicy'));
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/angebot" element={<QuotePage />} />
                   <Route path="/dienstleistungen" element={<ServicesPage />} />
                   <Route path="/uber-uns" element={<AboutPage />} />
+                  <Route path="/states" element={<StatesPage />} />
                   <Route path="/kontakt" element={<ContactPage />} />
 
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />

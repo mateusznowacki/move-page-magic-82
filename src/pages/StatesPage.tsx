@@ -3,106 +3,143 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { MapPin, Users, Building, ChevronRight } from 'lucide-react';
+import { MapPin, Users, Building, ChevronRight, Globe } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
 
 interface City {
   name: string;
   slug: string;
-  population: number;
-  district: string;
-  coords: {
-    lat: string;
-    lon: string;
-  };
-  area: number;
 }
 
-interface CitiesData {
-  [state: string]: City[];
+interface StateData {
+  name: string;
+  slug: string;
+  cities: City[];
 }
 
 const StatesPage: React.FC = () => {
   const { t, language } = useLanguage();
-  const [citiesData, setCitiesData] = useState<CitiesData>({});
+  const [statesData, setStatesData] = useState<StateData[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedState, setExpandedState] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadCities = async () => {
+    const loadStates = async () => {
       try {
-        const response = await fetch('/data/cities/all-cities.json');
-        const data = await response.json();
-        setCitiesData(data);
+        // Lista wszystkich landów niemieckich
+        const stateFiles = [
+          'baden-wuerttemberg',
+          'bavaria', 
+          'berlin',
+          'brandenburg',
+          'bremen',
+          'hamburg',
+          'hesse',
+          'lower-saxony',
+          'mecklenburg-western-pomerania',
+          'north-rhine-westphalia',
+          'rhineland-palatinate',
+          'saarland',
+          'saxony',
+          'saxony-anhalt',
+          'schleswig-holstein',
+          'thuringia'
+        ];
+
+        const states: StateData[] = [];
+        
+        for (const stateFile of stateFiles) {
+          try {
+            const response = await fetch(`/data/cities/${stateFile}.json`);
+            const cities: City[] = await response.json();
+            
+            states.push({
+              name: getStateDisplayName(stateFile),
+              slug: stateFile,
+              cities: cities
+            });
+          } catch (error) {
+            console.error(`Błąd podczas ładowania ${stateFile}:`, error);
+          }
+        }
+
+        // Sortuj według liczby miast (malejąco)
+        states.sort((a, b) => b.cities.length - a.cities.length);
+        
+        setStatesData(states);
       } catch (error) {
-        console.error('Błąd podczas ładowania danych miast:', error);
+        console.error('Błąd podczas ładowania danych landów:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    loadCities();
+    loadStates();
   }, []);
 
-  const formatPopulation = (population: number) => {
-    return new Intl.NumberFormat('de-DE').format(population);
-  };
-
-  const getStateName = (state: string) => {
+  const getStateDisplayName = (stateSlug: string) => {
     const stateNames: { [key: string]: string } = {
-      'Nordrhein-Westfalen': 'Nordrhein-Westfalen',
-      'Baden-Württemberg': 'Baden-Württemberg',
-      'Bayern': 'Bayern',
-      'Niedersachsen': 'Niedersachsen',
-      'Rheinland-Pfalz': 'Rheinland-Pfalz',
-      'Sachsen': 'Sachsen',
-      'Schleswig-Holstein': 'Schleswig-Holstein',
-      'Sachsen-Anhalt': 'Sachsen-Anhalt',
-      'Hessen': 'Hessen',
-      'Thüringen': 'Thüringen',
-      'Mecklenburg-Vorpommern': 'Mecklenburg-Vorpommern',
-      'Brandenburg': 'Brandenburg',
-      'Berlin': 'Berlin',
-      'Saarland': 'Saarland',
-      'Bremen': 'Bremen',
-      'Hamburg': 'Hamburg'
+      'baden-wuerttemberg': 'Baden-Württemberg',
+      'bavaria': 'Bavaria',
+      'berlin': 'Berlin',
+      'brandenburg': 'Brandenburg',
+      'bremen': 'Bremen',
+      'hamburg': 'Hamburg',
+      'hesse': 'Hesse',
+      'lower-saxony': 'Lower Saxony',
+      'mecklenburg-western-pomerania': 'Mecklenburg-Western Pomerania',
+      'north-rhine-westphalia': 'North Rhine-Westphalia',
+      'rhineland-palatinate': 'Rhineland-Palatinate',
+      'saarland': 'Saarland',
+      'saxony': 'Saxony',
+      'saxony-anhalt': 'Saxony-Anhalt',
+      'schleswig-holstein': 'Schleswig-Holstein',
+      'thuringia': 'Thuringia'
     };
-    return stateNames[state] || state;
+    return stateNames[stateSlug] || stateSlug;
   };
 
-  const createStateSlug = (state: string) => {
-    return state
-      .toLowerCase()
-      .replace(/ä/g, 'ae')
-      .replace(/ö/g, 'oe')
-      .replace(/ü/g, 'ue')
-      .replace(/ß/g, 'ss')
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-+|-+$/g, '');
-  };
-
-  const toggleState = (state: string) => {
-    setExpandedState(expandedState === state ? null : state);
+  const toggleState = (stateSlug: string) => {
+    setExpandedState(expandedState === stateSlug ? null : stateSlug);
   };
 
   const getHeaderText = () => {
     const texts = {
       en: {
-        title: "Choose Your City",
-        subtitle: "Click on your city and discover our comprehensive range of moving services, professional packing, furniture assembly, international moves, and storage solutions. We offer individual solutions, professional service, and consultation for your relocation throughout Germany. Request a free quote now!"
+        title: "German Federal States",
+        subtitle: "Explore our moving services across all German federal states. Click on any state to see the cities we serve, or browse through our comprehensive coverage of 16 states and over 2000 cities throughout Germany.",
+        stats: {
+          states: "Federal States",
+          cities: "Total Cities",
+          coverage: "Coverage"
+        }
       },
       pl: {
-        title: "Wybierz swoje miasto",
-        subtitle: "Kliknij na swoje miasto i odkryj nasze kompleksowe usługi przeprowadzkowe, profesjonalne pakowanie, montaż mebli, przeprowadzki międzynarodowe i rozwiązania magazynowe. Oferujemy indywidualne rozwiązania, profesjonalną obsługę i konsultacje dla Twojej przeprowadzki w całych Niemczech. Poproś o bezpłatną wycenę już teraz!"
+        title: "Niemieckie kraje związkowe",
+        subtitle: "Poznaj nasze usługi przeprowadzkowe we wszystkich niemieckich krajach związkowych. Kliknij na dowolny kraj, aby zobaczyć miasta, które obsługujemy, lub przejrzyj nasze kompleksowe pokrycie 16 krajów i ponad 2000 miast w całych Niemczech.",
+        stats: {
+          states: "Kraje związkowe",
+          cities: "Łącznie miast",
+          coverage: "Pokrycie"
+        }
       },
       de: {
-        title: "Wählen Sie Ihre Stadt",
-        subtitle: "Klicken Sie auf Ihre Stadt und entdecken Sie unser umfassendes Angebot an Umzugsdiensten, professioneller Verpackung, Möbelmontage, internationalen Umzügen und Lagerlösungen. Wir bieten individuelle Lösungen, professionellen Service und Beratung für Ihren Umzug in ganz Deutschland. Jetzt kostenloses Angebot anfordern!"
+        title: "Deutsche Bundesländer",
+        subtitle: "Entdecken Sie unsere Umzugsdienste in allen deutschen Bundesländern. Klicken Sie auf ein Bundesland, um die Städte zu sehen, die wir bedienen, oder durchsuchen Sie unsere umfassende Abdeckung von 16 Bundesländern und über 2000 Städten in ganz Deutschland.",
+        stats: {
+          states: "Bundesländer",
+          cities: "Städte insgesamt",
+          coverage: "Abdeckung"
+        }
       },
       es: {
-        title: "Elija su ciudad",
-        subtitle: "Haga clic en su ciudad y descubra nuestra amplia gama de servicios de mudanza, empaquetado profesional, montaje de muebles, mudanzas internacionales y soluciones de almacenamiento. Ofrecemos soluciones individuales, servicio profesional y consultoría para su mudanza en toda Alemania. ¡Solicite un presupuesto gratuito ahora!"
+        title: "Estados federados de Alemania",
+        subtitle: "Explore nuestros servicios de mudanza en todos los estados federados de Alemania. Haga clic en cualquier estado para ver las ciudades que servimos, o navegue por nuestra cobertura integral de 16 estados y más de 2000 ciudades en toda Alemania.",
+        stats: {
+          states: "Estados federados",
+          cities: "Ciudades totales",
+          coverage: "Cobertura"
+        }
       }
     };
     return texts[language as keyof typeof texts] || texts.en;
@@ -110,146 +147,142 @@ const StatesPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-moving-gray flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-moving-blue mx-auto mb-4"></div>
-          <p className="text-moving-dark">Ładowanie danych landów...</p>
+      <>
+        <SEOHead 
+          title="German Federal States - Moving Services | Meister Umzüge 24"
+          description="Explore our moving services across all 16 German federal states. Professional relocation services in Bavaria, North Rhine-Westphalia, Berlin, Hamburg and more. Get a free quote today!"
+          keywords="German federal states, moving services Germany, relocation Bavaria, North Rhine-Westphalia moving, Berlin moving company, Hamburg relocation"
+        />
+        <div className="min-h-screen bg-moving-gray flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-moving-blue mx-auto mb-4"></div>
+            <p className="text-moving-dark">Ładowanie danych landów...</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   const headerText = getHeaderText();
+  const totalCities = statesData.reduce((sum, state) => sum + state.cities.length, 0);
 
   return (
-    <div className="min-h-screen bg-moving-gray">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-moving-dark mb-6">
-            {headerText.title}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            {headerText.subtitle}
-          </p>
-        </div>
+    <>
+      <SEOHead 
+        title="German Federal States - Moving Services | Meister Umzüge 24"
+        description="Explore our moving services across all 16 German federal states. Professional relocation services in Bavaria, North Rhine-Westphalia, Berlin, Hamburg and more. Get a free quote today!"
+        keywords="German federal states, moving services Germany, relocation Bavaria, North Rhine-Westphalia moving, Berlin moving company, Hamburg relocation"
+      />
+      <div className="min-h-screen bg-moving-gray">
+        <div className="container mx-auto px-4 py-8">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-moving-dark mb-6">
+              {headerText.title}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              {headerText.subtitle}
+            </p>
+          </div>
 
-        {/* Statystyki ogólne */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <Building className="w-8 h-8 text-moving-blue mr-3" />
-                <div>
-                  <p className="text-sm text-gray-600">Landy</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {Object.keys(citiesData).length}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <MapPin className="w-8 h-8 text-moving-blue mr-3" />
-                <div>
-                  <p className="text-sm text-gray-600">Łącznie miast</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {Object.values(citiesData).reduce((sum, cities) => sum + cities.length, 0)}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="p-4">
-              <div className="flex items-center">
-                <Users className="w-8 h-8 text-moving-blue mr-3" />
-                <div>
-                  <p className="text-sm text-gray-600">Duże miasta</p>
-                  <p className="text-2xl font-bold text-moving-dark">
-                    {Object.values(citiesData).reduce((sum, cities) => 
-                      sum + cities.filter(city => city.population >= 100000).length, 0
-                    )}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Lista landów z miastami */}
-        <div className="space-y-6">
-          {Object.entries(citiesData).map(([state, cities]) => {
-            const stateSlug = createStateSlug(state);
-            const isExpanded = expandedState === state;
-            
-            return (
-              <Card key={state} className="overflow-hidden">
-                <CardHeader 
-                  className="cursor-pointer hover:bg-gray-50 transition-colors"
-                  onClick={() => toggleState(state)}
-                >
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-4">
-                      <CardTitle className="text-2xl font-bold text-moving-dark">
-                        {getStateName(state)}
-                      </CardTitle>
-                      <Badge variant="secondary" className="bg-moving-blue text-white">
-                        {cities.length} miast
-                      </Badge>
-                    </div>
-                    <ChevronRight 
-                      className={`w-6 h-6 text-moving-blue transition-transform duration-300 ${
-                        isExpanded ? 'rotate-90' : ''
-                      }`} 
-                    />
+          {/* Statystyki ogólne */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <Building className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">{headerText.stats.states}</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      {statesData.length}
+                    </p>
                   </div>
-                </CardHeader>
-                
-                {isExpanded && (
-                  <CardContent className="pt-0">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                      {cities.slice(0, 20).map((city, index) => (
-                        <Link 
-                          key={`${city.slug}-${index}`} 
-                          to={`/staedte/${stateSlug}/${city.slug}`}
-                          className="block p-3 rounded-lg border border-gray-200 hover:border-moving-blue hover:bg-moving-lightblue transition-all duration-200 group"
-                        >
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <h4 className="font-semibold text-moving-dark group-hover:text-moving-blue transition-colors">
-                                {city.name}
-                              </h4>
-                            </div>
-                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-moving-blue transition-colors" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                    
-                    {cities.length > 20 && (
-                      <div className="mt-6 text-center">
-                        <Link 
-                          to={`/staedte/${stateSlug}`}
-                          className="inline-flex items-center text-moving-blue hover:text-moving-darkblue font-semibold transition-colors"
-                        >
-                          Zobacz wszystkie {cities.length} miast w {getStateName(state)}
-                          <ChevronRight className="w-4 h-4 ml-2" />
-                        </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <MapPin className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">{headerText.stats.cities}</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      {totalCities}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-4">
+                <div className="flex items-center">
+                  <Globe className="w-8 h-8 text-moving-blue mr-3" />
+                  <div>
+                    <p className="text-sm text-gray-600">{headerText.stats.coverage}</p>
+                    <p className="text-2xl font-bold text-moving-dark">
+                      100%
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Lista landów z miastami */}
+          <div className="space-y-6">
+            {statesData.map((state) => {
+              const isExpanded = expandedState === state.slug;
+              
+              return (
+                <Card key={state.slug} className="overflow-hidden">
+                  <CardHeader 
+                    className="cursor-pointer hover:bg-gray-50 transition-colors"
+                    onClick={() => toggleState(state.slug)}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-4">
+                        <CardTitle className="text-2xl font-bold text-moving-dark">
+                          {state.name}
+                        </CardTitle>
+                        <Badge variant="secondary" className="text-sm">
+                          {state.cities.length} miast
+                        </Badge>
                       </div>
-                    )}
-                  </CardContent>
-                )}
-              </Card>
-            );
-          })}
+                      <ChevronRight 
+                        className={`w-6 h-6 text-moving-blue transition-transform ${
+                          isExpanded ? 'rotate-90' : ''
+                        }`} 
+                      />
+                    </div>
+                  </CardHeader>
+                  
+                  {isExpanded && (
+                    <CardContent className="p-6 bg-gray-50">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+                        {state.cities.map((city) => (
+                          <Link
+                            key={city.slug}
+                            to={`/cities/${state.slug}/${city.slug}`}
+                            className="block p-3 bg-white rounded-lg hover:bg-moving-lightblue hover:text-moving-blue transition-colors border border-gray-200 hover:border-moving-blue"
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="font-medium">{city.name}</span>
+                              <ChevronRight className="w-4 h-4" />
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </CardContent>
+                  )}
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

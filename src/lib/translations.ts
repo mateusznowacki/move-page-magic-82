@@ -1,5 +1,5 @@
 type TranslationKey = 
-  | 'nav.home' | 'nav.about' | 'nav.services' | 'nav.contact' | 'nav.quote' | 'nav.testimonials' | 'nav.getQuote' | 'nav.areas'
+  | 'nav.home' | 'nav.about' | 'nav.services' | 'nav.contact' | 'nav.quote' | 'nav.testimonials' | 'nav.getQuote' | 'nav.areas' | 'nav.states'
   | 'hero.title' | 'hero.subtitle' | 'hero.years' | 'hero.yearsDesc' | 'hero.getQuote' | 'hero.learnMore' | 'hero.services' | 'hero.customers' | 'hero.customersDesc' | 'hero.support' | 'hero.supportDesc'
   | 'about.title' | 'about.subtitle' | 'about.description' | 'about.getStarted' | 'about.learnMore' | 'about.contactUs'
   | 'about.feature1.title' | 'about.feature1.description'
@@ -138,6 +138,12 @@ export const translations: Translations = {
     pl: 'Obszary',
     de: 'Gebiete',
     es: 'Áreas'
+  },
+  'nav.states': {
+    en: 'States',
+    pl: 'Kraje',
+    de: 'Bundesländer',
+    es: 'Estados'
   },
 
 
