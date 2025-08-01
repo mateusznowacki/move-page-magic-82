@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import TestimonialCard from './TestimonialCard';
 
 const Testimonials: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, getTestimonialData } = useLanguage();
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -14,29 +14,7 @@ const Testimonials: React.FC = () => {
     }
   };
 
-  const testimonials = [
-    {
-      id: 1,
-      name: "Anna Kowalska",
-      location: "Berlin",
-      rating: 5,
-      text: "Profesjonalna obsługa od początku do końca. Zespół był punktualny, delikatny z meblami i bardzo pomocny. Polecam!"
-    },
-    {
-      id: 2,
-      name: "Michael Schmidt",
-      location: "Dresden",
-      rating: 5,
-      text: "Szybka i bezpieczna przeprowadzka. Cena była uczciwa, a jakość usługi znakomita. Na pewno skorzystam ponownie."
-    },
-    {
-      id: 3,
-      name: "Maria Garcia",
-      location: "Leipzig",
-      rating: 5,
-      text: "Doskonała komunikacja i terminowość. Wszystko przebiegło zgodnie z planem. Bardzo zadowolona z usługi."
-    }
-  ];
+  const testimonials = getTestimonialData();
 
   return (
     <section id="testimonials" className="section-padding bg-moving-lightblue" role="main" aria-labelledby="testimonials-heading">

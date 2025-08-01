@@ -32,8 +32,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
         detectedLanguage = 'de';
       } else if (browserLanguage.startsWith('es')) {
         detectedLanguage = 'es';
+      } else if (browserLanguage.startsWith('en')) {
+        detectedLanguage = 'en';
       }
       
+      console.log(`Detected browser language: ${browserLanguage}, setting to: ${detectedLanguage}`);
       setLanguage(detectedLanguage);
       localStorage.setItem('preferredLanguage', detectedLanguage);
     }

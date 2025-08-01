@@ -37,7 +37,7 @@ const About: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature1.title')}</h4>
                   <p className="text-gray-700">{t('about.feature1.description')}</p>
                 </div>
@@ -49,7 +49,7 @@ const About: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature2.title')}</h4>
                   <p className="text-gray-700">{t('about.feature2.description')}</p>
                 </div>
@@ -61,7 +61,7 @@ const About: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <div>
+                <div className="text-left">
                   <h4 className="font-semibold text-lg mb-2 text-moving-dark">{t('about.feature3.title')}</h4>
                   <p className="text-gray-700">{t('about.feature3.description')}</p>
                 </div>

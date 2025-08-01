@@ -33,10 +33,13 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <Select value={language} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-[110px] sm:w-[120px] lg:w-[130px] h-8 sm:h-9 lg:h-10 text-sm sm:text-base bg-white/95 backdrop-blur-sm border border-gray-300 hover:bg-white focus:ring-0 rounded-md shadow-sm">
+      <SelectTrigger 
+        className="w-[110px] sm:w-[120px] lg:w-[130px] h-8 sm:h-9 lg:h-10 text-sm sm:text-base bg-white/95 backdrop-blur-sm border border-gray-300 hover:bg-white focus:ring-2 focus:ring-moving-blue focus:ring-offset-2 rounded-md shadow-sm"
+        aria-label="Wybierz język"
+      >
         <div className="flex items-center gap-1 sm:gap-2">
           {currentLanguage && (
-            <span className="text-lg sm:text-xl">{currentLanguage.flag}</span>
+            <span className="text-lg sm:text-xl" aria-hidden="true">{currentLanguage.flag}</span>
           )}
           <span className="text-xs sm:text-sm lg:text-base font-semibold text-gray-800">{currentLanguage?.name}</span>
         </div>
@@ -45,7 +48,7 @@ const LanguageSwitcher: React.FC = () => {
         {languages.map((lang) => (
           <SelectItem key={lang.code} value={lang.code} className="cursor-pointer">
             <div className="flex items-center gap-2">
-              <span className="text-lg sm:text-xl">{lang.flag}</span>
+              <span className="text-lg sm:text-xl" aria-hidden="true">{lang.flag}</span>
               <span className="text-sm sm:text-base">{lang.name}</span>
             </div>
           </SelectItem>

@@ -87,14 +87,15 @@ const Navbar: React.FC = () => {
     item: typeof navigationItems[0];
     isMobile?: boolean;
   }) => {
-    const baseClasses = "text-moving-dark font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-moving-blue after:transition-all after:duration-300 hover:after:w-full focus:outline-none active:outline-none border-none";
-    const mobileClasses = isMobile ? "py-3 text-lg text-gray-800 hover:bg-moving-lightblue px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none active:outline-none border-none after:hidden" : "";
+    const baseClasses = "text-moving-dark font-semibold transition-colors text-base lg:text-lg xl:text-xl outline-none relative after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-moving-blue after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2 active:outline-none border-none";
+    const mobileClasses = isMobile ? "py-3 text-lg text-gray-800 hover:bg-moving-lightblue px-4 rounded-lg transition-all duration-200 outline-none focus:outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2 active:outline-none border-none after:hidden" : "";
     
     if (item.isLink) {
       return (
         <Link 
           to={item.href} 
-          className={`${baseClasses} ${mobileClasses}`} 
+          className={`${baseClasses} ${mobileClasses}`}
+          aria-label={getNavText(item.key)}
           onClick={() => {
             if (isMobile) setIsMobileMenuOpen(false);
             // Scroll to top for all page navigation
@@ -132,8 +133,9 @@ const Navbar: React.FC = () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           }}
+          aria-label="Strona główna - Meister Umzüge 24"
         >
-          <img alt="Meister Umzuge Logo" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" />
+          <img alt="Logo Meister Umzüge 24" className="h-10 sm:h-12 md:h-14 lg:h-16 object-contain" src="/optimized/meister-umzunge-logo.webp" />
         </Link>
         
         <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 2xl:space-x-10">
@@ -143,14 +145,27 @@ const Navbar: React.FC = () => {
         
         <div className="lg:hidden flex items-center gap-2">
           <LanguageSwitcher />
-          <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="outline-none">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+            className="outline-none focus:ring-2 focus:ring-moving-blue focus:ring-offset-2"
+            aria-label={isMobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
             <Menu className="h-6 w-6 sm:h-7 sm:w-7 text-moving-dark" />
           </Button>
         </div>
       </div>
       
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-lg border-t border-gray-200 animate-slide-in-right">
+        <div 
+          id="mobile-menu"
+          className="lg:hidden bg-white absolute top-full left-0 right-0 shadow-lg border-t border-gray-200 animate-slide-in-right"
+          role="navigation"
+          aria-label="Menu mobilne"
+        >
           <div className="container py-4 flex flex-col space-y-3">
             {navigationItems.map(item => <NavItem key={item.key} item={item} isMobile />)}
           </div>

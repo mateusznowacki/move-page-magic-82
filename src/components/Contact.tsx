@@ -170,11 +170,11 @@ ${formData.message}
             </header>
             
             <div className="space-y-6 mb-8">
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
                   <Phone className="w-6 h-6 text-moving-blue" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-gray-700 font-bold text-lg">MP Transporte <span className="text-moving-blue">und Umzüge</span></p>
                   <a 
                     href="tel:+4915223031473"
@@ -186,11 +186,11 @@ ${formData.message}
                 </div>
               </div>
               
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
                   <Mail className="w-6 h-6 text-moving-blue" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-gray-700 font-bold text-lg">Email</p>
                   <a 
                     href="mailto:info@meisterumzuege24.de"
@@ -202,11 +202,11 @@ ${formData.message}
                 </div>
               </div>
               
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
                   <MapPin className="w-6 h-6 text-moving-blue" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-gray-700 font-bold text-lg">Adres</p>
                   <a 
                     href="https://maps.google.com/?q=Kolonnenstr.+8,+10827+Berlin"
@@ -220,11 +220,11 @@ ${formData.message}
                 </div>
               </div>
               
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <div className="bg-moving-lightblue p-3 rounded-lg mr-4">
                   <Clock className="w-6 h-6 text-moving-blue" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-gray-700 font-bold text-lg">Godziny pracy</p>
                   <p className="text-gray-700 text-lg">{t('contact.hoursWeekdays')}</p>
                   <p className="text-gray-700 text-lg">{t('contact.hoursSaturday')}</p>
@@ -317,7 +317,11 @@ ${formData.message}
               <div>
                 <label htmlFor="move-type" className="block mb-2 text-sm font-medium text-gray-700">{t('contact.moveTypeLabel')}</label>
                 <Select value={formData.moveType} onValueChange={(value) => handleSelectChange('moveType', value)}>
-                  <SelectTrigger id="move-type" className={errors.moveType ? 'border-red-500' : ''}>
+                  <SelectTrigger 
+                    id="move-type" 
+                    className={errors.moveType ? 'border-red-500' : ''}
+                    aria-describedby={errors.moveType ? 'move-type-error' : undefined}
+                  >
                     <SelectValue placeholder={t('contact.moveTypePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
@@ -327,7 +331,7 @@ ${formData.message}
                   </SelectContent>
                 </Select>
                 {errors.moveType && (
-                  <p className="text-red-500 text-sm mt-1" role="alert">{errors.moveType}</p>
+                  <p id="move-type-error" className="text-red-500 text-sm mt-1" role="alert">{errors.moveType}</p>
                 )}
               </div>
               
@@ -353,7 +357,7 @@ ${formData.message}
               
               <Button 
                 type="submit"
-                className="w-full bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 px-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-moving-blue hover:bg-moving-darkblue text-white font-semibold py-3 px-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-moving-blue focus:ring-offset-2"
                 disabled={isSubmitting}
                 aria-label={isSubmitting ? 'Wysyłanie wiadomości...' : 'Wyślij wiadomość'}
               >

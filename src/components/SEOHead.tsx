@@ -47,15 +47,21 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:image" content={fullOgImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Meister Umzüge 24 - Professional Moving Services" />
       <meta property="og:site_name" content="Meister Umzüge 24" />
       <meta property="og:locale" content="de_DE" />
+      <meta property="og:locale:alternate" content="pl_PL" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="es_ES" />
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullOgImage} />
+      <meta name="twitter:image:alt" content="Meister Umzüge 24 - Professional Moving Services" />
       <meta name="twitter:site" content="@meisterumzuege24" />
+      <meta name="twitter:creator" content="@meisterumzuege24" />
       
       {/* Additional SEO Meta Tags */}
       <meta name="author" content="Meister Umzüge 24" />
@@ -64,6 +70,27 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="geo.placename" content="Berlin" />
       <meta name="geo.position" content="52.5200;13.4050" />
       <meta name="ICBM" content="52.5200, 13.4050" />
+      
+      {/* Viewport and Mobile Optimization */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+      <meta name="theme-color" content="#1e40af" />
+      <meta name="msapplication-TileColor" content="#1e40af" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Meister Umzüge 24" />
+      
+      {/* Search Engine Optimization */}
+      <meta name="bing-verification" content="YOUR_BING_VERIFICATION" />
+      <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION" />
+      
+      {/* Content Type and Encoding */}
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      
+      {/* Security Headers - Note: X-Frame-Options should be set via HTTP headers, not meta tags */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       
       {/* Business Information */}
       <meta name="business:contact_data:street_address" content="Kolonnenstr. 8" />
@@ -127,7 +154,20 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "sameAs": [
             "https://www.facebook.com/meisterumzuege24",
             "https://www.instagram.com/meisterumzuege24"
-          ]
+          ],
+          "foundingDate": "2014",
+          "numberOfEmployees": "10-50",
+          "currenciesAccepted": "EUR",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+          "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 52.5200,
+              "longitude": 13.4050
+            },
+            "geoRadius": "500000"
+          }
         })}
       </script>
     </Helmet>

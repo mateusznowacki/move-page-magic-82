@@ -33,8 +33,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       }
     },
     germany: {
-      center: [11.5, 52.5] as [number, number],
-      zoom: 5,
+      center: [10.5, 51.5] as [number, number],
+      zoom: 6,
       title: {
         en: 'German Federal States',
         pl: 'Niemieckie kraje związkowe',
@@ -115,6 +115,37 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                   // Find Berlin feature in GeoJSON
                   const berlinFeature = data.features.find((f: any) => f.properties.name === 'Berlin');
                   if (berlinFeature) {
+                    // Add Berlin boundary highlight
+                    const berlinData: GeoJSON.FeatureCollection = {
+                      type: 'FeatureCollection',
+                      features: [berlinFeature]
+                    };
+
+                    map.current.addSource('berlin-boundary', {
+                      type: 'geojson',
+                      data: berlinData
+                    });
+
+                    map.current.addLayer({
+                      id: 'berlin-boundary-fill',
+                      type: 'fill',
+                      source: 'berlin-boundary',
+                      paint: {
+                        'fill-color': '#3b82f6',
+                        'fill-opacity': 0.4
+                      }
+                    });
+
+                    map.current.addLayer({
+                      id: 'berlin-boundary-border',
+                      type: 'line',
+                      source: 'berlin-boundary',
+                      paint: {
+                        'line-color': '#1d4ed8',
+                        'line-width': 3
+                      }
+                    });
+
                     // Create bounds from Berlin's actual coordinates
                     const bounds = new mapboxgl.LngLatBounds();
                     berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
@@ -141,43 +172,90 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
               .then(response => response.json())
               .then(data => {
                 if (map.current) {
-                  // Filter only the states we want to highlight
-                  const highlightedStates = ['Thüringen', 'Sachsen', 'Sachsen-Anhalt', 'Berlin', 'Brandenburg', 'Mecklenburg-Vorpommern'];
+                  // Show all German states with different styling
+                  const allStates = data.features;
                   
-                  const filteredFeatures = data.features.filter((feature: any) => 
-                    highlightedStates.includes(feature.properties.name)
-                  );
-
-                  const filteredData: GeoJSON.FeatureCollection = {
-                    type: 'FeatureCollection',
-                    features: filteredFeatures
-                  };
-
-                  // Add source for highlighted states
-                  map.current.addSource('highlighted-states', {
+                  // Add source for all states
+                  map.current.addSource('all-states', {
                     type: 'geojson',
-                    data: filteredData
+                    data: data
                   });
 
-                  // Add layer for highlighted states
+                  // Add layer for all states (light blue fill)
                   map.current.addLayer({
-                    id: 'highlighted-states-fill',
+                    id: 'all-states-fill',
                     type: 'fill',
-                    source: 'highlighted-states',
+                    source: 'all-states',
                     paint: {
                       'fill-color': '#3b82f6',
-                      'fill-opacity': 0.2
+                      'fill-opacity': 0.1
                     }
                   });
 
+                  // Add layer for all states borders
                   map.current.addLayer({
-                    id: 'highlighted-states-border',
+                    id: 'all-states-border',
                     type: 'line',
-                    source: 'highlighted-states',
+                    source: 'all-states',
                     paint: {
-                      'line-color': '#1d4ed8',
-                      'line-width': 1.5
+                      'line-color': '#3b82f6',
+                      'line-width': 1
                     }
+                  });
+
+                  // Add Berlin boundary highlight
+                  const berlinFeature = allStates.find((feature: any) => feature.properties.name === 'Berlin');
+                  if (berlinFeature) {
+                    const berlinData: GeoJSON.FeatureCollection = {
+                      type: 'FeatureCollection',
+                      features: [berlinFeature]
+                    };
+
+                    map.current.addSource('berlin-boundary', {
+                      type: 'geojson',
+                      data: berlinData
+                    });
+
+                    map.current.addLayer({
+                      id: 'berlin-boundary-fill',
+                      type: 'fill',
+                      source: 'berlin-boundary',
+                      paint: {
+                        'fill-color': '#3b82f6',
+                        'fill-opacity': 0.4
+                      }
+                    });
+
+                    map.current.addLayer({
+                      id: 'berlin-boundary-border',
+                      type: 'line',
+                      source: 'berlin-boundary',
+                      paint: {
+                        'line-color': '#1d4ed8',
+                        'line-width': 3
+                      }
+                    });
+                  }
+
+                  // Fit map to show all of Germany
+                  const bounds = new mapboxgl.LngLatBounds();
+                  allStates.forEach((feature: any) => {
+                    if (feature.geometry.type === 'Polygon') {
+                      feature.geometry.coordinates[0].forEach((coord: number[]) => {
+                        bounds.extend(coord as [number, number]);
+                      });
+                    } else if (feature.geometry.type === 'MultiPolygon') {
+                      feature.geometry.coordinates.forEach((polygon: number[][][]) => {
+                        polygon[0].forEach((coord: number[]) => {
+                          bounds.extend(coord as [number, number]);
+                        });
+                      });
+                    }
+                  });
+                  
+                  map.current.fitBounds(bounds, {
+                    padding: 50,
+                    maxZoom: 7
                   });
                 }
               })
