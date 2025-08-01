@@ -123,7 +123,7 @@ const ContactPage: React.FC = () => {
 
     // Phone validation (if provided)
     if (formData.phone.trim()) {
-      const phoneRegex = /^[\+]?[0-9\s\-\(\)]{7,}$/;
+      const phoneRegex = /^[+]?[0-9\s\-()]{7,}$/;
       if (!phoneRegex.test(formData.phone)) {
         newErrors.phone = language === 'pl' ? 'Nieprawidłowy format telefonu' :
                          language === 'de' ? 'Ungültiges Telefonformat' :

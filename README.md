@@ -1,6 +1,85 @@
-# MP Transporte und Umzüge - Website
+# Meister Umzüge 24 - Professional Moving Services
 
-Profesjonalna strona internetowa firmy przeprowadzkowej MP Transporte und Umzüge z siedzibą w Berlinie.
+Professional moving services website for 6 German federal states with 587 cities coverage.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (includes sitemap generation)
+- `npm run build:dev` - Build for development
+- `npm run build:prod` - Clean build with production dependencies
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run generate-sitemap` - Generate sitemap.xml
+- `npm run optimize-images` - Check image optimization status
+- `npm run analyze` - Analyze bundle size
+- `npm run clean` - Clean build artifacts
+
+## 🏗️ Project Structure
+
+```
+├── public/                 # Static assets
+│   ├── data/cities/       # City data JSON files
+│   ├── optimized/         # Optimized images (WebP)
+│   └── sitemap.xml        # Generated sitemap
+├── scripts/               # Build scripts
+│   ├── generate-sitemap.cjs
+│   └── optimize-images.cjs
+├── src/                   # Source code
+│   ├── components/        # React components
+│   ├── contexts/          # React contexts
+│   ├── hooks/            # Custom hooks
+│   ├── lib/              # Utilities
+│   ├── pages/            # Page components
+│   └── ui/               # UI components
+└── dist/                 # Build output
+```
+
+## 🎯 Features
+
+- **Multi-language support** (DE, EN, PL, ES)
+- **SEO optimized** with dynamic meta tags
+- **Responsive design** with Tailwind CSS
+- **PWA ready** with service worker
+- **City-specific pages** for 587 German cities
+- **Automatic sitemap generation**
+- **Image optimization** (WebP format)
+- **Bundle optimization** with code splitting
+
+## 🔧 Build Optimization
+
+The project includes several optimizations:
+
+- **Code splitting** with manual chunks
+- **Image optimization** to WebP format
+- **CSS minification** and code splitting
+- **JavaScript minification** with Terser
+- **Automatic sitemap generation**
+- **Bundle analysis** tools
+
+## 📊 Performance
+
+- **Bundle size**: ~1.8MB (gzipped: ~500KB)
+- **Cities covered**: 587 cities in 6 German states
+- **SEO pages**: 602 total URLs in sitemap
+- **Image savings**: 80-99% reduction with WebP
 
 ## 🚀 Funkcje
 

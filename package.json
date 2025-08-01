@@ -5,11 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "clean": "rm -rf dist node_modules package-lock.json",
     "build": "npm run generate-sitemap && vite build",
     "build:dev": "npm run generate-sitemap && vite build --mode development",
+    "build:prod": "npm run clean && npm install --production && npm run generate-sitemap && vite build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
-    "generate-sitemap": "node scripts/generate-sitemap.cjs"
+    "generate-sitemap": "node scripts/generate-sitemap.cjs",
+    "optimize-images": "node scripts/optimize-images.cjs",
+    "analyze": "npx vite-bundle-analyzer dist/assets",
+    "size": "npx vite-bundle-analyzer dist/assets --mode static"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.1",
