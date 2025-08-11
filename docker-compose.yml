@@ -8,12 +8,16 @@ services:
     container_name: meisterumzuege24-web
     ports:
       - "80:80"
+      - "443:443"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
     volumes:
       # Mount logs for debugging
       - ./logs:/var/log/nginx
+      # Mount SSL certificates from host
+      - /etc/ssl/cloudflare/cert.pem:/etc/ssl/cloudflare/cert.pem:ro
+      - /etc/ssl/cloudflare/key.pem:/etc/ssl/cloudflare/key.pem:ro
     networks:
       - meisterumzuege24-network
     healthcheck:

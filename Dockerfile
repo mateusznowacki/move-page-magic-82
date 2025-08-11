@@ -28,8 +28,13 @@ RUN addgroup -g 1001 -S nginx || true && \
 # Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy nginx SSL configuration
+COPY nginx-ssl.conf /etc/nginx/nginx.conf
+
+# Create SSL directory and set permissions
+RUN mkdir -p /etc/ssl/cloudflare && \
+    chown -R root:root /etc/ssl/cloudflare && \
+    chmod 700 /etc/ssl/cloudflare
 
 # Set proper permissions
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
@@ -43,8 +48,8 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && \
 # Create logs directory
 RUN mkdir -p /var/log/nginx && chown nginx:nginx /var/log/nginx
 
-# Expose port 80
-EXPOSE 80
+# Expose ports 80 and 443
+EXPOSE 80 443
 
 # Switch to nginx user
 USER nginx
