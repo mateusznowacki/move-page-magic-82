@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  meisterumzuege24:
+    build:
+      context: .
+      dockerfile: Dockerfile-http
+    container_name: meisterumzuege24-web
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Mount logs for debugging
+      - ./logs:/var/log/nginx
+    networks:
+      - meisterumzuege24-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+
+networks:
+  meisterumzuege24-network:
+    driver: bridge 
