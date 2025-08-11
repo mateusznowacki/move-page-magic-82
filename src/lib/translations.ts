@@ -1,6 +1,6 @@
 type TranslationKey = 
   | 'nav.home' | 'nav.about' | 'nav.services' | 'nav.contact' | 'nav.quote' | 'nav.testimonials' | 'nav.getQuote' | 'nav.areas' | 'nav.states'
-  | 'hero.title' | 'hero.subtitle' | 'hero.years' | 'hero.yearsDesc' | 'hero.getQuote' | 'hero.learnMore' | 'hero.services' | 'hero.customers' | 'hero.customersDesc' | 'hero.support' | 'hero.supportDesc'
+  | 'hero.title' | 'hero.subtitle' | 'hero.years' | 'hero.yearsDesc' | 'hero.getQuote' | 'hero.learnMore' | 'hero.services' | 'hero.customers' | 'hero.customersDesc' | 'hero.support' | 'hero.supportDesc' | 'hero.experienceText' | 'hero.acrossGermany' | 'hero.alwaysReady'
   | 'about.title' | 'about.subtitle' | 'about.description' | 'about.getStarted' | 'about.learnMore' | 'about.contactUs'
   | 'about.feature1.title' | 'about.feature1.description'
   | 'about.feature2.title' | 'about.feature2.description'
@@ -97,6 +97,24 @@ export const translations: Translations = {
     pl: 'Wsparcie dostępne',
     de: 'Support verfügbar',
     es: 'Soporte disponible'
+  },
+  'hero.experienceText': {
+    en: 'Experience & Professionalism',
+    pl: 'Doświadczenie i profesjonalizm',
+    de: 'Erfahrung & Professionalität',
+    es: 'Experiencia y profesionalismo'
+  },
+  'hero.acrossGermany': {
+    en: 'Across Germany',
+    pl: 'W całych Niemczech',
+    de: 'In ganz Deutschland',
+    es: 'En toda Alemania'
+  },
+  'hero.alwaysReady': {
+    en: 'Always ready to help',
+    pl: 'Zawsze gotowi pomóc',
+    de: 'Immer bereit zu helfen',
+    es: 'Siempre listos para ayudar'
   },
   'hero.learnMore': {
     en: 'Learn More',

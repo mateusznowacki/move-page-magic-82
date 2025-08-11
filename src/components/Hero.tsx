@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-slate-800 text-sm sm:text-base">{t('hero.yearsDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-700">Experience & Professionalism</p>
+              <p className="text-xs sm:text-sm text-gray-700">{t('hero.experienceText')}</p>
             </div>
           </div>
           
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-slate-800 text-sm sm:text-base">{t('hero.customersDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-700">Across Germany</p>
+              <p className="text-xs sm:text-sm text-gray-700">{t('hero.acrossGermany')}</p>
             </div>
           </div>
           
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="text-center">
               <h3 className="font-semibold text-slate-800 text-sm sm:text-base">{t('hero.supportDesc')}</h3>
-              <p className="text-xs sm:text-sm text-gray-700">Always ready to help</p>
+              <p className="text-xs sm:text-sm text-gray-700">{t('hero.alwaysReady')}</p>
             </div>
           </div>
         </div>
