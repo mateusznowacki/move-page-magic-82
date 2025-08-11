@@ -19,14 +19,13 @@ const languages: Language[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'pl', name: 'Polski', flag: '🇵🇱' },
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
 ];
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value as 'en' | 'pl' | 'de' | 'es');
+    setLanguage(value as 'en' | 'pl' | 'de');
   };
 
   const currentLanguage = languages.find(lang => lang.code === language);

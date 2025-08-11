@@ -1,10 +1,42 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Earth, Truck, Package, Building2, Globe, Shield } from 'lucide-react';
+import { 
+  Home, 
+  Building2, 
+  Package, 
+  Truck, 
+  Lock, 
+  Wrench, 
+  Lightbulb, 
+  Square, 
+  Paintbrush, 
+  Sparkles, 
+  ShoppingBag, 
+  Globe 
+} from 'lucide-react';
 
 const ServiceCard = React.memo(({ service }: { service: any }) => {
   const isInternational = service.id === 12;
+  
+  // Funkcja do wyboru odpowiedniej ikony na podstawie ID usługi
+  const getServiceIcon = (serviceId: number) => {
+    switch (serviceId) {
+      case 1: return <Home size={40} className="text-blue-600" />; // Residential
+      case 2: return <Building2 size={40} className="text-blue-600" />; // Commercial
+      case 3: return <Package size={40} className="text-blue-600" />; // Packing
+      case 4: return <Truck size={40} className="text-blue-600" />; // Long Distance
+      case 5: return <Lock size={40} className="text-blue-600" />; // Storage
+      case 6: return <Wrench size={40} className="text-blue-600" />; // Furniture Assembly
+      case 7: return <Lightbulb size={40} className="text-blue-600" />; // Lamp Installation
+      case 8: return <Square size={40} className="text-blue-600" />; // Mirror Mounting
+      case 9: return <Paintbrush size={40} className="text-blue-600" />; // Wall Painting
+      case 10: return <Sparkles size={40} className="text-blue-600" />; // Furniture Cleaning
+      case 11: return <ShoppingBag size={40} className="text-blue-600" />; // Cleaning Products
+      case 12: return <Globe size={40} className="text-blue-600" />; // International
+      default: return <Truck size={40} className="text-blue-600" />;
+    }
+  };
   
   return (
     <article 
@@ -24,14 +56,10 @@ const ServiceCard = React.memo(({ service }: { service: any }) => {
         </div>
       )}
       <div className="text-blue-600 mb-4" role="img" aria-label={`Ikona usługi: ${service.title}`}>
-        {isInternational ? (
-          <Earth size={40} className="text-blue-600" />
-        ) : (
-          <Truck size={40} className="text-blue-600" />
-        )}
+        {getServiceIcon(service.id)}
       </div>
       <h3 className="text-xl font-semibold mb-3 text-slate-800" itemProp="name">{service.title}</h3>
-                  <p className="text-gray-700" itemProp="description">{service.description}</p>
+      <p className="text-gray-700" itemProp="description">{service.description}</p>
     </article>
   );
 });

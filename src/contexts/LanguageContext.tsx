@@ -15,30 +15,16 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('de');
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('preferredLanguage') as Language;
     if (savedLanguage && ['en', 'pl', 'de', 'es'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
     } else {
-      // Pobierz język przeglądarki
-      const browserLanguage = navigator.language.toLowerCase();
-      let detectedLanguage: Language = 'en';
-      
-      if (browserLanguage.startsWith('pl')) {
-        detectedLanguage = 'pl';
-      } else if (browserLanguage.startsWith('de')) {
-        detectedLanguage = 'de';
-      } else if (browserLanguage.startsWith('es')) {
-        detectedLanguage = 'es';
-      } else if (browserLanguage.startsWith('en')) {
-        detectedLanguage = 'en';
-      }
-      
-      console.log(`Detected browser language: ${browserLanguage}, setting to: ${detectedLanguage}`);
-      setLanguage(detectedLanguage);
-      localStorage.setItem('preferredLanguage', detectedLanguage);
+      // Domyślnie ustawiamy język niemiecki
+      setLanguage('de');
+      localStorage.setItem('preferredLanguage', 'de');
     }
   }, []);
 
