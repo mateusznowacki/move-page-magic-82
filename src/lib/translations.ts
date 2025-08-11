@@ -39,28 +39,28 @@ type Translations = {
 
 export const translations: Translations = {
   'hero.title': {
-    en: 'Professional Moving Services for Your Peace of Mind',
-    pl: 'Profesjonalne usługi przeprowadzkowe dla Twojego spokoju ducha',
-    de: 'Professionelle Umzugsdienste für Ihre Seelenruhe',
-    es: 'Servicios profesionales de mudanza para su tranquilidad'
+    en: 'Professional Moving Services in Germany',
+    pl: 'Profesjonalne usługi przeprowadzkowe w Niemczech',
+    de: 'Professionelle Umzugsdienste in Deutschland',
+    es: 'Servicios profesionales de mudanza en Alemania'
   },
   'hero.subtitle': {
-    en: 'We make your relocation stress-free with our experienced team and customized moving solutions.',
-    pl: 'Sprawiamy, że przeprowadzka jest wolna od stresu dzięki naszemu doświadczonemu zespołowi i spersonalizowanym rozwiązaniom.',
-    de: 'Wir machen Ihren Umzug stressfrei mit unserem erfahrenen Team und individuellen Umzugslösungen.',
-    es: 'Hacemos que su reubicación sea libre de estrés con nuestro equipo experimentado y soluciones de mudanza personalizadas.'
+    en: 'Fast, safe and reliable moving services throughout Germany. Your trusted partner for stress-free relocation.',
+    pl: 'Szybkie, bezpieczne i niezawodne usługi przeprowadzkowe w całych Niemczech. Twój zaufany partner dla bezstresowej przeprowadzki.',
+    de: 'Schnelle, sichere und zuverlässige Umzugsdienste in ganz Deutschland. Ihr vertrauensvoller Partner für stressfreie Umzüge.',
+    es: 'Servicios de mudanza rápidos, seguros y confiables en toda Alemania. Su socio de confianza para reubicaciones sin estrés.'
   },
   'hero.getQuote': {
     en: 'Get Free Quote',
-    pl: 'Uzyskaj darmową wycenę',
-    de: 'Kostenloses Angebot erhalten',
-    es: 'Obtener presupuesto gratis'
+    pl: 'Bezpłatna wycena',
+    de: 'Kostenloses Angebot',
+    es: 'Presupuesto gratis'
   },
   'hero.services': {
-    en: 'Our Services',
-    pl: 'Nasze Usługi',
-    de: 'Unsere Dienstleistungen',
-    es: 'Nuestros Servicios'
+    en: 'View Services',
+    pl: 'Zobacz usługi',
+    de: 'Dienstleistungen ansehen',
+    es: 'Ver servicios'
   },
   'hero.years': {
     en: '10+',
@@ -81,10 +81,10 @@ export const translations: Translations = {
     es: '5K+'
   },
   'hero.customersDesc': {
-    en: 'Satisfied Customers',
+    en: 'Happy Customers',
     pl: 'Zadowolonych klientów',
     de: 'Zufriedene Kunden',
-    es: 'Clientes satisfechos'
+    es: 'Clientes felices'
   },
   'hero.support': {
     en: '24/7',
@@ -93,10 +93,10 @@ export const translations: Translations = {
     es: '24/7'
   },
   'hero.supportDesc': {
-    en: 'Customer Support',
-    pl: 'Obsługa klienta',
-    de: 'Kundendienst',
-    es: 'Atención al cliente'
+    en: 'Support Available',
+    pl: 'Wsparcie dostępne',
+    de: 'Support verfügbar',
+    es: 'Soporte disponible'
   },
   'hero.learnMore': {
     en: 'Learn More',
