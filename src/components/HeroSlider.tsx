@@ -11,6 +11,7 @@ const HeroSlider = React.memo(() => {
           muted 
           loop 
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
           poster="/optimized/hero-image-1.webp"
         >
@@ -20,6 +21,8 @@ const HeroSlider = React.memo(() => {
             src="/optimized/hero-image-1.webp" 
             alt="Moving services" 
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </video>
       </div>
