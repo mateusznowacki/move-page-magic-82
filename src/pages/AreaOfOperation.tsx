@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ScrollToTop from '@/components/ScrollToTop';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import Map from '@/components/Map';
+const Map = React.lazy(() => import('@/components/Map'));
 
 const AreaOfOperation: React.FC = () => {
   const { language } = useLanguage();
@@ -57,7 +57,21 @@ const AreaOfOperation: React.FC = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-6">
-              <Map mapType="berlin" />
+              <React.Suspense fallback={
+                <div className="h-[400px] bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <p className="text-gray-600 text-sm">
+                      {language === 'en' && 'Loading map...'}
+                      {language === 'pl' && 'Ładowanie mapy...'}
+                      {language === 'de' && 'Karte wird geladen...'}
+                      {language === 'es' && 'Cargando mapa...'}
+                    </p>
+                  </div>
+                </div>
+              }>
+                <Map mapType="berlin" />
+              </React.Suspense>
             </div>
           </div>
         </section>
@@ -84,7 +98,21 @@ const AreaOfOperation: React.FC = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-6">
-              <Map mapType="germany" />
+              <React.Suspense fallback={
+                <div className="h-[400px] bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
+                    <p className="text-gray-600 text-sm">
+                      {language === 'en' && 'Loading map...'}
+                      {language === 'pl' && 'Ładowanie mapy...'}
+                      {language === 'de' && 'Karte wird geladen...'}
+                      {language === 'es' && 'Cargando mapa...'}
+                    </p>
+                  </div>
+                </div>
+              }>
+                <Map mapType="germany" />
+              </React.Suspense>
             </div>
           </div>
         </section>

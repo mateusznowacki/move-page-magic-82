@@ -137,7 +137,12 @@ const AreasSection: React.FC = () => {
                 <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                    <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
+                    <p className="text-gray-600 text-sm">
+                      {language === 'en' && 'Loading Berlin map...'}
+                      {language === 'pl' && 'Ładowanie mapy Berlina...'}
+                      {language === 'de' && 'Berliner Karte wird geladen...'}
+                      {language === 'es' && 'Cargando mapa de Berlín...'}
+                    </p>
                   </div>
                 </div>
               }>
@@ -147,7 +152,12 @@ const AreasSection: React.FC = () => {
               <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Ładowanie mapy Berlina...</p>
+                  <p className="text-gray-600 text-sm">
+                    {language === 'en' && 'Loading Berlin map...'}
+                    {language === 'pl' && 'Ładowanie mapy Berlina...'}
+                    {language === 'de' && 'Berliner Karte wird geladen...'}
+                    {language === 'es' && 'Cargando mapa de Berlín...'}
+                  </p>
                 </div>
               </div>
             )}
@@ -174,7 +184,12 @@ const AreasSection: React.FC = () => {
                 <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                    <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
+                    <p className="text-gray-600 text-sm">
+                      {language === 'en' && 'Loading Germany map...'}
+                      {language === 'pl' && 'Ładowanie mapy Niemiec...'}
+                      {language === 'de' && 'Deutsche Karte wird geladen...'}
+                      {language === 'es' && 'Cargando mapa de Alemania...'}
+                    </p>
                   </div>
                 </div>
               }>
@@ -184,7 +199,12 @@ const AreasSection: React.FC = () => {
               <div className="w-full h-[400px] rounded-lg bg-gray-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                  <p className="text-gray-600 text-sm">Ładowanie mapy Niemiec...</p>
+                  <p className="text-gray-600 text-sm">
+                    {language === 'en' && 'Loading Germany map...'}
+                    {language === 'pl' && 'Ładowanie mapy Niemiec...'}
+                    {language === 'de' && 'Deutsche Karte wird geladen...'}
+                    {language === 'es' && 'Cargando mapa de Alemania...'}
+                  </p>
                 </div>
               </div>
             )}
