@@ -1,40 +1,17 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  meisterumzuege24:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: meisterumzuege24-web
-    ports:
-      - "80:80"
-      - "443:443"
+  web:
+    container_name: meisterumzuege24-prod
+    build: .
+    image: meisterumzuege24:latest
     restart: unless-stopped
-    environment:
-      - NODE_ENV=production
+    ports:
+      - "443:443"
     volumes:
-      # Mount logs for debugging
-      - ./logs:/var/log/nginx
-      # Mount SSL certificates from host
-      - /etc/ssl/cloudflare/cert.pem:/etc/ssl/cloudflare/cert.pem:ro
-      - /etc/ssl/cloudflare/key.pem:/etc/ssl/cloudflare/key.pem:ro
+      - /etc/ssl/cloudflare:/etc/ssl/cloudflare:ro
     networks:
-      - meisterumzuege24-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-          cpus: '0.5'
-        reservations:
-          memory: 256M
-          cpus: '0.25'
+      - internal
 
 networks:
-  meisterumzuege24-network:
-    driver: bridge 
+  internal: {} 
