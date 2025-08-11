@@ -147,13 +147,13 @@ const Navbar: React.FC = () => {
           {navigationItems.map(item => <NavItem key={item.key} item={item} />)}
           <LanguageSwitcher />
           <a 
-            href="https://wa.me/4915223031473?text=Dzień%20dobry,%20proszę%20o%20kontakt." 
+            href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
             aria-label="Contact us on WhatsApp"
           >
-            <span className="text-base font-medium">WhatsApp</span>
+            <span className="text-base font-medium">{translations['nav.whatsapp'][language]}</span>
           </a>
         </nav>
         
@@ -181,14 +181,14 @@ const Navbar: React.FC = () => {
                 <LanguageSwitcher />
               </div>
               <a 
-                href="https://wa.me/4915223031473?text=Dzień%20dobry,%20proszę%20o%20kontakt." 
+                href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center text-white font-medium"
                 aria-label="Contact us on WhatsApp"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span className="text-base font-medium">WhatsApp</span>
+                <span className="text-base font-medium">{translations['nav.whatsapp'][language]}</span>
               </a>
             </div>
           </div>

@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 <a 
                   href="/" 
                   className="text-gray-300 hover:text-white transition-colors"
-                  aria-label="Strona główna"
+                  aria-label={t('nav.home')}
                 >
                   {t('nav.home')}
                 </a>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                 <a 
                   href="/dienstleistungen" 
                   className="text-gray-300 hover:text-white transition-colors"
-                  aria-label="Usługi przeprowadzkowe"
+                  aria-label={t('nav.services')}
                 >
                   {t('nav.services')}
                 </a>
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 <a 
                   href="/uber-uns" 
                   className="text-gray-300 hover:text-white transition-colors"
-                  aria-label="O nas"
+                  aria-label={t('nav.about')}
                 >
                   {t('nav.about')}
                 </a>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
                 <a 
                   href="/kontakt" 
                   className="text-gray-300 hover:text-white transition-colors"
-                  aria-label="Kontakt"
+                  aria-label={t('nav.contact')}
                 >
                   {t('nav.contact')}
                 </a>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                 <a 
                   href="/angebot" 
                   className="text-gray-300 hover:text-white transition-colors"
-                  aria-label="Bezpłatna wycena"
+                  aria-label={t('nav.quote')}
                 >
                   {t('nav.quote')}
                 </a>
@@ -113,21 +113,21 @@ const Footer: React.FC = () => {
               <a 
                 href="/privacy-policy" 
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Polityka prywatności"
+                aria-label={t('footer.privacyPolicy')}
               >
                 {t('footer.privacyPolicy')}
               </a>
               <a 
                 href="/terms-of-service" 
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Regulamin"
+                aria-label={t('footer.termsOfService')}
               >
                 {t('footer.termsOfService')}
               </a>
               <a 
                 href="/cookie-policy" 
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Polityka cookies"
+                aria-label={t('footer.cookiePolicy')}
               >
                 {t('footer.cookiePolicy')}
               </a>
