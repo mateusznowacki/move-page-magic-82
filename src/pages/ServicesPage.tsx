@@ -490,46 +490,53 @@ const ServicesPage: React.FC = () => {
           </div>
 
           {/* Contact CTA Section */}
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div className="bg-gradient-to-r from-moving-blue to-moving-darkblue text-white rounded-lg shadow-lg p-8">
             <div className="prose max-w-none text-center">
-              <h3 className="text-xl font-bold text-moving-dark mb-4">
-                {language === 'pl' ? 'Skontaktuj się z nami' :
-                 language === 'de' ? 'Kontaktieren Sie uns' :
-                 language === 'es' ? 'Contáctenos' :
-                 'Contact Us'}
+              <h3 className="text-2xl font-bold mb-4">
+                {language === 'pl' ? 'Potrzebujesz pomocy? Zadzwoń teraz!' :
+                 language === 'de' ? 'Brauchen Sie Hilfe? Rufen Sie jetzt an!' :
+                 language === 'es' ? '¿Necesita ayuda? ¡Llame ahora!' :
+                 'Need Help? Call Now!'}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-white/90 mb-6 text-lg">
                 {language === 'pl' ? 
-                  'Skontaktuj się z nami, aby uzyskać bezpłatną wycenę i dowiedzieć się więcej o naszych usługach przeprowadzkowych. Nasz doświadczony zespół jest gotowy, aby pomóc Ci w każdej fazie procesu przeprowadzkowego.' :
+                  'Nasz zespół jest dostępny 24/7. Zadzwoń i otrzymaj bezpłatną wycenę w ciągu 5 minut!' :
                  language === 'de' ? 
-                  'Kontaktieren Sie uns für ein kostenloses Angebot und erfahren Sie mehr über unsere Umzugsdienste. Unser erfahrenes Team ist bereit, Ihnen in jeder Phase des Umzugsprozesses zu helfen.' :
+                  'Unser Team ist 24/7 erreichbar. Rufen Sie an und erhalten Sie in 5 Minuten ein kostenloses Angebot!' :
                  language === 'es' ? 
-                  'Contáctenos para obtener un presupuesto gratuito y conocer más sobre nuestros servicios de mudanza. Nuestro experimentado equipo está listo para ayudarle en cada fase del proceso de mudanza.' :
-                 'Contact us for a free quote and learn more about our moving services. Our experienced team is ready to help you in every phase of the moving process.'}
-              </p>
-              <p className="text-gray-600 mb-6">
-                {language === 'pl' ? 
-                  'Działamy we wschodnich Niemczech i oferujemy usługi w języku polskim, niemieckim, angielskim i hiszpańskim.' :
-                 language === 'de' ? 
-                  'Wir sind in Ostdeutschland tätig und bieten Dienstleistungen auf Polnisch, Deutsch, Englisch und Spanisch.' :
-                 language === 'es' ? 
-                  'Operamos en el este de Alemania y ofrecemos servicios en polaco, alemán, inglés y español.' :
-                 'We operate in Eastern Germany and offer services in Polish, German, English, and Spanish.'}
+                  'Nuestro equipo está disponible 24/7. ¡Llame y reciba un presupuesto gratuito en 5 minutos!' :
+                 'Our team is available 24/7. Call and get a free quote in 5 minutes!'}
               </p>
               
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   size="lg" 
-                  className="bg-moving-blue hover:bg-moving-darkblue text-white px-8 py-3 text-lg font-semibold"
+                  className="bg-white hover:bg-gray-100 text-moving-blue px-8 py-4 text-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   onClick={() => window.open('tel:+4915223031473', '_self')}
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  {language === 'pl' ? 'Zadzwoń teraz' :
-                   language === 'de' ? 'Jetzt anrufen' :
-                   language === 'es' ? 'Llamar ahora' :
-                   'Call Now'}
+                  <Phone className="w-6 h-6 mr-3" />
+                  +49 152 230 314 73
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-moving-blue px-8 py-4 text-xl font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  onClick={() => window.open('https://wa.me/4915223031473', '_blank')}
+                >
+                  <span className="mr-3">📱</span>
+                  {language === 'pl' ? 'WhatsApp' :
+                   language === 'de' ? 'WhatsApp' :
+                   language === 'es' ? 'WhatsApp' :
+                   'WhatsApp'}
                 </Button>
               </div>
+              
+              <p className="text-white/80 mt-4 text-sm">
+                {language === 'pl' ? 'Działamy we wschodnich Niemczech • Obsługujemy języki: PL, DE, EN, ES' :
+                 language === 'de' ? 'Wir sind in Ostdeutschland tätig • Sprachen: PL, DE, EN, ES' :
+                 language === 'es' ? 'Operamos en el este de Alemania • Idiomas: PL, DE, EN, ES' :
+                 'We operate in Eastern Germany • Languages: PL, DE, EN, ES'}
+              </p>
             </div>
           </div>
         </div>

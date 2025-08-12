@@ -123,32 +123,137 @@ const QuotePage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Przygotuj wiadomość WhatsApp
-      const whatsappMessage = `
-🌍 *Meister Umzüge 24 - Nowa wycena*
+      // Przygotuj wiadomość WhatsApp w zależności od języka
+      const getWhatsAppMessage = () => {
+        const labels = {
+          pl: {
+            title: 'Meister Umzüge 24 - Nowa wycena',
+            contactInfo: 'Dane kontaktowe:',
+            name: 'Imię',
+            email: 'Email',
+            phone: 'Telefon',
+            notProvided: 'Nie podano',
+            moveDetails: 'Szczegóły przeprowadzki:',
+            from: 'Z',
+            to: 'Do',
+            date: 'Data',
+            type: 'Typ',
+            rooms: 'Pokoje',
+            distance: 'Odległość',
+            moveTypes: {
+              residential: 'Przeprowadzka mieszkaniowa',
+              commercial: 'Przeprowadzka biurowa',
+              international: 'Przeprowadzka międzynarodowa'
+            },
+            additionalServices: 'Dodatkowe usługi:',
+            none: 'Brak',
+            message: 'Wiadomość:',
+            sentFrom: 'Wysłane ze strony: meisterumzuege24.de'
+          },
+          de: {
+            title: 'Meister Umzüge 24 - Neues Angebot',
+            contactInfo: 'Kontaktdaten:',
+            name: 'Name',
+            email: 'E-Mail',
+            phone: 'Telefon',
+            notProvided: 'Nicht angegeben',
+            moveDetails: 'Umzugsdetails:',
+            from: 'Von',
+            to: 'Nach',
+            date: 'Datum',
+            type: 'Typ',
+            rooms: 'Zimmer',
+            distance: 'Entfernung',
+            moveTypes: {
+              residential: 'Wohnungsumzug',
+              commercial: 'Büroumzug',
+              international: 'Internationaler Umzug'
+            },
+            additionalServices: 'Zusätzliche Dienstleistungen:',
+            none: 'Keine',
+            message: 'Nachricht:',
+            sentFrom: 'Gesendet von: meisterumzuege24.de'
+          },
+          es: {
+            title: 'Meister Umzüge 24 - Nuevo Presupuesto',
+            contactInfo: 'Datos de contacto:',
+            name: 'Nombre',
+            email: 'Correo',
+            phone: 'Teléfono',
+            notProvided: 'No proporcionado',
+            moveDetails: 'Detalles de mudanza:',
+            from: 'Desde',
+            to: 'Hasta',
+            date: 'Fecha',
+            type: 'Tipo',
+            rooms: 'Habitaciones',
+            distance: 'Distancia',
+            moveTypes: {
+              residential: 'Mudanza residencial',
+              commercial: 'Mudanza comercial',
+              international: 'Mudanza internacional'
+            },
+            additionalServices: 'Servicios adicionales:',
+            none: 'Ninguno',
+            message: 'Mensaje:',
+            sentFrom: 'Enviado desde: meisterumzuege24.de'
+          },
+          en: {
+            title: 'Meister Umzüge 24 - New Quote',
+            contactInfo: 'Contact Information:',
+            name: 'Name',
+            email: 'Email',
+            phone: 'Phone',
+            notProvided: 'Not provided',
+            moveDetails: 'Moving Details:',
+            from: 'From',
+            to: 'To',
+            date: 'Date',
+            type: 'Type',
+            rooms: 'Rooms',
+            distance: 'Distance',
+            moveTypes: {
+              residential: 'Residential Move',
+              commercial: 'Commercial Move',
+              international: 'International Move'
+            },
+            additionalServices: 'Additional Services:',
+            none: 'None',
+            message: 'Message:',
+            sentFrom: 'Sent from: meisterumzuege24.de'
+          }
+        };
 
-*Dane kontaktowe:*
-👤 Imię: ${formData.name}
-📧 Email: ${formData.email}
-📱 Telefon: ${formData.phone || 'Nie podano'}
+        const l = labels[language as keyof typeof labels] || labels.en;
 
-*Szczegóły przeprowadzki:*
-📍 Z: ${formData.fromAddress || 'Nie podano'}
-📍 Do: ${formData.toAddress || 'Nie podano'}
-📅 Data: ${formData.moveDate || 'Nie podano'}
-🏠 Typ: ${formData.moveType || 'Nie podano'}
-🏠 Pokoje: ${formData.rooms || 'Nie podano'}
-📏 Odległość: ${formData.distance || 'Nie podano'}
+        return `
+🌍 *${l.title}*
 
-*Dodatkowe usługi:*
-${formData.additionalServices.length > 0 ? formData.additionalServices.join(', ') : 'Brak'}
+*${l.contactInfo}*
+👤 ${l.name}: ${formData.name}
+📧 ${l.email}: ${formData.email}
+📱 ${l.phone}: ${formData.phone || l.notProvided}
 
-*Wiadomość:*
+*${l.moveDetails}*
+📍 ${l.from}: ${formData.fromAddress || l.notProvided}
+📍 ${l.to}: ${formData.toAddress || l.notProvided}
+📅 ${l.date}: ${formData.moveDate || l.notProvided}
+🏠 ${l.type}: ${formData.moveType ? l.moveTypes[formData.moveType as keyof typeof l.moveTypes] || formData.moveType : l.notProvided}
+🏠 ${l.rooms}: ${formData.rooms || l.notProvided}
+📏 ${l.distance}: ${formData.distance || l.notProvided}
+
+*${l.additionalServices}*
+${formData.additionalServices.length > 0 ? formData.additionalServices.join(', ') : l.none}
+
+*${l.message}*
 ${formData.message}
 
 ---
-*Wysłane ze strony: meisterumzuege24.de*
-      `.trim();
+*${l.sentFrom}*
+        `.trim();
+      };
+
+      const whatsappMessage = getWhatsAppMessage();
 
       const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
       window.open(whatsappUrl, '_blank');

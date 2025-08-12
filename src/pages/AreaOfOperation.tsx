@@ -70,7 +70,7 @@ const AreaOfOperation: React.FC = () => {
                   </div>
                 </div>
               }>
-                <Map mapType="berlin" />
+                <Map mapType="google" center={{ lat: 52.5200, lng: 13.4050 }} zoom={10} />
               </React.Suspense>
             </div>
           </div>
