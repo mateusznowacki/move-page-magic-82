@@ -78,11 +78,12 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         }
 
         // Initialize map
-        mapboxgl.default.accessToken = MAPBOX_TOKEN;
+        const mapbox = mapboxgl.default || mapboxgl;
+        (mapbox as any).accessToken = MAPBOX_TOKEN;
         
         const settings = mapSettings[mapType];
         
-        map.current = new mapboxgl.default.Map({
+        map.current = new mapbox.Map({
           container: mapContainer.current,
           style: 'mapbox://styles/mapbox/light-v11',
           center: settings.center,
@@ -107,10 +108,10 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
             markerEl.style.cursor = 'pointer';
 
             // Add marker to map
-            new mapboxgl.default.Marker(markerEl)
+            new mapbox.Marker(markerEl)
               .setLngLat(COMPANY_LOCATION)
               .setPopup(
-                new mapboxgl.default.Popup({ offset: 25 })
+                new mapbox.Popup({ offset: 25 })
                   .setHTML(`
                     <div class="p-2">
                       <h3 class="font-bold text-lg">Meister Umzüge</h3>
@@ -162,7 +163,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                       });
 
                       // Create bounds from Berlin's actual coordinates
-                      const bounds = new mapboxgl.default.LngLatBounds();
+                      const bounds = new mapbox.LngLatBounds();
                       berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
                         bounds.extend(coord as [number, number]);
                       });
@@ -249,7 +250,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                     }
 
                     // Fit map to show all of Germany
-                    const bounds = new mapboxgl.default.LngLatBounds();
+                    const bounds = new mapbox.LngLatBounds();
                     allStates.forEach((feature: any) => {
                       if (feature.geometry.type === 'Polygon') {
                         feature.geometry.coordinates[0].forEach((coord: number[]) => {
