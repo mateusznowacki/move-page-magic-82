@@ -85,7 +85,7 @@ The project includes several optimizations:
 
 - **Wielojęzyczność**: Polski, Niemiecki, Angielski, Hiszpański
 - **Responsywny design**: Dostosowany do wszystkich urządzeń
-- **Mapy interaktywne**: Mapbox z obszarami działania
+- **Mapy statyczne**: Grafiki z obszarami działania
 - **Formularz kontaktowy**: Integracja z WhatsApp
 - **SEO zoptymalizowany**: Strukturalne dane i meta tagi
 - **Strony prawne**: Polityka prywatności, regulamin, polityka cookies
@@ -97,7 +97,7 @@ The project includes several optimizations:
 - Tailwind CSS
 - shadcn/ui
 - React Router
-- Mapbox GL JS
+
 - Lucide React Icons
 
 ## 📦 Instalacja
@@ -159,8 +159,7 @@ ssl/
 ### Zmienne środowiskowe
 
 ```bash
-# Mapbox API Key
-VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_token
+
 
 # Google Analytics
 VITE_GA_MEASUREMENT_ID=your_ga_id
