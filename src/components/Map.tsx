@@ -11,6 +11,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   const map = useRef<any>(null);
   const [isLoading, setIsLoading] = React.useState(true);
   const [mapboxLoaded, setMapboxLoaded] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
   const { language } = useLanguage();
   
   // Mapbox access token
@@ -52,6 +53,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         setMapboxLoaded(true);
       } catch (error) {
         console.error('Error loading Mapbox:', error);
+        setError('Failed to load map');
       }
     };
 
@@ -76,11 +78,12 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         }
 
         // Initialize map
-        mapboxgl.default.accessToken = MAPBOX_TOKEN;
+        const mapbox = mapboxgl.default || mapboxgl;
+        (mapbox as any).accessToken = MAPBOX_TOKEN;
         
         const settings = mapSettings[mapType];
         
-        map.current = new mapboxgl.default.Map({
+        map.current = new mapbox.Map({
           container: mapContainer.current,
           style: 'mapbox://styles/mapbox/light-v11',
           center: settings.center,
@@ -105,10 +108,10 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
             markerEl.style.cursor = 'pointer';
 
             // Add marker to map
-            new mapboxgl.default.Marker(markerEl)
+            new mapbox.Marker(markerEl)
               .setLngLat(COMPANY_LOCATION)
               .setPopup(
-                new mapboxgl.default.Popup({ offset: 25 })
+                new mapbox.Popup({ offset: 25 })
                   .setHTML(`
                     <div class="p-2">
                       <h3 class="font-bold text-lg">Meister Umzüge</h3>
@@ -160,7 +163,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                       });
 
                       // Create bounds from Berlin's actual coordinates
-                      const bounds = new mapboxgl.default.LngLatBounds();
+                      const bounds = new mapbox.LngLatBounds();
                       berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
                         bounds.extend(coord as [number, number]);
                       });
@@ -247,7 +250,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                     }
 
                     // Fit map to show all of Germany
-                    const bounds = new mapboxgl.default.LngLatBounds();
+                    const bounds = new mapbox.LngLatBounds();
                     allStates.forEach((feature: any) => {
                       if (feature.geometry.type === 'Polygon') {
                         feature.geometry.coordinates[0].forEach((coord: number[]) => {
@@ -288,6 +291,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         };
       } catch (error) {
         console.error('Error initializing map:', error);
+        setError('Failed to initialize map');
       }
     };
 
@@ -300,11 +304,29 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   return (
     <div className="flex flex-col w-full">
       <div className="relative w-full h-[400px] rounded-lg shadow-lg">
-        {isLoading && (
+        {isLoading && !error && (
           <div className="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10">
             <div className="text-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-moving-blue mx-auto mb-2"></div>
-              <p className="text-gray-600 text-sm">Ładowanie mapy...</p>
+              <p className="text-gray-600 text-sm">
+                {language === 'en' && 'Loading map...'}
+                {language === 'pl' && 'Ładowanie mapy...'}
+                {language === 'de' && 'Karte wird geladen...'}
+                {language === 'es' && 'Cargando mapa...'}
+              </p>
+            </div>
+          </div>
+        )}
+        {error && (
+          <div className="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10">
+            <div className="text-center">
+              <div className="text-red-500 mb-2">⚠️</div>
+              <p className="text-gray-600 text-sm">
+                {language === 'en' && 'Map loading failed. Please refresh the page.'}
+                {language === 'pl' && 'Błąd ładowania mapy. Odśwież stronę.'}
+                {language === 'de' && 'Kartenladung fehlgeschlagen. Bitte Seite neu laden.'}
+                {language === 'es' && 'Error al cargar el mapa. Actualice la página.'}
+              </p>
             </div>
           </div>
         )}
