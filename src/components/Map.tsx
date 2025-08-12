@@ -14,8 +14,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   const [error, setError] = React.useState<string | null>(null);
   const { language } = useLanguage();
   
-  // Mapbox access token
-  const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
+  // Carto free style (no token needed)
+  const CARTO_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
   
   // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
   const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
@@ -51,8 +51,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         const mapboxgl = await import('mapbox-gl');
         await import('mapbox-gl/dist/mapbox-gl.css');
         
-        // Set access token globally
-        mapboxgl.default.accessToken = MAPBOX_TOKEN;
+        // No token needed for Carto free styles
+        // mapboxgl.default.accessToken = CARTO_TOKEN;
         
         setMapboxLoaded(true);
       } catch (error) {
@@ -88,7 +88,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         
         map.current = new mapbox.Map({
           container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/light-v11',
+          style: CARTO_STYLE,
           center: settings.center,
           zoom: settings.zoom,
           interactive: false,
