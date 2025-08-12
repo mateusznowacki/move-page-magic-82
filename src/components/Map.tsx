@@ -55,7 +55,9 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         await import('mapbox-gl/dist/mapbox-gl.css');
         
         // Set a minimal token for Mapbox GL JS to work with external styles
-        mapboxgl.default.accessToken = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
+        if (mapboxgl && mapboxgl.default) {
+          mapboxgl.default.accessToken = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
+        }
         
         setMapboxLoaded(true);
       } catch (error) {
