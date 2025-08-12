@@ -15,7 +15,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   const { language } = useLanguage();
   
   // Mapbox access token
-  const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
+  const MAPBOX_TOKEN = 'pk.eyJ1IjoibWF0dHlub3Z5IiwiYSI6ImNtZTg4ZnQyOTBhem4yaXF2czhqcXNqeGUifQ.9MSHHlF5IVETk3_HI45X9Q';
   
   // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
   const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
@@ -79,7 +79,9 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
 
         // Initialize map
         const mapbox = mapboxgl.default || mapboxgl;
-        (mapbox as any).accessToken = MAPBOX_TOKEN;
+        if (mapbox && typeof mapbox === 'object') {
+          (mapbox as any).accessToken = MAPBOX_TOKEN;
+        }
         
         const settings = mapSettings[mapType];
         
