@@ -14,8 +14,23 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   const [error, setError] = React.useState<string | null>(null);
   const { language } = useLanguage();
   
-  // Mapbox access token
+  // Mapbox access token (default)
   const MAPBOX_TOKEN = 'pk.eyJ1IjoibWF0dHlub3Z5IiwiYSI6ImNtZTg4ZnQyOTBhem4yaXF2czhqcXNqeGUifQ.9MSHHlF5IVETk3_HI45X9Q';
+  
+  // Token handling with localStorage fallback
+  const [token, setToken] = React.useState<string>(() => {
+    try {
+      return localStorage.getItem('mapboxPublicToken') || MAPBOX_TOKEN;
+    } catch {
+      return MAPBOX_TOKEN;
+    }
+  });
+  
+  useEffect(() => {
+    try {
+      localStorage.setItem('mapboxPublicToken', token);
+    } catch {}
+  }, [token]);
   
   // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
   const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
@@ -80,7 +95,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         // Initialize map
         const mapbox = mapboxgl.default || mapboxgl;
         if (mapbox && typeof mapbox === 'object') {
-          (mapbox as any).accessToken = MAPBOX_TOKEN;
+          (mapbox as any).accessToken = token;
         }
         
         const settings = mapSettings[mapType];
@@ -93,6 +108,18 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
           interactive: false,
           attributionControl: false,
           logoPosition: 'bottom-left'
+        });
+
+        // Handle map errors (e.g., invalid token)
+        map.current.on('error', (e: any) => {
+          console.error('Mapbox error:', e);
+          setIsLoading(false);
+          const msg = (e?.error?.message || '').toLowerCase();
+          if (msg.includes('unauthorized') || msg.includes('access token') || msg.includes('forbidden')) {
+            setError('token');
+          } else {
+            setError('generic');
+          }
         });
 
         // Add company location marker
@@ -298,7 +325,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
     };
 
     initializeMap();
-  }, [mapType, mapboxLoaded]);
+  }, [mapType, mapboxLoaded, token]);
 
   const currentTitle = mapSettings[mapType].title[language as keyof typeof mapSettings.berlin.title] || 
                       mapSettings[mapType].title.en;
@@ -320,15 +347,41 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
           </div>
         )}
         {error && (
-          <div className="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10">
-            <div className="text-center">
+          <div className="absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center z-10 p-4">
+            <div className="text-center w-full max-w-md">
               <div className="text-red-500 mb-2">⚠️</div>
-              <p className="text-gray-600 text-sm">
-                {language === 'en' && 'Map loading failed. Please refresh the page.'}
-                {language === 'pl' && 'Błąd ładowania mapy. Odśwież stronę.'}
-                {language === 'de' && 'Kartenladung fehlgeschlagen. Bitte Seite neu laden.'}
-                {language === 'es' && 'Error al cargar el mapa. Actualice la página.'}
+              <p className="text-gray-600 text-sm mb-3">
+                {language === 'en' && (error === 'token' ? 'Mapbox token issue. Enter your public token below.' : 'Map loading failed. Please refresh the page.')}
+                {language === 'pl' && (error === 'token' ? 'Problem z tokenem Mapbox. Wpisz publiczny token poniżej.' : 'Błąd ładowania mapy. Odśwież stronę.')}
+                {language === 'de' && (error === 'token' ? 'Problem mit dem Mapbox-Token. Gib unten dein Public-Token ein.' : 'Kartenladung fehlgeschlagen. Bitte Seite neu laden.')}
+                {language === 'es' && (error === 'token' ? 'Problema con el token de Mapbox. Introduce tu token público abajo.' : 'Error al cargar el mapa. Actualice la página.')}
               </p>
+              <div className={error === 'token' ? 'block' : 'hidden'}>
+                <input
+                  value={token}
+                  onChange={(e) => setToken(e.target.value)}
+                  placeholder={language === 'pl' ? 'Publiczny token Mapbox' : language === 'de' ? 'Öffentlicher Mapbox-Token' : language === 'es' ? 'Token público de Mapbox' : 'Public Mapbox token'}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button
+                  onClick={() => {
+                    setError(null);
+                    setIsLoading(true);
+                  }}
+                  className="w-full bg-moving-blue text-white rounded-md px-4 py-2 hover:bg-moving-darkblue transition"
+                >
+                  {language === 'pl' && 'Zapisz i odśwież mapę'}
+                  {language === 'de' && 'Speichern und Karte neu laden'}
+                  {language === 'es' && 'Guardar y recargar mapa'}
+                  {language === 'en' && 'Save and reload map'}
+                </button>
+                <p className="text-xs text-gray-500 mt-2">
+                  {language === 'pl' && 'Znajdziesz go w Mapbox → Tokens'}
+                  {language === 'de' && 'Zu finden in Mapbox → Tokens'}
+                  {language === 'es' && 'Lo encontrarás en Mapbox → Tokens'}
+                  {language === 'en' && 'Find it in Mapbox → Tokens'}
+                </p>
+              </div>
             </div>
           </div>
         )}
