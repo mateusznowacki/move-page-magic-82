@@ -50,6 +50,10 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
       try {
         const mapboxgl = await import('mapbox-gl');
         await import('mapbox-gl/dist/mapbox-gl.css');
+        
+        // Set access token globally
+        mapboxgl.default.accessToken = MAPBOX_TOKEN;
+        
         setMapboxLoaded(true);
       } catch (error) {
         console.error('Error loading Mapbox:', error);
@@ -79,7 +83,6 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
 
         // Initialize map
         const mapbox = mapboxgl.default || mapboxgl;
-        (mapbox as any).accessToken = MAPBOX_TOKEN;
         
         const settings = mapSettings[mapType];
         
