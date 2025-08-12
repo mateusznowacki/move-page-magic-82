@@ -14,8 +14,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   const [error, setError] = React.useState<string | null>(null);
   const { language } = useLanguage();
   
-  // Carto free style (no token needed)
-  const CARTO_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+  // OpenStreetMap style (no token needed)
+  const OSM_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
   
   // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
   const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
@@ -82,13 +82,11 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         }
 
         // Initialize map
-        const mapbox = mapboxgl.default || mapboxgl;
-        
         const settings = mapSettings[mapType];
         
-        map.current = new mapbox.Map({
+        map.current = new mapboxgl.default.Map({
           container: mapContainer.current,
-          style: CARTO_STYLE,
+          style: OSM_STYLE,
           center: settings.center,
           zoom: settings.zoom,
           interactive: false,
@@ -111,10 +109,10 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
             markerEl.style.cursor = 'pointer';
 
             // Add marker to map
-            new mapbox.Marker(markerEl)
+            new mapboxgl.default.Marker(markerEl)
               .setLngLat(COMPANY_LOCATION)
               .setPopup(
-                new mapbox.Popup({ offset: 25 })
+                new mapboxgl.default.Popup({ offset: 25 })
                   .setHTML(`
                     <div class="p-2">
                       <h3 class="font-bold text-lg">Meister Umzüge</h3>
@@ -166,7 +164,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                       });
 
                       // Create bounds from Berlin's actual coordinates
-                      const bounds = new mapbox.LngLatBounds();
+                      const bounds = new mapboxgl.default.LngLatBounds();
                       berlinFeature.geometry.coordinates[0].forEach((coord: number[]) => {
                         bounds.extend(coord as [number, number]);
                       });
@@ -253,7 +251,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
                     }
 
                     // Fit map to show all of Germany
-                    const bounds = new mapbox.LngLatBounds();
+                    const bounds = new mapboxgl.default.LngLatBounds();
                     allStates.forEach((feature: any) => {
                       if (feature.geometry.type === 'Polygon') {
                         feature.geometry.coordinates[0].forEach((coord: number[]) => {
