@@ -17,6 +17,9 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
   // OpenStreetMap style (no token needed)
   const OSM_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
   
+  // Fallback style if Carto doesn't work
+  const FALLBACK_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+  
   // Company location coordinates (Kolonnenstr. 8, 10827 Berlin)
   const COMPANY_LOCATION = [13.405, 52.52] as [number, number];
   
@@ -51,8 +54,8 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         const mapboxgl = await import('mapbox-gl');
         await import('mapbox-gl/dist/mapbox-gl.css');
         
-        // No token needed for Carto free styles
-        // mapboxgl.default.accessToken = CARTO_TOKEN;
+        // Set a minimal token for Mapbox GL JS to work with external styles
+        mapboxgl.default.accessToken = 'pk.eyJ1IjoibWFrc3lta2luZyIsImEiOiJjbWJmYzczdHQyY2F1MmtwOWNwbmN2YjgxIn0.UsA0RBJN94VJmw14MGB5jg';
         
         setMapboxLoaded(true);
       } catch (error) {
