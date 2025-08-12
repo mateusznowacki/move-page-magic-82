@@ -40,7 +40,7 @@ const Map: React.FC<MapProps> = ({ mapType }) => {
         <img 
           src={mapSettings[mapType].image}
           alt={currentTitle}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           loading="lazy"
         />
       </div>
