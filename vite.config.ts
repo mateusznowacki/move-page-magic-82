@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => ({
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['lucide-react'],
           utils: ['clsx', 'class-variance-authority', 'tailwind-merge'],
-          mapbox: ['mapbox-gl'],
+      
         },
       },
     },
@@ -43,6 +43,6 @@ export default defineConfig(({ mode }) => ({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
-    exclude: ['mapbox-gl'],
+    
   },
 }));
