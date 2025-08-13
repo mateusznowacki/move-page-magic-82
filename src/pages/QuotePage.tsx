@@ -234,29 +234,29 @@ const QuotePage: React.FC = () => {
         const l = labels[language as keyof typeof labels] || labels.en;
 
         return `
-🌍 *${l.title}*
+${l.title}
 
-*${l.contactInfo}*
-👤 ${l.name}: ${formData.name}
-📧 ${l.email}: ${formData.email}
-📱 ${l.phone}: ${formData.phone || l.notProvided}
+${l.contactInfo}
+${l.name}: ${formData.name}
+${l.email}: ${formData.email}
+${l.phone}: ${formData.phone || l.notProvided}
 
-*${l.moveDetails}*
-📍 ${l.from}: ${formData.fromAddress || l.notProvided}
-📍 ${l.to}: ${formData.toAddress || l.notProvided}
-📅 ${l.date}: ${formData.moveDate || l.notProvided}
-🏠 ${l.type}: ${formData.moveType ? l.moveTypes[formData.moveType as keyof typeof l.moveTypes] || formData.moveType : l.notProvided}
-🏠 ${l.rooms}: ${formData.rooms || l.notProvided}
-📏 ${l.distance}: ${formData.distance || l.notProvided}
+${l.moveDetails}
+${l.from}: ${formData.fromAddress || l.notProvided}
+${l.to}: ${formData.toAddress || l.notProvided}
+${l.date}: ${formData.moveDate || l.notProvided}
+${l.type}: ${formData.moveType ? l.moveTypes[formData.moveType as keyof typeof l.moveTypes] || formData.moveType : l.notProvided}
+${l.rooms}: ${formData.rooms || l.notProvided}
+${l.distance}: ${formData.distance || l.notProvided}
 
-*${l.additionalServices}*
+${l.additionalServices}
 ${formData.additionalServices.length > 0 ? formData.additionalServices.join(', ') : l.none}
 
-*${l.message}*
+${l.message}
 ${formData.message}
 
 ---
-*${l.sentFrom}*
+${l.sentFrom}
         `.trim();
       };
 

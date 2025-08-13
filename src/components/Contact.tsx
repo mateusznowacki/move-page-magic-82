@@ -107,22 +107,22 @@ const Contact: React.FC = () => {
 
 
       const whatsappMessage = `
-🌍 *Meister Umzüge 24 - Nowa wiadomość*
+Meister Umzüge 24 - Nowa wiadomość
 
-*Dane kontaktowe:*
-👤 Imię: ${formData.name}
-📧 Email: ${formData.email}
-📱 Telefon: ${formData.phone || 'Nie podano'}
+Dane kontaktowe:
+Imię: ${formData.name}
+Email: ${formData.email}
+Telefon: ${formData.phone || 'Nie podano'}
 
-*Szczegóły przeprowadzki:*
-📅 Data: ${formData.moveDate || 'Nie podano'}
-🏠 Typ: ${formData.moveType || 'Nie podano'}
+Szczegóły przeprowadzki:
+Data: ${formData.moveDate || 'Nie podano'}
+Typ: ${formData.moveType || 'Nie podano'}
 
-*Wiadomość:*
+Wiadomość:
 ${formData.message}
 
 ---
-*Wysłane ze strony: meisterumzuege24.de*
+Wysłane ze strony: meisterumzuege24.de
       `.trim();
 
       const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
