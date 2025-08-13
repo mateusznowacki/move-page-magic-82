@@ -132,7 +132,7 @@ const QuotePage: React.FC = () => {
       // Google Ads conversion tracking
       if (typeof window.gtag !== 'undefined') {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-17470976934/253cCPb61oUbEKbn54pB',
+          'send_to': 'AW-17470976934/QWi-CPjv1IUbEKbn54pB',
           'value': 1.0,
           'currency': 'PLN'
         });
