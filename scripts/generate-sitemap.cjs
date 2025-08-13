@@ -8,10 +8,10 @@ const OUTPUT_FILE = 'public/sitemap.xml';
 // Główne strony
 const mainPages = [
   { url: '/', priority: '1.0', changefreq: 'weekly' },
-  { url: '/about', priority: '0.8', changefreq: 'monthly' },
-  { url: '/services', priority: '0.8', changefreq: 'monthly' },
-  { url: '/contact', priority: '0.8', changefreq: 'monthly' },
-  { url: '/quote', priority: '0.9', changefreq: 'weekly' },
+  { url: '/uber-uns', priority: '0.8', changefreq: 'monthly' },
+  { url: '/dienstleistungen', priority: '0.8', changefreq: 'monthly' },
+  { url: '/kontakt', priority: '0.8', changefreq: 'monthly' },
+  { url: '/angebot', priority: '0.9', changefreq: 'weekly' },
   { url: '/staedte', priority: '0.9', changefreq: 'weekly' },
   { url: '/privacy-policy', priority: '0.3', changefreq: 'yearly' },
   { url: '/terms-of-service', priority: '0.3', changefreq: 'yearly' },
