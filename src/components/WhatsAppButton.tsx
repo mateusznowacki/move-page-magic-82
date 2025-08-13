@@ -28,8 +28,8 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
 
   let finalMessage = message;
   if (!finalMessage) {
-    const lang = typeof window !== "undefined" ? (navigator.language || "en").slice(0,2) : "en";
-    finalMessage = defaultMessages[lang] || defaultMessages["en"];
+    // Zawsze używaj niemieckiego jako domyślnego
+    finalMessage = defaultMessages["de"];
   }
 
   const whatsappUrl = finalMessage

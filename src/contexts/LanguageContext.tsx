@@ -22,7 +22,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     if (savedLanguage && ['en', 'pl', 'de', 'es'].includes(savedLanguage)) {
       setLanguage(savedLanguage);
     } else {
-      // Domyślnie ustawiamy język niemiecki
+      // Zawsze domyślnie ustawiamy język niemiecki
       setLanguage('de');
       localStorage.setItem('preferredLanguage', 'de');
     }
