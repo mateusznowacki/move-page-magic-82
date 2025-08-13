@@ -156,13 +156,21 @@ const Navbar: React.FC = () => {
             href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
             target="_blank" 
             rel="noopener noreferrer"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+              const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`;
+              
               if (typeof window.gtag !== 'undefined') {
                 window.gtag('event', 'conversion', {
                   'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
                   'value': 1.0,
-                  'currency': 'PLN'
+                  'currency': 'PLN',
+                  'event_callback': () => {
+                    window.open(whatsappUrl, '_blank');
+                  }
                 });
+              } else {
+                window.open(whatsappUrl, '_blank');
               }
             }}
             className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
@@ -199,13 +207,21 @@ const Navbar: React.FC = () => {
                 href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
+                  const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`;
+                  
                   if (typeof window.gtag !== 'undefined') {
                     window.gtag('event', 'conversion', {
                       'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
                       'value': 1.0,
-                      'currency': 'PLN'
+                      'currency': 'PLN',
+                      'event_callback': () => {
+                        window.open(whatsappUrl, '_blank');
+                      }
                     });
+                  } else {
+                    window.open(whatsappUrl, '_blank');
                   }
                   setIsMobileMenuOpen(false);
                 }}

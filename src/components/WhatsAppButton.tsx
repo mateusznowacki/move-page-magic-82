@@ -36,14 +36,23 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
     ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`
     : `https://wa.me/${phoneNumber}`;
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
     // Google Ads conversion tracking
     if (typeof window.gtag !== 'undefined') {
       window.gtag('event', 'conversion', {
         'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
         'value': 1.0,
-        'currency': 'PLN'
+        'currency': 'PLN',
+        'event_callback': () => {
+          // Otwórz WhatsApp po wysłaniu konwersji
+          window.open(whatsappUrl, '_blank');
+        }
       });
+    } else {
+      // Jeśli gtag nie jest dostępny, otwórz WhatsApp bezpośrednio
+      window.open(whatsappUrl, '_blank');
     }
   };
 
