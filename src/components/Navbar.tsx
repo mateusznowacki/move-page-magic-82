@@ -164,14 +164,13 @@ const Navbar: React.FC = () => {
                 window.gtag('event', 'conversion', {
                   'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
                   'value': 1.0,
-                  'currency': 'PLN',
-                  'event_callback': () => {
-                    window.open(whatsappUrl, '_blank');
-                  }
+                  'currency': 'PLN'
                 });
-              } else {
-                window.open(whatsappUrl, '_blank');
               }
+              
+              setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+              }, 100);
             }}
             className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
             aria-label="Contact us on WhatsApp"
@@ -215,14 +214,13 @@ const Navbar: React.FC = () => {
                     window.gtag('event', 'conversion', {
                       'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
                       'value': 1.0,
-                      'currency': 'PLN',
-                      'event_callback': () => {
-                        window.open(whatsappUrl, '_blank');
-                      }
+                      'currency': 'PLN'
                     });
-                  } else {
-                    window.open(whatsappUrl, '_blank');
                   }
+                  
+                  setTimeout(() => {
+                    window.open(whatsappUrl, '_blank');
+                  }, 100);
                   setIsMobileMenuOpen(false);
                 }}
                 className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center text-white font-medium"

@@ -44,16 +44,14 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       window.gtag('event', 'conversion', {
         'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
         'value': 1.0,
-        'currency': 'PLN',
-        'event_callback': () => {
-          // Otwórz WhatsApp po wysłaniu konwersji
-          window.open(whatsappUrl, '_blank');
-        }
+        'currency': 'PLN'
       });
-    } else {
-      // Jeśli gtag nie jest dostępny, otwórz WhatsApp bezpośrednio
-      window.open(whatsappUrl, '_blank');
     }
+    
+    // Otwórz WhatsApp po krótkim opóźnieniu
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 100);
   };
 
   return (

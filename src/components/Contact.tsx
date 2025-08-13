@@ -127,19 +127,19 @@ ${formData.message}
 
       const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
       
-      // Otwórz WhatsApp po wysłaniu konwersji
+      // Google Ads conversion tracking
       if (typeof window.gtag !== 'undefined') {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
           'value': 1.0,
-          'currency': 'PLN',
-          'event_callback': () => {
-            window.open(whatsappUrl, '_blank');
-          }
+          'currency': 'PLN'
         });
-      } else {
-        window.open(whatsappUrl, '_blank');
       }
+      
+      // Otwórz WhatsApp po krótkim opóźnieniu
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 100);
 
       toast({
         title: language === 'pl' ? 'Wiadomość wysłana!' :
