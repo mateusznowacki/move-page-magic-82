@@ -8,6 +8,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { translations } from '@/lib/translations';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -150,6 +156,15 @@ const Navbar: React.FC = () => {
             href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
             target="_blank" 
             rel="noopener noreferrer"
+            onClick={() => {
+              if (typeof window.gtag !== 'undefined') {
+                window.gtag('event', 'conversion', {
+                  'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
+                  'value': 1.0,
+                  'currency': 'PLN'
+                });
+              }
+            }}
             className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
             aria-label="Contact us on WhatsApp"
           >
@@ -184,9 +199,18 @@ const Navbar: React.FC = () => {
                 href={`https://wa.me/4915223031473?text=${encodeURIComponent(translations['nav.whatsappMessage'][language])}`}
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window.gtag !== 'undefined') {
+                    window.gtag('event', 'conversion', {
+                      'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
+                      'value': 1.0,
+                      'currency': 'PLN'
+                    });
+                  }
+                  setIsMobileMenuOpen(false);
+                }}
                 className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center text-white font-medium"
                 aria-label="Contact us on WhatsApp"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span className="text-base font-medium">{translations['nav.whatsapp'][language]}</span>
               </a>

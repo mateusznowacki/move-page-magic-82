@@ -2,6 +2,12 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 interface WhatsAppButtonProps {
   phoneNumber: string;
   message?: string;
@@ -29,11 +35,24 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const whatsappUrl = finalMessage
     ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`
     : `https://wa.me/${phoneNumber}`;
+
+  const handleClick = () => {
+    // Google Ads conversion tracking
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
+        'value': 1.0,
+        'currency': 'PLN'
+      });
+    }
+  };
+
   return (
     <a 
       href={whatsappUrl} 
       target="_blank" 
       rel="noopener noreferrer"
+      onClick={handleClick}
       className={cn(
         "fixed bottom-8 right-8 z-40 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300",
         className
