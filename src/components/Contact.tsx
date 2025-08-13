@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
       // Google Ads conversion tracking
       if (typeof window.gtag !== 'undefined') {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-17470976934/ZPx5CJ6e1IUbEKbn54pB',
+          'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
           'value': 1.0,
           'currency': 'PLN'
         });

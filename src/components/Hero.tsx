@@ -6,10 +6,25 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { BadgePercent } from 'lucide-react';
 import HeroSlider from './HeroSlider';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   const scrollToContact = () => {
+    // Google Ads conversion tracking
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17470976934/DHe6CPb61oUbEKbn54pB',
+        'value': 1.0,
+        'currency': 'PLN'
+      });
+    }
+    
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
