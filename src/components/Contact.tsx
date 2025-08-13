@@ -8,6 +8,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
@@ -98,6 +104,15 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
+      // Google Ads conversion tracking
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17470976934/ZPx5CJ6e1IUbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+      }
+
       const whatsappMessage = `
 🌍 *Meister Umzüge 24 - Nowa wiadomość*
 

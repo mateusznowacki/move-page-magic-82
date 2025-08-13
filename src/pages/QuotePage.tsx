@@ -9,6 +9,12 @@ import SEOHead from '@/components/SEOHead';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Calculator, MapPin, Calendar, Package, Truck, BadgePercent, Clock, Shield, Star } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const QuotePage: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
@@ -123,6 +129,14 @@ const QuotePage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
+      // Google Ads conversion tracking
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17470976934/ZPx5CJ6e1IUbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+      }
       // Przygotuj wiadomość WhatsApp w zależności od języka
       const getWhatsAppMessage = () => {
         const labels = {
