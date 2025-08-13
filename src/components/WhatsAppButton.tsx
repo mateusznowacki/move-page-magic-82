@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
+    dataLayer: any[];
   }
 }
 
@@ -39,17 +40,41 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     
+    console.log('WhatsApp button clicked');
+    console.log('window.gtag available:', typeof window.gtag !== 'undefined');
+    
     // Google Ads conversion tracking
     if (typeof window.gtag !== 'undefined') {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
-        'value': 1.0,
-        'currency': 'PLN'
-      });
+      console.log('Sending conversion to Google Ads...');
+      try {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+        console.log('Conversion sent successfully');
+      } catch (error) {
+        console.error('Error sending conversion:', error);
+      }
+    } else {
+      console.log('Google Analytics not loaded yet, trying alternative method...');
+      // Próbuj użyć dataLayer bezpośrednio
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'conversion',
+          'send_to': 'AW-17470976934/azyNCLeh5IUbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+        console.log('Conversion sent via dataLayer');
+      } else {
+        console.log('Neither gtag nor dataLayer available');
+      }
     }
     
     // Otwórz WhatsApp po opóźnieniu
     setTimeout(() => {
+      console.log('Opening WhatsApp:', whatsappUrl);
       window.open(whatsappUrl, '_blank');
     }, 500);
   };
