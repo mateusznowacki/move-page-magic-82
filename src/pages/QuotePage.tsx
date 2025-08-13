@@ -129,14 +129,7 @@ const QuotePage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Google Ads conversion tracking
-      if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-17470976934/QWi-CPjv1IUbEKbn54pB',
-          'value': 1.0,
-          'currency': 'PLN'
-        });
-      }
+
       // Przygotuj wiadomość WhatsApp w zależności od języka
       const getWhatsAppMessage = () => {
         const labels = {
@@ -270,7 +263,20 @@ ${formData.message}
       const whatsappMessage = getWhatsAppMessage();
 
       const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
-      window.open(whatsappUrl, '_blank');
+      
+      // Otwórz WhatsApp po wysłaniu konwersji
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17470976934/QWi-CPjv1IUbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN',
+          'event_callback': () => {
+            window.open(whatsappUrl, '_blank');
+          }
+        });
+      } else {
+        window.open(whatsappUrl, '_blank');
+      }
 
       toast({
         title: language === 'pl' ? 'Wycena wysłana!' :
