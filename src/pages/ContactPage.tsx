@@ -18,6 +18,12 @@ import {
   Globe
 } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
 const ContactPage: React.FC = () => {
   const { language } = useLanguage();
   const { toast } = useToast();
@@ -154,6 +160,14 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
+      // Google Ads conversion tracking
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
+          'value': 1.0,
+          'currency': 'PLN'
+        });
+      }
       const translations = {
         pl: {
           title: 'Nowe zapytanie kontaktowe',
