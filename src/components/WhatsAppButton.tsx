@@ -48,10 +48,10 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       });
     }
     
-    // Otwórz WhatsApp po krótkim opóźnieniu
+    // Otwórz WhatsApp po opóźnieniu
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
-    }, 100);
+    }, 500);
   };
 
   return (

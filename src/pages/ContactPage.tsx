@@ -260,10 +260,10 @@ ${t.footer}`;
         });
       }
       
-      // Otwórz WhatsApp po krótkim opóźnieniu
+      // Otwórz WhatsApp po opóźnieniu
       setTimeout(() => {
         window.open(whatsappUrl, '_blank');
-      }, 100);
+      }, 500);
       
       toast({
         title: language === 'pl' ? "Sukces!" : language === 'de' ? "Erfolg!" : language === 'es' ? "¡Éxito!" : "Success!",

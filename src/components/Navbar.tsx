@@ -170,7 +170,7 @@ const Navbar: React.FC = () => {
               
               setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
-              }, 100);
+              }, 500);
             }}
             className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
             aria-label="Contact us on WhatsApp"
@@ -220,7 +220,7 @@ const Navbar: React.FC = () => {
                   
                   setTimeout(() => {
                     window.open(whatsappUrl, '_blank');
-                  }, 100);
+                  }, 500);
                   setIsMobileMenuOpen(false);
                 }}
                 className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center text-white font-medium"

@@ -136,10 +136,10 @@ ${formData.message}
         });
       }
       
-      // Otwórz WhatsApp po krótkim opóźnieniu
+      // Otwórz WhatsApp po opóźnieniu
       setTimeout(() => {
         window.open(whatsappUrl, '_blank');
-      }, 100);
+      }, 500);
 
       toast({
         title: language === 'pl' ? 'Wiadomość wysłana!' :
