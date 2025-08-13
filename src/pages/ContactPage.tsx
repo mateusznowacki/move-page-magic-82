@@ -252,12 +252,33 @@ ${t.footer}`;
       const whatsappUrl = `https://wa.me/4915223031473?text=${encodeURIComponent(whatsappMessage)}&lang=${language}`;
       
       // Google Ads conversion tracking
+      console.log('Contact form submitted - sending conversion...');
+      console.log('window.gtag available:', typeof window.gtag !== 'undefined');
+      
       if (typeof window.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
-          'value': 1.0,
-          'currency': 'PLN'
-        });
+        try {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
+            'value': 1.0,
+            'currency': 'PLN'
+          });
+          console.log('Conversion sent successfully to Google Ads');
+        } catch (error) {
+          console.error('Error sending conversion:', error);
+        }
+      } else {
+        console.log('Google Analytics not loaded yet, trying alternative method...');
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'conversion',
+            'send_to': 'AW-17470976934/DHe6CMjz44UbEKbn54pB',
+            'value': 1.0,
+            'currency': 'PLN'
+          });
+          console.log('Conversion sent via dataLayer');
+        } else {
+          console.log('Neither gtag nor dataLayer available');
+        }
       }
       
       // Otwórz WhatsApp po opóźnieniu
