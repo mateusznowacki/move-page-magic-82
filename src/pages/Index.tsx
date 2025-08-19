@@ -66,7 +66,9 @@ const Index: React.FC = () => {
     "telephone": "+49-152-230-314-73",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Kolonnenstr. 8",
       "addressLocality": "Berlin",
+      "postalCode": "10827",
       "addressCountry": "DE"
     },
     "areaServed": [
@@ -87,8 +89,8 @@ const Index: React.FC = () => {
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "567"
+      "ratingValue": 4.9,
+      "reviewCount": 567
     }
   };
 

@@ -156,7 +156,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
             "https://www.instagram.com/meisterumzuege24"
           ],
           "foundingDate": "2014",
-          "numberOfEmployees": "10-50",
+          "numberOfEmployees": 30,
           "currenciesAccepted": "EUR",
           "paymentAccepted": "Cash, Credit Card, Bank Transfer",
           "serviceArea": {
@@ -166,7 +166,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
               "latitude": 52.5200,
               "longitude": 13.4050
             },
-            "geoRadius": "500000"
+            "geoRadius": 500000
           }
         })}
       </script>
