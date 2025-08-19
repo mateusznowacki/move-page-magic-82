@@ -55,6 +55,8 @@ const TestimonialCard = React.memo(({ testimonial }: TestimonialCardProps) => {
           <p className="text-sm text-slate-600" itemProp="jobTitle">{testimonial.role}</p>
         </div>
       </div>
+      <meta itemProp="author" content={testimonial.name} />
+      <meta itemProp="itemReviewed" content="Meister Umzüge 24" />
     </article>
   );
 });
