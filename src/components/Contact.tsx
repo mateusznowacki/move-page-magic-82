@@ -235,11 +235,11 @@ Wysłane ze strony: meisterumzuege24.de
                 <div className="text-left">
                   <p className="text-gray-700 font-bold text-lg">Email</p>
                   <a 
-                    href="mailto:info@meisterumzuege24.de"
+                    href="mailto:mptransporte24@web.de"
                     className="text-gray-700 hover:text-moving-blue transition-colors cursor-pointer text-lg font-medium"
-                    aria-label="Napisz do nas: info@meisterumzuege24.de"
+                    aria-label="Napisz do nas: mptransporte24@web.de"
                   >
-                    info@meisterumzuege24.de
+                    mptransporte24@web.de
                   </a>
                 </div>
               </div>

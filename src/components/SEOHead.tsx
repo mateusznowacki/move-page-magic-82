@@ -98,7 +98,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="business:contact_data:postal_code" content="10827" />
       <meta name="business:contact_data:country_name" content="Germany" />
       <meta name="business:contact_data:phone_number" content="+49 152 230 314 73" />
-      <meta name="business:contact_data:email" content="info@meisterumzuege24.de" />
+      <meta name="business:contact_data:email" content="mptransporte24@web.de" />
       
       {/* Structured Data */}
       {structuredData && (
@@ -119,7 +119,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
           "logo": "https://meisterumzuege24.de/meister-umzunge-logo.svg",
           "image": "https://meisterumzuege24.de/optimized/movecompany-in-action.webp",
           "telephone": "+49 152 230 314 73",
-          "email": "info@meisterumzuege24.de",
+          "email": "mptransporte24@web.de",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Kolonnenstr. 8",

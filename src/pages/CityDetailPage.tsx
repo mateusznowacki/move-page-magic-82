@@ -742,8 +742,8 @@ const CityDetailPage: React.FC = () => {
                     <Mail className="w-8 h-8 text-moving-blue mr-4" />
                     <div>
                       <h3 className="font-semibold text-lg">{pageTexts.email}</h3>
-                      <a href="mailto:info@meisterumzuege24.de" className="text-moving-blue hover:underline">
-                        info@meisterumzuege24.de
+                      <a href="mailto:mptransporte24@web.de" className="text-moving-blue hover:underline">
+                        mptransporte24@web.de
                       </a>
                     </div>
                   </div>

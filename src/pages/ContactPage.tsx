@@ -569,7 +569,7 @@ ${t.footer}`;
                          language === 'es' ? 'Email' :
                          'Email'}
                       </p>
-                      <p className="text-gray-600">info@meisterumzuege24.de</p>
+                      <p className="text-gray-600">mptransporte24@web.de</p>
                     </div>
                   </div>
                   
